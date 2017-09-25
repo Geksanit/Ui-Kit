@@ -1,0 +1,12 @@
+mixin block-line
+    .block-line
+        include ../standart-button/standart-button
+        include ../arrow-button/arrow-button
+        +standart-button('start','standart-button_normal','standart-button_orange')
+        +standart-button('stop','standart-button_normal','standart-button_blue')
+        +standart-button('Button','standart-button_small','standart-button_orange')
+        +arrow-button('arrow-button_left','arrow-button_orange','disabled')
+        +arrow-button('arrow-button_right','arrow-button_orange','disabled')
+        +arrow-button
+        +arrow-button('arrow-button_left','arrow-button_orange')
+        +standart-button('Button')
