@@ -5,21 +5,48 @@ $orange = #e75735 #bf3e1f
 $darkorange = #bf3e1f
 //fonts
 @font-face
-  font-family lato
+  font-family lato-r
+  src:url(./fonts/LatoRegular/LatoRegular.ttf)
+@font-face
+  font-family lato-b
   src:url(./fonts/Lato-Black.ttf)
+@font-face
+  font-family lato-l
+  src:url(./fonts/lato-light.ttf)
+@font-face
+  font-family sans-r
+  src url(./fonts/SourceSansProRegular/SourceSansProRegular.ttf)
 
 //mixins
 body
   background #eee
+  margin 0
+  padding 10%
 //styles
 
 //.standart-button
 @import "components/standart-button/main.styl"
-standart-button($blue,$orange,lato)
+standart-button(lato-b,$blue,$orange)
 
-//block-line
+//block-line non mixin
 @import "components/block-line/main.styl"
 
 //arrow-button
 @import "components/arrow-button/main.styl"
 arrow-button($blue, $orange)
+
+//perxentages
+@import "components/percentages/main.styl"
+percentages(lato-l)
+
+//forma
+@import "components/form-elements/main.styl"
+forma(sans-r,$blue)
+
+//news
+@import "components/news/main.styl"
+news(lato-l,lato-b,lato-r,$blue, $orange)
+
+//stages
+@import "components/stages/main.styl"
+stages(lato-r,$blue, $orange)

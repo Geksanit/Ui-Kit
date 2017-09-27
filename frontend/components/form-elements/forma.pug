@@ -1,0 +1,9 @@
+
+mixin forma
+    form(action="#")
+        input(type="text" name="name" value="Your name" required)
+        input(type="email" name="email" value="Your email" autocomplete="on" required)
+        textarea(rows="4" required) Your message
+        +standart-button('submit')
+        <input type="checkbox">
+        <input type="radio">

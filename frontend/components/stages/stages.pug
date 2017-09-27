@@ -1,2 +1,18 @@
-mixin stages
+mixin stages(stage,N,color)
     .stages
+        <div class="stages__circle stages_!{color}">
+            .stages__text 1
+        </div>
+        - var i = 2;
+        while i <= N
+            if (i<=stage)
+                <div class="stages__line stages_#{color}">
+                </div>
+                <div class="stages__circle stages_#{color}">
+                    .stages__text #{i}
+                </div>
+            else
+                .stages__line
+                .stages__circle
+                    .stages__text #{i}
+            - i++

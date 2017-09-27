@@ -1,0 +1,24 @@
+news(font1,font2,font3,$blue,$orange)
+  $color = $blue
+  .news
+    width 310px
+    //border 2px solid red
+    border-radius 5px
+    color white
+    background-image url(./img/Layer.png)
+    background-repeat no-repeat
+    background-size contain
+    &__text
+      float right
+      width 190px
+      padding 15px
+      background-color $blue[0]
+      font-size 12px
+    h1
+      font-family font1
+      font-weight 100
+    h4
+      font-family font2
+      text-transform uppercase
+    p
+      font-family font3

@@ -1,14 +1,40 @@
 doctype html
 include ./components/standart-button/standart-button
 include ./components/block-line/block-line
+include ./components/arrow-button/arrow-button
+include ./components/percentages/percentages
+include ./components/form-elements/forma
+include ./components/news/news
+include ./components/stages/stages
 html
     head
         meta(charset = 'utf-8')
         meta(name='viewport', content="initial-scale=1.0, width=device-width")
-        title Flat_UI
+        title Ui-Kit
     body
+        .block-line
+            +standart-button('button','small','blue')
+            +standart-button('button')
+            +standart-button('button','normal','orange')
+            +standart-button('button','small','orange')
+        .block-line
+            +arrow-button('arrow-button_left','arrow-button_orange','disabled')
+            +arrow-button('arrow-button_right','arrow-button_orange','disabled')
+            +arrow-button('arrow-button_left')
+            +arrow-button()
+            +arrow-button('arrow-button_left','arrow-button_orange')
+            +arrow-button('arrow-button_right','arrow-button_orange')
+        .block-line
+            +percentages(0)
+            +percentages(38)
+            +percentages(50)
+            +percentages(62)
+            +percentages(89)
+            +percentages(100)
+        .block-line
+            +stages(3,5,'orange')
+        .block-line
+            +forma
+        .block-line
+            +news("It'is all going downhill",'24 august 2013','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.','green')
 
-        +standart-button('Button','standart-button_normal','standart-button_orange')
-
-        +block-line
-        +block-line

@@ -1,0 +1,40 @@
+
+forma(font,$color)
+  form
+    border 2px solid green
+    width 290px
+    padding 10px
+    input,textarea
+      position relative
+      padding 0.25rem 1rem
+      margin 0 10px 10px 0
+      width auto
+      height 2rem
+      display block
+      background-color lightgrey
+      border-radius 5px
+      border none
+
+      font-family font
+      font-size 1.5rem
+      color gray
+      &:invalid
+        border 2px solid red
+
+      &:after
+        display block
+        content "error"
+        position absolute
+        top 5px
+        left 55px
+        background-color yellow
+        z-index 10
+      &:valid
+        border 2px solid green
+    textarea
+      height 100px
+    button
+      float right
+      margin 0 10px 10px 0
+
+

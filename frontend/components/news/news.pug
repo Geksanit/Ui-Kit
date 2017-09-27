@@ -1,2 +1,6 @@
-mixin news
-    .news
+mixin news(title,date,text,color)
+    div(class="news #{color}")
+        .news__text
+            h1 #{title}
+            h4 #{date}
+            p #{text}

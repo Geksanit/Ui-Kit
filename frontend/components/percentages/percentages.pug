@@ -1,2 +1,10 @@
-mixin percentages
-    .percentages
+mixin percentages(num)
+    <div class="percentages">
+        <svg class="percentages__svg">
+            -var radius = 45
+            -var N = 3.1415*radius*2*(num/100);
+            <circle class="percentages__circle" r="#{radius}" stroke-dasharray="#{N} 500" stroke-dashoffset="0"></circle>
+        </svg>
+        .percentages__text
+            .percentages__number #{num}
+    </div>
