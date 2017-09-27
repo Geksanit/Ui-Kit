@@ -1,18 +1,23 @@
 @font-face {
-  font-family: lato;
+  font-family: lato-r;
+  src: url(fonts/LatoRegular/LatoRegular.ttf);
+}
+@font-face {
+  font-family: lato-b;
   src: url(fonts/Lato-Black.ttf);
 }
 @font-face {
-  font-family: lato-light;
+  font-family: lato-l;
   src: url(fonts/lato-light.ttf);
 }
 @font-face {
-  font-family: sans-regular;
+  font-family: sans-r;
   src: url(fonts/SourceSansProRegular/SourceSansProRegular.ttf);
 }
 body {
   background: #eee;
   margin: 0;
+  padding: 10%;
 }
 .standart-button {
   position: relative;
@@ -24,7 +29,7 @@ body {
   border-width: 1px;
   outline: none;
   background-color: #fff;
-  font-family: lato;
+  font-family: lato-b;
   font-size: 1rem;
   text-transform: uppercase;
   text-align: center;
@@ -32,16 +37,8 @@ body {
   border-color: #4eb7a8;
   box-shadow: 0 4px 0 #28a290;
   color: #4eb7a8;
-/*
-    &_blue
-      $_color = $blue
-      border-color $_color[0]
-      box-shadow 0 4px 0 $_color[1]
-      color $_color[0]
-      &:hover
-        background-color $_color[0]*/
 }
-.standart-button_small {
+.standart-button__small {
   width: 78px;
   height: 22px;
   font-size: 0.6rem;
@@ -57,12 +54,12 @@ body {
   border-style: solid;
   border-width: 1px;
 }
-.standart-button_orange {
+.standart-button__orange {
   border-color: #e75735;
   box-shadow: 0 4px 0 #bf3e1f;
   color: #e75735;
 }
-.standart-button_orange:hover {
+.standart-button__orange:hover {
   background-color: #e75735;
 }
 .block-line {
@@ -74,6 +71,7 @@ body {
   justify-content: space-around;
   background-color: #fff;
   background-origin: content-box;
+  border-bottom: 2px solid #808080;
 }
 .arrow-button {
   padding: 0;
@@ -128,20 +126,70 @@ body {
   width: 100px;
   height: 100px;
   background-color: #fff;
-  font-family: lato-light;
+  font-family: lato-l;
+  font-size: 45px;
   color: #808080;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  position: relative;
 }
-.percentages circle {
-  r: 45px;
+.percentages__svg {
+  transform: rotate(-90deg);
+}
+.percentages__circle {
   cx: 50%;
   cy: 50%;
   fill: #fff;
   stroke: #e75735;
   stroke-width: 5;
-  stroke-dasharray: attr(value);
+  animation-name: start;
+  animation-duration: 3s;
+}
+.percentages__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.percentages__number {
+  display: block;
+}
+@-moz-keyframes start {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes start {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-o-keyframes start {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes start {
+  from {
+    stroke-dashoffset: 300;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 form {
   border: 2px solid #008000;
@@ -150,6 +198,7 @@ form {
 }
 form input,
 form textarea {
+  position: relative;
   padding: 0.25rem 1rem;
   margin: 0 10px 10px 0;
   width: auto;
@@ -158,23 +207,27 @@ form textarea {
   background-color: #d3d3d3;
   border-radius: 5px;
   border: none;
-  font-family: sans-regular;
+  font-family: sans-r;
   font-size: 1.5rem;
   color: #808080;
 }
 form input:invalid,
 form textarea:invalid {
   border: 2px solid #f00;
-  position: relative;
 }
-form input:invalid:after,
-form textarea:invalid:after {
+form input:after,
+form textarea:after {
+  display: block;
   content: "error";
   position: absolute;
-  right: 10px;
-  width: 20px;
-  height: 10px;
-  background-color: #7fffd4;
+  top: 5px;
+  left: 55px;
+  background-color: #ff0;
+  z-index: 10;
+}
+form input:valid,
+form textarea:valid {
+  border: 2px solid #008000;
 }
 form textarea {
   height: 100px;
@@ -182,4 +235,63 @@ form textarea {
 form button {
   float: right;
   margin: 0 10px 10px 0;
+}
+.news {
+  width: 310px;
+  border-radius: 5px;
+  color: #fff;
+  background-image: url(img/Layer.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.news__text {
+  float: right;
+  width: 190px;
+  padding: 15px;
+  background-color: #4eb7a8;
+  font-size: 12px;
+}
+.news h1 {
+  font-family: lato-l;
+  font-weight: 100;
+}
+.news h4 {
+  font-family: lato-b;
+  text-transform: uppercase;
+}
+.news p {
+  font-family: lato-r;
+}
+.stages {
+  border: 2px #008000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.stages__circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #d3d3d3;
+  color: #808080;
+  z-index: 2;
+  font-family: lato-r;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.stages__line {
+  margin: -5px;
+  width: 100px;
+  height: 5px;
+  background-color: #d3d3d3;
+}
+.stages_orange {
+  background-color: #e75735;
+  color: #fff;
+}
+.stages_blue {
+  background-color: #4eb7a8;
+  color: #fff;
 }
