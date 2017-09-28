@@ -1,5 +1,6 @@
 stages($font,$blue,$orange)
   .stages
+    width 100%
     $diameter = 30px
     $radius = 15px
     border 2px green
@@ -16,13 +17,13 @@ stages($font,$blue,$orange)
       z-index 2
       font-family $font
       font-weight bold
-
-      display flex
-      align-items center
-      justify-content space-around
+      flex 0 0 30px
+    &__text
+      text-align center
+      line-height 30px
     &__line
+      flex 2 2 50px
       margin -5px
-      width 100px
       height 5px
       background-color lightgrey
     &_orange

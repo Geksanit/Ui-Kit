@@ -1,9 +1,9 @@
 
 mixin forma
     form(action="#")
-        input(type="text" name="name" value="Your name" required)
-        input(type="email" name="email" value="Your email" autocomplete="on" required)
-        textarea(rows="4" required) Your message
+        input(type="text" name="name" placeholder="name" required autofocus)
+        input(type="email" name="email" placeholder="email" autocomplete="on" required)
+        textarea(rows="4" placeholder="Your message" required)
         +standart-button('submit')
         <input type="checkbox">
         <input type="radio">

@@ -6,6 +6,9 @@ include ./components/percentages/percentages
 include ./components/form-elements/forma
 include ./components/news/news
 include ./components/stages/stages
+include ./components/slider/slider
+include ./components/calendar/calendar
+include ./components/search/search
 html
     head
         meta(charset = 'utf-8')
@@ -34,7 +37,13 @@ html
         .block-line
             +stages(3,5,'orange')
         .block-line
+            +slider
+        .block-line
             +forma
         .block-line
             +news("It'is all going downhill",'24 august 2013','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.','green')
+        .block-line
+            +calendar
+        .block-line
+            +search
 

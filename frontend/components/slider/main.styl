@@ -1,0 +1,55 @@
+slider($color)
+  .slider
+    //track - линия
+    $track-color = lightgray
+    //thumb - ручка/ползунок
+    $thumb-color = $color[0]
+    $thumb-radius = 10px
+    $thumb-size = 20px
+
+    track()
+      width 100%
+      height 5px
+      border-radius 5px
+      background-color $track-color
+      cursor pointer
+
+    thumb()
+      margin-top -7.5px
+      height $thumb-size
+      width $thumb-size
+      border-radius $thumb-radius
+      background $thumb-color
+      cursor pointer
+
+    input[type=range]
+      -webkit-appearance none
+      width 100%
+      &:focus
+        outline none
+
+      &::-webkit-slider-runnable-track
+        track()
+      &::-webkit-slider-thumb
+        thumb()
+        -webkit-appearance none
+
+      &::-moz-range-track
+        track()
+      &::-moz-range-thumb
+        thumb()
+
+      &::-ms-track
+        track()
+        background transparent
+        border-color transparent
+        border-width $thumb-size 0
+        color transparent
+      &::-ms-fill-lower
+        background yellow
+        border-radius 10px
+      &::-ms-fill-upper
+        background $track-color
+        border-radius 10px
+      &::-ms-thumb
+        thumb()
