@@ -230,11 +230,17 @@ form textarea:valid {
   border: 2px solid #008000;
 }
 form textarea {
+  resize: none;
+  -webkit-appearance: none;
   height: 100px;
 }
 form button {
   float: right;
   margin: 0 10px 10px 0;
+}
+form input[type="checkbox"i] {
+  -webkit-appearance: none;
+  background-color: #00f;
 }
 .news {
   width: 310px;
