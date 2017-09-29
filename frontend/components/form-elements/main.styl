@@ -1,37 +1,74 @@
 
-forma(font,$color)
+forma(font1,font2,$blue,$orange)
   form
     border 2px solid green
-    width 290px
+    width 280px
     padding 10px
+
     input,textarea
-      position relative
       padding 0.25rem 1rem
-      margin 0 10px 10px 0
-      width auto
       height 2rem
       display block
       background-color lightgrey
       border-radius 5px
+      box-sizing border-box
       border none
+      outline none
 
-      font-family font
-      font-size 1.5rem
+      font-family font1
+      font-size 1rem
       color gray
-      &:invalid
-        border 2px solid red
+    textarea:focus,
+    label input:focus
+        border 2px solid gray
 
-      &:after
-        display block
-        content "error"
-        position absolute
-        top 5px
-        left 55px
-        background-color yellow
-        z-index 10
-      &:valid
-        border 2px solid green
+    label
+      width 100%
+      display flex
+      margin-bottom 10px
+      input
+        float left
+        width 200px
+        margin-right 10px
+        height 2rem
+      div
+        position relative
+        float right
+        width 70px
+        margin 0px
+        height 2rem
+        background-color gray
+        border-radius 5px
+        &::before
+          content ''
+          top 0.7rem
+          left -3px
+          position absolute
+          width 10px
+          height 10px
+          background-color inherit
+          transform rotate(-45deg)
+        &::after
+          position absolute
+          content 'test'
+          width 70px
+          height 2rem
+          font-family font2
+          font-size 0.7rem
+          text-transform uppercase
+          color white
+          text-align center
+          line-height 2rem
+      input:invalid + div
+        background-color $orange[0]
+        &::after
+          content 'error'
+      input:valid + div
+        background-color $blue[0]
+        &::after
+          content 'thanks!'
     textarea
+      margin-right -10px
       resize none
       -webkit-appearance none
 
@@ -39,8 +76,75 @@ forma(font,$color)
     button
       float right
       margin 0 10px 10px 0
-    input[type="checkbox" i]
+
+
+
+    input[type="checkbox"]
       -webkit-appearance none
-      background-color blue
+      box-sizing border-box
+      height 24px
+      padding 2px
+      width 60px
+      cursor pointer
+      position relative
+      -webkit-transition: .15s;
+      border-radius  12px
+      background-color lightgrey
+      &:checked
+        background-color $blue[0]
+      &::after
+        content ''
+        position absolute
+        width 20px
+        height 20px
+        border-radius 10px
+        top 2px
+        left 2px
+        background-color white
+      &:checked::after
+        left 38px
+      &::before
+        position absolute
+        top 0px
+        left 10px
+        width 100%
+        height 100%
+        line-height 24px
+        font-family font2
+        font-size 0.7rem
+        text-align center
+        text-transform uppercase
+        color white
+        content 'off'
+      &:checked::before
+        content 'on'
+        left -10px
+
+    input[type="radio"]
+      position relative
+      -webkit-appearance none
+      background-color lightgrey
+      $size = 24px
+      width $size
+      height $size
+      border-radius 12px
+      padding 0px
+      &:checked
+        background-color $blue[0]
+
+      &::before
+        content ''
+        position absolute
+        top 8px
+        left 7px
+        width 8px
+        height 4px
+        border-bottom 2px solid grey
+        border-left 2px solid grey
+        transform rotate(-45deg)
+      &:checked::before
+        border-color white
+
+
 
 
