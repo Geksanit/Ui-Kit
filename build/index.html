@@ -49,6 +49,29 @@
       </div></div>
     </div>
     <div class="block-line">
+      <div class="pie-chart"><svg class="pie-chart__svg">
+<circle class="pie-chart__circle" r="40" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
+<circle class="pie-chart__circle pie-chart__circle-blue" r="40" stroke-dasharray="163.358 500" stroke="darkgray" stroke-dashoffset="0"></circle>
+<circle class="pie-chart__circle pie-chart__circle-orange" r="40" stroke-dasharray="87.96200000000002 500" stroke="red" stroke-dashoffset="0"></circle>
+<circle class="pie-chart__circle pie-chart__circle-gray" r="40" stroke-dasharray="25.132000000000005 500" stroke="green" stroke-dashoffset="0"></circle>
+</svg>
+      </div>
+      <div class="pie-chart"><svg class="pie-chart__svg">
+<circle class="pie-chart__circle" r="40" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
+<circle class="pie-chart__circle pie-chart__circle-blue" r="40" stroke-dasharray="75.396 500" stroke="darkgray" stroke-dashoffset="0"></circle>
+<circle class="pie-chart__circle pie-chart__circle-orange" r="40" stroke-dasharray="75.396 500" stroke="red" stroke-dashoffset="0"></circle>
+<circle class="pie-chart__circle pie-chart__circle-gray" r="40" stroke-dasharray="75.396 500" stroke="green" stroke-dashoffset="0"></circle>
+</svg>
+      </div>
+      <div class="pie-chart"><svg class="pie-chart__svg">
+<circle class="pie-chart__circle" r="40" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
+<circle class="pie-chart__circle pie-chart__circle-blue" r="40" stroke-dasharray="125.66000000000001 500" stroke="darkgray" stroke-dashoffset="0"></circle>
+<circle class="pie-chart__circle pie-chart__circle-orange" r="40" stroke-dasharray="50.26400000000001 500" stroke="red" stroke-dashoffset="0"></circle>
+<circle class="pie-chart__circle pie-chart__circle-gray" r="40" stroke-dasharray="0 500" stroke="green" stroke-dashoffset="0"></circle>
+</svg>
+      </div>
+    </div>
+    <div class="block-line">
       <div class="stages"><div class="stages__circle stages_orange">
         <div class="stages__text">1</div></div><div class="stages__line stages_orange">
 </div>
@@ -68,7 +91,22 @@
       </div>
     </div>
     <div class="block-line">
-      <div class="slider"><input type="range" min="0" max="33" step="1" value="6"></div>
+      <div class="slider">
+        <div class="slider__view">5</div><input class="slider" oninput="sliderInput(event)" type="range" min="0" max="10" value="5">
+      </div>
+      <div class="slider">
+        <div class="slider__view">1</div><input class="slider" oninput="sliderInput(event)" type="range" min="-5" max="12" value="1">
+      </div>
+      <div class="slider">
+        <div class="slider__line"></div><input class="slider-percentage" oninput="sliderPercentageInput(event)" type="range" min="0" max="100" value="30">
+        <div class="slider-percentage__percent">
+          <div>0</div>
+          <div>25</div>
+          <div>50</div>
+          <div>75</div>
+          <div>100</div>
+        </div>
+      </div>
     </div>
     <div class="block-line">
       <form action="#">
@@ -80,7 +118,7 @@
           <input type="email" name="email" placeholder="Your Email" autocomplete="on" required>
           <div></div>
         </label>
-        <textarea rows="4" placeholder="Your Message" required></textarea><button class="standart-button standart-button__undefined standart-button__undefined"> submit</button><input type="checkbox">
+        <textarea rows="4" name="message" placeholder="Your Message" required></textarea><button class="standart-button standart-button__undefined standart-button__undefined"> submit</button><input type="checkbox">
 <input type="radio">
       </form>
     </div>
@@ -96,8 +134,13 @@
     <div class="block-line">
       <div class="calendar"><input type="date"></div>
     </div>
-    <div class="block-line">
-      <div class="search"><input name="q" type="search"></div>
+    <div class="block-line"><form action="#" class="search search-">
+<input name="q" type="search" placeholder="Search"/>
+      <input class="submit" type="submit" name="" value=""></form><form action="#" class="search search-notfound">
+<input name="q" type="search" placeholder="I've not found what I'm looking for..."/>
+      <input class="submit" type="submit" name="" value=""></form>
+    </div>
+    <div class="block-line"><video preload="none" src="https://16-lvl3-pdl.vimeocdn.com/01/2596/2/62980495/156181927.mp4?expires=1506749454&amp;token=0463f87de3a1e920b6a01"></video>
     </div>
   <script type="text/javascript" src="index.js"></script></body>
 </html>

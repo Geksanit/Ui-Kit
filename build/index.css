@@ -157,6 +157,33 @@ body {
 .percentages__number {
   display: block;
 }
+.pie-chart {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.pie-chart__svg {
+  transform: rotate(-90deg);
+}
+.pie-chart__circle {
+  cx: 50%;
+  cy: 50%;
+  fill: none;
+  stroke-width: 17;
+}
+.pie-chart__circle-orange {
+  stroke: #e75735;
+}
+.pie-chart__circle-blue {
+  stroke: #4eb7a8;
+}
+.pie-chart__circle-gray {
+  stroke: #747474;
+}
 @-moz-keyframes start {
   from {
     stroke-dashoffset: 300;
@@ -267,8 +294,10 @@ form label input:valid + div::after {
   content: 'thanks!';
 }
 form textarea {
-  margin-right: -10px;
+  margin-bottom: 10px;
   resize: none;
+  overflow: auto;
+  width: 100%;
   -webkit-appearance: none;
   height: 100px;
 }
@@ -410,21 +439,48 @@ form input[type="radio"]:checked::before {
   background-color: #4eb7a8;
   color: #fff;
 }
-.slider input[type=range] {
+div.slider {
+  position: relative;
+  font-family: lato-r;
+}
+.slider__view {
+  position: absolute;
+  width: 35px;
+  height: 24px;
+  background-color: #4eb7a8;
+  border-radius: 5px;
+  top: 0px;
+  left: 32.5%;
+  color: #fff;
+  text-align: center;
+  line-height: 24px;
+}
+.slider__view::after {
+  content: '';
+  bottom: -2px;
+  left: 15.7px;
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: inherit;
+  transform: rotate(-45deg);
+}
+input[type=range] {
   -webkit-appearance: none;
   width: 100%;
+  margin: 40px 0 0 0;
 }
-.slider input[type=range]:focus {
+input[type=range]:focus {
   outline: none;
 }
-.slider input[type=range]::-webkit-slider-runnable-track {
+input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 5px;
   border-radius: 5px;
   background-color: #d3d3d3;
   cursor: pointer;
 }
-.slider input[type=range]::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-thumb {
   margin-top: -7.5px;
   height: 20px;
   width: 20px;
@@ -433,14 +489,14 @@ form input[type="radio"]:checked::before {
   cursor: pointer;
   -webkit-appearance: none;
 }
-.slider input[type=range]::-moz-range-track {
+input[type=range]::-moz-range-track {
   width: 100%;
   height: 5px;
   border-radius: 5px;
   background-color: #d3d3d3;
   cursor: pointer;
 }
-.slider input[type=range]::-moz-range-thumb {
+input[type=range]::-moz-range-thumb {
   margin-top: -7.5px;
   height: 20px;
   width: 20px;
@@ -448,7 +504,7 @@ form input[type="radio"]:checked::before {
   background: #4eb7a8;
   cursor: pointer;
 }
-.slider input[type=range]::-ms-track {
+input[type=range]::-ms-track {
   width: 100%;
   height: 5px;
   border-radius: 5px;
@@ -459,19 +515,83 @@ form input[type="radio"]:checked::before {
   border-width: 20px 0;
   color: transparent;
 }
-.slider input[type=range]::-ms-fill-lower {
+input[type=range]::-ms-fill-lower {
   background: #ff0;
   border-radius: 10px;
 }
-.slider input[type=range]::-ms-fill-upper {
+input[type=range]::-ms-fill-upper {
   background: #d3d3d3;
   border-radius: 10px;
 }
-.slider input[type=range]::-ms-thumb {
+input[type=range]::-ms-thumb {
   margin-top: -7.5px;
   height: 20px;
   width: 20px;
   border-radius: 10px;
   background: #4eb7a8;
   cursor: pointer;
+}
+.slider__line {
+  background-color: #4eb7a8;
+  width: 10px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 2;
+}
+.slider-percentage {
+  position: relative;
+  font-family: lato-r;
+}
+.slider-percentage__percent {
+  margin: 0 -10px;
+  color: #d3d3d3;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+form.search {
+  position: relative;
+  width: 300px;
+  padding: 0px;
+  border: none;
+}
+form.search input[type="search"] {
+  width: calc(100% - 2rem);
+  margin-right: 2rem;
+  background-color: #d3d3d3;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  padding: 0 1rem;
+  height: 2rem;
+  font-size: 1rem;
+  color: #808080;
+  font-family: sans-r;
+}
+form.search input[type="search"]:focus {
+  border: 2px solid #808080;
+}
+form.search input[type=submit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #4eb7a8;
+  border-radius: 0 5px 5px 0;
+  background-image: url(img/lupa.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+form.search-notfound {
+  color: #fff;
+}
+form.search-notfound input[type="search"] {
+  background-color: #e75735;
+  color: #fff;
+}
+.video {
+  border: 1px solid #ff0;
 }

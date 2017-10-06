@@ -3,12 +3,14 @@ include ./components/standart-button/standart-button
 include ./components/block-line/block-line
 include ./components/arrow-button/arrow-button
 include ./components/percentages/percentages
+include ./components/percentages/pie-chart
 include ./components/form-elements/forma
 include ./components/news/news
 include ./components/stages/stages
 include ./components/slider/slider
 include ./components/calendar/calendar
 include ./components/search/search
+include ./components/video/video
 html
     head
         meta(charset = 'utf-8')
@@ -35,9 +37,15 @@ html
             +percentages(89)
             +percentages(100)
         .block-line
+            +pie-chart(10,25,30)
+            +pie-chart()
+            +pie-chart(0,20,30)
+        .block-line
             +stages(3,5,'orange')
         .block-line
             +slider
+            +slider(-5,12,1)
+            +slider-percentage(30)
         .block-line
             +forma
         .block-line
@@ -46,4 +54,7 @@ html
             +calendar
         .block-line
             +search
+            +search('notfound')
+        .block-line
+            +video
 

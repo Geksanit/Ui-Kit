@@ -1,3 +1,4 @@
+var scripts =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -71,11 +72,18 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
-/**
- * Created by DNS on 20.09.2017.
- */
-//import './index.css';
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_slider_slider__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_slider_slider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_slider_slider__);
 
+
+
+
+window.Test = function () {
+    var elem = document.getElementsByClassName('slider-percentage')[0]
+    console.log(elem.shadowRoot);
+    //var root = elem.createShadowRoot();
+    //root.innerHTML = "<p>Привет из подполья!</p>";
+}
 
 
 
@@ -85,6 +93,49 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+//slider
+var sliderChange = function(element){
+    var value = element.value;
+    element.previousSibling.innerText = value;
+
+    var width = element.parentElement.clientWidth-20;
+    var min = element.attributes.min.value;
+    var max = element.attributes.max.value;
+    element.previousSibling.style.left = width/(max-min)*(value-min)-8.75+'px';
+};
+window.sliderInput = function (event) {
+    sliderChange(event.target);
+};
+var sliderInit = function () {
+    var elements = document.querySelectorAll('input.slider');
+    for(var i=0; i<elements.length; i++){
+        sliderChange(elements[i]);
+    }
+}();
+
+//slider-percentage
+var sliderPercentageChange = function(element){
+    var value = element.value;
+
+    var width = element.parentElement.clientWidth-20;
+    var min = element.attributes.min.value;
+    var max = element.attributes.max.value;
+    element.previousSibling.style.width = width/(max-min)*(value-min)+1+'px';
+};
+window.sliderPercentageInput = function (event) {
+    sliderPercentageChange(event.target);
+};
+var sliderPercentageInit = function(){
+    var elements = document.querySelectorAll('input.slider-percentage');
+    for(var i=0; i<elements.length; i++){
+        sliderPercentageChange(elements[i]);
+    }
+}();
 
 /***/ })
 /******/ ]);

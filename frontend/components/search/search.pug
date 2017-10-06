@@ -1,3 +1,9 @@
-mixin search
-    .search
-        <input name="q" type="search">
+mixin search(argument)
+    -var text = 'Search'
+    if (argument)
+        - argument = 'notfound'
+        - text = "I've not found what I'm looking for..."
+    <form action="#" class="search search-#{argument}">
+        <input name="q" type="search" placeholder="#{text}"/>
+        input( type="submit" name="" value="" class="submit")
+    </form>

@@ -1,10 +1,10 @@
-percentages(font)
+percentages(font,$blue,$orange)
   @keyframes start{
     from {stroke-dashoffset: 300}
     to {stroke-dashoffset: 0}
   }
   .percentages
-    $color = #e75735 #bf3e1f
+    $color = $orange
     $size = 100px
     width $size
     height $size
@@ -39,6 +39,30 @@ percentages(font)
       justify-content space-around
     &__number
       display block
+  .pie-chart
+    $color = $orange
+    $size = 100px
+    width $size
+    height $size
+    background-color white
+    display flex
+    align-items center
+    justify-content space-around
+    position relative
+    &__svg
+      transform  rotate(-90deg)
+    &__circle
+      cx 50%
+      cy 50%
+      fill none
+      stroke-width 17
+      &-orange
+        stroke $orange[0]
+      &-blue
+        stroke $blue[0]
+      &-gray
+        stroke #747474
+
 
 
 

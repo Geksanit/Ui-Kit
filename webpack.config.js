@@ -11,16 +11,17 @@ const baseConfig = {
     },
     output:{
         path: path.join(__dirname, 'build'),
-        filename: '[name].js'
+        filename: '[name].js',
+        library: 'scripts'
     },
     plugins:[
         new ExtractTextPlugin('[name].css', {allChunks: true}),
         new HtmlWebpackPlugin({filename: 'index.html',chunks: ['index'],template: './index.pug'})
-    ],
+    ],/*
     resolve:{
         modules:['node-modules'],
-        extensions:['.js', '.styl', '.pug']
-    },
+        extensions:['.js', ".json", '.styl', '.pug']
+    },*/
     resolveLoader:{
         modules:['node_modules'],
         moduleExtensions: ['-loader'],
