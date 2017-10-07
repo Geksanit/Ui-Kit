@@ -11,6 +11,8 @@ include ./components/slider/slider
 include ./components/calendar/calendar
 include ./components/search/search
 include ./components/video/video
+include ./components/select/select
+include ./components/messaging/messaging
 html
     head
         meta(charset = 'utf-8')
@@ -56,5 +58,8 @@ html
             +search
             +search('notfound')
         .block-line
+            +select
+        .block-line
             +video
-
+        .block-line
+            +messaging('Sarah Brown','Hey, so are we cool to meet at the art gallery? Say 8pm')

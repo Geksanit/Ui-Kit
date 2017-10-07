@@ -74,6 +74,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_slider_slider__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_slider_slider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_slider_slider__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_search_search__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_search_search___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_search_search__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_video_video__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_video_video___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_video_video__);
+
+
 
 
 
@@ -136,6 +142,30 @@ var sliderPercentageInit = function(){
         sliderPercentageChange(elements[i]);
     }
 }();
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+//search
+window.searchClick = function (event) {
+    var element = event.target;
+    //console.log(event);
+    element.className = '';
+    element.attributes.placeholder.value = 'Search';
+};
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+
+window.video = function () {
+    console.log(document.getElementsByTagName('video'));
+
+}();
+
 
 /***/ })
 /******/ ]);

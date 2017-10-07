@@ -134,13 +134,40 @@
     <div class="block-line">
       <div class="calendar"><input type="date"></div>
     </div>
-    <div class="block-line"><form action="#" class="search search-">
-<input name="q" type="search" placeholder="Search"/>
-      <input class="submit" type="submit" name="" value=""></form><form action="#" class="search search-notfound">
-<input name="q" type="search" placeholder="I've not found what I'm looking for..."/>
+    <div class="block-line"><form action="#" class="search">
+<input name="qq" onfocus="searchClick(event)" class="search-" type="search" placeholder="Search"/>
+      <input class="submit" type="submit" name="" value=""></form><form action="#" class="search">
+<input name="qq" onfocus="searchClick(event)" class="search-notfound" type="search" placeholder="I've not found what I'm looking for..."/>
       <input class="submit" type="submit" name="" value=""></form>
     </div>
+    <div class="block-line"><form action="#" class="select">
+      <div></div>
+      <select>
+        <option disabled selected>Choose An Options</option>
+        <option>option 1</option>
+        <option>option 2</option>
+        <option>option 3</option>
+      </select>
+    </div>
     <div class="block-line"><video preload="none" src="https://16-lvl3-pdl.vimeocdn.com/01/2596/2/62980495/156181927.mp4?expires=1506749454&amp;token=0463f87de3a1e920b6a01"></video>
+    </div>
+    <div class="block-line">
+      <div class="messaging">
+        <div class="messaging__top">
+          <div class="messaging__name">
+            <h2>Sarah Brown</h2>
+          </div>
+          <div class="messaging__img">
+            <div class="messaging__chat"></div>
+            <div class="messaging__photo"></div>
+            <div class="messaging__camera"></div>
+          </div>
+        </div>
+        <div class="messaging__bottom">
+          <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
+          <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button__undefined standart-button__undefined"> reply</button>
+        </div>
+      </div>
     </div>
   <script type="text/javascript" src="index.js"></script></body>
 </html>

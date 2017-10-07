@@ -11,11 +11,17 @@ $darkorange = #bf3e1f
   font-family lato-b
   src:url(./fonts/Lato-Black.ttf)
 @font-face
+  font-family lato-bold
+  src url(./fonts/LatoBold.ttf)
+@font-face
   font-family lato-l
   src:url(./fonts/lato-light.ttf)
 @font-face
   font-family sans-r
   src url(./fonts/SourceSansProRegular/SourceSansProRegular.ttf)
+@font-face
+  font-family sans-l
+  src url(./fonts/SourceSansProLight/SourceSansProLight.ttf)
 
 //mixins
 body
@@ -55,10 +61,16 @@ stages(lato-r,$blue, $orange)
 @import "components/slider/main.styl"
 slider(lato-r,$blue)
 
-//searh & drop
+//searh
 @import "components/search/main.styl"
 search(sans-r,$blue,$orange)
 
+//select ?drop down?
+@import "components/select/main.styl"
+select($blue)
 //video
 @import "components/video/main.styl"
 video()
+//messaging
+@import "components/messaging/main.styl"
+messaging(sans-l,lato-r,$blue)
