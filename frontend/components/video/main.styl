@@ -1,3 +1,30 @@
-video()
-  .video
-    border 1px solid yellow
+video($orange)
+  video
+    margin 10px
+    width 453px
+    height 255px
+    &::-webkit-media-controls-panel
+      background-color $orange[0]
+      //background-color rgba(0, 0, 0, 0.5)
+      color red
+    &::-webkit-media-controls-play-button
+      //background-color $orange[0]
+    &::-webkit-media-controls-current-time-display,
+    &::-webkit-media-controls-time-remaining-display,
+    &::-webkit-media-controls-mute-button,
+    &::-webkit-media-controls-volume-slider
+      display none
+    &::-internal-media-controls-download-button{display: none;}
+    &::-webkit-media-controls-enclosure
+      background-color blue
+    &::-webkit-media-controls-timeline
+      background-color white
+      -webkit-slider-runnable-track
+        background-color red
+
+    //-webkit-media-controls-panel   -webkit-media-controls-play-button
+    // -webkit-media-controls-current-time-display -webkit-media-controls-time-remaining-display
+    // -webkit-media-controls-timeline -webkit-media-controls-mute-button
+    // -webkit-media-controls-volume-slider -webkit-media-controls-fullscreen-button
+    // -internal-media-controls-download-button -internal-media-controls-cast-button
+    // -webkit-media-controls-toggle-closed-captions-button -internal-media-controls-overflow-button

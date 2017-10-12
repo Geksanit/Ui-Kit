@@ -13,6 +13,9 @@ include ./components/search/search
 include ./components/video/video
 include ./components/select/select
 include ./components/messaging/messaging
+include ./components/map/map
+include ./components/user-profile/user-profile
+include ./components/photo/photo
 html
     head
         meta(charset = 'utf-8')
@@ -31,6 +34,8 @@ html
             +arrow-button()
             +arrow-button('arrow-button_left','arrow-button_orange')
             +arrow-button('arrow-button_right','arrow-button_orange')
+        .block-line
+            +map()
         .block-line
             +percentages(0)
             +percentages(38)
@@ -62,4 +67,9 @@ html
         .block-line
             +video
         .block-line
-            +messaging('Sarah Brown','Hey, so are we cool to meet at the art gallery? Say 8pm')
+            +messaging('Sarah Brown','Hey, so are we cool to meet at the art gallery? Say 8pm','./img/photo1.png')
+        .block-line
+            +user-profile('Sarah Brown','developer','./img/photo1.png','blue')
+            +user-profile('John Smith','ux designer','./img/photo2.png','orange')
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap" >
+        </script>

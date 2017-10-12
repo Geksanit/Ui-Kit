@@ -1,8 +1,15 @@
 //colors
 $blue = #4eb7a8 #28a290
-$darkblue = #28a290
 $orange = #e75735 #bf3e1f
-$darkorange = #bf3e1f
+$gray = #f2f2f2 #e5e5e5 #8e8d8d
+$test = lightgray gray darkgray
+.blue
+  color white !important
+  background-color $blue[0] !important
+.orange
+  color white !important
+  background-color $orange[0] !important
+
 //fonts
 @font-face
   font-family lato-r
@@ -23,9 +30,19 @@ $darkorange = #bf3e1f
   font-family sans-l
   src url(./fonts/SourceSansProLight/SourceSansProLight.ttf)
 
+// hak ili kostil ?
+load-image()
+  body
+    background-image url('./img/photo1.png')
+    background-image url('./img/marker.png')
+    background-image url('./img/photo2.png')
+    background-image url('./img/photo1.png')
+load-image()
+
+
 //mixins
 body
-  background #eee
+  background #fff
   margin 0
   padding 10%
 //styles
@@ -70,7 +87,19 @@ search(sans-r,$blue,$orange)
 select($blue)
 //video
 @import "components/video/main.styl"
-video()
+video($orange)
 //messaging
 @import "components/messaging/main.styl"
 messaging(sans-l,lato-r,$blue)
+//map
+@import "components/map/map.styl"
+map(lato-l,lato-bold,$orange)
+//user-profile
+@import "components/user-profile/main.styl"
+user-profile(lato-r,$blue,$orange)
+//photo
+@import "components/photo/photo.styl"
+photo()
+//calendar
+@import "components/calendar/calendar.styl"
+calendar(lato-l,lato-bold,sans-r,$orange,$gray)

@@ -1,3 +1,19 @@
 mixin calendar
     .calendar
-        <input type="date">
+        .calendar__day day
+        .calendar__month mi
+            .calendar__left
+            .calendar__right
+
+        table(cols="7")
+            tr.calendar__days-week
+                td MON
+                td TUE
+                td WED
+                td THU
+                td FRI
+                td SAT
+                td SUN
+        table.calendar__days(cols="7")
+            tbody
+        .calendar__data TODAY

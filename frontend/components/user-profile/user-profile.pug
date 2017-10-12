@@ -1,6 +1,12 @@
-mixin user-profile(name,prof,photo,color)
+mixin user-profile(name,prof,url,color)
+    - prof = prof.toUpperCase()
     .user-profile
-        <div class="user-profile__photo" style="background: url(#{photo})"></div>
+        +photo(url)
         <div class="user-profile__block #{color}">
-            h3.user-profile__name #{name}
-            h4.user-profile__prof #{prof}
+            .user-profile__name #{name}
+            .user-profile__prof #{prof}
+            .block-line
+                .icon1
+                .icon2
+                .icon3
+        </div>

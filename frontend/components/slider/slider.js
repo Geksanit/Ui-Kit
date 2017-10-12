@@ -1,4 +1,5 @@
 //slider
+
 var sliderChange = function(element){
     var value = element.value;
     element.previousSibling.innerText = value;

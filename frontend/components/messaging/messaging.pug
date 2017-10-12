@@ -1,11 +1,11 @@
-mixin messaging(name,text)
+mixin messaging(name,text,url)
     .messaging
         .messaging__top
             .messaging__name
                 h2 #{name}
             .messaging__img
                 .messaging__chat
-                .messaging__photo
+                +photo(url)
                 .messaging__camera
         .messaging__bottom
             .messaging__buble #{text}
