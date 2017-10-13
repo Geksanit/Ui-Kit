@@ -146,12 +146,13 @@
     <div class="block-line">
       <div class="calendar">
         <div class="calendar__day">day</div>
-        <div class="calendar__month">mi
-          <div class="calendar__left"></div>
-          <div class="calendar__right"></div>
+        <div class="calendar__month">month
+          <div class="calendar__left" onclick="left(event)"></div>
+          <div class="calendar__right" onclick="right(event)"></div>
         </div>
-        <table cols="7">
-          <tr class="calendar__days-week">
+        <div class="calendar__year">year</div>
+        <table class="calendar__days-week" cols="7">
+          <tr>
             <td>MON</td>
             <td>TUE</td>
             <td>WED</td>
@@ -164,7 +165,7 @@
         <table class="calendar__days" cols="7">
           <tbody></tbody>
         </table>
-        <div class="calendar__data">TODAY</div>
+        <div class="calendar__data" onclick="today(event)">TODAY</div>
       </div>
     </div>
     <div class="block-line"><form action="#" class="search">

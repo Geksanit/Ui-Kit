@@ -7,7 +7,7 @@ calendar(font1,font2,font3,$color1,$color2)
     text-align center
     background-color $color1[0]
     overflow hidden
-    cursor pointer
+    cursor default
     .calendar__day
       height 100px
       line-height @height
@@ -48,14 +48,19 @@ calendar(font1,font2,font3,$color1,$color2)
         &::before
           transform rotate(-45deg)
           right calc(50% - 5px)
-
+    .calendar__year
+      height 40px
+      font-size 30px
+      line-height @height
     .calendar__days-week
       font-family font2
       font-size 12px
       height 25px
       line-height @height
-      background-color $color1[0]
+      background-color rgba(0,0,0, 0.1)
       border none
+      border-collapse collapse
+      vertical-align middle
       td
         width ($width / 7)
     table.calendar__days
@@ -86,3 +91,6 @@ calendar(font1,font2,font3,$color1,$color2)
       line-height @height
       background-color $color2[1]
       color $color2[2]
+      &:hover
+          background-color $color1[0]
+          color white

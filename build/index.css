@@ -861,7 +861,7 @@ video::-webkit-media-controls-timeline -webkit-slider-runnable-track {
   text-align: center;
   background-color: #e75735;
   overflow: hidden;
-  cursor: pointer;
+  cursor: default;
 }
 .calendar .calendar__day {
   height: 100px;
@@ -911,13 +911,20 @@ video::-webkit-media-controls-timeline -webkit-slider-runnable-track {
   transform: rotate(-45deg);
   right: calc(50% - 5px);
 }
+.calendar .calendar__year {
+  height: 40px;
+  font-size: 30px;
+  line-height: 40px;
+}
 .calendar .calendar__days-week {
   font-family: lato-bold;
   font-size: 12px;
   height: 25px;
   line-height: 25px;
-  background-color: #e75735;
+  background-color: rgba(0,0,0,0.1);
   border: none;
+  border-collapse: collapse;
+  vertical-align: middle;
 }
 .calendar .calendar__days-week td {
   width: 42.857142857142854px;
@@ -950,4 +957,8 @@ video::-webkit-media-controls-timeline -webkit-slider-runnable-track {
   line-height: 50px;
   background-color: #e5e5e5;
   color: #8e8d8d;
+}
+.calendar .calendar__data:hover {
+  background-color: #e75735;
+  color: #fff;
 }
