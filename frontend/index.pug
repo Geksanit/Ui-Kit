@@ -35,8 +35,6 @@ html
             +arrow-button('arrow-button_left','arrow-button_orange')
             +arrow-button('arrow-button_right','arrow-button_orange')
         .block-line
-            +map()
-        .block-line
             +percentages(0)
             +percentages(38)
             +percentages(50)
@@ -48,28 +46,30 @@ html
             +pie-chart()
             +pie-chart(0,20,30)
         .block-line
-            +stages(3,5,'orange')
-        .block-line
             +slider
             +slider(-5,12,1)
             +slider-percentage(30)
         .block-line
+            +stages(3,5,'orange')
+        .block-line
             +forma
-        .block-line
-            +news("It'is all going downhill",'24 august 2013','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.','green')
-        .block-line
-            +calendar
         .block-line
             +search
             +search('notfound')
         .block-line
             +select
         .block-line
-            +video
+            +user-profile('Sarah Brown','developer','./img/photo1.png','blue')
+            +user-profile('John Smith','ux designer','./img/photo2.png','orange')
+        .block-line
+            +news("It'is all going downhill",'24 august 2013','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.','green')
+        .block-line
+            +map()
+        .block-line
+            +calendar
         .block-line
             +messaging('Sarah Brown','Hey, so are we cool to meet at the art gallery? Say 8pm','./img/photo1.png')
         .block-line
-            +user-profile('Sarah Brown','developer','./img/photo1.png','blue')
-            +user-profile('John Smith','ux designer','./img/photo2.png','orange')
+            +video
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap" >
         </script>

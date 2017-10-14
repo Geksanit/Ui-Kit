@@ -6,7 +6,7 @@
     <title>Ui-Kit</title>
   <link href="index.css" rel="stylesheet"></head>
   <body>
-    <div class="block-line"><button class="standart-button standart-button__small standart-button__blue"> button</button><button class="standart-button standart-button__undefined standart-button__undefined"> button</button><button class="standart-button standart-button__normal standart-button__orange"> button</button><button class="standart-button standart-button__small standart-button__orange"> button</button>
+    <div class="block-line"><button class="standart-button standart-button__small standart-button__blue" onclick="buttonClick(event)"> button</button><button class="standart-button standart-button__undefined standart-button__undefined" onclick="buttonClick(event)"> button</button><button class="standart-button standart-button__normal standart-button__orange" onclick="buttonClick(event)"> button</button><button class="standart-button standart-button__small standart-button__orange" onclick="buttonClick(event)"> button</button>
     </div>
     <div class="block-line"><button class="arrow-button arrow-button_left arrow-button_orange" disabled>
       <div class="arrow-button__arrow"></div></button><button class="arrow-button arrow-button_right arrow-button_orange" disabled>
@@ -15,18 +15,6 @@
       <div class="arrow-button__arrow"></div></button><button class="arrow-button arrow-button_left arrow-button_orange" >
       <div class="arrow-button__arrow"></div></button><button class="arrow-button arrow-button_right arrow-button_orange" >
       <div class="arrow-button__arrow"></div></button>
-    </div>
-    <div class="block-line">
-      <div class="map">
-        <h3>My Google Maps Demo</h3>
-        <div id="map"></div>
-        <div class="map__down">
-          <div class="map__message">Meet us!</div>
-          <div class="map__addres">loading..</div>
-          <div class="icon1"></div>
-          <div class="icon2"></div>
-        </div>
-      </div>
     </div>
     <div class="block-line"><div class="percentages">
 <svg class="percentages__svg"><circle class="percentages__circle" r="45" stroke-dasharray="0 500" stroke-dashoffset="0"></circle>
@@ -84,6 +72,24 @@
       </div>
     </div>
     <div class="block-line">
+      <div class="slider">
+        <div class="slider__view">5</div><input class="slider" oninput="sliderInput(event)" type="range" min="0" max="10" value="5">
+      </div>
+      <div class="slider">
+        <div class="slider__view">1</div><input class="slider" oninput="sliderInput(event)" type="range" min="-5" max="12" value="1">
+      </div>
+      <div class="slider">
+        <div class="slider__line"></div><input class="slider-percentage" oninput="sliderPercentageInput(event)" type="range" min="0" max="100" value="30">
+        <div class="slider-percentage__percent">
+          <div>0</div>
+          <div>25</div>
+          <div>50</div>
+          <div>75</div>
+          <div>100</div>
+        </div>
+      </div>
+    </div>
+    <div class="block-line">
       <div class="stages"><div class="stages__circle stages_orange">
         <div class="stages__text">1</div></div><div class="stages__line stages_orange">
 </div>
@@ -103,24 +109,6 @@
       </div>
     </div>
     <div class="block-line">
-      <div class="slider">
-        <div class="slider__view">5</div><input class="slider" oninput="sliderInput(event)" type="range" min="0" max="10" value="5">
-      </div>
-      <div class="slider">
-        <div class="slider__view">1</div><input class="slider" oninput="sliderInput(event)" type="range" min="-5" max="12" value="1">
-      </div>
-      <div class="slider">
-        <div class="slider__line"></div><input class="slider-percentage" oninput="sliderPercentageInput(event)" type="range" min="0" max="100" value="30">
-        <div class="slider-percentage__percent">
-          <div>0</div>
-          <div>25</div>
-          <div>50</div>
-          <div>75</div>
-          <div>100</div>
-        </div>
-      </div>
-    </div>
-    <div class="block-line">
       <form action="#">
         <label>
           <input type="text" name="name" placeholder="Your Name" required autofocus>
@@ -130,9 +118,44 @@
           <input type="email" name="email" placeholder="Your Email" autocomplete="on" required>
           <div></div>
         </label>
-        <textarea rows="4" name="message" placeholder="Your Message" required></textarea><button class="standart-button standart-button__undefined standart-button__undefined"> submit</button><input type="checkbox">
+        <textarea rows="4" name="message" placeholder="Your Message" required></textarea><button class="standart-button standart-button__undefined standart-button__undefined" onclick="buttonClick(event)"> submit</button><input type="checkbox">
 <input type="radio">
       </form>
+    </div>
+    <div class="block-line"><form action="#" class="search">
+<input name="qq" onfocus="searchClick(event)" class="search-" type="search" placeholder="Search"/>
+      <input class="submit" type="submit" name="" value=""></form><form action="#" class="search">
+<input name="qq" onfocus="searchClick(event)" class="search-notfound" type="search" placeholder="I've not found what I'm looking for..."/>
+      <input class="submit" type="submit" name="" value=""></form>
+    </div>
+    <div class="block-line"><form action="#" class="select">
+      <div></div>
+      <select>
+        <option disabled selected>Choose An Options</option>
+        <option>option 1</option>
+        <option>option 2</option>
+        <option>option 3</option>
+      </select>
+    </div>
+    <div class="block-line">
+      <div class="user-profile"><div class="photo" style="background: url(./img/photo1.png)"></div><div class="user-profile__block blue">
+        <div class="user-profile__name">Sarah Brown</div>
+        <div class="user-profile__prof">DEVELOPER</div>
+        <div class="block-line">
+          <div class="icon1"></div>
+          <div class="icon2"></div>
+          <div class="icon3"></div>
+        </div></div>
+      </div>
+      <div class="user-profile"><div class="photo" style="background: url(./img/photo2.png)"></div><div class="user-profile__block orange">
+        <div class="user-profile__name">John Smith</div>
+        <div class="user-profile__prof">UX DESIGNER</div>
+        <div class="block-line">
+          <div class="icon1"></div>
+          <div class="icon2"></div>
+          <div class="icon3"></div>
+        </div></div>
+      </div>
     </div>
     <div class="block-line">
       <div class="news #{color}">
@@ -140,6 +163,18 @@
           <h1>It'is all going downhill</h1>
           <h4>24 august 2013</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
+        </div>
+      </div>
+    </div>
+    <div class="block-line">
+      <div class="map">
+        <h3>My Google Maps Demo</h3>
+        <div id="map"></div>
+        <div class="map__down">
+          <div class="map__message">Meet us!</div>
+          <div class="map__addres">loading..</div>
+          <div class="icon1"></div>
+          <div class="icon2"></div>
         </div>
       </div>
     </div>
@@ -168,23 +203,6 @@
         <div class="calendar__data" onclick="today(event)">TODAY</div>
       </div>
     </div>
-    <div class="block-line"><form action="#" class="search">
-<input name="qq" onfocus="searchClick(event)" class="search-" type="search" placeholder="Search"/>
-      <input class="submit" type="submit" name="" value=""></form><form action="#" class="search">
-<input name="qq" onfocus="searchClick(event)" class="search-notfound" type="search" placeholder="I've not found what I'm looking for..."/>
-      <input class="submit" type="submit" name="" value=""></form>
-    </div>
-    <div class="block-line"><form action="#" class="select">
-      <div></div>
-      <select>
-        <option disabled selected>Choose An Options</option>
-        <option>option 1</option>
-        <option>option 2</option>
-        <option>option 3</option>
-      </select>
-    </div>
-    <div class="block-line"><video controls src="https://16-lvl3-pdl.vimeocdn.com/01/2596/2/62980495/156181927.mp4?expires=1507720675&token=0512391d01925b2aaf374"></video>
-    </div>
     <div class="block-line">
       <div class="messaging">
         <div class="messaging__top">
@@ -198,29 +216,11 @@
         </div>
         <div class="messaging__bottom">
           <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
-          <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button__undefined standart-button__undefined"> reply</button>
+          <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button__undefined standart-button__undefined" onclick="buttonClick(event)"> reply</button>
         </div>
       </div>
     </div>
-    <div class="block-line">
-      <div class="user-profile"><div class="photo" style="background: url(./img/photo1.png)"></div><div class="user-profile__block blue">
-        <div class="user-profile__name">Sarah Brown</div>
-        <div class="user-profile__prof">DEVELOPER</div>
-        <div class="block-line">
-          <div class="icon1"></div>
-          <div class="icon2"></div>
-          <div class="icon3"></div>
-        </div></div>
-      </div>
-      <div class="user-profile"><div class="photo" style="background: url(./img/photo2.png)"></div><div class="user-profile__block orange">
-        <div class="user-profile__name">John Smith</div>
-        <div class="user-profile__prof">UX DESIGNER</div>
-        <div class="block-line">
-          <div class="icon1"></div>
-          <div class="icon2"></div>
-          <div class="icon3"></div>
-        </div></div>
-      </div>
+    <div class="block-line"><video controls src="https://16-lvl3-pdl.vimeocdn.com/01/2596/2/62980495/156181927.mp4?expires=1507720675&token=0512391d01925b2aaf374"></video>
     </div><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap" >
 </script>
   <script type="text/javascript" src="index.js"></script></body>

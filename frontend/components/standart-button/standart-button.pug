@@ -1,5 +1,6 @@
+
 mixin standart-button(title,size,color)
     -var sizes=['normal','small']; colors=['blue','orange']; arguments=['123']
     - size = 'standart-button__'+size
     - color = 'standart-button__'+color
-    <button class="standart-button #{size} #{color}"> #{title}</button>
+    <button class="standart-button #{size} #{color}" onclick="buttonClick(event)"> #{title}</button>

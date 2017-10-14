@@ -1,5 +1,18 @@
 //$blue = #4eb7a8 #28a290
 //$orange = #e75735 #bf3e1f
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1, 1);
+  }
+}
 standart-button($font,$blue,$orange)
   $_color = $blue//default
   .standart-button
@@ -7,25 +20,23 @@ standart-button($font,$blue,$orange)
     margin 5px
     width 118px
     height 32px
-    border-radius 5px
+    box-sizing border-box
+    border-radius 3px
     border-style solid
     border-width 1px
     outline none
     background-color  white
 
     font-family $font
-    font-size 1rem
-    &__small
-      width 78px
-      height 22px
-      font-size 0.6rem
+    font-size 12px
     text-transform uppercase
     text-align center
     vertical-align middle
 
     border-color $_color[0]
-    box-shadow 0 4px 0 $_color[1]
+    box-shadow 0 3px 0 $_color[1]
     color $_color[0]
+
     &:hover
       background-color $_color[0]
       color white
@@ -39,7 +50,22 @@ standart-button($font,$blue,$orange)
     &__orange
       $_color = $orange
       border-color $_color[0]
-      box-shadow 0 4px 0 $_color[1]
+      box-shadow 0 3px 0 $_color[1]
       color $_color[0]
       &:hover
         background-color $_color[0]
+    &__small
+      width 78px
+      height 22px
+      font-size 10px
+      box-shadow 0 2px 0
+
+  #ripple
+    position absolute
+    top 100px
+    left 100px
+    width 50px
+    height @width
+    border-radius @width
+    background-color white
+    animation ripple 0.5s forwards

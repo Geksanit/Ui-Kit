@@ -82,6 +82,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_map_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_map_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_calendar_calendar__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_calendar_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_calendar_calendar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_standart_button_standart_button__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_standart_button_standart_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_standart_button_standart_button__);
+
 
 
 
@@ -235,6 +238,15 @@ var weekDay = function () {
     n = n ? n-1 : 6;
     return n
 };
+var tableOnclick = function(event) {
+    var target = event.target; // где был клик?
+    if (target.tagName != 'TD') return; // не на TD? тогда не интересует
+    var oldElement = target.parentElement.parentElement.getElementsByClassName("calendar__today")[0];
+    oldElement.classList.remove("calendar__today");
+    target.classList.add("calendar__today");
+    var today = target.innerHTML;
+    target.parentElement.parentElement.parentElement.parentElement.children[0].innerHTML = today;
+};
 var date = new Date();
 var today = date.getDate();
 var month = date.getMonth();
@@ -243,9 +255,22 @@ var year = date.getFullYear();
 var calendarChange = function(element,year,month){
     var calendar = new Date(year, month);
     calendar.weekDay = weekDay;
-    //console.log(calendar.getFullYear(), calendar.getMonth(),calendar.getDate());
     month = calendar.getMonth();
     year = calendar.getFullYear();
+
+    //console.log(element);
+    //console.log(calendar.getFullYear(), calendar.getMonth(),calendar.getDate());
+    //выбранная дата предыдущего месяца, если есть
+    var List = element.getElementsByClassName("calendar__today");
+    var today = date.getDate();
+    if (List.length !== 0){
+        today = Number(element.getElementsByClassName("calendar__today")[0].innerHTML);
+    }
+    //если нет даты в месяце
+    var testDate = new Date(year, month, today);
+    if(testDate.getMonth() !== month){today = 28};
+
+
 
     element.children[0].innerHTML = today;
     element.children[1].childNodes[0].data = monthNames[month];
@@ -264,11 +289,10 @@ var calendarChange = function(element,year,month){
             var  td = document.createElement('td');
             td.innerHTML = calendar.getDate();
             if(calendar.getMonth() == month){
-                td.className = "calendar__days-month";};
+                td.classList.add("calendar__days-month");};
             if(calendar.getDate() == today &&
-                calendar.getMonth() == date.getMonth() &&
-                calendar.getFullYear() == date.getFullYear()){
-                td.className = "calendar__today";};
+                calendar.getMonth() == month){
+                td.classList.add("calendar__today");};
             calendar.setDate(calendar.getDate() + 1);
             tr.appendChild(td);
         };
@@ -280,6 +304,7 @@ var calendarChange = function(element,year,month){
 var calendarInit = function (){
      var elements = document.querySelectorAll('.calendar');
      for(var i=0; i<elements.length; i++){
+         elements[i].onclick = tableOnclick;
          calendarChange(elements[i],year,month);//календарь текущего месяца
      }
  }();
@@ -300,7 +325,25 @@ document.right = function (event) {
 };
 document.today = function(event){
     var element = event.target.parentElement;
+    var oldElement = element.getElementsByClassName("calendar__today")[0];
+    oldElement.classList.remove("calendar__today");
     calendarChange(element,year,month);
+};
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+//ripple effect
+document.buttonClick = function (event) {
+  var div = document.createElement('div');
+  div.id = 'ripple';
+  div.style.top = event.y-25+'px';
+  div.style.left = event.x-25+'px';
+
+  document.body.appendChild(div);
+  setTimeout(function(){document.body.removeChild(div)}, 550);
 };
 
 /***/ })

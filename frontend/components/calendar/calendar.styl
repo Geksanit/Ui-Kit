@@ -64,12 +64,14 @@ calendar(font1,font2,font3,$color1,$color2)
       td
         width ($width / 7)
     table.calendar__days
+      $width = $width + 2px
+      margin 0 -1px
       background-color $color2[1]
       color white
       font-family font3
       font-weight bold
       font-size 20px
-      width 100%
+      width $width
       border-collapse collapse
       td
         border 1px solid white
