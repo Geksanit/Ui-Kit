@@ -1,2 +1,18 @@
-mixin video
-    <video controls src="https://16-lvl3-pdl.vimeocdn.com/01/2596/2/62980495/156181927.mp4?expires=1507720675&token=0512391d01925b2aaf374"></video>
+mixin video(src,title)
+    if(!src)
+        -src = 'http://default'
+    if(!title)
+        -title = 'Title'
+    .video
+        .video__shade
+        .video__title
+            h1 #{title}
+            h4 #{src}
+        <video preload ontimeupdate="videoUpdate(event)" src="#{src}"></video>
+        .video__controls(onclick="videoClick(event)")
+            .video__button.video__button-play
+            .video__slider
+                .video__slider_line-full
+                .video__slider_line
+                <input type="range" class="video__input" oninput="videoInput(event.target)" min="0" max="100" value="0"></input>
+            .video__button-full

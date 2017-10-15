@@ -1,0 +1,43 @@
+events(font1,font2,font3,$blue,$orange)
+  $color = $blue
+  .events
+    width 288px
+    height 212px
+    border-radius 3px
+    color white
+    background-image url(./img/Layer2.png)
+    background-repeat no-repeat
+    background-size contain
+    &__text
+      float right
+      width 193px
+      height 100%
+      padding 0 20px
+      box-sizing border-box
+      background-color $blue[0]
+      font-size 12px
+      border-top-right-radius 3px
+      border-bottom-right-radius 3px
+    &__date
+      position relative
+      font-family font1
+      font-size 30px
+      font-weight 100
+      &-day
+        font-size 70px
+      &-month
+        position absolute
+        bottom 10px
+        right 0
+    h4
+      font-family font2
+      text-transform uppercase
+      margin-bottom 0
+    p
+      margin-top 5px
+      font-family font3
+    &__button
+      display flex
+      justify-content space-around
+      button.standart-button
+        width auto

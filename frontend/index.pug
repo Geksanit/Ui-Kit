@@ -16,6 +16,7 @@ include ./components/messaging/messaging
 include ./components/map/map
 include ./components/user-profile/user-profile
 include ./components/photo/photo
+include ./components/events/events
 html
     head
         meta(charset = 'utf-8')
@@ -55,14 +56,18 @@ html
             +forma
         .block-line
             +search
+        .block-line
             +search('notfound')
         .block-line
             +select
         .block-line
-            +user-profile('Sarah Brown','developer','./img/photo1.png','blue')
             +user-profile('John Smith','ux designer','./img/photo2.png','orange')
         .block-line
-            +news("It'is all going downhill",'24 august 2013','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.','green')
+            +user-profile('Sarah Brown','developer','./img/photo1.png','blue')
+        .block-line
+            +news("It'is all going downhill",'24 august 2013','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.','orange')
+        .block-line
+            +events('24','Aug','this is title','Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
         .block-line
             +map()
         .block-line
@@ -70,6 +75,7 @@ html
         .block-line
             +messaging('Sarah Brown','Hey, so are we cool to meet at the art gallery? Say 8pm','./img/photo1.png')
         .block-line
-            +video
+            +video('video/Travel_New_Zeland.mp4','New Zeland')
+        .block-line
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap" >
         </script>

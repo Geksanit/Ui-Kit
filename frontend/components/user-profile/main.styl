@@ -2,16 +2,19 @@ user-profile(font1,$blue,$orange)
   .user-profile
     display flex
     align-items center
-    width 300px
+    width 288px
+    height 94px
     font-family font1
 
     .photo
-      margin 0 10px
+      margin 0 11px
     &__block
       position relative
       background-color #e5e5e5
+      height 100%
+      padding 12px 10px
+      box-sizing border-box
       text-align center
-      padding 10px
       flex 1 1 50px
       border-radius 10px
       &::before
@@ -36,7 +39,7 @@ user-profile(font1,$blue,$orange)
         height 25px
         background url(./img/icon3.png) no-repeat center
     &__name
-      font-size 1.2em
+      font-size 18px
     &__prof
-      font-size 0.8em
+      font-size 10px
       font-weight bold

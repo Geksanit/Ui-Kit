@@ -1,0 +1,12 @@
+mixin events(day,month,title,text,color)
+    <div class="events events_#{color}">
+        .events__text
+            .events__date
+                .events__date-day #{day}
+                .events__date-month #{month}
+            h4 #{title}
+
+            p #{text}
+            .events__button
+                +standart-button('add to calendar','small')
+    </div>

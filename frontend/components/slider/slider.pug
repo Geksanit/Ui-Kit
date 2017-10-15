@@ -11,8 +11,9 @@ mixin slider(min,max,value)
 mixin slider-percentage(value)
     if(!value)
         -value = 50
-    .slider
-        .slider__line
+    .slider-percentage
+        .slider-percentage__full-line
+        .slider-percentage__line
         <input class="slider-percentage" oninput="sliderPercentageInput(event)" type="range" min="0" max="100" value="#{value}">
         .slider-percentage__percent
             div 0

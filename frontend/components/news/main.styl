@@ -1,19 +1,23 @@
 news(font1,font2,font3,$blue,$orange)
   $color = $blue
   .news
-    width 310px
-    //border 2px solid red
-    border-radius 5px
+    width 288px
+    height 212px
+    border-radius 3px
     color white
     background-image url(./img/Layer.png)
     background-repeat no-repeat
     background-size contain
     &__text
       float right
-      width 190px
-      padding 15px
+      width 193px
+      height 100%
+      padding 0 20px
+      box-sizing border-box
       background-color $blue[0]
       font-size 12px
+      border-top-right-radius 3px
+      border-bottom-right-radius 3px
     h1
       font-family font1
       font-weight 100
@@ -22,3 +26,6 @@ news(font1,font2,font3,$blue,$orange)
       text-transform uppercase
     p
       font-family font3
+    &_orange
+      .news__text
+        background-color $orange[0]

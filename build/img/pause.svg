@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"  
+     width="13px" 
+     height="13px" 
+     viewBox="0 0 13px 13px">
+     <polygon points="0,0 4,0 4,13 0,13" fill="white"></polygon>
+		 <polygon points="9,0 13,0 13,13 9,13" fill="white"></polygon>
+</svg>

@@ -1,27 +1,112 @@
-video($orange)
-  video
+video(font1,$orange)
+  $height = 48px
+  .video
+    position relative
     margin 10px
     width 453px
     height 255px
-    &::-webkit-media-controls-panel
-      background-color $orange[0]
-      //background-color rgba(0, 0, 0, 0.5)
-      color red
-    &::-webkit-media-controls-play-button
-      //background-color $orange[0]
-    &::-webkit-media-controls-current-time-display,
-    &::-webkit-media-controls-time-remaining-display,
-    &::-webkit-media-controls-mute-button,
-    &::-webkit-media-controls-volume-slider
-      display none
-    &::-internal-media-controls-download-button{display: none;}
-    &::-webkit-media-controls-enclosure
-      background-color blue
-    &::-webkit-media-controls-timeline
-      background-color white
-      -webkit-slider-runnable-track
-        background-color red
+    color white
+    background-color black
+    font-family font1
+    font-weight 100
+    &__title
+      padding 0 40px
+      box-sizing border-box
+      position absolute
+      top 0
+      left 0
+      width 100%
+      h1
+        margin 20px 0 10px 0
+      h4
+        margin 0
+      &-hide
+        display none
+    video
+      width 100%
+      height 100%
+    &__controls
+      display flex
+      position absolute
+      bottom 0
+      left 0
+      width 100%
 
+      height $height
+      background-color rgba(0,0,0,0.5)
+    &__button
+      flex 0 0 $height
+      height $height
+      background-color transparent
+      &:hover
+        background-color rgba(255,255,255,0.1)
+      &-play
+        background url(./img/play.svg) center no-repeat
+      &-pause
+        background url(./img/pause.svg) center  no-repeat
+    &__slider
+      position relative
+      flex 1 1 100px
+      margin 0 20px
+      height $height
+      background-color transparent
+      &_line-full
+        position absolute
+        top 22px
+        left 0
+        background-color lightgray
+        width 100%
+        height 5px
+        border-radius 5px
+      &_line
+        position absolute
+        top 22px
+        left 0
+        background-color $orange[0]
+        width 0
+        height 5px
+        border-radius 5px
+      input[type=range]
+        position relative
+        margin 0
+        padding 0
+        width 100%
+        height 100%
+        background-color transparent
+        &::-webkit-slider-runnable-track
+          background-color transparent
+          border-radius 5px
+        &::-webkit-slider-thumb
+          background-color $orange[0]
+    &-full
+      position fixed
+      top 10vh
+      left 10vw
+      width 80vw
+      height 80vh
+      z-index 100
+    &__button-full
+      flex 0 0 $height
+      height $height
+      background $orange[0] url(./img/fullScreen.svg) no-repeat center
+      &:hover
+        background-size 44px
+        //animation fulling 1s linear both
+    &__shade
+      display none
+      position fixed
+      top 0
+      left 0
+      width 100vw
+      height 100vh
+      background-color rgba(0,0,0,0.6)
+      z-index 10
+      &-full
+        display block
+  @keyframes fulling{
+    from{background-size: 22px}
+      to{background-size: 44px}
+  }
     //-webkit-media-controls-panel   -webkit-media-controls-play-button
     // -webkit-media-controls-current-time-display -webkit-media-controls-time-remaining-display
     // -webkit-media-controls-timeline -webkit-media-controls-mute-button

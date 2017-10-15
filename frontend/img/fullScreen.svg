@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"  
+     width="22px" 
+     height="22px" 
+     viewBox="0 0 22px 22px">
+		 <polygon points="0,0 0,6 6,0" fill="white"></polygon>
+     <polygon points="0,22 6,22 0,16" fill="white"></polygon>
+		 <polygon points="22,0 22,6 16,0" fill="white"></polygon>
+		 <polygon points="22,22 22,16 16,22" fill="white"></polygon>
+		 <polyline points="0,0 6,6" stroke="white" stroke-width="3"></polyline>
+		 <polyline points="0,22 6,16" stroke="white" stroke-width="3"></polyline>
+		 <polyline points="22,0 16,6" stroke="white" stroke-width="3"></polyline>
+		 <polyline points="22,22 16,16" stroke="white" stroke-width="3"></polyline>
+</svg>

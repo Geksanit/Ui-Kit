@@ -1,6 +1,7 @@
 mixin news(title,date,text,color)
-    div(class="news #{color}")
+    <div class="news news_#{color}">
         .news__text
             h1 #{title}
             h4 #{date}
             p #{text}
+    </div>
