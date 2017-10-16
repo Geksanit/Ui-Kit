@@ -1,5 +1,5 @@
 calendar(font1,font2,font3,$color1,$color2)
-  $width = 300px
+  $width = 279px
   .calendar
     width $width
     color white
@@ -10,16 +10,15 @@ calendar(font1,font2,font3,$color1,$color2)
     cursor default
     border-radius 3px
     .calendar__day
-      height 100px
+      height 109px
       line-height @height
-      font-size 70px
-      font-weight bold
+      font-size 80px
 
     .calendar__month
-      $height = 40px
+      $height = 43px
       position relative
       height $height
-      font-size 30px
+      font-size 26px
       line-height @height
       background-color rgba(0,0,0, 0.1)
       .calendar__left,
@@ -55,7 +54,7 @@ calendar(font1,font2,font3,$color1,$color2)
       line-height @height
     .calendar__days-week
       font-family font2
-      font-size 12px
+      font-size 10px
       height 25px
       line-height @height
       background-color rgba(0,0,0, 0.1)
@@ -90,10 +89,12 @@ calendar(font1,font2,font3,$color1,$color2)
 
     .calendar__data
       font-family font2
-      height 50px
+      height 49px
       line-height @height
       background-color $color2[1]
       color $color2[2]
+      border-bottom-left-radius 3px
+      border-bottom-right-radius 3px
       &:hover
           background-color $color1[0]
           color white

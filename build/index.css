@@ -411,6 +411,7 @@ form input[type="checkbox"]::after {
   top: 2px;
   left: 2px;
   background-color: #fff;
+  transition: all 0.5s;
 }
 form input[type="checkbox"]:checked::after {
   left: 38px;
@@ -428,6 +429,7 @@ form input[type="checkbox"]::before {
   text-transform: uppercase;
   color: #fff;
   content: 'off';
+  transition: all 0.5s;
 }
 form input[type="checkbox"]:checked::before {
   content: 'on';
@@ -792,6 +794,7 @@ form.select select {
   background-color: #000;
   font-family: lato-l;
   font-weight: 100;
+  border-radius: 3px;
 }
 .video__title {
   padding: 0 40px;
@@ -813,6 +816,7 @@ form.select select {
 .video video {
   width: 100%;
   height: 100%;
+  border-radius: 3px;
 }
 .video__controls {
   display: flex;
@@ -822,6 +826,8 @@ form.select select {
   width: 100%;
   height: 48px;
   background-color: rgba(0,0,0,0.5);
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 .video__button {
   flex: 0 0 48px;
@@ -889,57 +895,13 @@ form.select select {
   flex: 0 0 48px;
   height: 48px;
   background: #e75735 url(img/fullScreen.svg) no-repeat center;
+  border-bottom-right-radius: 3px;
 }
 .video__button-full:hover {
   background-size: 44px;
 }
-.video__shade {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.6);
-  z-index: 10;
-}
-.video__shade-full {
-  display: block;
-}
-@-moz-keyframes fulling {
-  from {
-    background-size: 22px;
-  }
-  to {
-    background-size: 44px;
-  }
-}
-@-webkit-keyframes fulling {
-  from {
-    background-size: 22px;
-  }
-  to {
-    background-size: 44px;
-  }
-}
-@-o-keyframes fulling {
-  from {
-    background-size: 22px;
-  }
-  to {
-    background-size: 44px;
-  }
-}
-@keyframes fulling {
-  from {
-    background-size: 22px;
-  }
-  to {
-    background-size: 44px;
-  }
-}
 .messaging {
-  width: 300px;
+  width: 288px;
   border-radius: 3px;
 }
 .messaging__top {
@@ -947,21 +909,28 @@ form.select select {
   color: #fff;
   height: 116px;
   background-color: #28a290;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.messaging__top h1 {
+  margin: 0;
 }
 .messaging__name {
   background-color: #4eb7a8;
   text-align: center;
-  line-height: 80px;
-  height: 80px;
+  height: 82px;
+  line-height: 82px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .messaging__img {
-  margin-top: -10px;
+  margin-top: -12px;
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
   z-index: 3;
 }
-.messaging .photo {
+.messaging__img .photo {
   z-index: 3;
 }
 .messaging__chat {
@@ -969,20 +938,27 @@ form.select select {
   height: 22px;
   background: url(img/Chat.png) no-repeat;
   z-index: 3;
+  margin-bottom: 5px;
 }
 .messaging__camera {
   width: 25px;
   height: 20px;
   background-image: url(img/Camera.png);
   z-index: 3;
+  margin-bottom: 5px;
 }
 .messaging__bottom {
   font-family: lato-r;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
   background-color: #f2f2f2;
   min-height: 60px;
   padding: 60px 20px 25px;
   color: #808080;
   position: relative;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 .messaging__buble {
   position: relative;
@@ -1015,9 +991,6 @@ form.select select {
   resize: none;
   overflow: auto;
   outline: none;
-}
-.messaging__message:focus {
-  border: 3px solid #fff;
 }
 .messaging .standart-button {
   width: 100%;
@@ -1127,7 +1100,7 @@ form.select select {
   background-color: #a9a9a9;
 }
 .calendar {
-  width: 300px;
+  width: 279px;
   color: #fff;
   font-family: lato-l;
   text-align: center;
@@ -1137,24 +1110,23 @@ form.select select {
   border-radius: 3px;
 }
 .calendar .calendar__day {
-  height: 100px;
-  line-height: 100px;
-  font-size: 70px;
-  font-weight: bold;
+  height: 109px;
+  line-height: 109px;
+  font-size: 80px;
 }
 .calendar .calendar__month {
   position: relative;
-  height: 40px;
-  font-size: 30px;
-  line-height: 40px;
+  height: 43px;
+  font-size: 26px;
+  line-height: 43px;
   background-color: rgba(0,0,0,0.1);
 }
 .calendar .calendar__month .calendar__left,
 .calendar .calendar__month .calendar__right {
   position: absolute;
   top: 0;
-  height: 40px;
-  width: 40px;
+  height: 43px;
+  width: 43px;
 }
 .calendar .calendar__month .calendar__left:hover,
 .calendar .calendar__month .calendar__right:hover {
@@ -1191,7 +1163,7 @@ form.select select {
 }
 .calendar .calendar__days-week {
   font-family: lato-bold;
-  font-size: 12px;
+  font-size: 10px;
   height: 25px;
   line-height: 25px;
   background-color: rgba(0,0,0,0.1);
@@ -1200,7 +1172,7 @@ form.select select {
   vertical-align: middle;
 }
 .calendar .calendar__days-week td {
-  width: 42.857142857142854px;
+  width: 39.857142857142854px;
 }
 .calendar table.calendar__days {
   margin: 0 -1px;
@@ -1209,13 +1181,13 @@ form.select select {
   font-family: sans-r;
   font-weight: bold;
   font-size: 20px;
-  width: 302px;
+  width: 281px;
   border-collapse: collapse;
 }
 .calendar table.calendar__days td {
   border: 1px solid #fff;
-  width: 43.142857142857146px;
-  height: 43.142857142857146px;
+  width: 40.142857142857146px;
+  height: 40.142857142857146px;
   box-sizing: border-box;
 }
 .calendar table.calendar__days td.calendar__days-month {
@@ -1227,10 +1199,12 @@ form.select select {
 }
 .calendar .calendar__data {
   font-family: lato-bold;
-  height: 50px;
-  line-height: 50px;
+  height: 49px;
+  line-height: 49px;
   background-color: #e5e5e5;
   color: #8e8d8d;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 .calendar .calendar__data:hover {
   background-color: #e75735;
