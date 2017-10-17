@@ -8,7 +8,7 @@ mixin video(src,title)
         .video__title
             h1 #{title}
             h4 #{src}
-        <video preload ontimeupdate="videoUpdate(event)" src="#{src}"></video>
+        <video poster="#{src}.jpg" ontimeupdate="videoUpdate(event)" src="#{src}.mp4"></video>
         .video__controls(onclick="videoClick(event)")
             .video__button.video__button-play
             .video__slider
