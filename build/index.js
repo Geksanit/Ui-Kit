@@ -182,6 +182,7 @@ var pause = function (element) {
     element.classList.toggle('video__button-pause');
 };
 var full = function (element) {
+    element.parentElement.parentElement.parentElement.classList.toggle('video__frame-full');
     element.parentElement.parentElement.classList.toggle('video-full');
     videoInput(element.previousElementSibling.children[2]);
 };
