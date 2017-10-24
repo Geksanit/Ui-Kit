@@ -7,7 +7,8 @@ const webpack = require('webpack');
 const baseConfig = {
     context: __dirname + '\\frontend',
     entry:{
-        'index': './index.js'
+        'index': './index.js',
+        'page': './pages/page.js'
     },
     output:{
         path: path.join(__dirname, 'build'),
@@ -16,7 +17,8 @@ const baseConfig = {
     },
     plugins:[
         new ExtractTextPlugin('[name].css', {allChunks: true}),
-        new HtmlWebpackPlugin({filename: 'index.html',chunks: ['index'],template: './index.pug'})
+        new HtmlWebpackPlugin({filename: 'index.html',chunks: ['index'],template: './index.pug'}),
+        new HtmlWebpackPlugin({filename: 'page.html',chunks: ['page'],template: 'pages/page.pug'})
     ],/*
     resolve:{
         modules:['node-modules'],
