@@ -1,14 +1,20 @@
+@import "../all_included.styl"
+//@import "../components/standart-button/main.styl"
+
+$green = green darkgreen
+$orange = #e75735 #bf3e1f
+
+@font-face
+  font-family lato-b
+  src:url(../fonts/Lato-Black.ttf)
 body
   margin 0
   padding 0
-  header
-    width 100%
-    height 100px
-    background-color gray
   main
     padding 0 10%
     width 80%
     background-color lightgrey
+    standart-button(lato-b,$green,$orange)
   footer
     width 100%
     height 100px

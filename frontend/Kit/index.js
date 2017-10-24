@@ -1,11 +1,6 @@
 
 import './index.styl';
-import './components/slider/slider'
-import './components/search/search'
-import './components/video/video'
-import './components/map/map'
-import './components/calendar/calendar'
-import './components/standart-button/standart-button'
+import '../all_included'
 
 window.Test = function () {
     var elem = document.getElementsByClassName('slider-percentage')[0]
