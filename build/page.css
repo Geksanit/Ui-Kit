@@ -1266,3 +1266,39 @@ form.select select {
   border-radius: 3px;
   background-color: #bf3e1f;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e5e5e5;
+}
+body main {
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 0 10%;
+  padding: 20px;
+  width: 80%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+body main >div {
+  margin: 20px;
+}
+body main:before {
+  content: 'News';
+  color: #e5e5e5;
+  margin: 0 10%;
+  width: 80%;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 20px;
+  font-family: lato-bold;
+}
+body footer {
+  width: 100%;
+  height: 100px;
+  background-color: #808080;
+}
