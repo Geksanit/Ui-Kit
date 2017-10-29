@@ -1,7 +1,7 @@
 # Ui-Kit
 Ui-Kit - и этим всё сказано)
 
-Github Pages   <https://geksanit.github.io/Ui-Kit/build/>
+Github Pages   <https://geksanit.github.io/Ui-Kit/build/page_news.html>
 
 Все зависимости webpack'a описаны в package.json и устанавливаются командой `npm i`
 
