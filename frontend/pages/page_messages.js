@@ -1,5 +1,4 @@
-
-import './page.styl'
+import './page_messages.styl'
 
 import '../components/slider/slider'
 import '../components/search/search'

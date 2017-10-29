@@ -1,0 +1,14 @@
+doctype html
+include ../all_included
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        title Friends
+    body
+        +header()
+        main(date-title='Friends')
+            +user-profile('John Smith','ux designer','photo2','orange')
+            +user-profile('Sarah Brown','developer','photo1','blue')
+
+            

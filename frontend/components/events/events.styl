@@ -6,7 +6,7 @@ events(font1,font2,font3,$blue,$orange)
     height 212px
     border-radius 3px
     color white
-    background-image url($path+'./img/Layer2.png')
+    background-color gray
     background-repeat no-repeat
     background-size contain
     &__text
@@ -20,16 +20,16 @@ events(font1,font2,font3,$blue,$orange)
       border-top-right-radius 3px
       border-bottom-right-radius 3px
     &__date
-      position relative
       font-family font1
       font-size 30px
       font-weight 100
+      text-align center
+      display flex
+      align-items flex-end
       &-day
         font-size 70px
       &-month
-        position absolute
-        bottom 10px
-        right 0
+        margin-bottom 10px
     h4
       font-family font2
       text-transform uppercase
@@ -42,3 +42,6 @@ events(font1,font2,font3,$blue,$orange)
       justify-content space-around
       button.standart-button
         width auto
+    &_orange
+      .events__text
+        background-color $orange[0]

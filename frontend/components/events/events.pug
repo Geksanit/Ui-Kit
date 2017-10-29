@@ -1,5 +1,8 @@
-mixin events(day,month,title,text,color)
-    <div class="events events_#{color}">
+mixin events(day,month,title,text,color,url)
+    if (!url)
+        -url = 'Layer2'
+    -url = require('../img/'+url+'.png')
+    div(class="events events_" + color, style="background-image: url(" + url + ")")
         .events__text
             .events__date
                 .events__date-day #{day}
@@ -8,5 +11,4 @@ mixin events(day,month,title,text,color)
 
             p #{text}
             .events__button
-                +standart-button('add to calendar','small')
-    </div>
+                +standart-button('add to calendar','small',color)

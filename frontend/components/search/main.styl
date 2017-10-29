@@ -1,13 +1,12 @@
 search(font,$blue,$orange)
   $path = '../'
   form.search
-    position relative
+    display flex
     width 288px
     padding 0px
     border none
     input[type="search"]
-      width 255px
-      margin-right 2rem
+      flex 1 1 255px
       background-color lightgrey
       outline none
       border-radius 3px 0 0 3px
@@ -17,10 +16,7 @@ search(font,$blue,$orange)
       color gray
       font-family font
     input[type=submit]
-      width 33px
-      position: absolute;
-      top: 0;
-      right: 0;
+      flex 0 0 33px
       background-color $blue[0]
       border-radius 0 3px 3px 0
       background-image url($path+'./img/lupa.png')

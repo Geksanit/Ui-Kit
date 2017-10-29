@@ -1,4 +1,4 @@
-messaging(font1,font2,$blue)
+messaging(font1,font2,$blue,$orange)
   $path = '../'
   .messaging
     width 288px
@@ -85,3 +85,13 @@ messaging(font1,font2,$blue)
     .standart-button
       width 100%
       margin 0
+    .clearfix
+      height 0px
+      clear both
+      background #e74c3c
+
+    &_orange
+      .messaging__top
+        background-color $orange[1]
+      .messaging__name
+        background-color $orange[0]

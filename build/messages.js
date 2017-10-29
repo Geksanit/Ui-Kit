@@ -61,7 +61,7 @@ var scripts =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -303,47 +303,25 @@ document.buttonClick = function (event) {
 };
 
 /***/ }),
-/* 5 */
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__all_included__ = __webpack_require__(7);
-
-
-
-
-window.Test = function () {
-    var elem = document.getElementsByClassName('slider-percentage')[0]
-    console.log(elem.shadowRoot);
-    //var root = elem.createShadowRoot();
-    //root.innerHTML = "<p>Привет из подполья!</p>";
-}
-
-
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_slider_slider__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_slider_slider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_slider_slider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_search_search__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_search_search___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_search_search__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_video_video__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_video_video___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_video_video__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_map_map__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_map_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_map_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__page_messages_styl__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__page_messages_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__page_messages_styl__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_slider_slider__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_slider_slider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_slider_slider__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_search_search__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_search_search___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_search_search__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_video_video__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_video_video___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_video_video__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button__ = __webpack_require__(4);
@@ -353,53 +331,15 @@ window.Test = function () {
 
 
 
+//import '../components/map/map'
 
 
 
 /***/ }),
-/* 8 */
+/* 12 */
 /***/ (function(module, exports) {
 
-var point = {lat: -33.877685, lng: 151.207077};
-var element = document.getElementById('map')
-window.initMap = function() {
-    var map = new google.maps.Map(element, {
-        zoom: 14,
-        center: point,
-        disableDefaultUI: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-    var image = 'img/marker.png';
-    var marker = new google.maps.Marker({
-        position: point,
-        map: map,
-        icon: image,
-    });
-};
-window.load = function() {
-    var xhr = new XMLHttpRequest();
-    var src = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+point.lat+','+point.lng+'&key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo';
-    xhr.open('GET', src, true);
-    xhr.send();
-
-    xhr.onreadystatechange = function() {
-        if (this.readyState != 4) return;
-
-        if (this.status != 200) {
-            // обработать ошибку
-            element.nextElementSibling.children[1].innerHTML = 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался');
-            return;
-        }
-        result = JSON.parse(this.response);
-        address = result.results[0].address_components[0].short_name+' '+result.results[0].address_components[1].short_name;
-        address+=', '+result.results[0].address_components[3].short_name+', '+result.results[0].address_components[4].short_name;
-        //address = result.results[0].formatted_address;
-        //console.log(result.results[0]);
-        //console.log(address);
-        element.nextElementSibling.children[1].innerHTML = address.toUpperCase();
-    }
-}();
-
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

@@ -141,7 +141,8 @@
       </select>
     </div>
     <div class="block-line">
-      <div class="user-profile"><div class="photo" style="background: url(./img/photo2.png)"></div><div class="user-profile__block orange">
+      <div class="user-profile">
+        <div class="photo" style="background-image: url(img/photo2.png);"></div><div class="user-profile__block orange">
         <div class="user-profile__name">John Smith</div>
         <div class="user-profile__prof">UX DESIGNER</div>
         <div class="block-line">
@@ -152,7 +153,8 @@
       </div>
     </div>
     <div class="block-line">
-      <div class="user-profile"><div class="photo" style="background: url(./img/photo1.png)"></div><div class="user-profile__block blue">
+      <div class="user-profile">
+        <div class="photo" style="background-image: url(img/photo1.png);"></div><div class="user-profile__block blue">
         <div class="user-profile__name">Sarah Brown</div>
         <div class="user-profile__prof">DEVELOPER</div>
         <div class="block-line">
@@ -162,24 +164,28 @@
         </div></div>
       </div>
     </div>
-    <div class="block-line"><div class="news news_orange">
-      <div class="news__text">
-        <h1>It'is all going downhill</h1>
-        <h4>24 august 2013</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
-      </div></div>
+    <div class="block-line">
+      <div class="news news_orange" style="background-image: url(img/Layer.png);">
+        <div class="news__text">
+          <h1>It'is all going downhill</h1>
+          <h4>24 august 2013</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
+        </div>
+      </div>
     </div>
-    <div class="block-line"><div class="events events_">
-      <div class="events__text">
-        <div class="events__date">
-          <div class="events__date-day">24</div>
-          <div class="events__date-month">Aug</div>
+    <div class="block-line">
+      <div class="events events_undefined" style="background-image: url(img/Layer2.png);">
+        <div class="events__text">
+          <div class="events__date">
+            <div class="events__date-day">24</div>
+            <div class="events__date-month">Aug</div>
+          </div>
+          <h4>this is title</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="events__button"><button class="standart-button standart-button_ standart-button_small standart-button_-small" onclick="buttonClick(event)">add to calendar</button>
+          </div>
         </div>
-        <h4>this is title</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <div class="events__button"><button class="standart-button standart-button_ standart-button_small standart-button_-small" onclick="buttonClick(event)">add to calendar</button>
-        </div>
-      </div></div>
+      </div>
     </div>
     <div class="block-line">
       <div class="map">
@@ -218,22 +224,22 @@
         <div class="calendar__data" onclick="today(event)">TODAY</div>
       </div>
     </div>
-    <div class="block-line">
-      <div class="messaging">
-        <div class="messaging__top">
-          <div class="messaging__name">
-            <h1>Sarah Brown</h1>
-          </div>
-          <div class="messaging__img">
-            <div class="messaging__chat"></div><div class="photo" style="background: url(./img/photo1.png)"></div>
-            <div class="messaging__camera"></div>
-          </div>
+    <div class="block-line"><div class="messaging messaging_">
+      <div class="messaging__top">
+        <div class="messaging__name">
+          <h1>Sarah Brown</h1>
         </div>
-        <div class="messaging__bottom">
-          <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
-          <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button_ standart-button_ standart-button_-" onclick="buttonClick(event)">reply</button>
+        <div class="messaging__img">
+          <div class="messaging__chat"></div>
+          <div class="photo" style="background-image: url(img/photo1.png);"></div>
+          <div class="messaging__camera"></div>
         </div>
       </div>
+      <div class="messaging__bottom">
+        <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
+        <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button_ standart-button_normal standart-button_-normal" onclick="buttonClick(event)">reply</button>
+        <div class="clearfix"></div>
+      </div></div>
     </div>
     <div class="block-line">
       <div class="video__frame">

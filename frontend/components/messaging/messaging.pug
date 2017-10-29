@@ -1,5 +1,5 @@
-mixin messaging(name,text,url)
-    .messaging
+mixin messaging(name,text,url,color)
+    <div class="messaging messaging_#{color}">
         .messaging__top
             .messaging__name
                 h1 #{name}
@@ -10,4 +10,6 @@ mixin messaging(name,text,url)
         .messaging__bottom
             .messaging__buble #{text}
             textarea.messaging__message(name="message")
-            +standart-button('reply')
+            +standart-button('reply','normal',color)
+            .clearfix
+    </div>

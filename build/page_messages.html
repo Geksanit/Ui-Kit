@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Messages</title>
+  <link href="messages.css" rel="stylesheet"></head>
+  <body>
+    <header class="main-header">
+      <div class="main-header__logo"></div>
+      <nav><a href="./page_news.html">News</a><a href="./page_messages.html">Messages</a><a href="./page_friends.html">Friends</a></nav><form action="#" class="search">
+<input name="qq" onfocus="searchClick(event)" class="search-" type="search" placeholder="Search"/>
+      <input class="submit" type="submit" name="" value=""></form>
+    </header>
+    <main><div class="messaging messaging_orange">
+      <div class="messaging__top">
+        <div class="messaging__name">
+          <h1>Sarah Brown</h1>
+        </div>
+        <div class="messaging__img">
+          <div class="messaging__chat"></div>
+          <div class="photo" style="background-image: url(img/photo1.png);"></div>
+          <div class="messaging__camera"></div>
+        </div>
+      </div>
+      <div class="messaging__bottom">
+        <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
+        <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button_orange standart-button_normal standart-button_orange-normal" onclick="buttonClick(event)">reply</button>
+        <div class="clearfix"></div>
+      </div></div><div class="messaging messaging_blue">
+      <div class="messaging__top">
+        <div class="messaging__name">
+          <h1>John Smith</h1>
+        </div>
+        <div class="messaging__img">
+          <div class="messaging__chat"></div>
+          <div class="photo" style="background-image: url(img/photo2.png);"></div>
+          <div class="messaging__camera"></div>
+        </div>
+      </div>
+      <div class="messaging__bottom">
+        <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
+        <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button_blue standart-button_normal standart-button_blue-normal" onclick="buttonClick(event)">reply</button>
+        <div class="clearfix"></div>
+      </div></div>
+    </main>
+  <script type="text/javascript" src="messages.js"></script></body>
+</html>

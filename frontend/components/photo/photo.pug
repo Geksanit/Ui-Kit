@@ -1,2 +1,3 @@
 mixin photo(url)
-    <div class="photo" style="background: url(#{url})"></div>
+    - url = require('../img/'+url+'.png')
+    .photo(style="background-image: url("+url+")")

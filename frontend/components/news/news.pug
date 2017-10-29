@@ -1,7 +1,9 @@
-mixin news(title,date,text,color)
-    <div class="news news_#{color}">
+mixin news(title,date,text,color,url)
+    if (!url)
+        -url = 'Layer'
+    -url = require('../img/'+url+'.png')
+    div(class="news news_"+color, style="background-image: url("+url+")")
         .news__text
             h1 #{title}
             h4 #{date}
             p #{text}
-    </div>

@@ -8,7 +8,9 @@ const baseConfig = {
     context: __dirname + '\\frontend',
     entry:{
         'index': './Kit/index.js',
-        'page': './pages/page.js'
+        'news': './pages/page_news.js',
+        'messages': './pages/page_messages.js',
+        'friends': './pages/page_friends.js'
     },
     output:{
         path: path.join(__dirname, 'build'),
@@ -18,7 +20,9 @@ const baseConfig = {
     plugins:[
         new ExtractTextPlugin('[name].css', {allChunks: true}),
         new HtmlWebpackPlugin({filename: 'index.html',chunks: ['index'],template: './Kit/index.pug'}),
-        new HtmlWebpackPlugin({filename: 'page.html',chunks: ['page'],template: 'pages/page.pug'})
+        new HtmlWebpackPlugin({filename: 'page_news.html',chunks: ['news'],template: 'pages/page_news.pug'}),
+        new HtmlWebpackPlugin({filename: 'page_messages.html',chunks: ['messages'],template: 'pages/page_messages.pug'}),
+        new HtmlWebpackPlugin({filename: 'page_friends.html',chunks: ['friends'],template: 'pages/page_friends.pug'})
     ],/*
     resolve:{
         modules:['node-modules'],
