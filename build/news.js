@@ -194,8 +194,8 @@ var weekDay = function () {
     return n
 };
 var tableOnclick = function(event) {
-    var target = event.target; // где был клик?
-    if (target.tagName != 'TD') return; // не на TD? тогда не интересует
+    var target = event.target;
+    if (target.tagName != 'TD') return;
     var oldElement = target.parentElement.parentElement.getElementsByClassName("calendar__today")[0];
     oldElement.classList.remove("calendar__today");
     target.classList.add("calendar__today");
@@ -303,7 +303,66 @@ document.buttonClick = function (event) {
 };
 
 /***/ }),
-/* 5 */,
+/* 5 */
+/***/ (function(module, exports) {
+
+
+
+var mapLoad = function(element) {
+    var point = {//координаты
+        lat : Number(element.getAttribute('data-lat')),
+        lng : Number(element.getAttribute('data-lng'))
+    };
+    var map = new google.maps.Map(element, {
+        zoom: 14,
+        center: point,
+        disableDefaultUI: true,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    var image = 'img/marker.png';
+    var marker = new google.maps.Marker({
+        position: point,
+        map: map,
+        icon: image,
+    });
+};
+var mapChange = function(element) {
+    var point = {
+        lat : Number(element.getAttribute('data-lat')),
+        lng : Number(element.getAttribute('data-lng'))
+    };
+    var xhr = new XMLHttpRequest();
+    var src = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+point.lat+','+point.lng+'&key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo';
+    xhr.open('GET', src, true);
+    xhr.send();
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState != 4) return;
+
+        if (this.status != 200) {
+            // обработать ошибку
+            element.nextElementSibling.children[1].innerHTML = 'ошибка: ' + (this.status ? this.statusText : 'запрос не удался');
+            return;
+        }
+        result = JSON.parse(this.response);
+        address = result.results[0].address_components[0].short_name+' '+result.results[0].address_components[1].short_name;
+        address+=', '+result.results[0].address_components[3].short_name+', '+result.results[0].address_components[4].short_name;
+        //address = result.results[0].formatted_address;
+        //console.log(result.results[0]);
+        //console.log(address);
+        element.nextElementSibling.children[1].innerHTML = address.toUpperCase();
+    }
+};
+window.initMap = function () {
+    var elements = document.querySelectorAll('.map__element');
+    for(var i=0; i<elements.length; i++){
+        mapLoad(elements[i]);
+        mapChange(elements[i]);
+    }
+};
+
+
+/***/ }),
 /* 6 */,
 /* 7 */,
 /* 8 */,
@@ -320,17 +379,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_search_search___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_search_search__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_video_video__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_video_video___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_video_video__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_map_map__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_map_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_map_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_calendar_calendar__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_calendar_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_calendar_calendar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_standart_button_standart_button__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_standart_button_standart_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_standart_button_standart_button__);
 
 
 
 
 
 
-//import '../components/map/map'
+
 
 
 

@@ -1,6 +1,8 @@
 mixin video(src,title)
     if(!src)
         -src = 'http://default'
+    - var url = require('../video/'+src+'.jpg')
+    - src = require('../video/'+src+'.mp4')
     if(!title)
         -title = 'Title'
     .video__frame
@@ -8,7 +10,7 @@ mixin video(src,title)
             .video__title
                 h1 #{title}
                 h4 #{src}
-            <video poster="#{src}.jpg" ontimeupdate="videoUpdate(event)" src="#{src}.mp4"></video>
+            video(poster=url src=src ontimeupdate="videoUpdate(event)")
             .video__controls(onclick="videoClick(event)")
                 .video__button.video__button-play
                 .video__slider

@@ -472,7 +472,7 @@ form input[type="radio"]:checked::before {
 }
 .news__text {
   float: right;
-  width: 193px;
+  width: calc(100% - 95px);
   height: 100%;
   padding: 0 20px;
   box-sizing: border-box;
@@ -506,7 +506,7 @@ form input[type="radio"]:checked::before {
 }
 .events__text {
   float: right;
-  width: 193px;
+  width: calc(100% - 95px);
   height: 100%;
   padding: 0 20px;
   box-sizing: border-box;
@@ -1023,11 +1023,16 @@ form.select select {
 .messaging_orange .messaging__name {
   background-color: #e75735;
 }
-.map #map {
-  height: 300px;
+.map {
   width: 600px;
-  background-color: #808080;
   border-radius: 3px;
+}
+.map__element {
+  height: 300px;
+  width: 100%;
+  background-color: #808080;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .map__down {
   width: 100%;
@@ -1036,14 +1041,15 @@ form.select select {
   padding: 20px;
   color: #fff;
   box-sizing: border-box;
+  border-radius: 0 0 3px 3px;
 }
-.map__down .icon1 {
+.map__icon1 {
   float: right;
   height: 100%;
   width: 30px;
   background: url(img/icon4.png) no-repeat center;
 }
-.map__down .icon2 {
+.map__icon2 {
   float: right;
   height: 100%;
   width: 30px;
@@ -1296,15 +1302,19 @@ body main {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-around;
-  margin: 0 10%;
+  justify-content: flex-start;
+  margin: 0 auto;
   padding: 20px;
-  width: 80%;
+  width: 696px;
   box-sizing: border-box;
   background-color: #fff;
 }
 body main >div {
   margin: 20px;
+}
+body main .news,
+body main .events {
+  flex: 1 0 288px;
 }
 body main:before {
   content: 'News';
@@ -1317,6 +1327,10 @@ body main:before {
   font-size: 20px;
   font-family: lato-bold;
 }
+body main .video__frame,
+body main .map {
+  width: 100%;
+}
 body main .arrows {
   width: 100%;
   display: flex;
@@ -1324,7 +1338,7 @@ body main .arrows {
   align-items: flex-start;
   justify-content: space-between;
 }
-@media (max-width: 500px) {
+@media (max-width: 696px) {
   body main {
     margin: 0;
     width: 100%;
@@ -1332,8 +1346,8 @@ body main .arrows {
 }
 @media (min-width: 1000px) {
   body main {
-    margin: 0 15%;
-    width: 70%;
+    margin: auto;
+    width: 696px;
   }
 }
 body footer {

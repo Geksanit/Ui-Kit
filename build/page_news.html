@@ -51,6 +51,23 @@
           </div>
         </div>
       </div>
+      <div class="video__frame">
+        <div class="video">
+          <div class="video__title">
+            <h1>New Zeland</h1>
+            <h4>video/Travel_New_Zeland.mp4</h4>
+          </div>
+          <video poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4" ontimeupdate="videoUpdate(event)"></video>
+          <div class="video__controls" onclick="videoClick(event)">
+            <div class="video__button video__button-play"></div>
+            <div class="video__slider">
+              <div class="video__slider_line-full"></div>
+              <div class="video__slider_line"></div><input type="range" class="video__input" oninput="videoInput(event.target)" min="0" max="100" value="0"></input>
+            </div>
+            <div class="video__button-full"></div>
+          </div>
+        </div>
+      </div>
       <div class="news news_blue" style="background-image: url(img/Layer.png);">
         <div class="news__text">
           <h1>It'is all going downhill</h1>
@@ -63,6 +80,15 @@
           <h1>It'is all going downhill</h1>
           <h4>20 august 2017</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+      <div class="map">
+        <div class="map__element" data-lat="-33.877685" data-lng="151.207077"></div>
+        <div class="map__down">
+          <div class="map__message">Meet Us !</div>
+          <div class="map__addres">loading..</div>
+          <div class="map__icon1"></div>
+          <div class="map__icon2"></div>
         </div>
       </div>
       <div class="news news_orange" style="background-image: url(img/Layer.png);">
@@ -100,6 +126,7 @@
         <div class="arrow-button__arrow"></div></button><button class="arrow-button arrow-button_right arrow-button_orange" >
         <div class="arrow-button__arrow"></div></button>
       </div>
-    </main>
+    </main><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap" >
+</script>
   <script type="text/javascript" src="news.js"></script></body>
 </html>

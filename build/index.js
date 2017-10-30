@@ -61,7 +61,7 @@ var scripts =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -194,8 +194,8 @@ var weekDay = function () {
     return n
 };
 var tableOnclick = function(event) {
-    var target = event.target; // где был клик?
-    if (target.tagName != 'TD') return; // не на TD? тогда не интересует
+    var target = event.target;
+    if (target.tagName != 'TD') return;
     var oldElement = target.parentElement.parentElement.getElementsByClassName("calendar__today")[0];
     oldElement.classList.remove("calendar__today");
     target.classList.add("calendar__today");
@@ -304,65 +304,15 @@ document.buttonClick = function (event) {
 
 /***/ }),
 /* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__all_included__ = __webpack_require__(7);
-
-
-
-
-window.Test = function () {
-    var elem = document.getElementsByClassName('slider-percentage')[0]
-    console.log(elem.shadowRoot);
-    //var root = elem.createShadowRoot();
-    //root.innerHTML = "<p>Привет из подполья!</p>";
-}
-
-
-
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 7 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_slider_slider__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_slider_slider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_slider_slider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_search_search__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_search_search___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_search_search__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_video_video__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_video_video___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_video_video__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_map_map__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_map_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_map_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button__);
 
 
-
-
-
-
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-var point = {lat: -33.877685, lng: 151.207077};
-var element = document.getElementById('map')
-window.initMap = function() {
+var mapLoad = function(element) {
+    var point = {//координаты
+        lat : Number(element.getAttribute('data-lat')),
+        lng : Number(element.getAttribute('data-lng'))
+    };
     var map = new google.maps.Map(element, {
         zoom: 14,
         center: point,
@@ -376,7 +326,11 @@ window.initMap = function() {
         icon: image,
     });
 };
-window.load = function() {
+var mapChange = function(element) {
+    var point = {
+        lat : Number(element.getAttribute('data-lat')),
+        lng : Number(element.getAttribute('data-lng'))
+    };
     var xhr = new XMLHttpRequest();
     var src = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+point.lat+','+point.lng+'&key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo';
     xhr.open('GET', src, true);
@@ -398,7 +352,68 @@ window.load = function() {
         //console.log(address);
         element.nextElementSibling.children[1].innerHTML = address.toUpperCase();
     }
-}();
+};
+window.initMap = function () {
+    var elements = document.querySelectorAll('.map__element');
+    for(var i=0; i<elements.length; i++){
+        mapLoad(elements[i]);
+        mapChange(elements[i]);
+    }
+};
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_styl__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__all_included__ = __webpack_require__(8);
+
+
+
+
+window.Test = function () {
+    var elem = document.getElementsByClassName('slider-percentage')[0]
+    console.log(elem.shadowRoot);
+    //var root = elem.createShadowRoot();
+    //root.innerHTML = "<p>Привет из подполья!</p>";
+}
+
+
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_slider_slider__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_slider_slider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_slider_slider__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_search_search__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_search_search___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_search_search__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_video_video__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_video_video___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_video_video__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_map_map__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_map_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_map_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_calendar_calendar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_standart_button_standart_button__);
+
+
+
+
+
+
 
 
 /***/ })

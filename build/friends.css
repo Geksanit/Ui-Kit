@@ -472,7 +472,7 @@ form input[type="radio"]:checked::before {
 }
 .news__text {
   float: right;
-  width: 193px;
+  width: calc(100% - 95px);
   height: 100%;
   padding: 0 20px;
   box-sizing: border-box;
@@ -506,7 +506,7 @@ form input[type="radio"]:checked::before {
 }
 .events__text {
   float: right;
-  width: 193px;
+  width: calc(100% - 95px);
   height: 100%;
   padding: 0 20px;
   box-sizing: border-box;
@@ -1023,11 +1023,16 @@ form.select select {
 .messaging_orange .messaging__name {
   background-color: #e75735;
 }
-.map #map {
-  height: 300px;
+.map {
   width: 600px;
-  background-color: #808080;
   border-radius: 3px;
+}
+.map__element {
+  height: 300px;
+  width: 100%;
+  background-color: #808080;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .map__down {
   width: 100%;
@@ -1036,14 +1041,15 @@ form.select select {
   padding: 20px;
   color: #fff;
   box-sizing: border-box;
+  border-radius: 0 0 3px 3px;
 }
-.map__down .icon1 {
+.map__icon1 {
   float: right;
   height: 100%;
   width: 30px;
   background: url(img/icon4.png) no-repeat center;
 }
-.map__down .icon2 {
+.map__icon2 {
   float: right;
   height: 100%;
   width: 30px;
@@ -1295,16 +1301,23 @@ body main {
   min-height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: flex-start;
   margin: 0 10%;
   padding: 20px;
   width: 80%;
   box-sizing: border-box;
   background-color: #fff;
 }
-body main .user-profile {
+body main .container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 1px solid #d3d3d3;
   margin-bottom: 20px;
+  padding-top: 20px;
 }
 body main:before {
   content: attr(date-title);

@@ -1,11 +1,14 @@
 map(font1,font2,$orange)
   $path = '../'
   .map
-    #map
+    width 600px
+    border-radius 3px//хз почему не работает
+    &__element
       height 300px
-      width 600px
+      width 100%
       background-color gray
-      border-radius 3px
+      border-top-left-radius 3px
+      border-top-right-radius 3px
     &__down
       width 100%
       height 70px
@@ -13,16 +16,17 @@ map(font1,font2,$orange)
       padding 20px
       color white
       box-sizing border-box
-      .icon1
-        float right
-        height 100%
-        width 30px
-        background url($path+'./img/icon4.png') no-repeat center
-      .icon2
-        float right
-        height 100%
-        width 30px
-        background url($path+'./img/icon5.png') no-repeat center
+      border-radius 0 0 3px 3px
+    &__icon1
+      float right
+      height 100%
+      width 30px
+      background url($path+'./img/icon4.png') no-repeat center
+    &__icon2
+      float right
+      height 100%
+      width 30px
+      background url($path+'./img/icon5.png') no-repeat center
     &__message
       font-family font1
       font-size 30px

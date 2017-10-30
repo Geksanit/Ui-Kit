@@ -55,7 +55,7 @@ const baseConfig = {
                 use: [{loader:'css'},{loader:'stylus'}]
             })
         }, {
-            test: /\.(png|ipg|svg|ttf|eot|woff|woff2)$/,
+            test: /\.(png|ipg|svg|ttf|eot|woff|woff2|jpg|mp4)$/,
             loader: 'file?name=[path][name].[ext]'
         }
         ]

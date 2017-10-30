@@ -194,8 +194,8 @@ var weekDay = function () {
     return n
 };
 var tableOnclick = function(event) {
-    var target = event.target; // где был клик?
-    if (target.tagName != 'TD') return; // не на TD? тогда не интересует
+    var target = event.target;
+    if (target.tagName != 'TD') return;
     var oldElement = target.parentElement.parentElement.getElementsByClassName("calendar__today")[0];
     oldElement.classList.remove("calendar__today");
     target.classList.add("calendar__today");

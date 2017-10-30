@@ -1,6 +1,10 @@
-var point = {lat: -33.877685, lng: 151.207077};
-var element = document.getElementById('map')
-window.initMap = function() {
+
+
+var mapLoad = function(element) {
+    var point = {//координаты
+        lat : Number(element.getAttribute('data-lat')),
+        lng : Number(element.getAttribute('data-lng'))
+    };
     var map = new google.maps.Map(element, {
         zoom: 14,
         center: point,
@@ -14,7 +18,11 @@ window.initMap = function() {
         icon: image,
     });
 };
-window.load = function() {
+var mapChange = function(element) {
+    var point = {
+        lat : Number(element.getAttribute('data-lat')),
+        lng : Number(element.getAttribute('data-lng'))
+    };
     var xhr = new XMLHttpRequest();
     var src = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+point.lat+','+point.lng+'&key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo';
     xhr.open('GET', src, true);
@@ -36,4 +44,11 @@ window.load = function() {
         //console.log(address);
         element.nextElementSibling.children[1].innerHTML = address.toUpperCase();
     }
-}();
+};
+window.initMap = function () {
+    var elements = document.querySelectorAll('.map__element');
+    for(var i=0; i<elements.length; i++){
+        mapLoad(elements[i]);
+        mapChange(elements[i]);
+    }
+};

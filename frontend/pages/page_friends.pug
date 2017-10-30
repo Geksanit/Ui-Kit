@@ -8,7 +8,11 @@ html
     body
         +header()
         main(date-title='Friends')
-            +user-profile('John Smith','ux designer','photo2','orange')
-            +user-profile('Sarah Brown','developer','photo1','blue')
+            .container
+                +user-profile('John Smith','ux designer','photo2','orange')
+                +standart-button('send message','orange')
+            .container
+                +user-profile('Sarah Brown','developer','photo1','blue')
+                +standart-button('send message','blue')
 
             
