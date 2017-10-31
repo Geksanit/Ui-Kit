@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Sign up</title>
+  <link href="registration.css" rel="stylesheet"></head>
+  <body>
+    <header class="main-header">
+      <div class="main-header__logo"></div>
+      <nav><a href="./page_news.html">News</a><a href="./page_messages.html">Messages</a><a href="./page_friends.html">Friends</a></nav>
+      <form class="search" action="#">
+        <input class="search-undefined" name="qq" onfocus="searchClick(event)" type="search" placeholder="Search">
+        <input class="submit" type="submit" name="" value="">
+      </form>
+    </header>
+    <main date-title="Sign up">
+      <form>
+        <label>
+          <input type="email" name="email" placeholder="Your Email" autocomplete="on" required autofocus>
+          <div></div>
+        </label>
+        <label>
+          <input type="text" name="name" placeholder="Your first name" required>
+          <div></div>
+        </label>
+        <label>
+          <input type="text" name="surname" placeholder="Your last name" required>
+          <div></div>
+        </label>
+        <label>Your age</label>
+        <label>
+          <div class="slider">
+            <div class="slider__view">20</div><input class="slider" oninput="sliderInput(event)" type="range" min="10" max="100" value="20">
+          </div>
+        </label>
+        <div>Your gender</div>
+        <div class="container">
+          <label>
+            <input type="radio" name="gender" value="male" required>
+            <p>Male</p>
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" required>
+            <p>Female</p>
+          </label>
+        </div>
+        <label>
+          <input type="checkbox" required>
+          <p>agree</p>
+        </label><button class="standart-button standart-button_ standart-button_ standart-button_-" onclick="buttonClick(event)">sign up</button>
+      </form>
+    </main>
+  <script type="text/javascript" src="registration.js"></script></body>
+</html>

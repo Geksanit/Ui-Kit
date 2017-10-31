@@ -3,7 +3,6 @@ mixin search(argument)
     if (argument)
         - argument = 'notfound'
         - text = "I've not found what I'm looking for..."
-    <form action="#" class="search">
-        <input name="qq" onfocus="searchClick(event)" class="search-#{argument}" type="search" placeholder="#{text}"/>
-        input( type="submit" name="" value="" class="submit")
-    </form>
+    form(action="#" class="search")
+        input(name="qq" onfocus="searchClick(event)" class="search-"+argument type="search" placeholder=text)
+        input(type="submit" name="" value="" class="submit")

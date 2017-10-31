@@ -3,7 +3,18 @@ forma(font1,font2,$blue,$orange)
   form
     width 288px
     padding 10px
-    input,textarea
+    color gray
+    font-family font1
+    .container
+      width 100%
+      display flex
+      flex-wrap wrap
+      align-items flex-start
+      justify-content flex-start
+      margin-bottom 12px
+      label
+        width auto
+    input[type=text],input[type=email],input[type=search],input[type=submit],textarea
       padding 4px 1rem
       height 28px
       line-height @height
@@ -21,11 +32,13 @@ forma(font1,font2,$blue,$orange)
       width 100%
       display flex
       margin-bottom 12px
-      input
+      p
+        margin auto 10px
+      input[type=text],input[type=email]
         float left
         width 208px
         margin-right 8px
-      div
+      input[type=text]+div,input[type=email]+div,input[type=search]+div
         position relative
         float right
         width 72px
@@ -61,6 +74,8 @@ forma(font1,font2,$blue,$orange)
         background-color $blue[0]
         &::after
           content 'thanks!'
+      .slider
+        width 100%
     textarea
       margin-bottom 10px
       resize none
@@ -77,6 +92,8 @@ forma(font1,font2,$blue,$orange)
       height 24px
       padding 2px
       width 60px
+      border none
+      outline none
       cursor pointer
       position relative
       -webkit-transition: .15s;

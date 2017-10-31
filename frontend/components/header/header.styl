@@ -3,7 +3,7 @@ header($color,font1)
     display flex
     width 100%
     min-height 50px
-    padding 10px 10%
+    padding 10px calc(50% - 348px)
     box-sizing border-box
     background-color $color[0]
     font-family font1
@@ -34,9 +34,6 @@ header($color,font1)
           border-radius 3px
           background-color $color[1]
 
-  @media (max-width:500px)
+  @media (max-width:696px)
     .main-header
       padding 10px
-  @media (min-width:1000px)
-    .main-header
-      padding 10px 15%

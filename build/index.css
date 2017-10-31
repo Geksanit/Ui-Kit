@@ -307,8 +307,24 @@ body {
 form {
   width: 288px;
   padding: 10px;
+  color: #808080;
+  font-family: sans-r;
 }
-form input,
+form .container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+form .container label {
+  width: auto;
+}
+form input[type=text],
+form input[type=email],
+form input[type=search],
+form input[type=submit],
 form textarea {
   padding: 4px 1rem;
   height: 28px;
@@ -328,12 +344,18 @@ form label {
   display: flex;
   margin-bottom: 12px;
 }
-form label input {
+form label p {
+  margin: auto 10px;
+}
+form label input[type=text],
+form label input[type=email] {
   float: left;
   width: 208px;
   margin-right: 8px;
 }
-form label div {
+form label input[type=text]+div,
+form label input[type=email]+div,
+form label input[type=search]+div {
   position: relative;
   float: right;
   width: 72px;
@@ -342,7 +364,9 @@ form label div {
   background-color: #808080;
   border-radius: 5px;
 }
-form label div::before {
+form label input[type=text]+div::before,
+form label input[type=email]+div::before,
+form label input[type=search]+div::before {
   content: '';
   top: 9px;
   left: -3px;
@@ -352,7 +376,9 @@ form label div::before {
   background-color: inherit;
   transform: rotate(-45deg);
 }
-form label div::after {
+form label input[type=text]+div::after,
+form label input[type=email]+div::after,
+form label input[type=search]+div::after {
   position: absolute;
   content: 'test';
   width: 70px;
@@ -376,6 +402,9 @@ form label input:valid + div {
 form label input:valid + div::after {
   content: 'thanks!';
 }
+form label .slider {
+  width: 100%;
+}
 form textarea {
   margin-bottom: 10px;
   resize: none;
@@ -393,6 +422,8 @@ form input[type="checkbox"] {
   height: 24px;
   padding: 2px;
   width: 60px;
+  border: none;
+  outline: none;
   cursor: pointer;
   position: relative;
   -webkit-transition: 0.15s;
@@ -1247,7 +1278,7 @@ form.select select {
   display: flex;
   width: 100%;
   min-height: 50px;
-  padding: 10px 10%;
+  padding: 10px calc(50% - 348px);
   box-sizing: border-box;
   background-color: #e75735;
   font-family: lato-bold;
@@ -1282,13 +1313,8 @@ form.select select {
   border-radius: 3px;
   background-color: #bf3e1f;
 }
-@media (max-width: 500px) {
+@media (max-width: 696px) {
   .main-header {
     padding: 10px;
-  }
-}
-@media (min-width: 1000px) {
-  .main-header {
-    padding: 10px 15%;
   }
 }
