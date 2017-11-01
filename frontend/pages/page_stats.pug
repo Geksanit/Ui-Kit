@@ -1,0 +1,29 @@
+doctype html
+include ../all_included
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        title My stats
+    body
+        +header()
+        main(date-title='My stats')
+            .container
+                h3 Respect
+                +percentages(87)
+            .container
+                h3 Activity
+                +percentages(62)
+            .container
+                h3 Content
+                +pie-chart(10,25,30)
+                div
+                    p - posts
+                    p - photos
+                    p - videos
+                    p - other
+
+        footer
+            center
+                a(href="./page_registration.html") Sugn up
+            

@@ -1354,16 +1354,25 @@ body main {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: flex-start;
   margin: 0 auto;
   width: 696px;
   padding: 20px;
   box-sizing: border-box;
   background-color: #fff;
 }
-body main .messaging {
-  width: 100%;
-  margin-bottom: 20px;
+body main .container {
+  margin: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  flex: 1 0 288px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  color: #808080;
 }
 body main:before {
   content: attr(date-title);
@@ -1386,23 +1395,6 @@ body main:before {
   body main {
     margin: auto;
     width: 696px;
-  }
-}
-@media (min-width: 400px) {
-  body .messaging__buble {
-    float: left;
-    width: 55%;
-  }
-  body .messaging__buble::before {
-    left: calc(100% * 5 / 6 - 6px);
-  }
-  body .messaging__message {
-    float: right;
-    width: 55%;
-  }
-  body .messaging .standart-button {
-    float: right;
-    width: 55%;
   }
 }
 body footer {

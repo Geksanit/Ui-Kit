@@ -62,7 +62,23 @@ percentages(font,$blue,$orange)
         stroke $blue[0]
       &-gray
         stroke #747474
-
-
+  .pie-chart+div
+    padding-left 15px
+    p
+      position relative
+    p:before
+      content ''
+      width 10px
+      height 10px
+      position absolute
+      top 5px
+      left -15px
+      background-color #747474
+    p:nth-child(2):before
+      background-color $orange[0]
+    p:nth-child(3):before
+      background-color $blue[0]
+    p:nth-child(4):before
+      background-color lightgray
 
 

@@ -272,6 +272,30 @@ body {
 .pie-chart__circle-gray {
   stroke: #747474;
 }
+.pie-chart+div {
+  padding-left: 15px;
+}
+.pie-chart+div p {
+  position: relative;
+}
+.pie-chart+div p:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 5px;
+  left: -15px;
+  background-color: #747474;
+}
+.pie-chart+div p:nth-child(2):before {
+  background-color: #e75735;
+}
+.pie-chart+div p:nth-child(3):before {
+  background-color: #4eb7a8;
+}
+.pie-chart+div p:nth-child(4):before {
+  background-color: #d3d3d3;
+}
 @-moz-keyframes start {
   from {
     stroke-dashoffset: 300;
@@ -473,6 +497,8 @@ form input[type="radio"] {
   width: 24px;
   height: 24px;
   border-radius: 12px;
+  border: none;
+  outline: none;
   padding: 0px;
 }
 form input[type="radio"]:checked {
@@ -1334,6 +1360,9 @@ body main {
   padding: 20px;
   box-sizing: border-box;
   background-color: #fff;
+}
+body main .search {
+  margin-bottom: 20px;
 }
 body main .container {
   width: 100%;

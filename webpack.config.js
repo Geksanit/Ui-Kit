@@ -11,7 +11,8 @@ const baseConfig = {
         'news': './pages/page_news.js',
         'messages': './pages/page_messages.js',
         'friends': './pages/page_friends.js',
-        'registration': './pages/page_registration.js'
+        'registration': './pages/page_registration.js',
+        'stats': './pages/page_stats.js'
     },
     output:{
         path: path.join(__dirname, 'build'),
@@ -24,7 +25,8 @@ const baseConfig = {
         new HtmlWebpackPlugin({filename: 'page_news.html',chunks: ['news'],template: 'pages/page_news.pug'}),
         new HtmlWebpackPlugin({filename: 'page_messages.html',chunks: ['messages'],template: 'pages/page_messages.pug'}),
         new HtmlWebpackPlugin({filename: 'page_friends.html',chunks: ['friends'],template: 'pages/page_friends.pug'}),
-        new HtmlWebpackPlugin({filename: 'page_registration.html',chunks: ['registration'],template: 'pages/page_registration.pug'})
+        new HtmlWebpackPlugin({filename: 'page_registration.html',chunks: ['registration'],template: 'pages/page_registration.pug'}),
+        new HtmlWebpackPlugin({filename: 'page_stats.html',chunks: ['stats'],template: 'pages/page_stats.pug'})
     ],/*
     resolve:{
         modules:['node-modules'],
