@@ -813,7 +813,6 @@ form.select div {
   background-color: #4eb7a8;
   top: 0;
   right: 0;
-  z-index: 2;
   pointer-events: none;
   border-radius: 0 5px 5px 0;
 }
@@ -1347,7 +1346,7 @@ form.select select {
 body {
   margin: 0;
   padding: 0;
-  background-color: #e5e5e5;
+  background-color: #f2f2f2;
 }
 body main {
   min-height: calc(100vh - 50px);

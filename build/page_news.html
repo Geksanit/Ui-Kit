@@ -11,6 +11,16 @@
       <nav><a href="./page_news.html">News</a><a href="./page_messages.html">Messages</a><a href="./page_friends.html">Friends</a><a href="./page_stats.html">My stats</a></nav>
     </header>
     <main date-title="News">
+      <div class="container-center">
+        <form class="select" action="#">
+          <select>
+            <option disabled selected>sorting</option>
+            <option>by date</option>
+            <option>by relevance</option>
+          </select>
+          <div></div>
+        </form>
+      </div>
       <div class="news news_orange" style="background-image: url(img/Layer.png);">
         <div class="news__text">
           <h1>It'is all going downhill</h1>
@@ -123,6 +133,32 @@
       <div class="arrows"><button class="arrow-button arrow-button_left arrow-button_orange" disabled>
         <div class="arrow-button__arrow"></div></button><button class="arrow-button arrow-button_right arrow-button_orange" >
         <div class="arrow-button__arrow"></div></button>
+      </div>
+      <div class="container-calendar">
+        <input type="checkbox">
+        <div class="calendar">
+          <div class="calendar__day">day</div>
+          <div class="calendar__month">month
+            <div class="calendar__left" onclick="left(event)"></div>
+            <div class="calendar__right" onclick="right(event)"></div>
+          </div>
+          <div class="calendar__year">year</div>
+          <table class="calendar__days-week" cols="7">
+            <tr>
+              <td>MON</td>
+              <td>TUE</td>
+              <td>WED</td>
+              <td>THU</td>
+              <td>FRI</td>
+              <td>SAT</td>
+              <td>SUN</td>
+            </tr>
+          </table>
+          <table class="calendar__days" cols="7">
+            <tbody></tbody>
+          </table>
+          <div class="calendar__data" onclick="today(event)">TODAY</div>
+        </div>
       </div>
     </main>
     <footer>

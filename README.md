@@ -1,7 +1,6 @@
 # Ui-Kit
-Ui-Kit - и этим всё сказано)
 
-Github Pages
+Github Pages:
 
 Ui-Kit <https://geksanit.github.io/Ui-Kit/build/index.html>
 

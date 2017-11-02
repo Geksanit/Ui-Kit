@@ -813,7 +813,6 @@ form.select div {
   background-color: #4eb7a8;
   top: 0;
   right: 0;
-  z-index: 2;
   pointer-events: none;
   border-radius: 0 5px 5px 0;
 }

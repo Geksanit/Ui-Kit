@@ -813,7 +813,6 @@ form.select div {
   background-color: #4eb7a8;
   top: 0;
   right: 0;
-  z-index: 2;
   pointer-events: none;
   border-radius: 0 5px 5px 0;
 }
@@ -1347,7 +1346,7 @@ form.select select {
 body {
   margin: 0;
   padding: 0;
-  background-color: #e5e5e5;
+  background-color: #f2f2f2;
 }
 body main {
   min-height: calc(100vh - 50px);
@@ -1380,9 +1379,14 @@ body main:before {
   font-family: lato-bold;
 }
 body main .video__frame,
-body main .map {
+body main .map,
+body main .container-center {
   width: 100%;
   margin: 20px;
+}
+body main .container-center {
+  display: flex;
+  justify-content: space-around;
 }
 body main .arrows {
   width: 100%;
@@ -1390,6 +1394,69 @@ body main .arrows {
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+}
+body main .container-calendar {
+  margin: 0;
+  padding: 0;
+  background-color: #ff0;
+}
+body main .container-calendar input[type=checkbox] {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  width: 20px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  background-color: #4eb7a8;
+  position: fixed;
+  top: calc(50% - 25px);
+  left: 0;
+  -webkit-transition: 0.15s;
+}
+body main .container-calendar input[type=checkbox]:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: rotate(225deg);
+}
+body main .container-calendar input[type=checkbox]:before {
+  content: 'My calendar';
+  position: absolute;
+  top: 85px;
+  left: -40px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  font-family: lato-l;
+  color: #fff;
+  padding: 0 3px;
+  width: 90px;
+  background-color: transparent;
+  transform: rotate(-90deg);
+}
+body main .container-calendar input[type=checkbox]:checked {
+  left: 279px;
+}
+body main .container-calendar input[type=checkbox]:checked:after {
+  left: 7px;
+  transform: rotate(45deg);
+}
+body main .container-calendar input[type=checkbox]:checked + div {
+  left: 0;
+}
+body main .container-calendar input[type=checkbox] + div {
+  position: fixed;
+  top: calc(50% - 255px);
+  left: -279px;
+  -webkit-transition: 0.15s;
 }
 @media (max-width: 696px) {
   body main {

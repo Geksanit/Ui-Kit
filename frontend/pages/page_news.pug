@@ -8,6 +8,8 @@ html
     body
         +header()
         main(date-title='News')
+            .container-center
+                +select('sorting','by date','by relevance')
             +news("It'is all going downhill",'24 august 2013','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.','orange','Layer')
             +events('10','Dec','HolyJS 2017 Moscow','HolyJS is a unique conference dedicated to JavaScript only.','orange','moskau')
             +news("RALLY DAKAR-2017",'15 january 2017','The Russian KAMAZ-master team triumphantly returned the Champion title in the extreme rally-marathon Dakar.','blue','rally')
@@ -23,6 +25,10 @@ html
             .arrows
                 +arrow-button('arrow-button_left','arrow-button_orange','disabled')
                 +arrow-button('arrow-button_right','arrow-button_orange')
+            .container-calendar
+                input(type="checkbox")
+                +calendar()
+
         footer
             center
                 a(href="./page_registration.html") Sugn up

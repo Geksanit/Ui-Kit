@@ -1,8 +1,7 @@
-mixin select()
-    <form action="#" class="select">
-        div
+mixin select(def,...options)
+    form(action="#" class="select")
         select
-            option(disabled selected) Choose An Options
-            option option 1
-            option option 2
-            option option 3
+            option(disabled selected)= def
+            each item in options
+                option=item
+        div
