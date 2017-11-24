@@ -1,0 +1,13 @@
+mixin slider-percent(value)
+    if(!value)
+        -value = 50
+    .slider-percent
+        .slider-percent__full-line
+        .slider-percent__line
+        input(class="slider-percent__input js-slider-percent__input" type="range" min="0" max="100" value=value)
+        .slider-percent__container
+            div 0
+            div 25
+            div 50
+            div 75
+            div 100

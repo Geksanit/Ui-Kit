@@ -1,0 +1,12 @@
+mixin slider(options)
+    if !options
+        - options = {}
+    if (!options.min)
+        - options.min = 0
+    if (!options.max)
+        - options.max = 10
+    if (!options.value)
+        - options.value = Math.ceil((options.max - options.min) / 2)
+    .slider
+        .slider__view #{options.value}
+        input(class="slider__input js-slider__input" type="range" min=options.min max=options.max value=options.value)

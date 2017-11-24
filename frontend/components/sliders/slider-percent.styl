@@ -1,0 +1,51 @@
+slider-percent(font,$color)
+    // track - линия
+    $track-color = lightgray
+    // thumb - ручка/ползунок
+    $thumb-color = $color[0]
+    $thumb-radius = 10px
+    $thumb-size = 20px
+
+    track()
+        width 100%
+        height 5px
+        border-radius 5px
+        background-color $track-color
+        cursor pointer
+    thumb()
+        margin-top -7.5px
+        height $thumb-size
+        width $thumb-size
+        border-radius $thumb-radius
+        background $thumb-color
+        cursor pointer
+    .slider-percent
+        position relative
+        font-family font
+        &__full-line
+            background-color $track-color
+            width 100%
+            height 5px
+            border-radius 5px
+            position absolute
+            top 40px
+            left 0
+        &__line
+            background-color $thumb-color
+        width 10px
+        height 5px
+        border-radius 5px
+        position absolute
+        top 40px
+        left 0
+        input.slider-percent__input
+            background-color transparent
+            &::-webkit-slider-runnable-track
+                background-color transparent
+        &__container
+            margin 0 -10px
+            color lightgrey
+            font-size 10px
+            display flex
+            justify-content space-around
+            align-items flex-start

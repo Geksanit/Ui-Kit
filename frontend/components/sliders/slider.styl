@@ -1,0 +1,78 @@
+slider(font,$color)
+    // track - линия
+    $track-color = lightgray
+     // thumb - ручка/ползунок
+    $thumb-color = $color[0]
+    $thumb-radius = 10px
+    $thumb-size = 20px
+
+    track()
+        width 100%
+        height 5px
+        border-radius 5px
+        background-color $track-color
+        cursor pointer
+    thumb()
+        margin-top -7.5px
+        height $thumb-size
+        width $thumb-size
+        border-radius $thumb-radius
+        background $thumb-color
+        cursor pointer
+    .slider
+        position relative
+        font-family font
+        .slider__view
+            position absolute
+            width 35px
+            height 24px
+            background-color $thumb-color
+            border-radius 5px
+            top 0px
+            left 50% - 17.5px
+
+            color white
+            text-align center
+            line-height 24px
+            &::after
+                content ''
+                bottom -2px
+                left 15.7px
+                position absolute
+                width 5px
+                height 5px
+                background-color inherit
+                transform rotate(-45deg)
+        input.slider__input
+            -webkit-appearance none
+            -moz-appearance none
+            width 100%
+            margin 40px 0 0 0
+            &:focus
+                outline none
+            &::-webkit-slider-runnable-track
+                track()
+            &::-webkit-slider-thumb
+                thumb()
+                -webkit-appearance none
+
+            &::-moz-range-track
+                track()
+            &::-moz-range-thumb
+                thumb()
+                border none
+
+            &::-ms-track
+                track()
+                background transparent
+                border-color transparent
+                border-width $thumb-size 0
+                color transparent
+            &::-ms-fill-lower
+                background yellow
+                border-radius 10px
+            &::-ms-fill-upper
+                background $track-color
+                border-radius 10px
+            &::-ms-thumb
+                thumb()
