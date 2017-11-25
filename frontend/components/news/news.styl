@@ -1,7 +1,6 @@
-events(font1,font2,font3,$blue,$orange)
+news(font1,font2,font3,$blue,$orange)
     $color = $blue
-    $path = '../'
-    .events
+    .news
         width 288px
         height 212px
         border-radius 3px
@@ -19,29 +18,14 @@ events(font1,font2,font3,$blue,$orange)
             font-size 12px
             border-top-right-radius 3px
             border-bottom-right-radius 3px
-        &__date
+        h1
             font-family font1
-            font-size 30px
             font-weight 100
-            text-align center
-            display flex
-            align-items flex-end
-            &-day
-                font-size 70px
-            &-month
-                margin-bottom 10px
         h4
             font-family font2
             text-transform uppercase
-            margin-bottom 0
         p
-            margin-top 5px
             font-family font3
-        &__button
-            display flex
-            justify-content space-around
-            button.standart-button
-                width auto
         &_color-orange
-            .events__text
-              background-color $orange[0]
+            .news__text
+                background-color $orange[0]

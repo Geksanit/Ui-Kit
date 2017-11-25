@@ -44,21 +44,20 @@ html
         .block-line
             +select('Schoose an option','option-1','option-2','option-3')
         .block-line
-            +user-profile('John Smith','ux designer','photo2','orange')
+            +user-profile({ name:'John Smith', prof:'ux designer', url:'photo2', color:'orange' })
         .block-line
-            +user-profile('Sarah Brown','developer','photo1','blue')
+            +user-profile({ name:'Sarah Brown', prof:'developer', url:'photo1', color:'blue' })
         .block-line
-            +news("It'is all going downhill",'24 august 2013','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.','orange')
+            +news({ title:"It'is all going downhill", date:'24 august 2013', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.', color:'orange' })
         .block-line
-            +events('24','Aug','this is title','Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+            +events({ day:'24', month:'Aug', title:'this is title', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' })
         .block-line
-            +map('-33.877685','151.207077','Meet Us !')
+            +map({ lat:'-33.877685', lng:'151.207077', title:'Meet Us !' })
         .block-line
             +calendar
         .block-line
-            +messaging('Sarah Brown','Hey, so are we cool to meet at the art gallery? Say 8pm','photo1')
+            +messaging({ name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', url:'photo1' })
         .block-line
             +video({ src:'Travel_New_Zeland', title:'New Zeland' })
         .block-line
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap" >
-        </script>
+        script( async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap")

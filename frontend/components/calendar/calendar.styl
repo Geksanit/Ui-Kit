@@ -1,100 +1,95 @@
 calendar(font1,font2,font3,$color1,$color2)
-  $width = 279px
-  .calendar
-    width $width
-    color white
-    font-family font1
-    text-align center
-    background-color $color1[0]
-    overflow hidden
-    cursor default
-    border-radius 3px
-    .calendar__day
-      height 109px
-      line-height @height
-      font-size 80px
-
-    .calendar__month
-      $height = 43px
-      position relative
-      height $height
-      font-size 26px
-      line-height @height
-      background-color rgba(0,0,0, 0.1)
-      .calendar__left,
-      .calendar__right
-        position absolute
-        top 0
-        height $height
-        width @height
-
-        &:hover
-          background-color rgba(0,0,0, 0.1)
-        &::before
-          content ''
-          position absolute
-          top calc(50% - 5px)
-          width 10px
-          height 10px
-          border-right 3px solid white
-          border-bottom 3px solid white
-      .calendar__left
-        left 0
-        &::before
-          transform rotate(135deg)
-          left calc(50% - 5px)
-      .calendar__right
-        right 0
-        &::before
-          transform rotate(-45deg)
-          right calc(50% - 5px)
-    .calendar__year
-      height 40px
-      font-size 30px
-      line-height @height
-    .calendar__days-week
-      font-family font2
-      font-size 10px
-      height 25px
-      line-height @height
-      background-color rgba(0,0,0, 0.1)
-      border none
-      border-collapse collapse
-      vertical-align middle
-      td
-        width ($width / 7)
-    table.calendar__days
-      $width = $width + 2px
-      margin 0 -1px
-      background-color $color2[1]
-      color white
-      font-family font3
-      font-weight bold
-      font-size 20px
-      width $width
-      border-collapse collapse
-      td
-        border 1px solid white
-
-        width ($width / 7)
-        height @width
-        box-sizing border-box
-      td.calendar__days-month
-        color $color2[2]
-      td.calendar__today
-        background-color $color1[0]
+    $width = 279px
+    .calendar
+        width $width
         color white
+        font-family font1
+        text-align center
+        background-color $color1[0]
+        overflow hidden
+        cursor default
+        border-radius 3px
+        .calendar__day
+            height 109px
+            line-height @height
+            font-size 80px
+        .calendar__month
+            $height = 43px
+            position relative
+            height $height
+            font-size 26px
+            line-height @height
+            background-color rgba(0,0,0, 0.1)
+            .calendar__left,
+            .calendar__right
+                position absolute
+                top 0
+                height $height
+                width @height
+                &:hover
+                    background-color rgba(0,0,0, 0.1)
+                &::before
+                    content ''
+                    position absolute
+                    top calc(50% - 5px)
+                    width 10px
+                    height 10px
+                    border-right 3px solid white
+                    border-bottom 3px solid white
+            .calendar__left
+                left 0
+                &::before
+                    transform rotate(135deg)
+                    left calc(50% - 5px)
+            .calendar__right
+                right 0
+                &::before
+                    transform rotate(-45deg)
+                    right calc(50% - 5px)
+        .calendar__year
+            height 40px
+            font-size 30px
+            line-height @height
+        .calendar__days-week
+            font-family font2
+            font-size 10px
+            height 25px
+            line-height @height
+            background-color rgba(0,0,0, 0.1)
+            border none
+            border-collapse collapse
+            vertical-align middle
+            td
+                width ($width / 7)
+        table.calendar__days
+            $width = $width + 2px
+            margin 0 -1px
+            background-color $color2[0]
+            color white
+            font-family font3
+            font-weight bold
+            font-size 20px
+            width $width
+            border-collapse collapse
+            td
+                border 1px solid white
+                width ($width / 7)
+                height @width
+                box-sizing border-box
+            td.calendar__days-month
+                color $color2[2]
+            td.calendar__today
+                background-color $color1[0]
+                color white
 
-
-
-    .calendar__data
-      font-family font2
-      height 49px
-      line-height @height
-      background-color $color2[1]
-      color $color2[2]
-      border-bottom-left-radius 3px
-      border-bottom-right-radius 3px
-      &:hover
-          background-color $color1[0]
-          color white
+        .calendar__data
+            font-family font2
+            height 49px
+            line-height @height
+            background-color $color2[1]
+            color $color2[2]
+            border-bottom-left-radius 3px
+            border-bottom-right-radius 3px
+            &:hover
+                background-color $color1[0]
+                color white

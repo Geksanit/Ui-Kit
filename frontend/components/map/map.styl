@@ -1,45 +1,48 @@
 map(font1,font2,$orange)
-  $path = '../'
-  .map
-    width 600px
-    border-radius 3px//хз почему не работает
-    &__element
-      height 300px
-      width 100%
-      background-color gray
-      border-top-left-radius 3px
-      border-top-right-radius 3px
-    &__down
-      width 100%
-      height 70px
-      background-color $orange[0]
-      padding 20px
-      color white
-      box-sizing border-box
-      border-radius 0 0 3px 3px
-    &__icon1
-      float right
-      height 100%
-      width 30px
-      background url($path+'./img/icon4.png') no-repeat center
-    &__icon2
-      float right
-      height 100%
-      width 30px
-      background url($path+'./img/icon5.png') no-repeat center
-    &__message
-      font-family font1
-      font-size 30px
-      height 100%
-      line-height 100%
-      margin 0 20px
-      float left
-
-    &__addres
-      font-family font2
-      font-size 14px
-      float left
-      height 30px
-      width auto
-      line-height @height
-      vertical-align middle
+    $path = '../'
+    .map
+        width 600px
+        border-radius 3px
+        &__element
+            height 300px
+            width 100%
+            background-color gray
+            border-top-left-radius 3px
+            border-top-right-radius 3px
+        &__down
+            width 100%
+            height 70px
+            background-color $orange[0]
+            padding 20px
+            color white
+            box-sizing border-box
+            border-radius 0 0 3px 3px
+        &__icon1
+            float right
+            height 100%
+            width 30px
+            background url($path+'./img/icon4.png') no-repeat center
+        &__icon2
+            float right
+            height 100%
+            width 30px
+            background url($path+'./img/icon5.png') no-repeat center
+        &__message
+            font-family font1
+            font-size 30px
+            width 30%
+            height 100%
+            line-height 100%
+            margin 0 20px 0 0
+            float left
+            overflow hidden
+            text-overflow: ellipsis
+        &__addres
+            font-family font2
+            font-size 12px
+            float left
+            height 30px
+            width calc(70% - 80px)
+            overflow hidden
+            line-height @height
+            vertical-align middle

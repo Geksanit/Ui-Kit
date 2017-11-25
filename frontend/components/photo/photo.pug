@@ -1,3 +1,6 @@
 mixin photo(url)
-    - url = require('../img/'+url+'.png')
-    .photo(style="background-image: url("+url+")")
+    if (url)
+        - url = require('../img/'+url+'.png')
+        .photo(style="background-image: url("+url+")")
+    else
+        .photo no photo

@@ -1,9 +1,21 @@
-mixin news(title,date,text,color,url)
-    if (!url)
-        -url = 'Layer'
-    -url = require('../img/'+url+'.png')
-    div(class="news news_"+color, style="background-image: url("+url+")")
+mixin news(options)
+    - // (date,title,text,color,url)
+    if !options
+        - options = {}
+    if (!options.url)
+        - options.url = 'Layer'
+    - var url = require('../img/'+options.url+'.png')
+    - var colors = ['blue', 'orange'];
+    if (options.color !== colors[0] && options.color !== colors[1])
+        - options.color = colors[0]
+    if !options.date
+        - options.date = '1 January'
+    if !options.title
+        - options.title = 'title'
+    if !options.text
+        - options.text = 'text'
+    div(class="news news_color-" + options.color, style="background-image: url(" + url + ")")
         .news__text
-            h1 #{title}
-            h4 #{date}
-            p #{text}
+            h1 #{options.title}
+            h4 #{options.date}
+            p #{options.text}

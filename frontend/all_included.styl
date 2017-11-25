@@ -59,44 +59,42 @@ slider-percent(lato-r,$blue)
 stages(lato-r,$blue, $orange)
 
 
-@import "../components/form-elements/main.styl"
+@import "../components/form-elements/forma.styl"
 forma(sans-r,lato-b,$blue, $orange)
 
-@import "../components/news/main.styl"
+
+@import "../components/search/search.styl"
+search(sans-r,$blue,$orange)
+
+@import "../components/select/select.styl"
+select($blue)
+
+@import "../components/user-profile/user-profile.styl"
+user-profile(lato-r,$blue,$orange)
+
+@import "../components/news/news.styl"
 news(lato-l,lato-bold,lato-r,$blue, $orange)
 
 @import "../components/events/events.styl"
 events(lato-l,lato-bold,lato-r,$blue, $orange)
 
-
-
-
-
-@import "../components/search/main.styl"
-search(sans-r,$blue,$orange)
-
-@import "../components/select/main.styl"
-select($blue)
-
-
-
-@import "../components/messaging/main.styl"
-messaging(sans-l,lato-r,$blue,$orange)
-
 @import "../components/map/map.styl"
 map(lato-l,lato-bold,$orange)
-
-@import "../components/user-profile/main.styl"
-user-profile(lato-r,$blue,$orange)
-
-@import "../components/photo/photo.styl"
-photo()
 
 @import "../components/calendar/calendar.styl"
 calendar(lato-l,lato-bold,sans-r,$orange,$gray)
 
-@import "../components/header/header.styl"
-header($orange,lato-bold)
+@import "../components/messaging/messaging.styl"
+messaging(sans-l,lato-r,$blue,$orange)
 
 @import "../components/video/video.styl"
 video(lato-l,$orange)
+
+// другие компоненты
+@import "../components/photo/photo.styl"
+photo()
+
+@import "../components/header/header.styl"
+header($orange,lato-bold)
+
+

@@ -1,0 +1,50 @@
+user-profile(font1,$blue,$orange)
+    $path = '../'
+    .user-profile
+        display flex
+        align-items center
+        width 288px
+        height 94px
+        font-family font1
+        .photo
+            margin 0 11px
+        &__block
+            position relative
+            background-color #e5e5e5
+            color white
+            height 100%
+            padding 12px 10px
+            box-sizing border-box
+            text-align center
+            flex 1 1 50px
+            border-radius 10px
+            &::before
+                content ''
+                position absolute
+                width 10px
+                height 10px
+                background-color inherit
+                transform rotate(-45deg)
+                top calc(50% - 6px)
+                left -5px
+            .icon1
+              width 25px
+              height 25px
+              background url($path+'./img/icon1.png') no-repeat center
+            .icon2
+                width 25px
+                height 25px
+                background url($path+'./img/icon2.png') no-repeat center
+            .icon3
+                width 25px
+                height 25px
+                background url($path+'./img/icon3.png') no-repeat center
+        &__name
+            font-size 18px
+        &__prof
+            font-size 10px
+            font-weight bold
+        &_color-blue
+            background-color $blue[0]
+        &_color-orange
+            background-color $orange[0]

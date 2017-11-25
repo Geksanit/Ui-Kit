@@ -1,15 +1,24 @@
-mixin messaging(name,text,url,color)
-    <div class="messaging messaging_#{color}">
+mixin messaging(options)
+    - // (name,text,url,color)
+    - var colors = ['blue', 'orange'];
+    if !options
+            - options = {}
+    if (options.color != colors[0] && options.color != colors[1])
+        -options.color = colors[0]
+    if (!options.name)
+        - options.name = 'name'
+    if (!options.text)
+        - options.text = 'text text text'
+    div(class="messaging messaging_color-"+options.color)
         .messaging__top
             .messaging__name
-                h1 #{name}
+                h1 #{options.name}
             .messaging__img
                 .messaging__chat
-                +photo(url)
+                +photo(options.url)
                 .messaging__camera
         .messaging__bottom
-            .messaging__buble #{text}
+            .messaging__buble #{options.text}
             textarea.messaging__message(name="message")
-            +standart-button('reply','normal',color)
+            +standart-button({ title:'reply', color:options.color })
             .clearfix
-    </div>
