@@ -30,33 +30,34 @@ $test = lightgray gray darkgray
   font-family sans-l
   src url(../fonts/SourceSansProLight/SourceSansProLight.ttf)
 
-//kostil
-load-image()
-  body
-    background-image url('../img/photo1.png')
-    background-image url('../img/marker.png')
-    background-image url('../img/photo2.png')
-    background-image url('../img/photo1.png')
-load-image()
-
-
-//mixins
 body
-  background #fff
-  margin 0
-  padding 10%
-//styles
-
-@import "../components/standart-button/main.styl"
-standart-button(lato-b,$blue,$orange)
+    background #fff
+    margin 0
+    padding 10%
 
 @import "../components/block-line/main.styl"
 
-@import "../components/arrow-button/main.styl"
+@import "../components/buttons/standart-button"
+standart-button(lato-b,$blue,$orange)
+
+@import "../components/arrow-button/arrow-button.styl"
 arrow-button($blue, $orange)
 
-@import "../components/percentages/main.styl"
+@import "../components/percentages/percentages.styl"
 percentages(lato-l,$blue,$orange)
+
+@import "../components/percentages/pie-chart.styl"
+pie-chart(lato-l,$blue,$orange)
+
+@import "../components/sliders/slider.styl"
+slider(lato-r,$blue)
+
+@import "../components/sliders/slider-percent.styl"
+slider-percent(lato-r,$blue)
+
+@import "../components/stages/stages.styl"
+stages(lato-r,$blue, $orange)
+
 
 @import "../components/form-elements/main.styl"
 forma(sans-r,lato-b,$blue, $orange)
@@ -67,11 +68,9 @@ news(lato-l,lato-bold,lato-r,$blue, $orange)
 @import "../components/events/events.styl"
 events(lato-l,lato-bold,lato-r,$blue, $orange)
 
-@import "../components/stages/main.styl"
-stages(lato-r,$blue, $orange)
 
-@import "../components/slider/main.styl"
-slider(lato-r,$blue)
+
+
 
 @import "../components/search/main.styl"
 search(sans-r,$blue,$orange)
@@ -79,8 +78,7 @@ search(sans-r,$blue,$orange)
 @import "../components/select/main.styl"
 select($blue)
 
-@import "../components/video/main.styl"
-video(lato-l,$orange)
+
 
 @import "../components/messaging/main.styl"
 messaging(sans-l,lato-r,$blue,$orange)
@@ -99,3 +97,6 @@ calendar(lato-l,lato-bold,sans-r,$orange,$gray)
 
 @import "../components/header/header.styl"
 header($orange,lato-bold)
+
+@import "../components/video/video.styl"
+video(lato-l,$orange)

@@ -1,16 +1,22 @@
-mixin stages(stage,N,color)
+mixin stages(options)
+    if !options
+        - options = {}
+    -var colors = ['blue', 'orange'];
+    if !options.value
+        -options.value = 3
+    if !options.max
+        -options.max = 5
+    if (options.color != colors[0] && options.color != colors[1])
+        -options.color = colors[0]
     .stages
-        <div class="stages__circle stages_!{color}">
+        div(class="stages__circle stages_color-"+options.color)
             .stages__text 1
-        </div>
         - var i = 2;
-        while i <= N
-            if (i<=stage)
-                <div class="stages__line stages_#{color}">
-                </div>
-                <div class="stages__circle stages_#{color}">
+        while (i <= options.max)
+            if (i <= options.value)
+                div(class="stages__line stages_color-"+options.color)
+                div(class="stages__circle stages_color-"+options.color)
                     .stages__text #{i}
-                </div>
             else
                 .stages__line
                 .stages__circle

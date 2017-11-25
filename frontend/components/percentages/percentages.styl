@@ -1,0 +1,41 @@
+percentages(font,$blue,$orange)
+    @keyframes start{
+        from {stroke-dashoffset: 300}
+        to {stroke-dashoffset: 0}
+    }
+    .percentages
+        $color = $orange
+        $size = 100px
+        width $size
+        height $size
+        background-color white
+
+        font-family font
+        font-size 45px
+        color gray
+        display flex
+        align-items center
+        justify-content space-around
+        position relative
+        &__svg
+            transform  rotate(-90deg)
+        &__circle
+            cx 50%
+            cy 50%
+            fill white
+            stroke $color[0]
+            stroke-width 5
+            //animation-name: start;
+            //animation-duration: 3s;
+        &__text
+            position absolute
+            top 0
+            left 0
+            width $size
+            height $size
+
+            display flex
+            align-items center
+            justify-content space-around
+        &__number
+            display block

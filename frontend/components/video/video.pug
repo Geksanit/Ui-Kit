@@ -1,20 +1,22 @@
-mixin video(src,title)
-    if(!src)
-        -src = 'http://default'
-    - var url = require('../video/'+src+'.jpg')
-    - src = require('../video/'+src+'.mp4')
-    if(!title)
-        -title = 'Title'
+mixin video(options)
+    if !options
+        - options = {}
+    if(!options.src)
+        -options.src = 'src-default'
+    - var url = require('../video/'+options.src+'.jpg')
+    - var src = require('../video/'+options.src+'.mp4')
+    if(!options.title)
+        -options.title = 'Title'
     .video__frame
         .video
             .video__title
-                h1 #{title}
-                h4 #{src}
+                h1 #{options.title}
+                h4 #{options.src}
             video(poster=url src=src ontimeupdate="videoUpdate(event)")
             .video__controls(onclick="videoClick(event)")
                 .video__button.video__button-play
                 .video__slider
                     .video__slider_line-full
                     .video__slider_line
-                    <input type="range" class="video__input" oninput="videoInput(event.target)" min="0" max="100" value="0"></input>
+                    input(class="video__slider-input" type="range" class="video__input" min="0" max="100" value="0")
                 .video__button-full

@@ -10,7 +10,7 @@ slider-percent(font,$color)
         width 100%
         height 5px
         border-radius 5px
-        background-color $track-color
+        background-color transparent
         cursor pointer
     thumb()
         margin-top -7.5px
@@ -32,16 +32,50 @@ slider-percent(font,$color)
             left 0
         &__line
             background-color $thumb-color
-        width 10px
-        height 5px
-        border-radius 5px
-        position absolute
-        top 40px
-        left 0
+            width 10px
+            height 5px
+            border-radius 5px
+            position absolute
+            top 40px
+            left 0
         input.slider-percent__input
+            -webkit-appearance none
+            -moz-appearance none
+            width 100%
+            margin 40px 0 0 0
+            opacity 0.99
             background-color transparent
+            &:focus
+                outline none
             &::-webkit-slider-runnable-track
-                background-color transparent
+                track()
+                //background-color transparent
+            &::-webkit-slider-thumb
+                thumb()
+                -webkit-appearance none
+
+            &::-moz-range-track
+                track()
+            &::-moz-range-thumb
+                thumb()
+                border none
+
+            &::-ms-track
+                track()
+                background transparent
+                border-color transparent
+                border-width $thumb-size 0
+                color transparent
+            &::-ms-fill-lower
+                background yellow
+                border-radius 10px
+            &::-ms-fill-upper
+                background $track-color
+                border-radius 10px
+            &::-ms-thumb
+                thumb()
+
+
         &__container
             margin 0 -10px
             color lightgrey

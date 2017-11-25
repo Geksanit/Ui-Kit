@@ -46,9 +46,3 @@ window.videoInput = function(element){
 /*window.sliderPercentageInput = function (event) {
     sliderPercentageChange(event.target);
 };*/
-/*
- https://16-lvl3-pdl.vimeocdn.com/01/2596/2/62980495/156181927.mp4?expires=1508065708&token=051659edd81b941ae3418
- https://16-lvl3-pdl.vimeocdn.com/01/2596/2/62980495/156181927.mp4?expires=1508072035&token=0fc8c817e5244efb39fab
- https://16-lvl3-pdl.vimeocdn.com/01/2596/2/62980495/156181927.mp4?expires=1508072164&token=01df9ab46b3f2cf2e6f4f
- https://16-lvl3-pdl.vimeocdn.com/01/2596/2/62980495/156181927.mp4?expires=1508072298&token=0494e9e1b1aa5024dddae
- */

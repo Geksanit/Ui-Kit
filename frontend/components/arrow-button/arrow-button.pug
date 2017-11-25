@@ -1,4 +1,14 @@
-mixin arrow-button(pos,color,disabled)
-    <button class="arrow-button #{pos} #{color}" #{disabled}>
-        .arrow-button__arrow
-    </button>
+mixin arrow-button(options)
+    if !options
+        - options = {}
+    -var orientations = ['right', 'left']; colors = ['blue', 'orange'];
+    if (options.orientation != orientations[0] && options.orientation != orientations[1])
+        -options.orientation = orientations[0]
+    if (options.color != colors[0] && options.color != colors[1])
+        -options.color = colors[0]
+    if (options.disabled)
+        button(class="arrow-button arrow-button_orientation-"+options.orientation+" arrow-button_color-"+options.color disabled)
+            .arrow-button__arrow
+    else
+        button(class="arrow-button arrow-button_orientation-"+options.orientation+" arrow-button_color-"+options.color)
+            .arrow-button__arrow
