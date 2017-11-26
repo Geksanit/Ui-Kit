@@ -12,6 +12,9 @@ html
             +standart-button({ title:'button', size:'normal', color:'orange' })
             +standart-button({ title:'button', size:'small', color:'orange' })
         .block-line
+            form(action="#")
+                +input-text({ placeholder:'rew', required:true })
+        .block-line
             +arrow-button({ orientation:'left', disabled:true })
             +arrow-button({ orientation:'right', color:'orange', disabled:true })
             +arrow-button({ orientation:'left' })

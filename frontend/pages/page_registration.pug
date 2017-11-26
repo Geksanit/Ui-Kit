@@ -20,7 +20,7 @@ html
                     div
                 label Your age
                 label
-                    +slider(10,100,20)
+                    +slider({ min:10, max:100, value:20 })
                 div Your gender
                 .container
                     label
@@ -31,7 +31,7 @@ html
                         p Female
                 label
                     input(type="checkbox" required)
-                    p I agree <a href="#">privacy police</a>
-                +standart-button('sign up')
+                    p I agree <a href="404.html">privacy police</a>
+                +standart-button({ title:'sign up' })
 
 

@@ -1,5 +1,5 @@
 mixin arrow-button(options)
-    if !options
+    if (!options || (typeof(options) !== 'object'))
         - options = {}
     -var orientations = ['right', 'left']; colors = ['blue', 'orange'];
     if (options.orientation != orientations[0] && options.orientation != orientations[1])

@@ -1,5 +1,5 @@
 mixin standart-button(options)
-    if !options
+    if (!options || (typeof(options) !== 'object'))
         - options = {}
     -var sizes=['normal','small']; colors=['blue','orange'];
     if(!options.title)

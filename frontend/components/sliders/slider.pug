@@ -1,5 +1,5 @@
 mixin slider(options)
-    if !options
+    if (!options || (typeof(options) !== 'object'))
         - options = {}
     if (!options.min)
         - options.min = 0

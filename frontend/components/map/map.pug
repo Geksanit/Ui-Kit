@@ -1,6 +1,6 @@
 mixin map(options)
     - // (lat,lng,title)
-    if !options
+    if (!options || (typeof(options) !== 'object'))
         - options = {}
     if !options.title
         - options.title = 'Title'

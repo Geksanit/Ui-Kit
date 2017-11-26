@@ -1,5 +1,5 @@
-doctype html
 include ../all_included
+doctype html
 html
     head
         meta(charset = 'utf-8')
@@ -8,8 +8,8 @@ html
     body
         +header()
         main(date-title="Messages")
-            +messaging('Sarah Brown','Hey, so are we cool to meet at the art gallery? Say 8pm','photo1','orange')
-            +messaging('John Smith','Hey, so are we cool to meet at the art gallery? Say 8pm','photo2','blue')
+            +messaging({ name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo1', color:'orange' })
+            +messaging({ name:'John Smith', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo2', color:'blue' })
 
         footer
             center

@@ -1,10 +1,11 @@
 mixin video(options)
-    if !options
+    if (!options || (typeof(options) !== 'object'))
         - options = {}
     if(!options.src)
-        -options.src = 'src-default'
-    - var url = require('../video/'+options.src+'.jpg')
-    - var src = require('../video/'+options.src+'.mp4')
+        -options.src = 'no src !!!'
+    else
+        - var url = require('../video/'+options.src+'.jpg')
+        - var src = require('../video/'+options.src+'.mp4')
     if(!options.title)
         -options.title = 'Title'
     .video__frame
@@ -12,7 +13,10 @@ mixin video(options)
             .video__title
                 h1 #{options.title}
                 h4 #{src}
-            video(poster = url src = src)
+            if(options.src)
+                video(poster = url src = src)
+            else
+                video
             .video__controls
                 .video__button.video__button-play
                 .video__slider

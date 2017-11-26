@@ -3,37 +3,26 @@ $blue = #4eb7a8 #28a290
 $orange = #e75735 #bf3e1f
 $gray = #f2f2f2 #e5e5e5 #8e8d8d
 $test = lightgray gray darkgray
-.blue
-  color white !important
-  background-color $blue[0] !important
-.orange
-  color white !important
-  background-color $orange[0] !important
 
 //fonts
 @font-face
-  font-family lato-r
-  src url(../fonts/LatoRegular/LatoRegular.ttf)
+    font-family lato-r
+    src url(../fonts/LatoRegular/LatoRegular.ttf)
 @font-face
-  font-family lato-b
-  src url(../fonts/Lato-Black.ttf)
+    font-family lato-b
+    src url(../fonts/Lato-Black.ttf)
 @font-face
-  font-family lato-bold
-  src url(../fonts/LatoBold.ttf)
+    font-family lato-bold
+    src url(../fonts/LatoBold.ttf)
 @font-face
-  font-family lato-l
-  src url(../fonts/lato-light.ttf)
+    font-family lato-l
+    src url(../fonts/lato-light.ttf)
 @font-face
-  font-family sans-r
-  src url(../fonts/SourceSansProRegular/SourceSansProRegular.ttf)
+    font-family sans-r
+    src url(../fonts/SourceSansProRegular/SourceSansProRegular.ttf)
 @font-face
-  font-family sans-l
-  src url(../fonts/SourceSansProLight/SourceSansProLight.ttf)
-
-body
-    background #fff
-    margin 0
-    padding 10%
+    font-family sans-l
+    src url(../fonts/SourceSansProLight/SourceSansProLight.ttf)
 
 @import "../components/block-line/main.styl"
 
@@ -97,4 +86,6 @@ photo()
 @import "../components/header/header.styl"
 header($orange,lato-bold)
 
+@import "../components/form-elements/input-text.styl"
+input-text(sans-r,lato-b,$blue, $orange)
 

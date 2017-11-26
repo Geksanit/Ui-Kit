@@ -1,10 +1,10 @@
 mixin events(options)
-    - // (day,month,title,text,color,url)
-    if !options
+    - // (day,month,title,text,color,src)
+    if (!options || (typeof(options) !== 'object'))
         - options = {}
-    if (!options.url)
-        - options.url = 'Layer2'
-    - var url = require('../img/'+options.url+'.png')
+    if (!options.src)
+        - options.src = 'Layer2'
+    - var url = require('../img/'+options.src+'.png')
     - var colors = ['blue', 'orange'];
     if (options.color !== colors[0] && options.color !== colors[1])
         - options.color = colors[0]
@@ -16,7 +16,7 @@ mixin events(options)
         - options.title = 'title'
     if !options.text
         - options.text = 'text'
-    div(class="events events_color-" + color, style="background-image: url(" + url + ")")
+    div(class="events events_color-" + options.color, style="background-image: url(" + url + ")")
         .events__text
             .events__date
                 .events__date-day #{options.day}

@@ -2,7 +2,7 @@
 mixin forma
     form(action="#")
         label
-            input(type="text" name="name" placeholder="Your Name" required autofocus)
+            input(type="text" name="name" placeholder="Your Name" required)
             div
         label
             input(type="email" name="email" placeholder="Your Email" autocomplete="on" required)
@@ -11,3 +11,5 @@ mixin forma
         +standart-button({ title:'submit' })
         input(type="checkbox")
         input(type="radio")
+
+

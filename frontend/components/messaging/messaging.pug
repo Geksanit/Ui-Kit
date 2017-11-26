@@ -1,8 +1,8 @@
 mixin messaging(options)
-    - // (name,text,url,color)
+    - // (name,text,src,color)
+    if (!options || (typeof(options) !== 'object'))
+        - options = {}
     - var colors = ['blue', 'orange'];
-    if !options
-            - options = {}
     if (options.color != colors[0] && options.color != colors[1])
         -options.color = colors[0]
     if (!options.name)
@@ -15,7 +15,7 @@ mixin messaging(options)
                 h1 #{options.name}
             .messaging__img
                 .messaging__chat
-                +photo(options.url)
+                +photo(options.src)
                 .messaging__camera
         .messaging__bottom
             .messaging__buble #{options.text}
