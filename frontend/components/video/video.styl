@@ -1,4 +1,4 @@
-video(font1,$orange)
+video($font,$orange)
     $path = '../'
     $height = 48px
     .video
@@ -9,13 +9,13 @@ video(font1,$orange)
         min-height 100px
         background-color black
         border-radius 3px
+        font-family $font, Arial, sans-serif
+        font-weight 400
         &__frame
             width 640px
             height 281px
             color white
             background-color gray
-            font-family font1
-            font-weight 100
             border-radius 3px
             margin 10px
             &-full
@@ -34,7 +34,9 @@ video(font1,$orange)
             top 0
             left 0
             width 100%
-            h1
+            h2
+                font-family $font, Arial, sans-serif
+                font-weight 300
                 margin 20px 0 10px 0
             h4
                 margin 0

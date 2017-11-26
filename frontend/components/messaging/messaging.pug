@@ -11,8 +11,7 @@ mixin messaging(options)
         - options.text = 'text text text'
     div(class="messaging messaging_color-"+options.color)
         .messaging__top
-            .messaging__name
-                h1 #{options.name}
+            .messaging__name #{options.name}
             .messaging__img
                 .messaging__chat
                 +photo(options.src)

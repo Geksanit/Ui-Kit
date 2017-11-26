@@ -6,86 +6,108 @@ $test = lightgray gray darkgray
 
 //fonts
 @font-face
-    font-family lato-r
-    src url(../fonts/LatoRegular/LatoRegular.ttf)
+    font-family Lato
+    src url(../fonts/Lato/Lato-Regular.ttf)
+    font-weight: 400;
+    font-style: normal;
 @font-face
-    font-family lato-b
-    src url(../fonts/Lato-Black.ttf)
+    font-family Lato
+    src url(../fonts/Lato/Lato-Light.ttf)
+    font-weight: 300;
+    font-style: normal;
 @font-face
-    font-family lato-bold
-    src url(../fonts/LatoBold.ttf)
+    font-family Lato
+    src url(../fonts/Lato/Lato-Bold.ttf)
+    font-weight: 700;
+    font-style: normal;
 @font-face
-    font-family lato-l
-    src url(../fonts/lato-light.ttf)
+    font-family Lato
+    src url(../fonts/Lato/Lato-Black.ttf)
+    font-weight: 900;
+    font-style: normal;
 @font-face
-    font-family sans-r
-    src url(../fonts/SourceSansProRegular/SourceSansProRegular.ttf)
+    font-family SourceSansPro
+    src url(../fonts/SourceSansPro/SourceSansProRegular.ttf)
+    font-weight: 400;
+    font-style: normal;
 @font-face
-    font-family sans-l
-    src url(../fonts/SourceSansProLight/SourceSansProLight.ttf)
+    font-family SourceSansPro
+    src url(../fonts/SourceSansPro/SourceSansProLight.ttf)
+    font-weight: 300;
+    font-style: normal;
+@font-face
+    font-family SourceSansPro
+    src url(../fonts/SourceSansPro/SourceSansProBold.ttf)
+    font-weight: 700;
+    font-style: normal;
+
+body
+    font-family Lato, Arial, sans-serif
+    font-weight 400
+
 
 @import "../components/block-line/main.styl"
 
 @import "../components/buttons/standart-button"
-standart-button(lato-b,$blue,$orange)
+standart-button(Lato,$blue,$orange)
 
 @import "../components/arrow-button/arrow-button.styl"
 arrow-button($blue, $orange)
 
 @import "../components/percentages/percentages.styl"
-percentages(lato-l,$blue,$orange)
+percentages(Lato,$blue,$orange)
 
 @import "../components/percentages/pie-chart.styl"
-pie-chart(lato-l,$blue,$orange)
+pie-chart($blue,$orange)
 
 @import "../components/sliders/slider.styl"
-slider(lato-r,$blue)
+slider(Lato,$blue)
 
 @import "../components/sliders/slider-percent.styl"
-slider-percent(lato-r,$blue)
+slider-percent(Lato,$blue)
 
 @import "../components/stages/stages.styl"
-stages(lato-r,$blue, $orange)
+stages(Lato,$blue, $orange)
 
 
 @import "../components/form-elements/forma.styl"
-forma(sans-r,lato-b,$blue, $orange)
+forma(SourceSansPro, Lato,$blue, $orange)
 
 
 @import "../components/search/search.styl"
-search(sans-r,$blue,$orange)
+search(SourceSansPro,$blue,$orange)
 
 @import "../components/select/select.styl"
-select($blue)
+select(SourceSansPro,$blue)
 
 @import "../components/user-profile/user-profile.styl"
-user-profile(lato-r,$blue,$orange)
+user-profile(Lato,$blue,$orange)
 
 @import "../components/news/news.styl"
-news(lato-l,lato-bold,lato-r,$blue, $orange)
+news(Lato,$blue, $orange)
 
 @import "../components/events/events.styl"
-events(lato-l,lato-bold,lato-r,$blue, $orange)
+events(Lato,$blue, $orange)
 
 @import "../components/map/map.styl"
-map(lato-l,lato-bold,$orange)
+map(Lato,$orange)
 
 @import "../components/calendar/calendar.styl"
-calendar(lato-l,lato-bold,sans-r,$orange,$gray)
+calendar(Lato,SourceSansPro,$orange,$gray)
 
 @import "../components/messaging/messaging.styl"
-messaging(sans-l,lato-r,$blue,$orange)
+messaging(Lato,SourceSansPro,$blue,$orange)
 
 @import "../components/video/video.styl"
-video(lato-l,$orange)
+video(Lato,$orange)
 
 // другие компоненты
 @import "../components/photo/photo.styl"
 photo()
 
 @import "../components/header/header.styl"
-header($orange,lato-bold)
+header(Lato,$orange)
 
 @import "../components/form-elements/input-text.styl"
-input-text(sans-r,lato-b,$blue, $orange)
+input-text(Lato,SourceSansPro,$blue, $orange)
 

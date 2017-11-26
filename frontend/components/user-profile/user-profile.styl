@@ -1,11 +1,12 @@
-user-profile(font1,$blue,$orange)
+user-profile($font,$blue,$orange)
     $path = '../'
     .user-profile
         display flex
         align-items center
         width 288px
         height 94px
-        font-family font1
+        font-family $font, Arial, sans-serif
+        font-weight 400
         .photo
             margin 0 11px
         &__block
@@ -42,8 +43,9 @@ user-profile(font1,$blue,$orange)
         &__name
             font-size 18px
         &__prof
+            font-family $font, Arial, sans-serif
+            font-weight 900
             font-size 10px
-            font-weight bold
         &_color-blue
             background-color $blue[0]
         &_color-orange

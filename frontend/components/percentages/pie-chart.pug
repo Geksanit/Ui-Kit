@@ -13,9 +13,8 @@ mixin pie-chart(a,b,c)
 
         -var num = 50
         -var N = 3.1415*radius*2*(num/100);
-        <svg class="pie-chart__svg">
-            <circle class="pie-chart__circle" r="#{radius}" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
-            <circle class="pie-chart__circle pie-chart__circle-blue" r="#{radius}" stroke-dasharray="#{c} 500" stroke="darkgray" stroke-dashoffset="0"></circle>
-            <circle class="pie-chart__circle pie-chart__circle-orange" r="#{radius}" stroke-dasharray="#{b} 500" stroke="red" stroke-dashoffset="0"></circle>
-            <circle class="pie-chart__circle pie-chart__circle-gray" r="#{radius}" stroke-dasharray="#{a} 500" stroke="green" stroke-dashoffset="0"></circle>
-        </svg>
+        svg(class="pie-chart__svg")
+            circle(class="pie-chart__circle" r=radius cx="50%" cy="50%" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0")
+            circle(class="pie-chart__circle pie-chart__circle-blue" r=radius cx="50%" cy="50%" stroke-dasharray=c+" 500" stroke="darkgray" stroke-dashoffset="0")
+            circle(class="pie-chart__circle pie-chart__circle-orange" r=radius cx="50%" cy="50%" stroke-dasharray=b+" 500" stroke="red" stroke-dashoffset="0")
+            circle(class="pie-chart__circle pie-chart__circle-gray" r=radius cx="50%" cy="50%" stroke-dasharray=a+" 500" stroke="green" stroke-dashoffset="0")

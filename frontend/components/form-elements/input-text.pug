@@ -3,7 +3,6 @@ mixin input-text(options)
         - options = {}
     if !options.placeholder
         - options.placeholder = 'placeholder'
-    - console.log(options.placeholder)
     if options.required
         label.input-text
             input(type="text" name="name" placeholder=options.placeholder required)

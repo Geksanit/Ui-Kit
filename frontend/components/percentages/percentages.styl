@@ -1,4 +1,4 @@
-percentages(font,$blue,$orange)
+percentages($font,$blue,$orange)
     @keyframes start{
         from {stroke-dashoffset: 300}
         to {stroke-dashoffset: 0}
@@ -10,7 +10,8 @@ percentages(font,$blue,$orange)
         height $size
         background-color white
 
-        font-family font
+        font-family $font, Arial, sans-serif
+        font-weight 300
         font-size 45px
         color gray
         display flex
@@ -20,8 +21,7 @@ percentages(font,$blue,$orange)
         &__svg
             transform  rotate(-90deg)
         &__circle
-            cx 50%
-            cy 50%
+            //cx cy не работают в фоксе
             fill white
             stroke $color[0]
             stroke-width 5

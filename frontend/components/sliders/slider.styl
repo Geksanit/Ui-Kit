@@ -1,4 +1,4 @@
-slider(font,$color)
+slider($font,$color)
     // track - линия
     $track-color = lightgray
      // thumb - ручка/ползунок
@@ -21,7 +21,8 @@ slider(font,$color)
         cursor pointer
     .slider
         position relative
-        font-family font
+        font-family $font, Arial, sans-serif
+        font-weight 700
         .slider__view
             position absolute
             width 35px

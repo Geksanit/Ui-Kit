@@ -1,15 +1,18 @@
-calendar(font1,font2,font3,$color1,$color2)
+calendar($font1,$font2,$color1,$color2)
     $width = 279px
     .calendar
         width $width
         color white
-        font-family font1
+        font-family $font1, Arial, sans-serif
+        font-weight 400
         text-align center
         background-color $color1[0]
         overflow hidden
         cursor default
         border-radius 3px
         .calendar__day
+            font-family $font1, Arial, sans-serif
+            font-weight 300
             height 109px
             line-height @height
             font-size 80px
@@ -17,6 +20,8 @@ calendar(font1,font2,font3,$color1,$color2)
             $height = 43px
             position relative
             height $height
+            font-family $font1, Arial, sans-serif
+            font-weight 300
             font-size 26px
             line-height @height
             background-color rgba(0,0,0, 0.1)
@@ -48,10 +53,13 @@ calendar(font1,font2,font3,$color1,$color2)
                     right calc(50% - 5px)
         .calendar__year
             height 40px
+            font-family $font1, Arial, sans-serif
+            font-weight 300
             font-size 30px
             line-height @height
         .calendar__days-week
-            font-family font2
+            font-family $font1, Arial, sans-serif
+            font-weight 900
             font-size 10px
             height 25px
             line-height @height
@@ -66,8 +74,8 @@ calendar(font1,font2,font3,$color1,$color2)
             margin 0 -1px
             background-color $color2[0]
             color white
-            font-family font3
-            font-weight bold
+            font-family $font2, Arial, sans-serif
+            font-weight 400
             font-size 20px
             width $width
             border-collapse collapse
@@ -83,7 +91,8 @@ calendar(font1,font2,font3,$color1,$color2)
                 color white
 
         .calendar__data
-            font-family font2
+            font-family $font1, Arial, sans-serif
+            font-weight 900
             height 49px
             line-height @height
             background-color $color2[1]

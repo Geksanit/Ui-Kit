@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
     <title>Messages</title>
   <link href="messages.css" rel="stylesheet"></head>
   <body>
@@ -10,37 +16,39 @@
       <div class="main-header__logo"></div>
       <nav><a href="./page_news.html">News</a><a href="./page_messages.html">Messages</a><a href="./page_friends.html">Friends</a><a href="./page_stats.html">My stats</a></nav>
     </header>
-    <main date-title="Messages"><div class="messaging messaging_orange">
-      <div class="messaging__top">
-        <div class="messaging__name">
-          <h1>Sarah Brown</h1>
+    <main date-title="Messages">
+      <div class="messaging messaging_color-orange">
+        <div class="messaging__top">
+          <div class="messaging__name">Sarah Brown</div>
+          <div class="messaging__img">
+            <div class="messaging__chat"></div>
+            <div class="photo" style="background-image: url(img/photo1.png);"></div>
+            <div class="messaging__camera"></div>
+          </div>
         </div>
-        <div class="messaging__img">
-          <div class="messaging__chat"></div>
-          <div class="photo" style="background-image: url(img/photo1.png);"></div>
-          <div class="messaging__camera"></div>
-        </div>
-      </div>
-      <div class="messaging__bottom">
-        <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
-        <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button_orange standart-button_normal standart-button_orange-normal" onclick="buttonClick(event)">reply</button>
-        <div class="clearfix"></div>
-      </div></div><div class="messaging messaging_blue">
-      <div class="messaging__top">
-        <div class="messaging__name">
-          <h1>John Smith</h1>
-        </div>
-        <div class="messaging__img">
-          <div class="messaging__chat"></div>
-          <div class="photo" style="background-image: url(img/photo2.png);"></div>
-          <div class="messaging__camera"></div>
+        <div class="messaging__bottom">
+          <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
+          <textarea class="messaging__message" name="message"></textarea>
+          <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-normal">reply</button>
+          <div class="clearfix"></div>
         </div>
       </div>
-      <div class="messaging__bottom">
-        <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
-        <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button_blue standart-button_normal standart-button_blue-normal" onclick="buttonClick(event)">reply</button>
-        <div class="clearfix"></div>
-      </div></div>
+      <div class="messaging messaging_color-blue">
+        <div class="messaging__top">
+          <div class="messaging__name">John Smith</div>
+          <div class="messaging__img">
+            <div class="messaging__chat"></div>
+            <div class="photo" style="background-image: url(img/photo2.png);"></div>
+            <div class="messaging__camera"></div>
+          </div>
+        </div>
+        <div class="messaging__bottom">
+          <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
+          <textarea class="messaging__message" name="message"></textarea>
+          <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">reply</button>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </main>
     <footer>
       <center><a href="./page_registration.html">Sugn up</a></center>

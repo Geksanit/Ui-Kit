@@ -1,3 +1,4 @@
+import './favicons/favicons';
 import './components/buttons/standart-button';
 import './components/sliders/slider';
 import './components/sliders/slider-percent';

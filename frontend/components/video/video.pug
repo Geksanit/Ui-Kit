@@ -11,7 +11,7 @@ mixin video(options)
     .video__frame
         .js-video.video
             .video__title
-                h1 #{options.title}
+                h2 #{options.title}
                 h4 #{src}
             if(options.src)
                 video(poster = url src = src)

@@ -1,4 +1,4 @@
-search(font,$blue,$orange)
+search($font,$blue,$orange)
     $path = '../'
     form.search
         display flex
@@ -14,7 +14,8 @@ search(font,$blue,$orange)
             padding 0 0 0 10px
             font-size 14px
             color gray
-            font-family font
+            font-family $font, Arial, sans-serif
+            font-weight 400
         input[type=submit]
             flex 0 0 33px
             background-color $blue[0]
@@ -25,4 +26,6 @@ search(font,$blue,$orange)
         input.search-notfound
             background-color $orange[0]
             &::-webkit-input-placeholder
+                color white
+            &::-moz-placeholder
                 color white

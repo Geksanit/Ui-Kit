@@ -61,113 +61,113 @@ var scripts =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 27);
 /******/ })
 /************************************************************************/
 /******/ ({
 
 /***/ 0:
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-//slider
+"use strict";
 
-var sliderChange = function(element){
-    var value = element.value;
-    element.previousSibling.innerText = value;
 
-    var width = element.parentElement.clientWidth-20;
-    var min = element.attributes.min.value;
-    var max = element.attributes.max.value;
-    element.previousSibling.style.left = width/(max-min)*(value-min)-8.75+'px';
+// ripple effect
+var buttonClick = function buttonClick(event) {
+  var div = document.createElement('div');
+  div.id = 'ripple';
+  div.style.top = event.pageY - 25 + 'px';
+  div.style.left = event.pageX - 25 + 'px';
+
+  document.body.appendChild(div);
+  setTimeout(function () {
+    document.body.removeChild(div);
+  }, 550);
 };
-window.sliderInput = function (event) {
-    sliderChange(event.target);
-};
-var sliderInit = function () {
-    var elements = document.querySelectorAll('input.slider');
-    for(var i=0; i<elements.length; i++){
-        sliderChange(elements[i]);
-    }
-}();
 
-//slider-percentage
-var sliderPercentageChange = function(element){
-    var value = element.value;
-
-    var width = element.parentElement.clientWidth-20;
-    var min = element.attributes.min.value;
-    var max = element.attributes.max.value;
-    element.previousSibling.style.width = width/(max-min)*(value-min)+1+'px';
-};
-window.sliderPercentageInput = function (event) {
-    sliderPercentageChange(event.target);
-};
-var sliderPercentageInit = function(){
-    var elements = document.querySelectorAll('input.slider-percentage');
-    for(var i=0; i<elements.length; i++){
-        sliderPercentageChange(elements[i]);
-    }
-}();
+(function initButtons() {
+  var elements = document.querySelectorAll('.standart-button');
+  elements.forEach(function (element) {
+    element.onclick = buttonClick;
+  });
+})();
 
 /***/ }),
 
 /***/ 1:
-/***/ (function(module, exports) {
-
-//search
-window.searchClick = function (event) {
-    var element = event.target;
-    //console.log(event);
-    element.className = '';
-    element.attributes.placeholder.value = 'Search';
-};
-
-
-/***/ }),
-
-/***/ 15:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__page_registration_styl__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__page_registration_styl___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__page_registration_styl__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_slider_slider__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_slider_slider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_slider_slider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_search_search__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_search_search___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_search_search__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_standart_button_standart_button__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_standart_button_standart_button___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_standart_button_standart_button__);
 
 
+// search
+var searchClick = function searchClick(_ref) {
+  var target = _ref.target;
 
+  target.className = '';
+  target.attributes.placeholder.value = 'Search';
+};
 
-
-
-
-/***/ }),
-
-/***/ 16:
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
+(function initSearch() {
+  var elements = document.querySelectorAll('.js-search');
+  elements.forEach(function (element) {
+    element.children[0].onfocus = searchClick;
+  });
+})();
 
 /***/ }),
 
 /***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// slider
+var sliderChange = function sliderChange(element) {
+  var value = element.value;
+
+  var width = element.parentElement.clientWidth - 20;
+  var min = element.attributes.min.value;
+  var max = element.attributes.max.value;
+  element.previousElementSibling.innerText = value;
+  element.previousElementSibling.style.left = width / (max - min) * (value - min) - 8.75 + 'px';
+};
+
+var sliderInput = function sliderInput(event) {
+  sliderChange(event.target);
+};
+
+(function initSliders() {
+  var elements = document.querySelectorAll('.js-slider__input');
+  elements.forEach(function (element) {
+    sliderChange(element);
+    element.oninput = sliderInput;
+  });
+})();
+
+/***/ }),
+
+/***/ 27:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(28);
+
+__webpack_require__(2);
+
+__webpack_require__(1);
+
+__webpack_require__(0);
+
+/***/ }),
+
+/***/ 28:
 /***/ (function(module, exports) {
 
-//ripple effect
-document.buttonClick = function (event) {
-  //console.log(event.screenY,event.pageY,event.y,event);
-  var div = document.createElement('div');
-  div.id = 'ripple';
-  div.style.top = event.pageY-25+'px';
-  div.style.left = event.pageX-25+'px';
-
-  document.body.appendChild(div);
-  setTimeout(function(){document.body.removeChild(div)}, 550);
-};
+// removed by extract-text-webpack-plugin
 
 /***/ })
 

@@ -11,7 +11,7 @@ const buttonClick = function buttonClick(event) {
 
 (function initButtons() {
   const elements = document.querySelectorAll('.standart-button');
-  for (let i = 0; i < elements.length; i += 1) {
-    elements[i].onclick = buttonClick;
-  }
+  elements.forEach((element) => {
+    element.onclick = buttonClick;
+  })
 }());

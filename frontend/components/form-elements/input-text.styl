@@ -1,4 +1,4 @@
-input-text(font1,font2,$blue,$orange)
+input-text($font1,$font2,$blue,$orange)
     .input-text
         width 100%
         display flex
@@ -31,7 +31,8 @@ input-text(font1,font2,$blue,$orange)
                 content 'test'
                 width 70px
                 height 28px
-                font-family font2
+                font-family $font1, Arial, sans-serif
+                font-weight 900
                 font-size 0.7rem
                 text-transform uppercase
                 color white
@@ -56,6 +57,7 @@ input-text(font1,font2,$blue,$orange)
             box-sizing border-box
             border none
             outline none
-            font-family font1
+            font-family $font2, Arial, sans-serif
+            font-weight 400
             font-size 14px
             color gray

@@ -1,4 +1,4 @@
-select($blue)
+select($font, $blue)
     form.select
         position relative
         width 288px
@@ -26,6 +26,7 @@ select($blue)
         select
             width 100%
             -webkit-appearance none
+            -moz-appearance none
             background-color lightgrey
             outline none
             border-radius 3px
@@ -34,4 +35,5 @@ select($blue)
             height 28px
             font-size 1rem
             color gray
-            font-family font
+            font-family $font, Arial, sans-serif
+            font-weight 400

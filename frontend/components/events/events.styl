@@ -1,4 +1,4 @@
-events(font1,font2,font3,$blue,$orange)
+events(font,$blue,$orange)
     $color = $blue
     $path = '../'
     .events
@@ -20,9 +20,9 @@ events(font1,font2,font3,$blue,$orange)
             border-top-right-radius 3px
             border-bottom-right-radius 3px
         &__date
-            font-family font1
+            font-family font, Arial, sans-serif
+            font-weight 300
             font-size 30px
-            font-weight 100
             text-align center
             display flex
             align-items flex-end
@@ -31,12 +31,14 @@ events(font1,font2,font3,$blue,$orange)
             &-month
                 margin-bottom 10px
         h4
-            font-family font2
+            font-family font, Arial, sans-serif
+            font-weight 900
             text-transform uppercase
             margin-bottom 0
         p
+            font-family font, Arial, sans-serif
+            font-weight 400
             margin-top 5px
-            font-family font3
         &__button
             display flex
             justify-content space-around

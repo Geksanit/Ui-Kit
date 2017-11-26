@@ -16,6 +16,6 @@ mixin news(options)
         - options.text = 'text'
     div(class="news news_color-" + options.color, style="background-image: url(" + url + ")")
         .news__text
-            h1 #{options.title}
+            h2 #{options.title}
             h4 #{options.date}
             p #{options.text}

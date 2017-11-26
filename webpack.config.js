@@ -39,14 +39,14 @@ const baseConfig = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: "eslint-loader",
-    },/*{
+    }, {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: "babel-loader?cacheDirectory=true",
       options : {
         presets: ['env'],
       }
-    }, */{
+    }, {
       test: /\.pug$/,
       use: {
         loader: 'pug',

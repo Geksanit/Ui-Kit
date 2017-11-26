@@ -4,6 +4,8 @@ html
     head
         meta(charset = 'utf-8')
         meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        meta(name="keywords" content="Ui-Kit БЭМ компоненты")
+        +favicons
         title Ui-Kit
     body
         .block-line
@@ -11,9 +13,6 @@ html
             +standart-button
             +standart-button({ title:'button', size:'normal', color:'orange' })
             +standart-button({ title:'button', size:'small', color:'orange' })
-        .block-line
-            form(action="#")
-                +input-text({ placeholder:'rew', required:true })
         .block-line
             +arrow-button({ orientation:'left', disabled:true })
             +arrow-button({ orientation:'right', color:'orange', disabled:true })
@@ -47,9 +46,9 @@ html
         .block-line
             +select('Schoose an option','option-1','option-2','option-3')
         .block-line
-            +user-profile({ name:'John Smith', prof:'ux designer', url:'photo2', color:'orange' })
+            +user-profile({ name:'John Smith', prof:'ux designer', src:'photo2', color:'orange' })
         .block-line
-            +user-profile({ name:'Sarah Brown', prof:'developer', url:'photo1', color:'blue' })
+            +user-profile({ name:'Sarah Brown', prof:'developer', src:'photo1', color:'blue' })
         .block-line
             +news({ title:"It'is all going downhill", date:'24 august 2013', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.', color:'orange' })
         .block-line
@@ -59,7 +58,7 @@ html
         .block-line
             +calendar
         .block-line
-            +messaging({ name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', url:'photo1' })
+            +messaging({ name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo1' })
         .block-line
             +video({ src:'Travel_New_Zeland', title:'New Zeland' })
         .block-line

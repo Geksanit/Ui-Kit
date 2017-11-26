@@ -13,9 +13,9 @@ const sliderPercentageInput = function sliderPercentageInput(event) {
 
 (function initSliders() {
   const elements = document.querySelectorAll('input.js-slider-percent__input');
-  for (let i = 0; i < elements.length; i += 1) {
-    sliderPercentageChange(elements[i]);
-    elements[i].oninput = sliderPercentageInput;
-  }
+  elements.forEach((element) => {
+    sliderPercentageChange(element);
+    element.oninput = sliderPercentageInput;
+  })
 }());
 

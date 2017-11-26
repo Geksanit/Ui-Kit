@@ -14,8 +14,8 @@ const sliderInput = function sliderInput(event) {
 
 (function initSliders() {
   const elements = document.querySelectorAll('.js-slider__input');
-  for (let i = 0; i < elements.length; i += 1) {
-    sliderChange(elements[i]);
-    elements[i].oninput = sliderInput;
-  }
+  elements.forEach((element) => {
+    sliderChange(element);
+    element.oninput = sliderInput;
+  })
 }());
