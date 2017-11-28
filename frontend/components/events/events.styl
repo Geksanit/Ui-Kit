@@ -1,47 +1,49 @@
-events(font1,font2,font3,$blue,$orange)
-  $color = $blue
-  $path = '../'
-  .events
-    width 288px
-    height 212px
-    border-radius 3px
-    color white
-    background-color gray
-    background-repeat no-repeat
-    background-size contain
-    &__text
-      float right
-      width calc(100% - 95px)
-      height 100%
-      padding 0 20px
-      box-sizing border-box
-      background-color $blue[0]
-      font-size 12px
-      border-top-right-radius 3px
-      border-bottom-right-radius 3px
-    &__date
-      font-family font1
-      font-size 30px
-      font-weight 100
-      text-align center
-      display flex
-      align-items flex-end
-      &-day
-        font-size 70px
-      &-month
-        margin-bottom 10px
-    h4
-      font-family font2
-      text-transform uppercase
-      margin-bottom 0
-    p
-      margin-top 5px
-      font-family font3
-    &__button
-      display flex
-      justify-content space-around
-      button.standart-button
-        width auto
-    &_orange
-      .events__text
-        background-color $orange[0]
+events(font,$blue,$orange)
+    $color = $blue
+    $path = '../'
+    .events
+        width 288px
+        height 212px
+        border-radius 3px
+        color white
+        background-color gray
+        background-repeat no-repeat
+        background-size contain
+        &__text
+            float right
+            width calc(100% - 95px)
+            height 100%
+            padding 0 20px
+            box-sizing border-box
+            background-color $blue[0]
+            font-size 12px
+            border-top-right-radius 3px
+            border-bottom-right-radius 3px
+        &__date
+            font-family font, Arial, sans-serif
+            font-weight 300
+            font-size 30px
+            text-align center
+            display flex
+            align-items flex-end
+            &-day
+                font-size 70px
+            &-month
+                margin-bottom 10px
+        h4
+            font-family font, Arial, sans-serif
+            font-weight 900
+            text-transform uppercase
+            margin-bottom 0
+        p
+            font-family font, Arial, sans-serif
+            font-weight 400
+            margin-top 5px
+        &__button
+            display flex
+            justify-content space-around
+            button.standart-button
+                width auto
+        &_color-orange
+            .events__text
+              background-color $orange[0]

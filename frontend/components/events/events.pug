@@ -1,14 +1,28 @@
-mixin events(day,month,title,text,color,url)
-    if (!url)
-        -url = 'Layer2'
-    -url = require('../img/'+url+'.png')
-    div(class="events events_" + color, style="background-image: url(" + url + ")")
+mixin events(options)
+    - // (day,month,title,text,color,src)
+    if (!options || (typeof(options) !== 'object'))
+        - options = {}
+    if (!options.src)
+        - options.src = 'Layer2'
+    - var url = require('../img/'+options.src+'.png')
+    - var colors = ['blue', 'orange'];
+    if (options.color !== colors[0] && options.color !== colors[1])
+        - options.color = colors[0]
+    if !options.day
+        - options.day = '1'
+    if !options.month
+        - options.month = 'Jan'
+    if !options.title
+        - options.title = 'title'
+    if !options.text
+        - options.text = 'text'
+    div(class="events events_color-" + options.color, style="background-image: url(" + url + ")")
         .events__text
             .events__date
-                .events__date-day #{day}
-                .events__date-month #{month}
-            h4 #{title}
+                .events__date-day #{options.day}
+                .events__date-month #{options.month}
+            h4 #{options.title}
 
-            p #{text}
+            p #{options.text}
             .events__button
-                +standart-button('add to calendar','small',color)
+                +standart-button({ title:'add to calendar', size:'small', color:options.color })

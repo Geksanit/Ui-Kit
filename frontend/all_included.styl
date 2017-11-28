@@ -3,99 +3,111 @@ $blue = #4eb7a8 #28a290
 $orange = #e75735 #bf3e1f
 $gray = #f2f2f2 #e5e5e5 #8e8d8d
 $test = lightgray gray darkgray
-.blue
-  color white !important
-  background-color $blue[0] !important
-.orange
-  color white !important
-  background-color $orange[0] !important
 
 //fonts
 @font-face
-  font-family lato-r
-  src url(../fonts/LatoRegular/LatoRegular.ttf)
+    font-family Lato
+    src url(../fonts/Lato/Lato-Regular.ttf)
+    font-weight: 400;
+    font-style: normal;
 @font-face
-  font-family lato-b
-  src url(../fonts/Lato-Black.ttf)
+    font-family Lato
+    src url(../fonts/Lato/Lato-Light.ttf)
+    font-weight: 300;
+    font-style: normal;
 @font-face
-  font-family lato-bold
-  src url(../fonts/LatoBold.ttf)
+    font-family Lato
+    src url(../fonts/Lato/Lato-Bold.ttf)
+    font-weight: 700;
+    font-style: normal;
 @font-face
-  font-family lato-l
-  src url(../fonts/lato-light.ttf)
+    font-family Lato
+    src url(../fonts/Lato/Lato-Black.ttf)
+    font-weight: 900;
+    font-style: normal;
 @font-face
-  font-family sans-r
-  src url(../fonts/SourceSansProRegular/SourceSansProRegular.ttf)
+    font-family SourceSansPro
+    src url(../fonts/SourceSansPro/SourceSansProRegular.ttf)
+    font-weight: 400;
+    font-style: normal;
 @font-face
-  font-family sans-l
-  src url(../fonts/SourceSansProLight/SourceSansProLight.ttf)
+    font-family SourceSansPro
+    src url(../fonts/SourceSansPro/SourceSansProLight.ttf)
+    font-weight: 300;
+    font-style: normal;
+@font-face
+    font-family SourceSansPro
+    src url(../fonts/SourceSansPro/SourceSansProBold.ttf)
+    font-weight: 700;
+    font-style: normal;
 
-//kostil
-load-image()
-  body
-    background-image url('../img/photo1.png')
-    background-image url('../img/marker.png')
-    background-image url('../img/photo2.png')
-    background-image url('../img/photo1.png')
-load-image()
-
-
-//mixins
 body
-  background #fff
-  margin 0
-  padding 10%
-//styles
+    font-family Lato, Arial, sans-serif
+    font-weight 400
 
-@import "../components/standart-button/main.styl"
-standart-button(lato-b,$blue,$orange)
 
 @import "../components/block-line/main.styl"
 
-@import "../components/arrow-button/main.styl"
+@import "../components/buttons/standart-button"
+standart-button(Lato,$blue,$orange)
+
+@import "../components/arrow-button/arrow-button.styl"
 arrow-button($blue, $orange)
 
-@import "../components/percentages/main.styl"
-percentages(lato-l,$blue,$orange)
+@import "../components/percentages/percentages.styl"
+percentages(Lato,$blue,$orange)
 
-@import "../components/form-elements/main.styl"
-forma(sans-r,lato-b,$blue, $orange)
+@import "../components/percentages/pie-chart.styl"
+pie-chart($blue,$orange)
 
-@import "../components/news/main.styl"
-news(lato-l,lato-bold,lato-r,$blue, $orange)
+@import "../components/sliders/slider.styl"
+slider(Lato,$blue)
+
+@import "../components/sliders/slider-percent.styl"
+slider-percent(Lato,$blue)
+
+@import "../components/stages/stages.styl"
+stages(Lato,$blue, $orange)
+
+
+@import "../components/form-elements/forma.styl"
+forma(SourceSansPro, Lato,$blue, $orange)
+
+
+@import "../components/search/search.styl"
+search(SourceSansPro,$blue,$orange)
+
+@import "../components/select/select.styl"
+select(SourceSansPro,$blue)
+
+@import "../components/user-profile/user-profile.styl"
+user-profile(Lato,$blue,$orange)
+
+@import "../components/news/news.styl"
+news(Lato,$blue, $orange)
 
 @import "../components/events/events.styl"
-events(lato-l,lato-bold,lato-r,$blue, $orange)
-
-@import "../components/stages/main.styl"
-stages(lato-r,$blue, $orange)
-
-@import "../components/slider/main.styl"
-slider(lato-r,$blue)
-
-@import "../components/search/main.styl"
-search(sans-r,$blue,$orange)
-
-@import "../components/select/main.styl"
-select($blue)
-
-@import "../components/video/main.styl"
-video(lato-l,$orange)
-
-@import "../components/messaging/main.styl"
-messaging(sans-l,lato-r,$blue,$orange)
+events(Lato,$blue, $orange)
 
 @import "../components/map/map.styl"
-map(lato-l,lato-bold,$orange)
+map(Lato,$orange)
 
-@import "../components/user-profile/main.styl"
-user-profile(lato-r,$blue,$orange)
+@import "../components/calendar/calendar.styl"
+calendar(Lato,SourceSansPro,$orange,$gray)
 
+@import "../components/messaging/messaging.styl"
+messaging(Lato,SourceSansPro,$blue,$orange)
+
+@import "../components/video/video.styl"
+video(Lato,$orange)
+
+// другие компоненты
 @import "../components/photo/photo.styl"
 photo()
 
-@import "../components/calendar/calendar.styl"
-calendar(lato-l,lato-bold,sans-r,$orange,$gray)
-
 @import "../components/header/header.styl"
-header($orange,lato-bold)
+header(Lato,$orange)
+
+@import "../components/form-elements/input-text.styl"
+input-text(Lato,SourceSansPro,$blue, $orange)
+

@@ -1,0 +1,13 @@
+mixin input-text(options)
+    if !options
+        - options = {}
+    if !options.placeholder
+        - options.placeholder = 'placeholder'
+    if options.required
+        label.input-text
+            input(type="text" name="name" placeholder=options.placeholder required)
+            div
+    else
+        label.input-text
+            input(type="text" name="name" placeholder=options.placeholder)
+            div

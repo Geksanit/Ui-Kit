@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
     <title>Friends</title>
   <link href="friends.css" rel="stylesheet"></head>
   <body>
@@ -11,33 +17,39 @@
       <nav><a href="./page_news.html">News</a><a href="./page_messages.html">Messages</a><a href="./page_friends.html">Friends</a><a href="./page_stats.html">My stats</a></nav>
     </header>
     <main date-title="Friends">
-      <form class="search" action="#">
-        <input class="search-undefined" name="qq" onfocus="searchClick(event)" type="search" placeholder="Search">
+      <form class="search js-search" action="#">
+        <input class="search-undefined" name="qq" type="search" placeholder="Search">
         <input class="submit" type="submit" name="" value="">
       </form>
       <div class="container">
         <div class="user-profile">
-          <div class="photo" style="background-image: url(img/photo2.png);"></div><div class="user-profile__block orange">
-          <div class="user-profile__name">John Smith</div>
-          <div class="user-profile__prof">UX DESIGNER</div>
-          <div class="block-line">
-            <div class="icon1"></div>
-            <div class="icon2"></div>
-            <div class="icon3"></div>
-          </div></div>
-        </div><button class="standart-button standart-button_ standart-button_orange standart-button_-orange" onclick="buttonClick(event)">send message</button>
+          <div class="photo" style="background-image: url(img/photo2.png);"></div>
+          <div class="user-profile__block user-profile_color-orange">
+            <div class="user-profile__name">John Smith</div>
+            <div class="user-profile__prof">UX DESIGNER</div>
+            <div class="block-line">
+              <div class="icon1"></div>
+              <div class="icon2"></div>
+              <div class="icon3"></div>
+            </div>
+          </div>
+        </div>
+        <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-normal">send message</button>
       </div>
       <div class="container">
         <div class="user-profile">
-          <div class="photo" style="background-image: url(img/photo1.png);"></div><div class="user-profile__block blue">
-          <div class="user-profile__name">Sarah Brown</div>
-          <div class="user-profile__prof">DEVELOPER</div>
-          <div class="block-line">
-            <div class="icon1"></div>
-            <div class="icon2"></div>
-            <div class="icon3"></div>
-          </div></div>
-        </div><button class="standart-button standart-button_ standart-button_blue standart-button_-blue" onclick="buttonClick(event)">send message</button>
+          <div class="photo" style="background-image: url(img/photo1.png);"></div>
+          <div class="user-profile__block user-profile_color-blue">
+            <div class="user-profile__name">Sarah Brown</div>
+            <div class="user-profile__prof">DEVELOPER</div>
+            <div class="block-line">
+              <div class="icon1"></div>
+              <div class="icon2"></div>
+              <div class="icon3"></div>
+            </div>
+          </div>
+        </div>
+        <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">send message</button>
       </div>
     </main>
     <footer>

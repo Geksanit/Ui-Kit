@@ -1,0 +1,11 @@
+mixin standart-button(options)
+    if (!options || (typeof(options) !== 'object'))
+        - options = {}
+    -var sizes=['normal','small']; colors=['blue','orange'];
+    if(!options.title)
+        -options.title = 'button'
+    if(!options.size != sizes[0] && options.size != sizes[1])
+        -options.size = sizes[0]
+    if(options.color != colors[0] && options.color != colors[1])
+        -options.color = colors[0]
+    button(class="standart-button js-standart-button standart-button_color-"+options.color+" standart-button_size-"+options.size) #{options.title}

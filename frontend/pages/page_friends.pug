@@ -1,20 +1,21 @@
-doctype html
 include ../all_included
+doctype html
 html
     head
         meta(charset = 'utf-8')
         meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        +favicons
         title Friends
     body
         +header()
         main(date-title='Friends')
             +search()
             .container
-                +user-profile('John Smith','ux designer','photo2','orange')
-                +standart-button('send message','orange')
+                +user-profile({ name:'John Smith', prof:'ux designer', src:'photo2', color:'orange' })
+                +standart-button({ title:'send message', color:'orange' })
             .container
-                +user-profile('Sarah Brown','developer','photo1','blue')
-                +standart-button('send message','blue')
+                +user-profile({ name:'Sarah Brown', prof:'developer', src:'photo1', color:'blue' })
+                +standart-button({ title:'send message', color:'blue' })
         footer
             center
                 a(href="./page_registration.html") Sugn up

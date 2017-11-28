@@ -1,58 +1,55 @@
 @import "../all_included.styl"
 
 body
-  margin 0
-  padding 0
-  background-color $gray[0]
-  main
-    min-height calc(100vh - 50px)
-    display flex
-    flex-wrap wrap
-    align-items flex-start
-    justify-content space-around
-    margin 0 auto
-    width 696px
-    padding 20px
-    box-sizing border-box
-    background-color white
-
-    .messaging
-      width 100%
-      margin-bottom 20px
-
-    &:before
-      content attr(date-title)
-      color $gray[1]
-      margin-bottom 20px
-      width 100%
-      height 25px
-      line-height @height
-      text-align center
-      font-size 20px
-      font-family lato-bold
-  @media (max-width:696px)
+    margin 0
+    padding 0
+    background-color $gray[0]
     main
-      margin 0
-      width 100%
-  @media (min-width:1000px)
-    main
-      margin auto
-      width 696px
-  @media (min-width:400px)
-    .messaging
-      &__buble
-        float left
-        width 55%
-        &::before
-          left calc(100% * 5 / 6 - 6px)
-      &__message
-        float right
-        width 55%
-      .standart-button
-        float right
-        width 55%
-  footer
-    width 100%
-    height 20px
-    padding 10px 0
-    background-color $orange[0]
+        min-height calc(100vh - 50px)
+        display flex
+        flex-wrap wrap
+        align-items flex-start
+        justify-content space-around
+        margin 0 auto
+        width 696px
+        @media (max-width:712px)
+            margin 0
+            width 100%
+        @media (min-width:1000px)
+            margin auto
+            width 696px
+        padding 20px
+        box-sizing border-box
+        background-color white
+        .messaging
+            width 100%
+            margin-bottom 20px
+            &__buble
+                @media (min-width:400px)
+                    float left
+                    width 55%
+                &::before
+                    @media (min-width:400px)
+                        left calc(100% * 5 / 6 - 6px)
+            &__message
+                @media (min-width:400px)
+                    float right
+                    width 55%
+            .standart-button
+                @media (min-width:400px)
+                    float right
+                    width 55%
+        &:before
+            content attr(date-title)
+            color $gray[1]
+            margin-bottom 20px
+            width 100%
+            height 25px
+            line-height @height
+            text-align center
+            font-size 20px
+    footer
+        width 100%
+        height 20px
+        padding 10px 0
+        background-color $orange[0]

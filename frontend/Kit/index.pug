@@ -1,23 +1,25 @@
-doctype html
 include ../all_included
+doctype html
 html
     head
         meta(charset = 'utf-8')
         meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        meta(name="keywords" content="Ui-Kit БЭМ компоненты")
+        +favicons
         title Ui-Kit
     body
         .block-line
-            +standart-button('button','small','blue')
-            +standart-button('button')
-            +standart-button('button','normal','orange')
-            +standart-button('button','small','orange')
+            +standart-button({ title:'button', size:'small', color:'blue' })
+            +standart-button
+            +standart-button({ title:'button', size:'normal', color:'orange' })
+            +standart-button({ title:'button', size:'small', color:'orange' })
         .block-line
-            +arrow-button('arrow-button_left','arrow-button_orange','disabled')
-            +arrow-button('arrow-button_right','arrow-button_orange','disabled')
-            +arrow-button('arrow-button_left')
+            +arrow-button({ orientation:'left', disabled:true })
+            +arrow-button({ orientation:'right', color:'orange', disabled:true })
+            +arrow-button({ orientation:'left' })
             +arrow-button()
-            +arrow-button('arrow-button_left','arrow-button_orange')
-            +arrow-button('arrow-button_right','arrow-button_orange')
+            +arrow-button({ orientation:'left', color:'orange' })
+            +arrow-button({ orientation:'right', color:'orange' })
         .block-line
             +percentages(0)
             +percentages(38)
@@ -31,10 +33,10 @@ html
             +pie-chart(0,20,30)
         .block-line
             +slider
-            +slider(-5,12,1)
-            +slider-percentage(30)
+            +slider({ min:-5, max:12, value:1 })
+            +slider-percent(75)
         .block-line
-            +stages(3,5,'orange')
+            +stages({ color:'orange' })
         .block-line
             +forma
         .block-line
@@ -44,21 +46,20 @@ html
         .block-line
             +select('Schoose an option','option-1','option-2','option-3')
         .block-line
-            +user-profile('John Smith','ux designer','photo2','orange')
+            +user-profile({ name:'John Smith', prof:'ux designer', src:'photo2', color:'orange' })
         .block-line
-            +user-profile('Sarah Brown','developer','photo1','blue')
+            +user-profile({ name:'Sarah Brown', prof:'developer', src:'photo1', color:'blue' })
         .block-line
-            +news("It'is all going downhill",'24 august 2013','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.','orange')
+            +news({ title:"It'is all going downhill", date:'24 august 2013', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.', color:'orange' })
         .block-line
-            +events('24','Aug','this is title','Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
+            +events({ day:'24', month:'Aug', title:'this is title', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' })
         .block-line
-            +map('-33.877685','151.207077','Meet Us !')
+            +map({ lat:'-33.877685', lng:'151.207077', title:'Meet Us !' })
         .block-line
             +calendar
         .block-line
-            +messaging('Sarah Brown','Hey, so are we cool to meet at the art gallery? Say 8pm','photo1')
+            +messaging({ name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo1' })
         .block-line
-            +video('Travel_New_Zeland','New Zeland')
+            +video({ src:'Travel_New_Zeland', title:'New Zeland' })
         .block-line
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap" >
-        </script>
+        script( async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap")

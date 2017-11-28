@@ -3,23 +3,46 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="keywords" content="Ui-Kit БЭМ компоненты">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
     <title>Ui-Kit</title>
   <link href="index.css" rel="stylesheet"></head>
   <body>
-    <div class="block-line"><button class="standart-button standart-button_blue standart-button_small standart-button_blue-small" onclick="buttonClick(event)">button</button><button class="standart-button standart-button_ standart-button_ standart-button_-" onclick="buttonClick(event)">button</button><button class="standart-button standart-button_orange standart-button_normal standart-button_orange-normal" onclick="buttonClick(event)">button</button><button class="standart-button standart-button_orange standart-button_small standart-button_orange-small" onclick="buttonClick(event)">button</button>
+    <div class="block-line">
+      <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-small">button</button>
+      <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">button</button>
+      <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-normal">button</button>
+      <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-small">button</button>
     </div>
-    <div class="block-line"><button class="arrow-button arrow-button_left arrow-button_orange" disabled>
-      <div class="arrow-button__arrow"></div></button><button class="arrow-button arrow-button_right arrow-button_orange" disabled>
-      <div class="arrow-button__arrow"></div></button><button class="arrow-button arrow-button_left " >
-      <div class="arrow-button__arrow"></div></button><button class="arrow-button  " >
-      <div class="arrow-button__arrow"></div></button><button class="arrow-button arrow-button_left arrow-button_orange" >
-      <div class="arrow-button__arrow"></div></button><button class="arrow-button arrow-button_right arrow-button_orange" >
-      <div class="arrow-button__arrow"></div></button>
+    <div class="block-line">
+      <button class="arrow-button arrow-button_orientation-left arrow-button_color-blue" disabled>
+        <div class="arrow-button__arrow"></div>
+      </button>
+      <button class="arrow-button arrow-button_orientation-right arrow-button_color-orange" disabled>
+        <div class="arrow-button__arrow"></div>
+      </button>
+      <button class="arrow-button arrow-button_orientation-left arrow-button_color-blue">
+        <div class="arrow-button__arrow"></div>
+      </button>
+      <button class="arrow-button arrow-button_orientation-right arrow-button_color-blue">
+        <div class="arrow-button__arrow"></div>
+      </button>
+      <button class="arrow-button arrow-button_orientation-left arrow-button_color-orange">
+        <div class="arrow-button__arrow"></div>
+      </button>
+      <button class="arrow-button arrow-button_orientation-right arrow-button_color-orange">
+        <div class="arrow-button__arrow"></div>
+      </button>
     </div>
     <div class="block-line">
       <div class="percentages">
         <svg class="percentages__svg">
-          <circle class="percentages__circle" r="45" stroke-dasharray="0 500" stroke-dashoffset="0"></circle>
+          <circle class="percentages__circle" cx="50%" cy="50%" r="45" stroke-dasharray="0 500" stroke-dashoffset="0"></circle>
         </svg>
         <div class="percentages__text">
           <div class="percentages__number">0</div>
@@ -27,7 +50,7 @@
       </div>
       <div class="percentages">
         <svg class="percentages__svg">
-          <circle class="percentages__circle" r="45" stroke-dasharray="107.4393 500" stroke-dashoffset="0"></circle>
+          <circle class="percentages__circle" cx="50%" cy="50%" r="45" stroke-dasharray="107.4393 500" stroke-dashoffset="0"></circle>
         </svg>
         <div class="percentages__text">
           <div class="percentages__number">38</div>
@@ -35,7 +58,7 @@
       </div>
       <div class="percentages">
         <svg class="percentages__svg">
-          <circle class="percentages__circle" r="45" stroke-dasharray="141.3675 500" stroke-dashoffset="0"></circle>
+          <circle class="percentages__circle" cx="50%" cy="50%" r="45" stroke-dasharray="141.3675 500" stroke-dashoffset="0"></circle>
         </svg>
         <div class="percentages__text">
           <div class="percentages__number">50</div>
@@ -43,7 +66,7 @@
       </div>
       <div class="percentages">
         <svg class="percentages__svg">
-          <circle class="percentages__circle" r="45" stroke-dasharray="175.2957 500" stroke-dashoffset="0"></circle>
+          <circle class="percentages__circle" cx="50%" cy="50%" r="45" stroke-dasharray="175.2957 500" stroke-dashoffset="0"></circle>
         </svg>
         <div class="percentages__text">
           <div class="percentages__number">62</div>
@@ -51,7 +74,7 @@
       </div>
       <div class="percentages">
         <svg class="percentages__svg">
-          <circle class="percentages__circle" r="45" stroke-dasharray="251.63415 500" stroke-dashoffset="0"></circle>
+          <circle class="percentages__circle" cx="50%" cy="50%" r="45" stroke-dasharray="251.63415 500" stroke-dashoffset="0"></circle>
         </svg>
         <div class="percentages__text">
           <div class="percentages__number">89</div>
@@ -59,7 +82,7 @@
       </div>
       <div class="percentages">
         <svg class="percentages__svg">
-          <circle class="percentages__circle" r="45" stroke-dasharray="282.735 500" stroke-dashoffset="0"></circle>
+          <circle class="percentages__circle" cx="50%" cy="50%" r="45" stroke-dasharray="282.735 500" stroke-dashoffset="0"></circle>
         </svg>
         <div class="percentages__text">
           <div class="percentages__number">100</div>
@@ -67,39 +90,45 @@
       </div>
     </div>
     <div class="block-line">
-      <div class="pie-chart"><svg class="pie-chart__svg">
-<circle class="pie-chart__circle" r="40" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
-<circle class="pie-chart__circle pie-chart__circle-blue" r="40" stroke-dasharray="163.358 500" stroke="darkgray" stroke-dashoffset="0"></circle>
-<circle class="pie-chart__circle pie-chart__circle-orange" r="40" stroke-dasharray="87.96200000000002 500" stroke="red" stroke-dashoffset="0"></circle>
-<circle class="pie-chart__circle pie-chart__circle-gray" r="40" stroke-dasharray="25.132000000000005 500" stroke="green" stroke-dashoffset="0"></circle>
-</svg>
+      <div class="pie-chart">
+        <svg class="pie-chart__svg">
+          <circle class="pie-chart__circle" r="40" cx="50%" cy="50%" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
+          <circle class="pie-chart__circle pie-chart__circle-blue" r="40" cx="50%" cy="50%" stroke-dasharray="163.358 500" stroke="darkgray" stroke-dashoffset="0"></circle>
+          <circle class="pie-chart__circle pie-chart__circle-orange" r="40" cx="50%" cy="50%" stroke-dasharray="87.96200000000002 500" stroke="red" stroke-dashoffset="0"></circle>
+          <circle class="pie-chart__circle pie-chart__circle-gray" r="40" cx="50%" cy="50%" stroke-dasharray="25.132000000000005 500" stroke="green" stroke-dashoffset="0"></circle>
+        </svg>
       </div>
-      <div class="pie-chart"><svg class="pie-chart__svg">
-<circle class="pie-chart__circle" r="40" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
-<circle class="pie-chart__circle pie-chart__circle-blue" r="40" stroke-dasharray="75.396 500" stroke="darkgray" stroke-dashoffset="0"></circle>
-<circle class="pie-chart__circle pie-chart__circle-orange" r="40" stroke-dasharray="75.396 500" stroke="red" stroke-dashoffset="0"></circle>
-<circle class="pie-chart__circle pie-chart__circle-gray" r="40" stroke-dasharray="75.396 500" stroke="green" stroke-dashoffset="0"></circle>
-</svg>
+      <div class="pie-chart">
+        <svg class="pie-chart__svg">
+          <circle class="pie-chart__circle" r="40" cx="50%" cy="50%" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
+          <circle class="pie-chart__circle pie-chart__circle-blue" r="40" cx="50%" cy="50%" stroke-dasharray="75.396 500" stroke="darkgray" stroke-dashoffset="0"></circle>
+          <circle class="pie-chart__circle pie-chart__circle-orange" r="40" cx="50%" cy="50%" stroke-dasharray="75.396 500" stroke="red" stroke-dashoffset="0"></circle>
+          <circle class="pie-chart__circle pie-chart__circle-gray" r="40" cx="50%" cy="50%" stroke-dasharray="75.396 500" stroke="green" stroke-dashoffset="0"></circle>
+        </svg>
       </div>
-      <div class="pie-chart"><svg class="pie-chart__svg">
-<circle class="pie-chart__circle" r="40" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
-<circle class="pie-chart__circle pie-chart__circle-blue" r="40" stroke-dasharray="125.66000000000001 500" stroke="darkgray" stroke-dashoffset="0"></circle>
-<circle class="pie-chart__circle pie-chart__circle-orange" r="40" stroke-dasharray="50.26400000000001 500" stroke="red" stroke-dashoffset="0"></circle>
-<circle class="pie-chart__circle pie-chart__circle-gray" r="40" stroke-dasharray="0 500" stroke="green" stroke-dashoffset="0"></circle>
-</svg>
+      <div class="pie-chart">
+        <svg class="pie-chart__svg">
+          <circle class="pie-chart__circle" r="40" cx="50%" cy="50%" stroke-dasharray="550" stroke="lightgray" stroke-dashoffset="0"></circle>
+          <circle class="pie-chart__circle pie-chart__circle-blue" r="40" cx="50%" cy="50%" stroke-dasharray="125.66000000000001 500" stroke="darkgray" stroke-dashoffset="0"></circle>
+          <circle class="pie-chart__circle pie-chart__circle-orange" r="40" cx="50%" cy="50%" stroke-dasharray="50.26400000000001 500" stroke="red" stroke-dashoffset="0"></circle>
+          <circle class="pie-chart__circle pie-chart__circle-gray" r="40" cx="50%" cy="50%" stroke-dasharray="0 500" stroke="green" stroke-dashoffset="0"></circle>
+        </svg>
       </div>
     </div>
     <div class="block-line">
       <div class="slider">
-        <div class="slider__view">5</div><input class="slider" oninput="sliderInput(event)" type="range" min="0" max="10" value="5">
+        <div class="slider__view">5</div>
+        <input class="slider__input js-slider__input" type="range" min="0" max="10" value="5">
       </div>
       <div class="slider">
-        <div class="slider__view">1</div><input class="slider" oninput="sliderInput(event)" type="range" min="-5" max="12" value="1">
+        <div class="slider__view">1</div>
+        <input class="slider__input js-slider__input" type="range" min="-5" max="12" value="1">
       </div>
-      <div class="slider-percentage">
-        <div class="slider-percentage__full-line"></div>
-        <div class="slider-percentage__line"></div><input class="slider-percentage" oninput="sliderPercentageInput(event)" type="range" min="0" max="100" value="30">
-        <div class="slider-percentage__percent">
+      <div class="slider-percent">
+        <div class="slider-percent__full-line"></div>
+        <div class="slider-percent__line"></div>
+        <input class="slider-percent__input js-slider-percent__input" type="range" min="0" max="100" value="75">
+        <div class="slider-percent__container">
           <div>0</div>
           <div>25</div>
           <div>50</div>
@@ -109,14 +138,18 @@
       </div>
     </div>
     <div class="block-line">
-      <div class="stages"><div class="stages__circle stages_orange">
-        <div class="stages__text">1</div></div><div class="stages__line stages_orange">
-</div>
-<div class="stages__circle stages_orange">
-        <div class="stages__text">2</div></div><div class="stages__line stages_orange">
-</div>
-<div class="stages__circle stages_orange">
-        <div class="stages__text">3</div></div>
+      <div class="stages">
+        <div class="stages__circle stages_color-orange">
+          <div class="stages__text">1</div>
+        </div>
+        <div class="stages__line stages_color-orange"></div>
+        <div class="stages__circle stages_color-orange">
+          <div class="stages__text">2</div>
+        </div>
+        <div class="stages__line stages_color-orange"></div>
+        <div class="stages__circle stages_color-orange">
+          <div class="stages__text">3</div>
+        </div>
         <div class="stages__line"></div>
         <div class="stages__circle">
           <div class="stages__text">4</div>
@@ -130,27 +163,28 @@
     <div class="block-line">
       <form action="#">
         <label>
-          <input type="text" name="name" placeholder="Your Name" required autofocus>
+          <input type="text" name="name" placeholder="Your Name" required>
           <div></div>
         </label>
         <label>
           <input type="email" name="email" placeholder="Your Email" autocomplete="on" required>
           <div></div>
         </label>
-        <textarea rows="4" name="message" placeholder="Your Message" required></textarea><button class="standart-button standart-button_ standart-button_ standart-button_-" onclick="buttonClick(event)">submit</button>
+        <textarea rows="4" name="message" placeholder="Your Message" required></textarea>
+        <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">submit</button>
         <input type="checkbox">
         <input type="radio">
       </form>
     </div>
     <div class="block-line">
-      <form class="search" action="#">
-        <input class="search-undefined" name="qq" onfocus="searchClick(event)" type="search" placeholder="Search">
+      <form class="search js-search" action="#">
+        <input class="search-undefined" name="qq" type="search" placeholder="Search">
         <input class="submit" type="submit" name="" value="">
       </form>
     </div>
     <div class="block-line">
-      <form class="search" action="#">
-        <input class="search-notfound" name="qq" onfocus="searchClick(event)" type="search" placeholder="I've not found what I'm looking for...">
+      <form class="search js-search" action="#">
+        <input class="search-notfound" name="qq" type="search" placeholder="I've not found what I'm looking for...">
         <input class="submit" type="submit" name="" value="">
       </form>
     </div>
@@ -167,39 +201,43 @@
     </div>
     <div class="block-line">
       <div class="user-profile">
-        <div class="photo" style="background-image: url(img/photo2.png);"></div><div class="user-profile__block orange">
-        <div class="user-profile__name">John Smith</div>
-        <div class="user-profile__prof">UX DESIGNER</div>
-        <div class="block-line">
-          <div class="icon1"></div>
-          <div class="icon2"></div>
-          <div class="icon3"></div>
-        </div></div>
+        <div class="photo" style="background-image: url(img/photo2.png);"></div>
+        <div class="user-profile__block user-profile_color-orange">
+          <div class="user-profile__name">John Smith</div>
+          <div class="user-profile__prof">UX DESIGNER</div>
+          <div class="block-line">
+            <div class="icon1"></div>
+            <div class="icon2"></div>
+            <div class="icon3"></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="block-line">
       <div class="user-profile">
-        <div class="photo" style="background-image: url(img/photo1.png);"></div><div class="user-profile__block blue">
-        <div class="user-profile__name">Sarah Brown</div>
-        <div class="user-profile__prof">DEVELOPER</div>
-        <div class="block-line">
-          <div class="icon1"></div>
-          <div class="icon2"></div>
-          <div class="icon3"></div>
-        </div></div>
+        <div class="photo" style="background-image: url(img/photo1.png);"></div>
+        <div class="user-profile__block user-profile_color-blue">
+          <div class="user-profile__name">Sarah Brown</div>
+          <div class="user-profile__prof">DEVELOPER</div>
+          <div class="block-line">
+            <div class="icon1"></div>
+            <div class="icon2"></div>
+            <div class="icon3"></div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="block-line">
-      <div class="news news_orange" style="background-image: url(img/Layer.png);">
+      <div class="news news_color-orange" style="background-image: url(img/Layer.png);">
         <div class="news__text">
-          <h1>It'is all going downhill</h1>
+          <h2>It'is all going downhill</h2>
           <h4>24 august 2013</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
         </div>
       </div>
     </div>
     <div class="block-line">
-      <div class="events events_undefined" style="background-image: url(img/Layer2.png);">
+      <div class="events events_color-blue" style="background-image: url(img/Layer2.png);">
         <div class="events__text">
           <div class="events__date">
             <div class="events__date-day">24</div>
@@ -207,7 +245,8 @@
           </div>
           <h4>this is title</h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="events__button"><button class="standart-button standart-button_ standart-button_small standart-button_-small" onclick="buttonClick(event)">add to calendar</button>
+          <div class="events__button">
+            <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-small">add to calendar</button>
           </div>
         </div>
       </div>
@@ -225,10 +264,10 @@
     </div>
     <div class="block-line">
       <div class="calendar">
-        <div class="calendar__day">day</div>
+        <div class="calendar__day">0</div>
         <div class="calendar__month">month
-          <div class="calendar__left" onclick="left(event)"></div>
-          <div class="calendar__right" onclick="right(event)"></div>
+          <div class="calendar__left"></div>
+          <div class="calendar__right"></div>
         </div>
         <div class="calendar__year">year</div>
         <table class="calendar__days-week" cols="7">
@@ -245,46 +284,48 @@
         <table class="calendar__days" cols="7">
           <tbody></tbody>
         </table>
-        <div class="calendar__data" onclick="today(event)">TODAY</div>
+        <div class="calendar__data">TODAY</div>
       </div>
     </div>
-    <div class="block-line"><div class="messaging messaging_">
-      <div class="messaging__top">
-        <div class="messaging__name">
-          <h1>Sarah Brown</h1>
+    <div class="block-line">
+      <div class="messaging messaging_color-blue">
+        <div class="messaging__top">
+          <div class="messaging__name">Sarah Brown</div>
+          <div class="messaging__img">
+            <div class="messaging__chat"></div>
+            <div class="photo" style="background-image: url(img/photo1.png);"></div>
+            <div class="messaging__camera"></div>
+          </div>
         </div>
-        <div class="messaging__img">
-          <div class="messaging__chat"></div>
-          <div class="photo" style="background-image: url(img/photo1.png);"></div>
-          <div class="messaging__camera"></div>
+        <div class="messaging__bottom">
+          <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
+          <textarea class="messaging__message" name="message"></textarea>
+          <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">reply</button>
+          <div class="clearfix"></div>
         </div>
       </div>
-      <div class="messaging__bottom">
-        <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
-        <textarea class="messaging__message" name="message"></textarea><button class="standart-button standart-button_ standart-button_normal standart-button_-normal" onclick="buttonClick(event)">reply</button>
-        <div class="clearfix"></div>
-      </div></div>
     </div>
     <div class="block-line">
       <div class="video__frame">
-        <div class="video">
+        <div class="js-video video">
           <div class="video__title">
-            <h1>New Zeland</h1>
+            <h2>New Zeland</h2>
             <h4>video/Travel_New_Zeland.mp4</h4>
           </div>
-          <video poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4" ontimeupdate="videoUpdate(event)"></video>
-          <div class="video__controls" onclick="videoClick(event)">
+          <video poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
+          <div class="video__controls">
             <div class="video__button video__button-play"></div>
             <div class="video__slider">
               <div class="video__slider_line-full"></div>
-              <div class="video__slider_line"></div><input type="range" class="video__input" oninput="videoInput(event.target)" min="0" max="100" value="0"></input>
+              <div class="video__slider_line"></div>
+              <input class="js-video__slider-input video__slider-input" type="range" min="0" max="100" value="0">
             </div>
             <div class="video__button-full"></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="block-line"></div><script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap" >
-</script>
+    <div class="block-line"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&amp;callback=initMap"></script>
   <script type="text/javascript" src="index.js"></script></body>
 </html>

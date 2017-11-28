@@ -1,9 +1,9 @@
 mixin calendar
     .calendar
-        .calendar__day day
+        .calendar__day 0
         .calendar__month month
-            .calendar__left(onclick="left(event)")
-            .calendar__right(onclick="right(event)")
+            .calendar__left
+            .calendar__right
         .calendar__year year
         table(cols="7").calendar__days-week
             tr
@@ -16,4 +16,4 @@ mixin calendar
                 td SUN
         table.calendar__days(cols="7")
             tbody
-        .calendar__data(onclick="today(event)") TODAY
+        .calendar__data TODAY
