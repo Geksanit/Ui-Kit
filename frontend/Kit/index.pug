@@ -5,61 +5,61 @@ html
         meta(charset = 'utf-8')
         meta(name='viewport', content="initial-scale=1.0, width=device-width")
         meta(name="keywords" content="Ui-Kit БЭМ компоненты")
-        +favicons
+        +favicons()
         title Ui-Kit
     body
-        .block-line
+        .container-line
             +standart-button({ title:'button', size:'small', color:'blue' })
-            +standart-button
+            +standart-button()
             +standart-button({ title:'button', size:'normal', color:'orange' })
             +standart-button({ title:'button', size:'small', color:'orange' })
-        .block-line
+        .container-line
             +arrow-button({ orientation:'left', disabled:true })
             +arrow-button({ orientation:'right', color:'orange', disabled:true })
             +arrow-button({ orientation:'left' })
             +arrow-button()
             +arrow-button({ orientation:'left', color:'orange' })
             +arrow-button({ orientation:'right', color:'orange' })
-        .block-line
+        .container-line
             +percentages(0)
             +percentages(38)
             +percentages(50)
             +percentages(62)
             +percentages(89)
             +percentages(100)
-        .block-line
+        .container-line
             +pie-chart(10,25,30)
             +pie-chart()
             +pie-chart(0,20,30)
-        .block-line
-            +slider
+        .container-line
+            +slider()
             +slider({ min:-5, max:12, value:1 })
             +slider-percent(75)
-        .block-line
+        .container-line
             +stages({ color:'orange' })
-        .block-line
-            +forma
-        .block-line
-            +search
-        .block-line
+        .container-line
+            +forma()
+        .container-line
+            +search()
+        .container-line
             +search('notfound')
-        .block-line
+        .container-line
             +select('Schoose an option','option-1','option-2','option-3')
-        .block-line
+        .container-line
             +user-profile({ name:'John Smith', prof:'ux designer', src:'photo2', color:'orange' })
-        .block-line
+        .container-line
             +user-profile({ name:'Sarah Brown', prof:'developer', src:'photo1', color:'blue' })
-        .block-line
+        .container-line
             +news({ title:"It'is all going downhill", date:'24 august 2013', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.', color:'orange' })
-        .block-line
+        .container-line
             +events({ day:'24', month:'Aug', title:'this is title', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' })
-        .block-line
+        .container-line
             +map({ lat:'-33.877685', lng:'151.207077', title:'Meet Us !' })
-        .block-line
-            +calendar
-        .block-line
+        .container-line
+            +calendar()
+        .container-line
             +messaging({ name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo1' })
-        .block-line
+        .container-line
             +video({ src:'Travel_New_Zeland', title:'New Zeland' })
-        .block-line
+        .container-line
         script( async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap")
