@@ -1,13 +1,18 @@
 mixin input-text(options)
-    if !options
+    - //(placeholder='placeholder', required=true, name='name')
+    if (!options || (typeof(options) !== 'object'))
         - options = {}
     if !options.placeholder
         - options.placeholder = 'placeholder'
+    if !options.name
+        - options.name = 'name'
+    if (options.required === undefined)
+        - options.required = true;
     if options.required
         label.input-text
-            input(type="text" name="name" placeholder=options.placeholder required)
+            input(type="text" name=options.name placeholder=options.placeholder required)
             div
     else
         label.input-text
-            input(type="text" name="name" placeholder=options.placeholder)
+            input(type="text" name=options.name placeholder=options.placeholder)
             div

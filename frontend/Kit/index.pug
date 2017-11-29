@@ -38,11 +38,17 @@ html
         .container-line
             +stages({ color:'orange' })
         .container-line
-            +forma()
+            forma.send-mes
+                +input-text({ placeholder:'Your Name' })
+                +input-email({ placeholder:'Your Email' })
+                +textarea({ placeholder:'Your Message' })
+                +radio()
+                +checkbox()
+                +standart-button({ title:'submit' })
         .container-line
             +search()
         .container-line
-            +search('notfound')
+            +search({ notfound:true })
         .container-line
             +select('Schoose an option','option-1','option-2','option-3')
         .container-line

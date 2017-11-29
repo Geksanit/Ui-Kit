@@ -28,18 +28,27 @@ user-profile($font,$blue,$orange)
                 transform rotate(-45deg)
                 top calc(50% - 6px)
                 left -5px
-            .icon1
-              width 25px
-              height 25px
-              background url($path+'./img/icon1.png') no-repeat center
-            .icon2
-                width 25px
-                height 25px
-                background url($path+'./img/icon2.png') no-repeat center
-            .icon3
-                width 25px
-                height 25px
-                background url($path+'./img/icon3.png') no-repeat center
+            .user-profile__line
+                padding 10px
+                box-sizing border-box
+                width 100%
+                height auto
+                display flex
+                align-items center
+                justify-content space-around
+
+                .icon1
+                  width 25px
+                  height 25px
+                  background url($path+'./img/icon1.png') no-repeat center
+                .icon2
+                    width 25px
+                    height 25px
+                    background url($path+'./img/icon2.png') no-repeat center
+                .icon3
+                    width 25px
+                    height 25px
+                    background url($path+'./img/icon3.png') no-repeat center
         &__name
             font-size 18px
         &__prof

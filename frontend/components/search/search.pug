@@ -1,8 +1,14 @@
-mixin search(argument)
-    -var text = 'Search'
-    if (argument)
-        - argument = 'notfound'
-        - text = "I've not found what I'm looking for..."
+mixin search(options)
+    - //(placeholder='search',name='search',notfound=false)
+    if (!options || (typeof(options) !== 'object'))
+        - options = {}
+    if !options.placeholder
+        - options.placeholder = 'Search'
+    if !options.name
+        - options.name = 'search'
+    if options.notfound
+        - var mod = 'search-notfound'
+        - options.placeholder = "I've not found what I'm looking for..."
     form(action="#" class="search js-search")
-        input(name="qq" class="search-" + argument type="search" placeholder=text)
+        input(type="search" name=options.name class=mod placeholder=options.placeholder)
         input(type="submit" name="" value="" class="submit")
