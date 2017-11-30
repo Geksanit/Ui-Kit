@@ -17,20 +17,20 @@
       <nav><a href="./page_news.html">News</a><a href="./page_messages.html">Messages</a><a href="./page_friends.html">Friends</a><a href="./page_stats.html">My stats</a></nav>
     </header>
     <main date-title="Sign up">
-      <form>
-        <label>
-          <input type="email" name="email" placeholder="Your Email" autocomplete="on" required autofocus>
+      <forma class="send-mes">
+        <label class="input-email">
+          <input type="email" name="email" placeholder="Your Email" required>
           <div></div>
         </label>
-        <label>
+        <label class="input-text">
           <input type="text" name="name" placeholder="Your first name" required>
           <div></div>
         </label>
-        <label>
-          <input type="text" name="surname" placeholder="Your last name" required>
+        <label class="input-text">
+          <input type="text" name="name" placeholder="Your last name" required>
           <div></div>
         </label>
-        <label>Your age</label>
+        <div>Your age</div>
         <label>
           <div class="slider">
             <div class="slider__view">20</div>
@@ -40,20 +40,20 @@
         <div>Your gender</div>
         <div class="container">
           <label>
-            <input type="radio" name="gender" value="male" required>
+            <input class="radio" type="radio" name="gender" value="male" required>
             <p>Male</p>
           </label>
           <label>
-            <input type="radio" name="gender" value="female" required>
+            <input class="radio" type="radio" name="gender" value="female" required>
             <p>Female</p>
           </label>
         </div>
         <label>
-          <input type="checkbox" required>
+          <input class="checkbox" type="checkbox">
           <p>I agree <a href="404.html">privacy police</a></p>
         </label>
         <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">sign up</button>
-      </form>
+      </forma>
     </main>
   <script type="text/javascript" src="registration.js"></script></body>
 </html>

@@ -1,0 +1,47 @@
+checkbox($font,$blue)
+    .checkbox
+        -webkit-appearance none
+        -moz-appearance none
+        box-sizing border-box
+        height 24px
+        padding 2px
+        width 60px
+        border none
+        outline none
+        cursor pointer
+        position relative
+        -webkit-transition: .15s;
+        border-radius  12px
+        background-color lightgrey
+        &:checked
+            background-color $blue[0]
+        &::after
+            content ''
+            position absolute
+            width 20px
+            height 20px
+            border-radius 10px
+            top 2px
+            left 2px
+            background-color white
+            transition: all 0.5s
+        &:checked::after
+            left 38px
+        &::before
+            position absolute
+            top 0px
+            left 10px
+            width 100%
+            height 100%
+            line-height 24px
+            font-family $font, Arial, sans-serif
+            font-weight 900
+            font-size 0.7rem
+            text-align center
+            text-transform uppercase
+            color white
+            content 'off'
+            transition: all 0.5s
+        &:checked::before
+            content 'on'
+            left -10px

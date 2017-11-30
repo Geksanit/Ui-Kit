@@ -9,30 +9,22 @@ html
     body
         +header()
         main(date-title='Sign up')
-            form
+            forma.send-mes
+                +input-email({placeholder: 'Your Email'})
+                +input-text({placeholder: 'Your first name'})
+                +input-text({placeholder: 'Your last name'})
+                div Your age
                 label
-                    input(type="email" name="email" placeholder="Your Email" autocomplete="on" required autofocus)
-                    div
-                label
-                    input(type="text" name="name" placeholder="Your first name" required)
-                    div
-                label
-                    input(type="text" name="surname" placeholder="Your last name" required)
-                    div
-                label Your age
-                label
-                    +slider({ min:10, max:100, value:20 })
+                    +slider({min: 10, max: 100, value: 20})
                 div Your gender
                 .container
                     label
-                        input(type="radio" name="gender" value="male" required)
+                        input(type="radio" class="radio" name="gender" value="male" required)
                         p Male
                     label
-                        input(type="radio" name="gender" value="female" required)
+                        input(type="radio" class="radio"  name="gender" value="female" required)
                         p Female
                 label
-                    input(type="checkbox" required)
+                    +checkbox()
                     p I agree <a href="404.html">privacy police</a>
-                +standart-button({ title:'sign up' })
-
-
+                +standart-button({title: 'sign up'})

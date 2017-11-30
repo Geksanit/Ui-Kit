@@ -6,20 +6,36 @@ search($font,$blue,$orange)
         padding 0px
         border none
         input[type="search"]
+            $height = 28px
+            display block
             flex 1 1 255px
+
+            box-sizing border-box
+            width 208px
+            height $height
+            padding 0 0 0 10px
+            margin-right 0
+
             background-color lightgrey
             outline none
             border-radius 3px 0 0 3px
             border none
-            padding 0 0 0 10px
-            font-size 14px
-            color gray
+
+
             font-family $font, Arial, sans-serif
             font-weight 400
+            font-size 14px
+            color gray
         input[type=submit]
+            -webkit-appearance none
+            -moz-appearance none
             flex 0 0 33px
+            margin 0px
+            padding 0
             background-color $blue[0]
             border-radius 0 3px 3px 0
+            border none
+            outline none
             background-image url($path+'./img/lupa.png')
             background-repeat no-repeat
             background-position center
