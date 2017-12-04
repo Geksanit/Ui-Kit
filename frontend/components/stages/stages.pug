@@ -1,21 +1,20 @@
 mixin stages(options)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
-    -var colors = ['blue', 'orange'];
-    if !options.value
-        -options.value = 3
-    if !options.max
-        -options.max = 5
-    if (options.color != colors[0] && options.color != colors[1])
-        -options.color = colors[0]
-    .stages
-        div(class="stages__circle stages_color-"+options.color)
+    - options.value = options.value || 3
+    - options.max = options.max || 5
+    - options.mix = options.mix || ''
+    if (options.color !== 'blue' && options.color !== 'orange')
+        -options.color = 'blue'
+
+    div(class = "stages " + options.mix)
+        div(class = "stages__circle stages_color_" + options.color)
             .stages__text 1
         - var i = 2;
         while (i <= options.max)
             if (i <= options.value)
-                div(class="stages__line stages_color-"+options.color)
-                div(class="stages__circle stages_color-"+options.color)
+                div(class = "stages__line stages_color_" + options.color)
+                div(class = "stages__circle stages_color_" + options.color)
                     .stages__text #{i}
             else
                 .stages__line

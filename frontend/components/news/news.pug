@@ -2,20 +2,18 @@ mixin news(options)
     - // (date,title,text,color,url)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
-    if (!options.src)
-        - options.src = 'Layer'
+    - options.src = options.src || 'Layer'
     - var url = require('../img/'+options.src+'.png')
-    - var colors = ['blue', 'orange'];
-    if (options.color !== colors[0] && options.color !== colors[1])
-        - options.color = colors[0]
-    if !options.date
-        - options.date = '1 January'
-    if !options.title
-        - options.title = 'title'
-    if !options.text
-        - options.text = 'text'
-    div(class="news news_color-" + options.color, style="background-image: url(" + url + ")")
+    if (options.color !== 'blue' && options.color !== 'orange')
+        - options.color = 'blue'
+    - options.date = options.date || '1 January'
+    - options.title = options.title || 'title'
+    - options.text = options.text || 'text'
+    - options.mix = options.mix || ''
+
+    div(class="news news_color_" + options.color + " " + options.mix)
+        img.news__img(src = url alt = "news")
         .news__text
-            h2 #{options.title}
-            h4 #{options.date}
-            p #{options.text}
+            h2.news__title #{options.title}
+            h4.news__date #{options.date}
+            p.news__desription #{options.text}

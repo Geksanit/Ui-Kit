@@ -1,0 +1,94 @@
+slider-percent($font,$color)
+  // track - линия
+  $track-color = lightgray
+  // thumb - ручка/ползунок
+  $thumb-color = $color[0]
+  $thumb-radius = 10px
+  $thumb-size = 20px
+
+  track()
+    width 100%
+    height 5px
+    border-radius 5px
+    background-color transparent
+    cursor pointer
+  thumb()
+    margin-top -7.5px
+    height $thumb-size
+    width $thumb-size
+    border-radius $thumb-radius
+    background $thumb-color
+    cursor pointer
+    
+  .slider-percent
+    position relative
+    font-family $font, Arial, sans-serif
+    font-weight 900
+
+    &__full-line
+      background-color $track-color
+      width 100%
+      height 5px
+      border-radius 5px
+      position absolute
+      top 40px
+      left 0
+
+    &__line
+      background-color $thumb-color
+      width 10px
+      height 5px
+      border-radius 5px
+      position absolute
+      top 40px
+      left 0
+
+    &__input
+      -webkit-appearance none
+      -moz-appearance none
+      width 100%
+      height 5px
+      margin 40px 0 0 0
+      padding 0
+      opacity 0.99
+      background-color transparent
+      &:focus
+        outline none
+      &::-webkit-slider-runnable-track
+        track()
+        //background-color transparent
+      &::-webkit-slider-thumb
+        thumb()
+        -webkit-appearance none
+
+      &::-moz-range-track
+        track()
+        padding 0
+        margin 0
+      &::-moz-range-thumb
+        thumb()
+        border none
+
+      &::-ms-track
+        track()
+        background transparent
+        border-color transparent
+        border-width $thumb-size 0
+        color transparent
+      &::-ms-fill-lower
+        background yellow
+        border-radius 10px
+      &::-ms-fill-upper
+        background $track-color
+        border-radius 10px
+      &::-ms-thumb
+        thumb()
+
+
+    &__container
+      margin 0 -10px
+      color lightgrey
+      font-size 10px
+      display flex
+      justify-content space-around
+      align-items flex-start

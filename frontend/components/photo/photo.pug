@@ -1,6 +1,9 @@
-mixin photo(url)
-    if (url)
-        - url = require('../img/'+url+'.png')
-        .photo(style="background-image: url("+url+")")
+mixin photo(options)
+    if (!options || (typeof(options) !== 'object'))
+        - options = {}
+    - options.mix = options.mix || ''
+    if (options.src)
+        - options.src = require('../img/' + options.src + '.png')
+        img(class = "photo " + options.mix src = options.src alt = "avatar")
     else
-        .photo no photo
+        img(class = "photo " + options.mix alt = "avatar")

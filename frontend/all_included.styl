@@ -6,47 +6,73 @@ $test = lightgray gray darkgray
 
 //fonts
 @font-face
-    font-family Lato
-    src url(../fonts/Lato/Lato-Regular.ttf)
-    font-weight: 400;
-    font-style: normal;
+  font-family Lato
+  src url(../fonts/Lato/Lato-Hairline.ttf)
+  font-weight: 100;
+  font-style: normal;
 @font-face
-    font-family Lato
-    src url(../fonts/Lato/Lato-Light.ttf)
-    font-weight: 300;
-    font-style: normal;
+  font-family Lato
+  src url(../fonts/Lato/Lato-Thin.ttf)
+  font-weight: 200;
+  font-style: normal;
 @font-face
-    font-family Lato
-    src url(../fonts/Lato/Lato-Bold.ttf)
-    font-weight: 700;
-    font-style: normal;
+  font-family Lato
+  src url(../fonts/Lato/Lato-Light.ttf)
+  font-weight: 300;
+  font-style: normal;
 @font-face
-    font-family Lato
-    src url(../fonts/Lato/Lato-Black.ttf)
-    font-weight: 900;
-    font-style: normal;
+  font-family Lato
+  src url(../fonts/Lato/Lato-Regular.ttf)
+  font-weight: 400;
+  font-style: normal;
 @font-face
-    font-family SourceSansPro
-    src url(../fonts/SourceSansPro/SourceSansProRegular.ttf)
-    font-weight: 400;
-    font-style: normal;
+  font-family Lato
+  src url(../fonts/Lato/Lato-Medium.ttf)
+  font-weight: 500;
+  font-style: normal;
 @font-face
-    font-family SourceSansPro
-    src url(../fonts/SourceSansPro/SourceSansProLight.ttf)
-    font-weight: 300;
-    font-style: normal;
+  font-family Lato
+  src url(../fonts/Lato/Lato-Semibold.ttf)
+  font-weight: 600;
+  font-style: normal;
 @font-face
-    font-family SourceSansPro
-    src url(../fonts/SourceSansPro/SourceSansProBold.ttf)
-    font-weight: 700;
-    font-style: normal;
+  font-family Lato
+  src url(../fonts/Lato/Lato-Bold.ttf)
+  font-weight: 700;
+  font-style: normal;
+@font-face
+  font-family Lato
+  src url(../fonts/Lato/Lato-Heavy.ttf)
+  font-weight: 800;
+  font-style: normal;
+@font-face
+  font-family Lato
+  src url(../fonts/Lato/Lato-Black.ttf)
+  font-weight: 900;
+  font-style: normal;
+
+@font-face
+  font-family SourceSansPro
+  src url(../fonts/SourceSansPro/SourceSansProRegular.ttf)
+  font-weight: 400;
+  font-style: normal;
+@font-face
+  font-family SourceSansPro
+  src url(../fonts/SourceSansPro/SourceSansProLight.ttf)
+  font-weight: 300;
+  font-style: normal;
+@font-face
+  font-family SourceSansPro
+  src url(../fonts/SourceSansPro/SourceSansProBold.ttf)
+  font-weight: 700;
+  font-style: normal;
 
 body
-    font-family Lato, Arial, sans-serif
-    font-weight 400
+  font-family Lato, Arial, sans-serif
+  font-weight 400
 
 
-@import "../components/buttons/standart-button"
+@import "../components/standart-button/standart-button"
 standart-button(Lato,$blue,$orange)
 
 @import "../components/arrow-button/arrow-button.styl"
@@ -55,13 +81,13 @@ arrow-button($blue, $orange)
 @import "../components/percentages/percentages.styl"
 percentages(Lato,$blue,$orange)
 
-@import "../components/percentages/pie-chart.styl"
+@import "../components/pie-chart/pie-chart.styl"
 pie-chart($blue,$orange)
 
-@import "../components/sliders/slider.styl"
+@import "../components/slider/slider.styl"
 slider(Lato,$blue)
 
-@import "../components/sliders/slider-percent.styl"
+@import "../components/slider-percent/slider-percent.styl"
 slider-percent(Lato,$blue)
 
 @import "../components/stages/stages.styl"
@@ -101,18 +127,18 @@ photo()
 @import "../components/header/header.styl"
 header(Lato,$orange)
 
-@import "../components/form-elements/input-text.styl"
+@import "../components/form-elements/input-text/input-text.styl"
 input-text(Lato,SourceSansPro,$blue, $orange)
 
-@import "../components/form-elements/input-email.styl"
+@import "../components/form-elements/input-email/input-email.styl"
 input-email(Lato,SourceSansPro,$blue, $orange)
 
-@import "../components/form-elements/textarea.styl"
+@import "../components/form-elements/textarea/textarea.styl"
 textarea(SourceSansPro)
 
-@import "../components/form-elements/radio.styl"
+@import "../components/form-elements/radio/radio.styl"
 radio($blue, $orange)
 
-@import "../components/form-elements/checkbox.styl"
+@import "../components/form-elements/checkbox/checkbox.styl"
 checkbox(Lato, $blue)
 

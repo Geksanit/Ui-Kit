@@ -5,17 +5,17 @@ mixin user-profile(options)
     - var colors = ['blue', 'orange'];
     if (options.color !== colors[0] && options.color !== colors[1])
         - options.color = colors[0]
-    if !options.name
-        - options.name = 'name'
-    if !options.prof
-        - options.prof = 'prof'
+    - options.name = options.name || 'name'
+    - options.prof = options.prof || 'prof'
     - options.prof = options.prof.toUpperCase()
-    .user-profile
-        +photo(options.src)
-        div(class="user-profile__block user-profile_color-" + options.color)
+    - options.mix = options.mix || ''
+
+    div(class = "user-profile " + options.mix)
+        +photo({ src:options.src, mix:'user-profile__photo-mix' })
+        div(class="user-profile__block user-profile_color_" + options.color)
             .user-profile__name #{options.name}
             .user-profile__prof #{options.prof}
             .user-profile__line
-                .icon1
-                .icon2
-                .icon3
+                .user-profile__icon1
+                .user-profile__icon2
+                .user-profile__icon3

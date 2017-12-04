@@ -1,6 +1,6 @@
 // search
 const searchClick = function searchClick({ target }) {
-  target.className = '';
+  target.className = 'search__input';
   target.attributes.placeholder.value = 'Search';
 };
 

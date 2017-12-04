@@ -44,13 +44,13 @@ html
                 +textarea({ placeholder:'Your Message' })
                 +radio()
                 +checkbox()
-                +standart-button({ title:'submit' })
+                +standart-button({ mix:'submit-mix', title:'submit' })
         .container-line
             +search()
         .container-line
             +search({ notfound:true })
         .container-line
-            +select('Schoose an option','option-1','option-2','option-3')
+            +select({ def:'Schoose an option', list:['option-1','option-2','option-3'] })
         .container-line
             +user-profile({ name:'John Smith', prof:'ux designer', src:'photo2', color:'orange' })
         .container-line

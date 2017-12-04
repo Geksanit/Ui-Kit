@@ -1,7 +1,13 @@
-mixin select(def,...options)
-    form(action="#" class="select")
-        select
-            option(disabled selected)= def
-            each item in options
+mixin select(options)
+    if (!options || (typeof(options) !== 'object'))
+        - options = {}
+    - options.def = options.def || 'default'
+    if (!options.list || (!Array.isArray(options.list)))
+        - options.list = ['']
+    - options.mix = options.mix || ''
+    form(action = "#" class = "select " + options.mix)
+        select.select__select
+            option(disabled selected)= options.def
+            each item in options.list
                 option=item
-        div
+        .select__arrow

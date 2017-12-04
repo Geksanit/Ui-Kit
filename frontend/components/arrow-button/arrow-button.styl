@@ -1,51 +1,53 @@
 arrow-button($blue, $orange)
-    $_color = $blue
-    //blue = default
-    //right = default
-    $radius = 50px
-    .arrow-button
-        padding 0
-        box-sizing content-box
-        width $radius - 6
-        height $radius - 6
-        border-radius 25px
-        border-style solid
-        border-width 3px
-        outline none
-        cursor pointer
-        background-color  white
+  $radius = 50px
+  .arrow-button
+    padding 0
+    box-sizing content-box
+    width $radius - 6
+    height $radius - 6
+    border-radius 25px
+    border-style solid
+    border-width 3px
+    outline none
+    cursor pointer
+    background-color  white
+    display flex
+    align-items center
+    justify-content space-around
+    border-color $blue[0]
+    color $blue[0]
 
-        display flex
-        align-items center
-        justify-content space-around
+    &__arrow
+      $size = 14px
+      width $size
+      height $size
+      transform translateX(-4px) rotate(-45deg)
+      border-bottom 3px solid $blue[0]
+      border-right 3px solid $blue[0]
 
+    &:hover
+      background-color $blue[0]
+
+      .arrow-button__arrow
+        border-color white
+
+    &_color_orange
+      $_color = $orange
+      border-color $_color[0]
+
+      .arrow-button__arrow
         border-color $_color[0]
-        color $_color[0]
-        &__arrow
-            $size = 14px
-            width $size
-            height $size
-            transform translateX(-4px) rotate(-45deg)
-            border-bottom 3px solid $_color[0]
-            border-right 3px solid $_color[0]
-        &:hover
-            background-color $_color[0]
-            .arrow-button__arrow
-                border-color white
 
-        &_color-orange
-            $_color = $orange
-            border-color $_color[0]
-            .arrow-button__arrow
-                border-color $_color[0]
-            &:hover
-                background-color $_color[0]
+      &:hover
+        background-color $_color[0]
 
-        &_orientation-left
-            .arrow-button__arrow
-                transform translateX(4px) rotate(135deg)
-        &:disabled
-            border-color lightgray
-            background-color lightgray
-            .arrow-button__arrow
-                border-color white
+    &_orientation_left
+      .arrow-button__arrow
+        transform translateX(4px) rotate(135deg)
+
+    &:disabled
+      border-color lightgray
+      background-color lightgray
+
+      .arrow-button__arrow
+        border-color white

@@ -20,8 +20,7 @@ const pause = function pause(element) {
 };
 
 const full = function full(element) {
-  element.parentElement.parentElement.parentElement.classList.toggle('video__frame-full');
-  element.parentElement.parentElement.classList.toggle('video-full');
+  element.parentElement.parentElement.classList.toggle('video_full');
   videoInput(element.previousElementSibling.children[2]);
 };
 
@@ -44,8 +43,8 @@ const videoUpdate = function videoUpdate({ target }) {
 };
 
 (function initVideos() {
-  const elements = document.querySelectorAll('.js-video');
-  elements.forEach((element) => {
+  const blocks = document.querySelectorAll('.js-video');
+  blocks.forEach((element) => {
     element.children[1].ontimeupdate = videoUpdate;
     element.children[2].onclick = videoClick;
   });

@@ -1,0 +1,64 @@
+input-email($font1,$font2,$blue,$orange)
+  .input-email
+    $height = 28px
+    width 100%
+    display flex
+    margin-bottom 12px
+
+    &__input
+      float left
+      display block
+      box-sizing border-box
+      width 208px
+      height $height
+      padding 4px 1rem
+      margin-right 8px
+      background-color lightgrey
+      border-radius 3px
+      border none
+      outline none
+      font-family $font2
+      font-size 14px
+      line-height @height
+      color gray
+
+      & + .input-email__status
+        position relative
+        float right
+        width 72px
+        margin 0
+        height $height
+        background-color gray
+        border-radius 5px
+        font-family $font1
+        font-weight 900
+        font-size 10px
+
+        &::before
+          position absolute
+          content ''
+          top 9px
+          left -3px
+          width 10px
+          height 10px
+          background-color inherit
+          transform rotate(-45deg)
+        &::after
+          position absolute
+          content ''
+          width 70px
+          height $height
+          text-transform uppercase
+          color white
+          text-align center
+          line-height @height
+
+      &:invalid + .input-email__status
+        background-color $orange[0]
+        &::after
+          content 'error'
+
+      &:valid + .input-email__status
+        background-color $blue[0]
+        &::after
+          content 'thanks!'
