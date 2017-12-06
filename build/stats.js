@@ -104,7 +104,7 @@ var buttonClick = function buttonClick(event) {
 var searchClick = function searchClick(_ref) {
   var target = _ref.target;
 
-  target.className = '';
+  target.className = 'search__input';
   target.attributes.placeholder.value = 'Search';
 };
 
@@ -323,8 +323,7 @@ var pause = function pause(element) {
 };
 
 var full = function full(element) {
-  element.parentElement.parentElement.parentElement.classList.toggle('video__frame-full');
-  element.parentElement.parentElement.classList.toggle('video-full');
+  element.parentElement.parentElement.classList.toggle('video_full');
   videoInput(element.previousElementSibling.children[2]);
 };
 
@@ -350,8 +349,8 @@ var videoUpdate = function videoUpdate(_ref2) {
 };
 
 (function initVideos() {
-  var elements = document.querySelectorAll('.js-video');
-  elements.forEach(function (element) {
+  var blocks = document.querySelectorAll('.js-video');
+  blocks.forEach(function (element) {
     element.children[1].ontimeupdate = videoUpdate;
     element.children[2].onclick = videoClick;
   });

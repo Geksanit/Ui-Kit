@@ -16,6 +16,6 @@ const sliderPercentageInput = function sliderPercentageInput(event) {
   elements.forEach((element) => {
     sliderPercentageChange(element);
     element.oninput = sliderPercentageInput;
-  })
+  });
 }());
 

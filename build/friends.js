@@ -104,7 +104,7 @@ var buttonClick = function buttonClick(event) {
 var searchClick = function searchClick(_ref) {
   var target = _ref.target;
 
-  target.className = '';
+  target.className = 'search__input';
   target.attributes.placeholder.value = 'Search';
 };
 

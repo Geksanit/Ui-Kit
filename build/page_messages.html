@@ -14,39 +14,37 @@
   <body>
     <header class="main-header">
       <div class="main-header__logo"></div>
-      <nav><a href="./page_news.html">News</a><a href="./page_messages.html">Messages</a><a href="./page_friends.html">Friends</a><a href="./page_stats.html">My stats</a></nav>
+      <nav class="main-header__nav"><a class="main-header__link" href="./page_news.html">News</a><a class="main-header__link" href="./page_messages.html">Messages</a><a class="main-header__link" href="./page_friends.html">Friends</a><a class="main-header__link" href="./page_stats.html">My stats</a></nav>
     </header>
     <main date-title="Messages">
-      <div class="messaging messaging_color-orange">
+      <div class="messaging messaging_color_orange messaging-mix">
         <div class="messaging__top">
           <div class="messaging__name">Sarah Brown</div>
           <div class="messaging__img">
-            <div class="messaging__chat"></div>
-            <div class="photo" style="background-image: url(img/photo1.png);"></div>
+            <div class="messaging__chat"></div><img class="photo " src="img/photo1.png" alt="avatar">
             <div class="messaging__camera"></div>
           </div>
         </div>
         <div class="messaging__bottom">
           <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
           <textarea class="messaging__message" name="message"></textarea>
-          <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-normal">reply</button>
-          <div class="clearfix"></div>
+          <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_normal messaging__button-mix">reply</button>
+          <div class="messaging__clearfix"></div>
         </div>
       </div>
-      <div class="messaging messaging_color-blue">
+      <div class="messaging messaging_color_blue messaging-mix">
         <div class="messaging__top">
           <div class="messaging__name">John Smith</div>
           <div class="messaging__img">
-            <div class="messaging__chat"></div>
-            <div class="photo" style="background-image: url(img/photo2.png);"></div>
+            <div class="messaging__chat"></div><img class="photo " src="img/photo2.png" alt="avatar">
             <div class="messaging__camera"></div>
           </div>
         </div>
         <div class="messaging__bottom">
           <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
           <textarea class="messaging__message" name="message"></textarea>
-          <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">reply</button>
-          <div class="clearfix"></div>
+          <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal messaging__button-mix">reply</button>
+          <div class="messaging__clearfix"></div>
         </div>
       </div>
     </main>

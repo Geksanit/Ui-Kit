@@ -3,14 +3,14 @@ doctype html
 html
     head
         meta(charset = 'utf-8')
-        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        meta(name = 'viewport', content = "initial-scale=1.0, width=device-width")
         +favicons()
         title News
     body
         +header()
         main(date-title='News')
             .container-center
-                +select('sorting','by date','by relevance')
+                +select({ def:'sorting', list:['by date','by relevance'] })
             +news({ mix:'news-events-mix', title:"It'is all going downhill", date:'24 august 2013', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.', color:'orange', src:'Layer' })
             +events({ mix:'news-events-mix', day:'10', month:'Dec', title:'HolyJS 2017 Moscow', text:'HolyJS is a unique conference dedicated to JavaScript only.', color:'orange', src:'moskau' })
             +news({ mix:'news-events-mix', title:"RALLY DAKAR-2017", date:'15 january 2017', text:'The Russian KAMAZ-master team triumphantly returned the Champion title in the extreme rally-marathon Dakar.', color:'blue', src:'rally' })

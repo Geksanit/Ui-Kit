@@ -15,7 +15,7 @@ html
                 +input-text({placeholder: 'Your last name'})
                 div Your age
                 label
-                    +slider({min: 10, max: 100, value: 20})
+                    +slider({ mix:'slider-mix', min: 10, max: 100, value: 20 })
                 div Your gender
                 .container
                     label
@@ -26,5 +26,5 @@ html
                         p Female
                 label
                     +checkbox()
-                    p I agree <a href="404.html">privacy police</a>
-                +standart-button({title: 'sign up'})
+                    p I agree <a href="404.html">privacy policy</a>
+                +standart-button({ mix:'button-mix', title: 'sign up' })

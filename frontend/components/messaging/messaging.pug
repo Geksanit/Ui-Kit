@@ -6,8 +6,9 @@ mixin messaging(options)
         -options.color = 'blue'
     - options.name = options.name || 'name'
     - options.text = options.text || 'text text text'
+    - options.mix = options.mix || ''
 
-    div(class="messaging messaging_color_" + options.color)
+    div(class="messaging messaging_color_" + options.color + " " + options.mix)
         .messaging__top
             .messaging__name #{options.name}
             .messaging__img

@@ -14,38 +14,38 @@
   <link href="index.css" rel="stylesheet"></head>
   <body>
     <div class="container-line">
-      <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-small">button</button>
-      <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">button</button>
-      <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-normal">button</button>
-      <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-small">button</button>
+      <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small ">button</button>
+      <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal ">button</button>
+      <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_normal ">button</button>
+      <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small ">button</button>
     </div>
     <div class="container-line">
-      <button class="arrow-button arrow-button_orientation-left arrow-button_color-blue" disabled>
+      <button class="arrow-button arrow-button_orientation_left arrow-button_color_blue" disabled>
         <div class="arrow-button__arrow"></div>
       </button>
-      <button class="arrow-button arrow-button_orientation-right arrow-button_color-orange" disabled>
+      <button class="arrow-button arrow-button_orientation_right arrow-button_color_orange" disabled>
         <div class="arrow-button__arrow"></div>
       </button>
-      <button class="arrow-button arrow-button_orientation-left arrow-button_color-blue">
+      <button class="arrow-button arrow-button_orientation_left arrow-button_color_blue">
         <div class="arrow-button__arrow"></div>
       </button>
-      <button class="arrow-button arrow-button_orientation-right arrow-button_color-blue">
+      <button class="arrow-button arrow-button_orientation_right arrow-button_color_blue">
         <div class="arrow-button__arrow"></div>
       </button>
-      <button class="arrow-button arrow-button_orientation-left arrow-button_color-orange">
+      <button class="arrow-button arrow-button_orientation_left arrow-button_color_orange">
         <div class="arrow-button__arrow"></div>
       </button>
-      <button class="arrow-button arrow-button_orientation-right arrow-button_color-orange">
+      <button class="arrow-button arrow-button_orientation_right arrow-button_color_orange">
         <div class="arrow-button__arrow"></div>
       </button>
     </div>
     <div class="container-line">
       <div class="percentages">
         <svg class="percentages__svg">
-          <circle class="percentages__circle" cx="50%" cy="50%" r="45" stroke-dasharray="0 500" stroke-dashoffset="0"></circle>
+          <circle class="percentages__circle" cx="50%" cy="50%" r="45" stroke-dasharray="141.3675 500" stroke-dashoffset="0"></circle>
         </svg>
         <div class="percentages__text">
-          <div class="percentages__number">0</div>
+          <div class="percentages__number">50</div>
         </div>
       </div>
       <div class="percentages">
@@ -116,11 +116,11 @@
       </div>
     </div>
     <div class="container-line">
-      <div class="slider">
+      <div class="slider ">
         <div class="slider__view">5</div>
         <input class="slider__input js-slider__input" type="range" min="0" max="10" value="5">
       </div>
-      <div class="slider">
+      <div class="slider ">
         <div class="slider__view">1</div>
         <input class="slider__input js-slider__input" type="range" min="-5" max="12" value="1">
       </div>
@@ -138,16 +138,16 @@
       </div>
     </div>
     <div class="container-line">
-      <div class="stages">
-        <div class="stages__circle stages_color-orange">
+      <div class="stages ">
+        <div class="stages__circle stages_color_orange">
           <div class="stages__text">1</div>
         </div>
-        <div class="stages__line stages_color-orange"></div>
-        <div class="stages__circle stages_color-orange">
+        <div class="stages__line stages_color_orange"></div>
+        <div class="stages__circle stages_color_orange">
           <div class="stages__text">2</div>
         </div>
-        <div class="stages__line stages_color-orange"></div>
-        <div class="stages__circle stages_color-orange">
+        <div class="stages__line stages_color_orange"></div>
+        <div class="stages__circle stages_color_orange">
           <div class="stages__text">3</div>
         </div>
         <div class="stages__line"></div>
@@ -163,100 +163,98 @@
     <div class="container-line">
       <forma class="send-mes">
         <label class="input-text">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <div></div>
+          <input class="input-text__input" type="text" name="name" placeholder="Your Name" required>
+          <div class="input-text__status"></div>
         </label>
         <label class="input-email">
-          <input type="email" name="email" placeholder="Your Email" required>
-          <div></div>
+          <input class="input-email__input" type="email" name="email" placeholder="Your Email" required>
+          <div class="input-email__status"></div>
         </label>
         <textarea class="textarea" name="message" placeholder="Your Message" required></textarea>
         <input class="radio" type="radio" name="radio" value="value">
         <input class="checkbox" type="checkbox">
-        <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">submit</button>
+        <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal submit-mix">submit</button>
       </forma>
     </div>
     <div class="container-line">
       <form class="search js-search" action="#">
-        <input type="search" name="search" placeholder="Search">
-        <input class="submit" type="submit" name="" value="">
+        <input class="search__input undefined" type="search" name="search" placeholder="Search">
+        <input class="search__submit submit" type="submit" name="" value="">
       </form>
     </div>
     <div class="container-line">
       <form class="search js-search" action="#">
-        <input class="search-notfound" type="search" name="search" placeholder="I've not found what I'm looking for...">
-        <input class="submit" type="submit" name="" value="">
+        <input class="search__input search_notfound" type="search" name="search" placeholder="I've not found what I'm looking for...">
+        <input class="search__submit submit" type="submit" name="" value="">
       </form>
     </div>
     <div class="container-line">
-      <form class="select" action="#">
-        <select>
-          <option disabled selected>Schoose an option</option>
+      <form class="select " action="#">
+        <select class="select__select">
+          <option disabled selected>Choose An Option</option>
           <option>option-1</option>
           <option>option-2</option>
           <option>option-3</option>
         </select>
-        <div></div>
+        <div class="select__arrow"></div>
       </form>
     </div>
     <div class="container-line">
-      <div class="user-profile">
-        <div class="photo" style="background-image: url(img/photo2.png);"></div>
-        <div class="user-profile__block user-profile_color-orange">
+      <div class="user-profile "><img class="photo user-profile__photo-mix" src="img/photo2.png" alt="avatar">
+        <div class="user-profile__block user-profile_color_orange">
           <div class="user-profile__name">John Smith</div>
           <div class="user-profile__prof">UX DESIGNER</div>
           <div class="user-profile__line">
-            <div class="icon1"></div>
-            <div class="icon2"></div>
-            <div class="icon3"></div>
+            <div class="user-profile__icon1"></div>
+            <div class="user-profile__icon2"></div>
+            <div class="user-profile__icon3"></div>
           </div>
         </div>
       </div>
     </div>
     <div class="container-line">
-      <div class="user-profile">
-        <div class="photo" style="background-image: url(img/photo1.png);"></div>
-        <div class="user-profile__block user-profile_color-blue">
+      <div class="user-profile "><img class="photo user-profile__photo-mix" src="img/photo1.png" alt="avatar">
+        <div class="user-profile__block user-profile_color_blue">
           <div class="user-profile__name">Sarah Brown</div>
           <div class="user-profile__prof">DEVELOPER</div>
           <div class="user-profile__line">
-            <div class="icon1"></div>
-            <div class="icon2"></div>
-            <div class="icon3"></div>
+            <div class="user-profile__icon1"></div>
+            <div class="user-profile__icon2"></div>
+            <div class="user-profile__icon3"></div>
           </div>
         </div>
       </div>
     </div>
     <div class="container-line">
-      <div class="news news_color-orange" style="background-image: url(img/Layer.png);">
+      <div class="news news_color_orange "><img class="news__img" src="img/Layer.png" alt="news">
         <div class="news__text">
-          <h2>It'is all going downhill</h2>
-          <h4>24 august 2013</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
+          <h2 class="news__title">It'is all going downhill</h2>
+          <div class="news__date">24 august 2013</div>
+          <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
         </div>
       </div>
     </div>
     <div class="container-line">
-      <div class="events events_color-blue" style="background-image: url(img/Layer2.png);">
+      <div class="events events_color_blue "><img class="events__img" src="img/Layer2.png" alt="events">
         <div class="events__text">
           <div class="events__date">
             <div class="events__date-day">24</div>
             <div class="events__date-month">Aug</div>
           </div>
-          <h4>this is title</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="events__title">this is the title</div>
+          <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <div class="events__button">
-            <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-small">add to calendar</button>
+            <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small events__button-mix">add to calendar</button>
           </div>
         </div>
       </div>
     </div>
     <div class="container-line">
-      <div class="map">
+      <div class="map ">
         <div class="map__element" data-lat="-33.877685" data-lng="151.207077"></div>
         <div class="map__down">
           <div class="map__message">Meet Us !</div>
-          <div class="map__addres">loading..</div>
+          <div class="map__addres">no data ...</div>
           <div class="map__icon1"></div>
           <div class="map__icon2"></div>
         </div>
@@ -288,40 +286,37 @@
       </div>
     </div>
     <div class="container-line">
-      <div class="messaging messaging_color-blue">
+      <div class="messaging messaging_color_blue ">
         <div class="messaging__top">
           <div class="messaging__name">Sarah Brown</div>
           <div class="messaging__img">
-            <div class="messaging__chat"></div>
-            <div class="photo" style="background-image: url(img/photo1.png);"></div>
+            <div class="messaging__chat"></div><img class="photo " src="img/photo1.png" alt="avatar">
             <div class="messaging__camera"></div>
           </div>
         </div>
         <div class="messaging__bottom">
           <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
           <textarea class="messaging__message" name="message"></textarea>
-          <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">reply</button>
-          <div class="clearfix"></div>
+          <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal messaging__button-mix">reply</button>
+          <div class="messaging__clearfix"></div>
         </div>
       </div>
     </div>
     <div class="container-line">
-      <div class="video__frame">
-        <div class="js-video video">
-          <div class="video__title">
-            <h2>New Zeland</h2>
-            <h4>video/Travel_New_Zeland.mp4</h4>
+      <div class="js-video video ">
+        <div class="video__title">
+          <h2>New Zeland</h2>
+          <h4>video/Travel_New_Zeland.mp4</h4>
+        </div>
+        <video poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
+        <div class="video__controls">
+          <div class="video__button video__button-play"></div>
+          <div class="video__slider">
+            <div class="video__slider_line-full"></div>
+            <div class="video__slider_line"></div>
+            <input class="js-video__slider-input video__slider-input" type="range" min="0" max="100" value="0">
           </div>
-          <video poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
-          <div class="video__controls">
-            <div class="video__button video__button-play"></div>
-            <div class="video__slider">
-              <div class="video__slider_line-full"></div>
-              <div class="video__slider_line"></div>
-              <input class="js-video__slider-input video__slider-input" type="range" min="0" max="100" value="0">
-            </div>
-            <div class="video__button-full"></div>
-          </div>
+          <div class="video__button-full"></div>
         </div>
       </div>
     </div>

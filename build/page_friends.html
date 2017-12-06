@@ -14,42 +14,40 @@
   <body>
     <header class="main-header">
       <div class="main-header__logo"></div>
-      <nav><a href="./page_news.html">News</a><a href="./page_messages.html">Messages</a><a href="./page_friends.html">Friends</a><a href="./page_stats.html">My stats</a></nav>
+      <nav class="main-header__nav"><a class="main-header__link" href="./page_news.html">News</a><a class="main-header__link" href="./page_messages.html">Messages</a><a class="main-header__link" href="./page_friends.html">Friends</a><a class="main-header__link" href="./page_stats.html">My stats</a></nav>
     </header>
     <main date-title="Friends">
       <form class="search js-search" action="#">
-        <input type="search" name="search" placeholder="Search">
-        <input class="submit" type="submit" name="" value="">
+        <input class="search__input undefined" type="search" name="search" placeholder="Search">
+        <input class="search__submit submit" type="submit" name="" value="">
       </form>
       <div class="container">
-        <div class="user-profile">
-          <div class="photo" style="background-image: url(img/photo2.png);"></div>
-          <div class="user-profile__block user-profile_color-orange">
+        <div class="user-profile "><img class="photo user-profile__photo-mix" src="img/photo2.png" alt="avatar">
+          <div class="user-profile__block user-profile_color_orange">
             <div class="user-profile__name">John Smith</div>
             <div class="user-profile__prof">UX DESIGNER</div>
             <div class="user-profile__line">
-              <div class="icon1"></div>
-              <div class="icon2"></div>
-              <div class="icon3"></div>
+              <div class="user-profile__icon1"></div>
+              <div class="user-profile__icon2"></div>
+              <div class="user-profile__icon3"></div>
             </div>
           </div>
         </div>
-        <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-normal">send message</button>
+        <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_normal ">send message</button>
       </div>
       <div class="container">
-        <div class="user-profile">
-          <div class="photo" style="background-image: url(img/photo1.png);"></div>
-          <div class="user-profile__block user-profile_color-blue">
+        <div class="user-profile "><img class="photo user-profile__photo-mix" src="img/photo1.png" alt="avatar">
+          <div class="user-profile__block user-profile_color_blue">
             <div class="user-profile__name">Sarah Brown</div>
             <div class="user-profile__prof">DEVELOPER</div>
             <div class="user-profile__line">
-              <div class="icon1"></div>
-              <div class="icon2"></div>
-              <div class="icon3"></div>
+              <div class="user-profile__icon1"></div>
+              <div class="user-profile__icon2"></div>
+              <div class="user-profile__icon3"></div>
             </div>
           </div>
         </div>
-        <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-normal">send message</button>
+        <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal ">send message</button>
       </div>
     </main>
     <footer>

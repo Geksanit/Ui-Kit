@@ -17,5 +17,5 @@ const sliderInput = function sliderInput(event) {
   elements.forEach((element) => {
     sliderChange(element);
     element.oninput = sliderInput;
-  })
+  });
 }());

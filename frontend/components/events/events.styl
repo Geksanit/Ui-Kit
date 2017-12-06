@@ -1,52 +1,60 @@
 events(font,$blue,$orange)
-    $color = $blue
-    $path = '../'
-    .events
-        width 288px
-        height 212px
-        border-radius 3px
-        color white
-        background-color gray
-        background-repeat no-repeat
-        background-size contain
-        &__img
-            width 95px
-            height 212px
-        &__text
-            float right
-            width calc(100% - 95px)
-            height 100%
-            padding 0 20px
-            box-sizing border-box
-            background-color $blue[0]
-            font-size 12px
-            border-top-right-radius 3px
-            border-bottom-right-radius 3px
-        &__date
-            font-family font, Arial, sans-serif
-            font-weight 300
-            font-size 30px
-            text-align center
-            display flex
-            align-items flex-end
-            &-day
-                font-size 70px
-            &-month
-                margin-bottom 10px
-        &__title
-            font-family font, Arial, sans-serif
-            font-weight 900
-            text-transform uppercase
-            margin-bottom 0
-        &__description
-            font-family font, Arial, sans-serif
-            font-weight 400
-            margin-top 5px
-        &__button
-            display flex
-            justify-content space-around
-            button.standart-button
-                width auto
-        &_color_orange
-            .events__text
-              background-color $orange[0]
+  $color = $blue
+  $path = '../'
+  .events
+    width 288px
+    height 212px
+    border-radius 3px
+    color white
+    background-color gray
+    background-repeat no-repeat
+    background-size contain
+
+    &__img
+      width 95px
+      height 212px
+
+    &__text
+      float right
+      width calc(100% - 95px)
+      height 100%
+      padding 0 20px
+      box-sizing border-box
+      background-color $blue[0]
+      font-size 12px
+      border-top-right-radius 3px
+      border-bottom-right-radius 3px
+
+    &__date
+      font-family font, Arial, sans-serif
+      font-weight 300
+      font-size 30px
+      text-align center
+      display flex
+      align-items flex-end
+      &-day
+        font-size 70px
+      &-month
+        margin-bottom 10px
+
+    &__title
+      font-size 12px
+      font-family font, Arial, sans-serif
+      font-weight 900
+      text-transform uppercase
+      margin-bottom 0
+
+    &__description
+      font-family font, Arial, sans-serif
+      font-weight 400
+      margin-top 5px
+
+    &__button
+        display flex
+        justify-content space-around
+        &-mix
+          width 128px
+
+    &_color_orange
+      .events__text
+        background-color $orange[0]
