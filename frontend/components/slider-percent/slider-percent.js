@@ -4,7 +4,7 @@ const sliderPercentageChange = function sliderPercentageChange(element) {
   const width = element.parentElement.clientWidth - 20;
   const min = element.attributes.min.value;
   const max = element.attributes.max.value;
-  element.previousElementSibling.style.width = (((width / (max - min)) * (value - min)) + 1) + 'px';
+  element.previousElementSibling.style.width = `${((width / (max - min)) * (value - min)) + 1}px`;
 };
 
 const sliderPercentageInput = function sliderPercentageInput(event) {

@@ -73,7 +73,7 @@ var scripts =
 
 
 // ripple effect
-var buttonClick = function buttonClick(event) {
+var rippleEffect = function rippleEffect(event) {
   var div = document.createElement('div');
   div.id = 'ripple';
   div.style.top = event.pageY - 25 + 'px';
@@ -88,7 +88,7 @@ var buttonClick = function buttonClick(event) {
 (function initButtons() {
   var elements = document.querySelectorAll('.standart-button');
   elements.forEach(function (element) {
-    element.onclick = buttonClick;
+    element.onclick = rippleEffect;
   });
 })();
 
@@ -101,7 +101,7 @@ var buttonClick = function buttonClick(event) {
 
 
 // search
-var searchClick = function searchClick(_ref) {
+var modNotFoundRemove = function modNotFoundRemove(_ref) {
   var target = _ref.target;
 
   target.className = 'search__input';
@@ -111,7 +111,7 @@ var searchClick = function searchClick(_ref) {
 (function initSearch() {
   var elements = document.querySelectorAll('.js-search');
   elements.forEach(function (element) {
-    element.children[0].onfocus = searchClick;
+    element.children[0].onfocus = modNotFoundRemove;
   });
 })();
 
@@ -224,7 +224,7 @@ var calendarChange = function calendarChange(element, year, month) {
   element.children[4].replaceChild(table, element.children[4].children[0]);
 };
 
-var tableOnclick = function tableOnclick(_ref) {
+var setDate = function setDate(_ref) {
   var target = _ref.target;
 
   if (target.tagName !== 'TD') return;
@@ -235,21 +235,21 @@ var tableOnclick = function tableOnclick(_ref) {
   target.parentElement.parentElement.parentElement.parentElement.children[0].innerHTML = today;
 };
 
-var leftClick = function leftClick(event) {
+var nextMonth = function nextMonth(event) {
   var element = event.target.parentElement.parentElement;
   var year = Number(element.children[4].children[0].getAttribute('data-year'));
   var month = Number(element.children[4].children[0].getAttribute('data-month'));
   calendarChange(element, year, month - 1);
 };
 
-var rightClick = function rightClick(event) {
+var previousMonth = function previousMonth(event) {
   var element = event.target.parentElement.parentElement;
   var year = Number(element.children[4].children[0].getAttribute('data-year'));
   var month = Number(element.children[4].children[0].getAttribute('data-month'));
   calendarChange(element, year, month + 1);
 };
 
-var todayClick = function todayClick(event) {
+var setToday = function setToday(event) {
   var element = event.target.parentElement;
   var oldElement = element.getElementsByClassName('calendar__today')[0];
   oldElement.classList.remove('calendar__today');
@@ -259,7 +259,7 @@ var todayClick = function todayClick(event) {
 (function calendarInit() {
   var elements = document.querySelectorAll('.calendar');
   elements.forEach(function (element) {
-    element.onclick = tableOnclick;
+    element.onclick = setDate;
     calendarChange(element, date.getFullYear(), date.getMonth()); // календарь текущего месяца
   });
 })();
@@ -267,21 +267,21 @@ var todayClick = function todayClick(event) {
 (function calendarInit() {
   var elements = document.querySelectorAll('.calendar__left');
   elements.forEach(function (element) {
-    element.onclick = leftClick;
+    element.onclick = nextMonth;
   });
 })();
 
 (function calendarInit() {
   var elements = document.querySelectorAll('.calendar__right');
   elements.forEach(function (element) {
-    element.onclick = rightClick;
+    element.onclick = previousMonth;
   });
 })();
 
 (function calendarInit() {
   var elements = document.querySelectorAll('.calendar__data');
   elements.forEach(function (element) {
-    element.onclick = todayClick;
+    element.onclick = setToday;
   });
 })();
 
@@ -301,7 +301,7 @@ var todayClick = function todayClick(event) {
 
 
 // двигает слайдер
-var videoInput = function videoInput(element) {
+var sliderChange = function sliderChange(element) {
   var value = element.value;
 
   var width = element.parentElement.clientWidth - 20;
@@ -324,10 +324,10 @@ var pause = function pause(element) {
 
 var full = function full(element) {
   element.parentElement.parentElement.classList.toggle('video_full');
-  videoInput(element.previousElementSibling.children[2]);
+  sliderChange(element.previousElementSibling.children[2]);
 };
 
-var videoClick = function videoClick(_ref) {
+var playPauseFull = function playPauseFull(_ref) {
   var target = _ref.target;
 
   if (target.classList.contains('video__button')) {
@@ -345,14 +345,14 @@ var videoUpdate = function videoUpdate(_ref2) {
   var input = target.parentElement.getElementsByClassName('js-video__slider-input')[0];
   input.attributes.max.value = target.duration;
   input.value = target.currentTime;
-  videoInput(input);
+  sliderChange(input);
 };
 
 (function initVideos() {
   var blocks = document.querySelectorAll('.js-video');
   blocks.forEach(function (element) {
     element.children[1].ontimeupdate = videoUpdate;
-    element.children[2].onclick = videoClick;
+    element.children[2].onclick = playPauseFull;
   });
 })();
 

@@ -1,9 +1,9 @@
 // ripple effect
-const buttonClick = function buttonClick(event) {
+const rippleEffect = function rippleEffect(event) {
   const div = document.createElement('div');
   div.id = 'ripple';
-  div.style.top = (event.pageY - 25) + 'px';
-  div.style.left = (event.pageX - 25) + 'px';
+  div.style.top = `${event.pageY - 25}px`;
+  div.style.left = `${event.pageX - 25}px`;
 
   document.body.appendChild(div);
   setTimeout(() => { document.body.removeChild(div); }, 550);
@@ -12,6 +12,6 @@ const buttonClick = function buttonClick(event) {
 (function initButtons() {
   const elements = document.querySelectorAll('.standart-button');
   elements.forEach((element) => {
-    element.onclick = buttonClick;
+    element.onclick = rippleEffect;
   });
 }());

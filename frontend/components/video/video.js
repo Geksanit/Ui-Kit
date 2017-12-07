@@ -1,10 +1,10 @@
 // двигает слайдер
-const videoInput = function videoInput(element) {
+const sliderChange = function sliderChange(element) {
   const { value } = element;
   const width = element.parentElement.clientWidth - 20;
   const min = element.attributes.min.value;
   const max = element.attributes.max.value;
-  element.previousElementSibling.style.width = ((width / (max - min)) * (value - min)) + 1 + 'px';
+  element.previousElementSibling.style.width = `${((width / (max - min)) * (value - min)) + 1}px`;
 };
 
 const play = function play(element) {
@@ -21,10 +21,10 @@ const pause = function pause(element) {
 
 const full = function full(element) {
   element.parentElement.parentElement.classList.toggle('video_full');
-  videoInput(element.previousElementSibling.children[2]);
+  sliderChange(element.previousElementSibling.children[2]);
 };
 
-const videoClick = function videoClick({ target }) {
+const playPauseFull = function playPauseFull({ target }) {
   if (target.classList.contains('video__button')) {
     if (!target.classList.contains('video__button-pause')) play(target);
     else pause(target);
@@ -39,13 +39,13 @@ const videoUpdate = function videoUpdate({ target }) {
   const input = target.parentElement.getElementsByClassName('js-video__slider-input')[0];
   input.attributes.max.value = target.duration;
   input.value = target.currentTime;
-  videoInput(input);
+  sliderChange(input);
 };
 
 (function initVideos() {
   const blocks = document.querySelectorAll('.js-video');
   blocks.forEach((element) => {
     element.children[1].ontimeupdate = videoUpdate;
-    element.children[2].onclick = videoClick;
+    element.children[2].onclick = playPauseFull;
   });
 }());
