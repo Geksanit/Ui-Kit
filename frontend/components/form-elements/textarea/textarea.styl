@@ -1,4 +1,5 @@
-textarea($font)
+textarea($font, $gray)
+
   .textarea
     -webkit-appearance none
     -moz-appearance none
@@ -8,7 +9,7 @@ textarea($font)
     height 88px
     padding 4px 1rem
     margin-bottom 10px
-    background-color lightgrey
+    background-color $gray[1]
     border-radius 3px
     border none
     outline none
@@ -16,5 +17,5 @@ textarea($font)
     overflow hidden
     font-family $font, Arial, sans-serif
     font-size 14px
-    color gray
+    color $gray[2]
     line-height 28px

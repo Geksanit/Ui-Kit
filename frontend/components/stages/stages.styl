@@ -1,9 +1,9 @@
-stages($font,$blue,$orange)
+stages($font, $blue, $orange, $gray, $white)
+
   .stages
     $diameter = 29px
     $radius = 14.5px
     width 100%
-    border 2px green
     display flex
     align-items center
     justify-content space-around
@@ -12,8 +12,8 @@ stages($font,$blue,$orange)
       width $diameter
       height $diameter
       border-radius $radius
-      background-color lightgrey
-      color gray
+      background-color $gray[1]
+      color $gray[2]
       z-index 2
       font-family $font, Arial, sans-serif
       font-weight 700
@@ -27,12 +27,12 @@ stages($font,$blue,$orange)
       flex 2 2 50px
       margin -5px
       height 5px
-      background-color lightgrey
+      background-color $gray[1]
 
     &_color_orange
       background-color $orange[0]
-      color white
+      color $white
 
     &_color_blue
       background-color $blue[0]
-      color white
+      color $white

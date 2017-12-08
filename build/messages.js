@@ -73,9 +73,9 @@ var scripts =
 
 
 // ripple effect
-var buttonClick = function buttonClick(event) {
+var rippleEffect = function rippleEffect(event) {
   var div = document.createElement('div');
-  div.id = 'ripple';
+  div.id = 'button__ripple';
   div.style.top = event.pageY - 25 + 'px';
   div.style.left = event.pageX - 25 + 'px';
 
@@ -88,7 +88,7 @@ var buttonClick = function buttonClick(event) {
 (function initButtons() {
   var elements = document.querySelectorAll('.standart-button');
   elements.forEach(function (element) {
-    element.onclick = buttonClick;
+    element.onclick = rippleEffect;
   });
 })();
 

@@ -1,6 +1,8 @@
-arrow-button($blue, $orange)
-  $radius = 50px
+arrow-button($blue, $orange, $gray, $white)
+
+
   .arrow-button
+    $radius = 50px
     padding 0
     box-sizing content-box
     width $radius - 6
@@ -10,7 +12,7 @@ arrow-button($blue, $orange)
     border-width 3px
     outline none
     cursor pointer
-    background-color  white
+    background-color  $white
     display flex
     align-items center
     justify-content space-around
@@ -29,7 +31,7 @@ arrow-button($blue, $orange)
       background-color $blue[0]
 
       .arrow-button__arrow
-        border-color white
+        border-color $white
 
     &_color_orange
       $_color = $orange
@@ -46,8 +48,8 @@ arrow-button($blue, $orange)
         transform translateX(4px) rotate(135deg)
 
     &:disabled
-      border-color lightgray
-      background-color lightgray
+      border-color $gray[1]
+      background-color $gray[1]
 
       .arrow-button__arrow
-        border-color white
+        border-color $white

@@ -1,17 +1,9 @@
 mixin input-email(options)
-    - //(placeholder='placeholder', required=true, name='emal')
     if (!options || (typeof(options) !== 'object'))
         - options = {}
     - options.placeholder = options.placeholder || 'placeholder'
     - options.name = options.name || 'email'
-    if (options.required === undefined)
-        - options.required = true;
 
-    if options.required
-        label.input-email
-            input.input-email__input(type = "email" name = options.name placeholder = options.placeholder required)
-            .input-email__status
-    else
-        label.input-email
-            input.input-email__input(type = "email" name = options.name placeholder = options.placeholder)
-            .input-email__status
+    label.input-email
+        input.input-email__input(type = "email" name = options.name placeholder = options.placeholder required)
+        .input-email__status

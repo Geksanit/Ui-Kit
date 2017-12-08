@@ -1,6 +1,6 @@
-slider-percent($font,$color)
+slider-percent($font, $color, $gray, $white)
   // track - линия
-  $track-color = lightgray
+  $track-color = $gray[1]
   // thumb - ручка/ползунок
   $thumb-color = $color[0]
   $thumb-radius = 10px
@@ -56,7 +56,6 @@ slider-percent($font,$color)
         outline none
       &::-webkit-slider-runnable-track
         track()
-        //background-color transparent
       &::-webkit-slider-thumb
         thumb()
         -webkit-appearance none
@@ -87,7 +86,7 @@ slider-percent($font,$color)
 
     &__container
       margin 0 -10px
-      color lightgrey
+      color $gray[1]
       font-size 10px
       display flex
       justify-content space-around

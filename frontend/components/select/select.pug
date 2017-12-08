@@ -5,6 +5,7 @@ mixin select(options)
     if (!options.list || (!Array.isArray(options.list)))
         - options.list = ['']
     - options.mix = options.mix || ''
+
     form(action = "#" class = "select " + options.mix)
         select.select__select
             option(disabled selected)= options.def

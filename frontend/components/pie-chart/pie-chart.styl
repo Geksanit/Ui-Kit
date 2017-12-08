@@ -1,28 +1,36 @@
-pie-chart($blue,$orange)
+pie-chart($blue, $orange, $gray, $white)
+
   .pie-chart
     $color = $orange
     $size = 100px
     width $size
     height $size
-    background-color white
+    background-color $white
     display flex
     align-items center
     justify-content space-around
     position relative
+
     &__svg
       transform  rotate(-90deg)
+
     &__circle
-      // cx cy не работают в фоксе
       fill none
       stroke-width 17
-      &-orange
-        stroke $orange[0]
-      &-blue
-        stroke $blue[0]
-      &-gray
-        stroke #747474
 
-  .pie-chart + div //сделать mix ?
+    &_color_lightgray
+      stroke $gray[1]
+
+    &_color_orange
+      stroke $orange[0]
+
+    &_color_blue
+      stroke $blue[0]
+
+    &_color_gray
+      stroke $gray[4]
+
+  .pie-chart + div //переделаю
     padding-left 15px
     p
       position relative
@@ -33,10 +41,10 @@ pie-chart($blue,$orange)
       position absolute
       top 5px
       left -15px
-      background-color #747474
+      background-color $gray[4]
     p:nth-child(2):before
       background-color $orange[0]
     p:nth-child(3):before
       background-color $blue[0]
     p:nth-child(4):before
-      background-color lightgray
+      background-color $gray[1]

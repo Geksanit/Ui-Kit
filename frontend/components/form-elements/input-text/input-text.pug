@@ -1,17 +1,10 @@
 mixin input-text(options)
-    - //(placeholder='placeholder', required=true, name='name')
     if (!options || (typeof(options) !== 'object'))
         - options = {}
     - options.placeholder = options.placeholder || 'placeholder'
     - options.name = options.name || 'name'
-    if (options.required === undefined)
-        - options.required = true;
 
-    if options.required
-        label.input-text
-            input.input-text__input(type = "text" name = options.name placeholder = options.placeholder required)
-            .input-text__status
-    else
-        label.input-text
-            input.input-text__input(type = "text" name = options.name placeholder = options.placeholder)
-            .input-text__status
+
+    label.input-text
+        input.input-text__input(type = "text" name = options.name placeholder = options.placeholder required)
+        .input-text__status

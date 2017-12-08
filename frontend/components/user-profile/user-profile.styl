@@ -1,6 +1,7 @@
-user-profile($font,$blue,$orange)
-  $path = '../img/'
+user-profile($font, $blue, $orange, $white)
+
   .user-profile
+    $path = '../img/'
     display flex
     align-items center
     width 268px
@@ -14,7 +15,7 @@ user-profile($font,$blue,$orange)
     &__block
       position relative
       background-color #e5e5e5
-      color white
+      color $white
       height 100%
       padding 12px 10px
       box-sizing border-box
@@ -44,10 +45,12 @@ user-profile($font,$blue,$orange)
           width 25px
           height 25px
           background url($path + 'icon1.png') no-repeat center
+
         .user-profile__icon2
           width 25px
           height 25px
           background url($path + 'icon2.png') no-repeat center
+
         .user-profile__icon3
           width 25px
           height 25px
@@ -60,8 +63,10 @@ user-profile($font,$blue,$orange)
       font-family $font, Arial, sans-serif
       font-weight 900
       font-size 11px
+      text-transform uppercase
 
     &_color_blue
       background-color $blue[0]
+
     &_color_orange
       background-color $orange[0]

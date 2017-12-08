@@ -1,7 +1,8 @@
 mixin radio(options)
-    - //(name,value)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
     - options.name = options.name || 'radio'
     - options.value = options.value || 'value'
-    input.radio(type = "radio" name = options.name value = options.value)
+    - options.mix = options.mix || ''
+
+    input(type = "radio" class = "radio " + options.mix name = options.name value = options.value)

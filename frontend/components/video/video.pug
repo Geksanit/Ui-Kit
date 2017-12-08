@@ -4,8 +4,8 @@ mixin video(options)
     if (!options.src)
         - options.src = 'no src !!!'
     else
-        - var url = require('../video/'+options.src+'.jpg')
-        - var src = require('../video/'+options.src+'.mp4')
+        - var url = require('../video/' + options.src + '.jpg')
+        - var src = require('../video/' + options.src + '.mp4')
     - options.title = options.title || 'Title'
     - options.mix = options.mix || ''
 
@@ -15,9 +15,9 @@ mixin video(options)
             h2 #{options.title}
             h4 #{src}
         if(options.src)
-            video(poster = url src = src)
+            video.video__video(poster = url src = src)
         else
-            video
+            video.video__video
         .video__controls
             .video__button.video__button-play
             .video__slider

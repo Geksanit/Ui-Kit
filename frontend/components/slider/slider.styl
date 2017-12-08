@@ -1,6 +1,6 @@
-slider($font,$color)
+slider($font, $color, $gray, $white)
   // track - линия
-  $track-color = lightgray
+  $track-color = $gray[1]
   // thumb - ручка/ползунок
   $thumb-color = $color[0]
   $thumb-radius = 10px
@@ -31,9 +31,9 @@ slider($font,$color)
       height 24px
       background-color $thumb-color
       border-radius 5px
-      top 0px
+      top 0
       left 50% - 17.5px
-      color white
+      color $white
       text-align center
       line-height 24px
       &::after

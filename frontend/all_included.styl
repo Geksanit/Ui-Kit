@@ -1,8 +1,9 @@
 //colors
+$white = white
+$black = black
 $blue = #4eb7a8 #28a290
 $orange = #e75735 #bf3e1f
-$gray = #f2f2f2 #e5e5e5 #8e8d8d
-$test = lightgray gray darkgray
+$gray = #f2f2f2 #e5e5e5 #8e8d8d #9d9d9d #747474
 
 //fonts
 @font-face
@@ -73,72 +74,72 @@ body
 
 
 @import "../components/standart-button/standart-button"
-standart-button(Lato,$blue,$orange)
+standart-button(Lato, $blue, $orange, $gray , $white)
 
 @import "../components/arrow-button/arrow-button.styl"
-arrow-button($blue, $orange)
+arrow-button($blue, $orange, $gray, $white)
 
 @import "../components/percentages/percentages.styl"
-percentages(Lato,$blue,$orange)
+percentages(Lato, $orange, $gray, $white)
 
 @import "../components/pie-chart/pie-chart.styl"
-pie-chart($blue,$orange)
+pie-chart($blue, $orange, $gray, $white)
 
 @import "../components/slider/slider.styl"
-slider(Lato,$blue)
+slider(Lato, $blue, $gray, $white)
 
 @import "../components/slider-percent/slider-percent.styl"
-slider-percent(Lato,$blue)
+slider-percent(Lato, $blue, $gray, $white)
 
 @import "../components/stages/stages.styl"
-stages(Lato,$blue, $orange)
+stages(Lato, $blue, $orange, $gray, $white)
 
 @import "../components/search/search.styl"
-search(SourceSansPro,$blue,$orange)
+search(SourceSansPro, $blue, $orange, $gray, $white)
 
 @import "../components/select/select.styl"
-select(SourceSansPro,$blue)
+select(SourceSansPro, $blue, $gray, $white)
 
 @import "../components/user-profile/user-profile.styl"
-user-profile(Lato,$blue,$orange)
+user-profile(Lato, $blue, $orange, $white)
 
 @import "../components/news/news.styl"
-news(Lato,$blue, $orange)
+news(Lato, $blue, $orange, $gray, $white)
 
 @import "../components/events/events.styl"
-events(Lato,$blue, $orange)
+events(Lato, $blue, $orange, $gray, $white)
 
 @import "../components/map/map.styl"
-map(Lato,$orange)
+map(Lato, $orange, $gray, $white)
 
 @import "../components/calendar/calendar.styl"
-calendar(Lato,SourceSansPro,$orange,$gray)
+calendar(Lato, SourceSansPro, $orange, $gray, $white)
 
 @import "../components/messaging/messaging.styl"
-messaging(Lato,SourceSansPro,$blue,$orange)
+messaging(Lato, SourceSansPro, $blue, $orange, $gray, $white)
 
 @import "../components/video/video.styl"
-video(Lato,$orange)
+video(Lato, $orange, $gray, $white, $black)
 
 // другие компоненты
 @import "../components/photo/photo.styl"
-photo()
+photo($gray, $white)
 
 @import "../components/header/header.styl"
-header(Lato,$orange)
+header(Lato, $orange, $white)
 
 @import "../components/form-elements/input-text/input-text.styl"
-input-text(Lato,SourceSansPro,$blue, $orange)
+input-text(Lato, SourceSansPro, $blue, $orange, $gray, $white)
 
 @import "../components/form-elements/input-email/input-email.styl"
-input-email(Lato,SourceSansPro,$blue, $orange)
+input-email(Lato, SourceSansPro, $blue, $orange, $gray, $white)
 
 @import "../components/form-elements/textarea/textarea.styl"
-textarea(SourceSansPro)
+textarea(SourceSansPro, $gray)
 
 @import "../components/form-elements/radio/radio.styl"
-radio($blue, $orange)
+radio($blue, $orange, $gray, $white)
 
 @import "../components/form-elements/checkbox/checkbox.styl"
-checkbox(Lato, $blue)
+checkbox(Lato, $blue, $gray, $white)
 

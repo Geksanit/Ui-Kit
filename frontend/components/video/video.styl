@@ -1,4 +1,4 @@
-video($font,$orange)
+video($font, $orange, $gray, $white, $black)
   $path = '../img/'
   $height = 48px
   .video
@@ -7,11 +7,11 @@ video($font,$orange)
     height 281px
     min-width 200px
     min-height 100px
-    background-color black
+    background-color $black
     border-radius 3px
     font-family $font, Arial, sans-serif
     font-weight 400
-    color white
+    color $white
 
     &_full
       position fixed
@@ -43,13 +43,13 @@ video($font,$orange)
         margin 20px 0 10px 0
       h4
         margin 0
+
       &-hide
         display none
 
-    video
+    &__video
       width 100%
       height 100%
-      border-radius 3px
 
     &__controls
       display flex
@@ -68,10 +68,12 @@ video($font,$orange)
       background-color transparent
       &:hover
         background-color rgba(255,255,255,0.1)
+
       &-play
-        background url($path+'play.svg') center no-repeat
+        background url($path + 'play.svg') center no-repeat
+
       &-pause
-        background url($path+'pause.svg') center  no-repeat
+        background url($path + 'pause.svg') center  no-repeat
 
     &__slider
       position relative
@@ -84,10 +86,11 @@ video($font,$orange)
         position absolute
         top 22px
         left 0
-        background-color lightgray
+        background-color $gray[1]
         width 100%
         height 5px
         border-radius 5px
+
       &_line
         position absolute
         top 22px
@@ -96,6 +99,7 @@ video($font,$orange)
         width 0
         height 5px
         border-radius 5px
+
       .video__slider-input
         position relative
         margin 0
@@ -117,58 +121,58 @@ video($font,$orange)
       &:hover
         background-size 44px
 
-  .video__slider-input
-    // track - линия
-    $track-color = lightgray
-    // thumb - ручка/ползунок
-    $thumb-color = $orange[0]
-    $thumb-radius = 10px
-    $thumb-size = 20px
+    &__slider-input
+      // track - линия
+      $track-color = $gray[1]
+      // thumb - ручка/ползунок
+      $thumb-color = $orange[0]
+      $thumb-radius = 10px
+      $thumb-size = 20px
 
-    track()
-      width 100%
-      height 5px
-      border-radius 5px
-      background-color transparent
-      cursor pointer
-    thumb()
-      margin-top -7.5px
-      height $thumb-size
-      width $thumb-size
-      border-radius $thumb-radius
-      background $thumb-color
-      cursor pointer
-
-    -webkit-appearance none
-    -moz-appearance none
-    width 100%
-    margin 40px 0 0 0
-    opacity 0.99
-    background-color transparent
-    &:focus
-      outline none
-    &::-webkit-slider-runnable-track
       track()
-      //background-color transparent
-    &::-webkit-slider-thumb
+        width 100%
+        height 5px
+        border-radius 5px
+        background-color transparent
+        cursor pointer
       thumb()
+        margin-top -7.5px
+        height $thumb-size
+        width $thumb-size
+        border-radius $thumb-radius
+        background $thumb-color
+        cursor pointer
+
       -webkit-appearance none
-    &::-moz-range-track
-      track()
-    &::-moz-range-thumb
-      thumb()
-      border none
-    &::-ms-track
-      track()
-      background transparent
-      border-color transparent
-      border-width $thumb-size 0
-      color transparent
-    &::-ms-fill-lower
-      background yellow
-      border-radius 10px
-    &::-ms-fill-upper
-      background $track-color
-      border-radius 10px
-    &::-ms-thumb
-      thumb()
+      -moz-appearance none
+      width 100%
+      margin 40px 0 0 0
+      opacity 0.99
+      background-color transparent
+      &:focus
+        outline none
+      &::-webkit-slider-runnable-track
+        track()
+        //background-color transparent
+      &::-webkit-slider-thumb
+        thumb()
+        -webkit-appearance none
+      &::-moz-range-track
+        track()
+      &::-moz-range-thumb
+        thumb()
+        border none
+      &::-ms-track
+        track()
+        background transparent
+        border-color transparent
+        border-width $thumb-size 0
+        color transparent
+      &::-ms-fill-lower
+        background yellow
+        border-radius 10px
+      &::-ms-fill-upper
+        background $track-color
+        border-radius 10px
+      &::-ms-thumb
+        thumb()

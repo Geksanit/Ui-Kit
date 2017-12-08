@@ -1,5 +1,4 @@
 mixin textarea(options)
-    - //(placeholder='placeholder', required=true, name='message')
     if (!options || (typeof(options) !== 'object'))
         - options = {}
     - options.placeholder = options.placeholder || 'placeholder'

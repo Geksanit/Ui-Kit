@@ -1,6 +1,6 @@
-map($font,$orange)
-  $path = '../'
+map($font, $orange, $gray, $white)
   .map
+    $path = '../'
     width 594px
     border-radius 3px
     font-family $font, Arial, sans-serif
@@ -9,7 +9,7 @@ map($font,$orange)
     &__element
       height 203px
       width 100%
-      background-color gray
+      background-color $gray[2]
       border-top-left-radius 3px
       border-top-right-radius 3px
 
@@ -18,7 +18,7 @@ map($font,$orange)
       height 70px
       background-color $orange[0]
       padding 20px
-      color white
+      color $white
       box-sizing border-box
       border-radius 0 0 3px 3px
 

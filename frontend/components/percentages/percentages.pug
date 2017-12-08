@@ -1,9 +1,8 @@
 mixin percentages(num)
-    - num = num || 50
+    - num = num || 0
     .percentages
         svg(class="percentages__svg")
             - var radius = 45
             - var N = 3.1415 * radius * 2 * (num / 100);
             circle(class = "percentages__circle" cx = "50%" cy = "50%" r = radius stroke-dasharray = N + " 500" stroke-dashoffset = "0")
-        .percentages__text
-            .percentages__number #{num}
+        .percentages__number #{num}

@@ -1,8 +1,9 @@
-calendar($font1,$font2,$color1,$color2)
-  $width = 279px
+calendar($font1, $font2, $color1, $color2, $white)
+
   .calendar
+    $width = 279px
     width $width
-    color white
+    color $white
     font-family $font1, Arial, sans-serif
     font-weight 400
     text-align center
@@ -42,8 +43,8 @@ calendar($font1,$font2,$color1,$color2)
           top calc(50% - 5px)
           width 10px
           height 10px
-          border-right 3px solid white
-          border-bottom 3px solid white
+          border-right 3px solid $white
+          border-bottom 3px solid $white
 
       .calendar__left
         left 0
@@ -76,26 +77,26 @@ calendar($font1,$font2,$color1,$color2)
       td
         width ($width / 7)
 
-    table.calendar__days
+    .calendar__days
       $width = $width + 2px
       margin 0 -1px
       background-color $color2[0]
-      color white
+      color $white
       font-family $font2, Arial, sans-serif
       font-weight 400
       font-size 20px
       width $width
       border-collapse collapse
       td
-        border 1px solid white
+        border 1px solid $white
         width ($width / 7)
         height @width
         box-sizing border-box
-      td.calendar__days-month
+      .calendar__days-month
         color $color2[2]
-      td.calendar__today
+      .calendar__today
         background-color $color1[0]
-        color white
+        color $white
 
     .calendar__data
       font-family $font1, Arial, sans-serif
@@ -108,4 +109,4 @@ calendar($font1,$font2,$color1,$color2)
       border-bottom-right-radius 3px
       &:hover
         background-color $color1[0]
-        color white
+        color $white

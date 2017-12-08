@@ -1,22 +1,23 @@
-select($font, $blue)
+select($font, $blue, $gray, $white)
+
   .select
     position relative
     width 288px
-    padding 0px
+    padding 0
     border none
 
     &__select
       width 100%
       -webkit-appearance none
       -moz-appearance none
-      background-color lightgrey
+      background-color $gray[1]
       outline none
       border-radius 3px
       border none
       padding 0 1rem
       height 28px
       font-size 1rem
-      color gray
+      color $gray[2]
       font-family $font, Arial, sans-serif
       font-weight 400
 
@@ -36,6 +37,6 @@ select($font, $blue)
         height 25%
         top 7px
         right 11px
-        border-bottom 2px solid white
-        border-left 2px solid white
+        border-bottom 2px solid $white
+        border-left 2px solid $white
         transform rotate(-45deg)

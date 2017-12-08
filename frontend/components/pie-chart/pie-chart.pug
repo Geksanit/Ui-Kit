@@ -1,20 +1,17 @@
 mixin pie-chart(a,b,c)
+    - // a,b,c-% d-четвертая часть дополняет до 100%
     .pie-chart
         - var radius = 40
-        if (a == null)
-            - var a = 30
+        - a = a || 0
         - a = 3.1415 * radius * 2 * (a / 100);
-        if (b == null)
-            - var b = 0
+        - b = b || 0
         - b = 3.1415 * radius * 2 * (b / 100) + a;
-        if (c == null)
-            - var c = 0
+        - c = c || 0
         - c = 3.1415 * radius * 2 * (c / 100) + b;
-        - var num = 50
-        - var N = 3.1415 * radius * 2 * (num / 100);
 
-        svg(class="pie-chart__svg")
-            circle(class = "pie-chart__circle" r = radius cx = "50%" cy = "50%" stroke-dasharray = "550" stroke = "lightgray" stroke-dashoffset = "0")
-            circle(class = "pie-chart__circle pie-chart__circle-blue" r = radius cx = "50%" cy = "50%" stroke-dasharray = c + " 500" stroke = "darkgray" stroke-dashoffset = "0")
-            circle(class = "pie-chart__circle pie-chart__circle-orange" r = radius cx = "50%" cy = "50%" stroke-dasharray= b + " 500" stroke = "red" stroke-dashoffset = "0")
-            circle(class = "pie-chart__circle pie-chart__circle-gray" r = radius cx = "50%" cy = "50%" stroke-dasharray= a + " 500" stroke = "green" stroke-dashoffset = "0")
+
+        svg(class = "pie-chart__svg")
+            circle(class = "pie-chart__circle pie-chart_color_lightgray" r = radius cx = "50%" cy = "50%" stroke-dasharray = "550" stroke = "lightgray" stroke-dashoffset = "0")
+            circle(class = "pie-chart__circle pie-chart_color_blue" r = radius cx = "50%" cy = "50%" stroke-dasharray = c + " 500" stroke = "darkgray" stroke-dashoffset = "0")
+            circle(class = "pie-chart__circle pie-chart_color_orange" r = radius cx = "50%" cy = "50%" stroke-dasharray = b + " 500" stroke = "red" stroke-dashoffset = "0")
+            circle(class = "pie-chart__circle pie-chart_color_gray" r = radius cx = "50%" cy = "50%" stroke-dasharray = a + " 500" stroke = "green" stroke-dashoffset = "0")

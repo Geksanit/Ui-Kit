@@ -13,10 +13,10 @@ mixin messaging(options)
             .messaging__name #{options.name}
             .messaging__img
                 .messaging__chat
-                +photo({ src:options.src })
+                +photo({ src: options.src })
                 .messaging__camera
         .messaging__bottom
             .messaging__buble #{options.text}
             textarea.messaging__message(name = "message")
-            +standart-button({ title:'reply', color:options.color, mix:'messaging__button-mix' })
+            +standart-button({ title: 'reply', color: options.color, mix: 'messaging__button-mix' })
             .messaging__clearfix
