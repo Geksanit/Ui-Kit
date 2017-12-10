@@ -18,6 +18,7 @@ standart-button($font, $blue, $orange, $gray, $white)
     border-color $_color[0]
     box-shadow 0 3px 0 $_color[1]
     color $_color[0]
+
     &:hover
       background-color $_color[0]
 
@@ -43,10 +44,12 @@ standart-button($font, $blue, $orange, $gray, $white)
     border-color $blue[0]
     box-shadow 0 3px 0 $blue[1]
     color $blue[0]
+
     &:hover
       background-color $blue[0]
       color white
       cursor pointer
+
     &:active
       bottom -4px
       box-shadow none
@@ -64,6 +67,7 @@ standart-button($font, $blue, $orange, $gray, $white)
 
     &:disabled
       setColor($gray)
+
       &:hover
         background-color $white
 

@@ -44,6 +44,7 @@ input-email($font1, $font2, $blue, $orange, $gray, $white)
           height 10px
           background-color inherit
           transform rotate(-45deg)
+
         &::after
           position absolute
           content ''
@@ -56,10 +57,12 @@ input-email($font1, $font2, $blue, $orange, $gray, $white)
 
       &:invalid + .input-email__status
         background-color $orange[0]
+
         &::after
           content 'error'
 
       &:valid + .input-email__status
         background-color $blue[0]
+
         &::after
           content 'thanks!'

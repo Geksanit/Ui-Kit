@@ -4,6 +4,7 @@ body
   margin 0
   padding 0
   background-color $gray[0]
+
   main
     min-height calc(100vh - 50px)
     display flex
@@ -12,9 +13,11 @@ body
     justify-content flex-start
     margin 0 auto
     width 696px
+
     @media (max-width:712px)
       margin 0
       width 100%
+
     @media (min-width:1000px)
       margin auto
       width 696px
@@ -44,6 +47,30 @@ body
       line-height @height
       text-align center
       font-size 20px
+
+    .pie-chart + div //
+      padding-left 15px
+
+      p
+        position relative
+
+        &:before
+          content ''
+          width 10px
+          height 10px
+          position absolute
+          top 5px
+          left -15px
+          background-color $gray[4]
+
+        &:nth-child(2):before
+          background-color $orange[0]
+
+        &:nth-child(3):before
+          background-color $blue[0]
+
+        &:nth-child(4):before
+          background-color $gray[1]
 
   footer
     width 100%

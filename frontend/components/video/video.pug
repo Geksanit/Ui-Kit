@@ -1,15 +1,13 @@
 mixin video(options)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
-    if (!options.src)
-        - options.src = 'no src !!!'
-    else
+    - var src = 'no src!'
+    if (options.src)
         - var url = require('../video/' + options.src + '.jpg')
-        - var src = require('../video/' + options.src + '.mp4')
+        - src = require('../video/' + options.src + '.mp4')
     - options.title = options.title || 'Title'
     - options.mix = options.mix || ''
 
-    - //video__frame для фуллскрина
     div(class = "js-video video " + options.mix)
         .video__title
             h2 #{options.title}
