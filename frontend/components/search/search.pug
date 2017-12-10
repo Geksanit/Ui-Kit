@@ -2,13 +2,11 @@ mixin search(options)
     - //(placeholder='search',name='search',notfound=false)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
-    if !options.placeholder
-        - options.placeholder = 'Search'
-    if !options.name
-        - options.name = 'search'
+    - options.placeholder = options.placeholder || 'Search'
+    - options.name = options.name || 'search'
     if options.notfound
-        - var mod = 'search-notfound'
+        - var mod = 'search_notfound'
         - options.placeholder = "I've not found what I'm looking for..."
-    form(action="#" class="search js-search")
-        input(type="search" name=options.name class=mod placeholder=options.placeholder)
-        input(type="submit" name="" value="" class="submit")
+    form(action = "#" class = "search js-search")
+        input(type = "search" name = options.name class = "search__input " + mod placeholder = options.placeholder)
+        input.search__submit(type = "submit" name = "" value = "" class = "submit")

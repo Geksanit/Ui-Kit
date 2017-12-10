@@ -1,26 +1,25 @@
 mixin video(options)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
-    if(!options.src)
-        -options.src = 'no src !!!'
-    else
-        - var url = require('../video/'+options.src+'.jpg')
-        - var src = require('../video/'+options.src+'.mp4')
-    if(!options.title)
-        -options.title = 'Title'
-    .video__frame
-        .js-video.video
-            .video__title
-                h2 #{options.title}
-                h4 #{src}
-            if(options.src)
-                video(poster = url src = src)
-            else
-                video
-            .video__controls
-                .video__button.video__button-play
-                .video__slider
-                    .video__slider_line-full
-                    .video__slider_line
-                    input(class="js-video__slider-input video__slider-input" type="range" min="0" max="100" value="0")
-                .video__button-full
+    - var src = 'no src!'
+    if (options.src)
+        - var url = require('../video/' + options.src + '.jpg')
+        - src = require('../video/' + options.src + '.mp4')
+    - options.title = options.title || 'Title'
+    - options.mix = options.mix || ''
+
+    div(class = "js-video video " + options.mix)
+        .video__title
+            h2 #{options.title}
+            h4 #{src}
+        if(options.src)
+            video.video__video(poster = url src = src)
+        else
+            video.video__video
+        .video__controls
+            .video__button.video__button-play
+            .video__slider
+                .video__slider_line-full
+                .video__slider_line
+                input(class = "js-video__slider-input video__slider-input" type = "range" min = "0" max = "100" value = "0")
+            .video__button-full

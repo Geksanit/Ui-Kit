@@ -1,0 +1,33 @@
+pie-chart($blue, $orange, $gray, $white)
+
+  .pie-chart
+    $color = $orange
+    $size = 100px
+    width $size
+    height $size
+    background-color $white
+    display flex
+    align-items center
+    justify-content space-around
+    position relative
+
+    &__svg
+      transform  rotate(-90deg)
+
+    &__circle
+      fill none
+      stroke-width 17
+
+    &_color_lightgray
+      stroke $gray[1]
+
+    &_color_orange
+      stroke $orange[0]
+
+    &_color_blue
+      stroke $blue[0]
+
+    &_color_gray
+      stroke $gray[4]
+
+

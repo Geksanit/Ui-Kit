@@ -1,2 +1,2 @@
 import './page_messages.styl';
-import '../components/buttons/standart-button';
+import '../components/standart-button/standart-button';

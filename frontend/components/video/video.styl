@@ -1,172 +1,193 @@
-video($font,$orange)
-    $path = '../'
+video($font, $orange, $gray, $white, $black)
+
+  .video
+    $path = '../img/'
     $height = 48px
-    .video
+    position relative
+    width 640px
+    height 281px
+    min-width 200px
+    min-height 100px
+    background-color $black
+    border-radius 3px
+    font-family $font, Arial, sans-serif
+    font-weight 400
+    color $white
+
+    &_full
+      position fixed
+      top 10vh
+      left 10vw
+      width 80vw
+      height 80vh
+      z-index 10
+
+      &::before
+        content ''
+        width 100vw
+        height 100vh
+        position fixed
+        top 0
+        left 0
+        background-color rgba(0,0,0, 0.5)
+        z-index -1
+
+    &__title
+      padding 0 40px
+      box-sizing border-box
+      position absolute
+      top 0
+      left 0
+      width 100%
+
+      h2
+        font-family $font, Arial, sans-serif
+        font-weight 300
+        margin 20px 0 10px 0
+      h4
+        margin 0
+
+      &-hide
+        display none
+
+    &__video
+      width 100%
+      height 100%
+
+    &__controls
+      display flex
+      position absolute
+      bottom 0
+      left 0
+      width 100%
+      height $height
+      background-color rgba(0,0,0,0.5)
+      border-bottom-right-radius 3px
+      border-bottom-left-radius 3px
+
+    &__button
+      flex 0 0 $height
+      height $height
+      background-color transparent
+
+      &:hover
+        background-color rgba(255,255,255,0.1)
+
+      &-play
+        background url($path + 'play.svg') center no-repeat
+
+      &-pause
+        background url($path + 'pause.svg') center  no-repeat
+
+    &__slider
+      position relative
+      flex 1 1 100px
+      margin 0 20px
+      height $height
+      background-color transparent
+
+      &_line-full
+        position absolute
+        top 22px
+        left 0
+        background-color $gray[1]
+        width 100%
+        height 5px
+        border-radius 5px
+
+      &_line
+        position absolute
+        top 22px
+        left 0
+        background-color $orange[0]
+        width 0
+        height 5px
+        border-radius 5px
+
+      .video__slider-input
         position relative
+        margin 0
+        padding 0
         width 100%
         height 100%
-        min-width 200px
-        min-height 100px
-        background-color black
-        border-radius 3px
-        font-family $font, Arial, sans-serif
-        font-weight 400
-        &__frame
-            width 640px
-            height 281px
-            color white
-            background-color gray
-            border-radius 3px
-            margin 10px
-            &-full
-                &::before
-                    content ''
-                    width 100vw
-                    height 100vh
-                    position fixed
-                    top 0
-                    left 0
-                    background-color rgba(0,0,0, 0.5)
-        &__title
-            padding 0 40px
-            box-sizing border-box
-            position absolute
-            top 0
-            left 0
-            width 100%
-            h2
-                font-family $font, Arial, sans-serif
-                font-weight 300
-                margin 20px 0 10px 0
-            h4
-                margin 0
-            &-hide
-                display none
-        video
-            width 100%
-            height 100%
-            border-radius 3px
-        &__controls
-            display flex
-            position absolute
-            bottom 0
-            left 0
-            width 100%
-            height $height
-            background-color rgba(0,0,0,0.5)
-            border-bottom-right-radius 3px
-            border-bottom-left-radius 3px
-        &__button
-            flex 0 0 $height
-            height $height
-            background-color transparent
-            &:hover
-                background-color rgba(255,255,255,0.1)
-            &-play
-                background url($path+'./img/play.svg') center no-repeat
-            &-pause
-                background url($path+'./img/pause.svg') center  no-repeat
-        &__slider
-            position relative
-            flex 1 1 100px
-            margin 0 20px
-            height $height
-            background-color transparent
-            &_line-full
-                position absolute
-                top 22px
-                left 0
-                background-color lightgray
-                width 100%
-                height 5px
-                border-radius 5px
-            &_line
-                position absolute
-                top 22px
-                left 0
-                background-color $orange[0]
-                width 0
-                height 5px
-                border-radius 5px
-            input[type=range].video__slider-input
-                position relative
-                margin 0
-                padding 0
-                width 100%
-                height 100%
-                background-color transparent
-                &::-webkit-slider-runnable-track
-                    background-color transparent
-                    border-radius 5px
-                    &::-webkit-slider-thumb
-                        background-color $orange[0]
-        &-full
-            position fixed
-            top 10vh
-            left 10vw
-            width 80vw
-            height 80vh
-            z-index 100
-        &__button-full
-            flex 0 0 $height
-            height $height
-            background $orange[0] url($path+'./img/fullScreen.svg') no-repeat center
-            border-bottom-right-radius 3px
-            &:hover
-                background-size 44px
-
-    .video__slider-input
-        // track - линия
-        $track-color = lightgray
-        // thumb - ручка/ползунок
-        $thumb-color = $orange[0]
-        $thumb-radius = 10px
-        $thumb-size = 20px
-
-        track()
-            width 100%
-            height 5px
-            border-radius 5px
-            background-color transparent
-            cursor pointer
-        thumb()
-            margin-top -7.5px
-            height $thumb-size
-            width $thumb-size
-            border-radius $thumb-radius
-            background $thumb-color
-            cursor pointer
-
-        -webkit-appearance none
-        -moz-appearance none
-        width 100%
-        margin 40px 0 0 0
-        opacity 0.99
         background-color transparent
-        &:focus
-            outline none
+
         &::-webkit-slider-runnable-track
-            track()
-            //background-color transparent
-        &::-webkit-slider-thumb
-            thumb()
-            -webkit-appearance none
-        &::-moz-range-track
-            track()
-        &::-moz-range-thumb
-            thumb()
-            border none
-        &::-ms-track
-            track()
-            background transparent
-            border-color transparent
-            border-width $thumb-size 0
-            color transparent
-        &::-ms-fill-lower
-            background yellow
-            border-radius 10px
-        &::-ms-fill-upper
-            background $track-color
-            border-radius 10px
-        &::-ms-thumb
-            thumb()
+          background-color transparent
+          border-radius 5px
+
+          &::-webkit-slider-thumb
+            background-color $orange[0]
+
+    &__button-full
+      flex 0 0 $height
+      height $height
+      background $orange[0] url($path + 'fullScreen.svg') no-repeat center
+      border-bottom-right-radius 3px
+
+      &:hover
+        background-size 44px
+
+    &__slider-input
+      // track - линия
+      $track-color = $gray[1]
+      // thumb - ползунок
+      $thumb-color = $orange[0]
+      $thumb-radius = 10px
+      $thumb-size = 20px
+
+      track()
+        width 100%
+        height 5px
+        border-radius 5px
+        background-color transparent
+        cursor pointer
+      thumb()
+        margin-top -7.5px
+        height $thumb-size
+        width $thumb-size
+        border-radius $thumb-radius
+        background $thumb-color
+        cursor pointer
+
+      -webkit-appearance none
+      -moz-appearance none
+      width 100%
+      margin 40px 0 0 0
+      opacity 0.99
+      background-color transparent
+
+      &:focus
+        outline none
+
+      &::-webkit-slider-runnable-track
+        track()
+        //background-color transparent
+      &::-webkit-slider-thumb
+        thumb()
+        -webkit-appearance none
+
+      &::-moz-range-track
+        track()
+
+      &::-moz-range-thumb
+        thumb()
+        border none
+
+      &::-ms-track
+        track()
+        background transparent
+        border-color transparent
+        border-width $thumb-size 0
+        color transparent
+
+      &::-ms-fill-lower
+        background yellow
+        border-radius 10px
+
+      &::-ms-fill-upper
+        background $track-color
+        border-radius 10px
+
+      &::-ms-thumb
+        thumb()

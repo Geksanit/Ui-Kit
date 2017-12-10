@@ -1,38 +1,44 @@
-header($font,$color)
-    .main-header
-        display flex
-        width 100%
-        min-height 50px
-        padding 10px calc(50% - 348px)
-        @media (max-width:696px)
-            padding 10px
-        box-sizing border-box
-        background-color $color[0]
-        font-family $font, Arial, sans-serif
-        font-weight 700
-        color white
-        &__logo
-            width 30px
-            height 30px
-            background url(../img/icon3.png) center no-repeat
-        nav
-            flex 1 1 100px
-            display flex
-            align-items flex-start
-            justify-content space-between
-            flex-wrap wrap
-            min-height 30px
-            margin 0 20px;
-            overflow hidden
-            a
-                flex 1 1 50px
-                text-decoration none
-                margin 0
-                padding 4px
-                text-align center
-                font-size 22px
-                line-height 22px
-                color white
-                &:hover
-                    border-radius 3px
-                    background-color $color[1]
+header($font, $color, $white)
+
+  .main-header
+    display flex
+    width 100%
+    min-height 50px
+    padding 10px calc(50% - 348px)
+
+    @media (max-width: 696px)
+      padding 10px
+    box-sizing border-box
+    background-color $color[0]
+    font-family $font, Arial, sans-serif
+    font-weight 700
+    color $white
+
+    &__logo
+      width 30px
+      height 30px
+      background url(../img/icon3.png) center no-repeat
+
+    &__nav
+      flex 1 1 100px
+      display flex
+      align-items flex-start
+      justify-content space-between
+      flex-wrap wrap
+      min-height 30px
+      margin 0 20px;
+      overflow hidden
+
+    &__link
+      flex 1 1 50px
+      text-decoration none
+      margin 0
+      padding 4px
+      text-align center
+      font-size 22px
+      line-height 22px
+      color $white
+
+      &:hover
+        border-radius 3px
+        background-color $color[1]

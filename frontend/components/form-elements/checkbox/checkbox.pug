@@ -1,0 +1,8 @@
+mixin checkbox(options)
+    if (!options || (typeof(options) !== 'object'))
+        - options = {}
+    - options.name = options.name || 'radio'
+    - options.value = options.value || 'value'
+    - options.mix = options.mix || ''
+
+    input(type = "checkbox" class = "checkbox " + options.mix name = options.name value = options.value)

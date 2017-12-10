@@ -12,14 +12,14 @@
   },
   "extends": "airbnb-base",
   "rules": {
-    "semi": 1, //;
-    "no-extra-semi": 1,
-    "no-unused-vars": 1,
-    "no-redeclare": 1,
-    "no-mixed-operators": 0,
+    "semi": 2, //;
+    "no-extra-semi": 2,
+    "no-unused-vars": 2,
+    "no-redeclare": 2,
+    "no-mixed-operators": 2,
     "linebreak-style": 0,
-    "no-param-reassign": 0,
-    "prefer-template": 1,
+    "no-param-reassign": 1,
+    "prefer-template": 2,
     "default-case": 1
   }
 }

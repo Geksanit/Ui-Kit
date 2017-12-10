@@ -1,11 +1,13 @@
-photo()
-    .photo
-        width 94px
-        height 94px
-        border-radius 47px
-        box-sizing border-box
-        border 5px solid #e5e5e5
-        background #e5e5e5 no-repeat center
-        text-align center
-        line-height 94px
-        color white
+photo($gray, $white)
+
+  .photo
+    $size = 94px
+    width $size
+    height $size
+    border-radius 47px
+    box-sizing border-box
+    border 5px solid $gray[1]
+    background $gray[1] no-repeat center
+    text-align center
+    line-height $size
+    color $white

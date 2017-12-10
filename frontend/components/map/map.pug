@@ -2,16 +2,15 @@ mixin map(options)
     - // (lat,lng,title)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
-    if !options.title
-        - options.title = 'Title'
-    if !options.lat
-        - options.lat = -30
-    if !options.lng
-        - options.lng = 150
-    .map
-        .map__element(data-lat=options.lat, data-lng=options.lng)
+    - options.title = options.title || 'Title'
+    - options.lat = options.lat || -30
+    - options.lng = options.lng || 150
+    - options.mix = options.mix || ''
+
+    div(class = "map " + options.mix)
+        .map__element(data-lat = options.lat, data-lng = options.lng)
         .map__down
             .map__message #{options.title}
-            .map__addres loading..
+            .map__addres no data ...
             .map__icon1
             .map__icon2

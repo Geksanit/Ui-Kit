@@ -1,34 +1,36 @@
 @import "../all_included.styl"
 
 .container-line
-    padding 10px
-    box-sizing border-box
+  padding 10px
+  box-sizing border-box
+  width 100%
+  height auto
+  display flex
+  align-items center
+  justify-content space-around
+
+.send-mes
+  width 288px
+  padding 10px
+
+  .container
     width 100%
-    height auto
     display flex
-    align-items center
-    justify-content space-around
-forma.send-mes
-    width 288px
-    padding 10px
-    .container
-        width 100%
-        display flex
-        flex-wrap wrap
-        align-items flex-start
-        justify-content flex-start
-        margin-bottom 12px
-        label
-            width auto
+    flex-wrap wrap
+    align-items flex-start
+    justify-content flex-start
+    margin-bottom 12px
+
     label
-        width 100%
-        display flex
-        margin-bottom 12px
-        p
-            margin auto 10px
+      width auto
 
-    .slider
-        width 100%
+  label
+    width 100%
+    display flex
+    margin-bottom 12px
 
-    button
-        float right
+    p
+      margin auto 10px
+
+  .submit-mix
+    float right

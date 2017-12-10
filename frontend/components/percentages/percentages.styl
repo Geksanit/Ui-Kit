@@ -1,41 +1,41 @@
-percentages($font,$blue,$orange)
-    @keyframes start{
-        from {stroke-dashoffset: 300}
-        to {stroke-dashoffset: 0}
-    }
-    .percentages
-        $color = $orange
-        $size = 100px
-        width $size
-        height $size
-        background-color white
+percentages($font, $orange, $gray, $white)
 
-        font-family $font, Arial, sans-serif
-        font-weight 300
-        font-size 45px
-        color gray
-        display flex
-        align-items center
-        justify-content space-around
-        position relative
-        &__svg
-            transform  rotate(-90deg)
-        &__circle
-            //cx cy не работают в фоксе
-            fill white
-            stroke $color[0]
-            stroke-width 5
-            //animation-name: start;
-            //animation-duration: 3s;
-        &__text
-            position absolute
-            top 0
-            left 0
-            width $size
-            height $size
+  @keyframes start{
+    from {stroke-dashoffset: 300}
+    to {stroke-dashoffset: 0}
+  }
 
-            display flex
-            align-items center
-            justify-content space-around
-        &__number
-            display block
+  .percentages
+    $size = 100px
+    width $size
+    height $size
+    background-color $white
+    font-family $font, Arial, sans-serif
+    font-weight 300
+    font-size 45px
+    color $gray[3]
+    display flex
+    align-items center
+    justify-content space-around
+    position relative
+
+    &__svg
+      transform  rotate(-90deg)
+
+    &__circle
+      //cx cy не работают в фоксе
+      fill $white
+      stroke $orange[0]
+      stroke-width 5
+      animation-name start
+      animation-duration 3s
+
+    &__number
+      position absolute
+      top 0
+      left 0
+      width $size
+      height $size
+      line-height $size
+      text-align center
+

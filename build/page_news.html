@@ -14,138 +14,136 @@
   <body>
     <header class="main-header">
       <div class="main-header__logo"></div>
-      <nav><a href="./page_news.html">News</a><a href="./page_messages.html">Messages</a><a href="./page_friends.html">Friends</a><a href="./page_stats.html">My stats</a></nav>
+      <nav class="main-header__nav"><a class="main-header__link" href="./page_news.html">News</a><a class="main-header__link" href="./page_messages.html">Messages</a><a class="main-header__link" href="./page_friends.html">Friends</a><a class="main-header__link" href="./page_stats.html">My stats</a></nav>
     </header>
     <main date-title="News">
       <div class="container-center">
-        <form class="select" action="#">
-          <select>
+        <form class="select " action="#">
+          <select class="select__select">
             <option disabled selected>sorting</option>
             <option>by date</option>
             <option>by relevance</option>
           </select>
-          <div></div>
+          <div class="select__arrow"></div>
         </form>
       </div>
-      <div class="news news_color-orange" style="background-image: url(img/Layer.png);">
+      <div class="news news_color_orange news-events-mix"><img class="news__img" src="img/Layer.png" alt="news">
         <div class="news__text">
-          <h2>It'is all going downhill</h2>
-          <h4>24 august 2013</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
+          <h2 class="news__title">It'is all going downhill</h2>
+          <div class="news__date">24 august 2013</div>
+          <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
         </div>
       </div>
-      <div class="events events_color-orange" style="background-image: url(img/moskau.png);">
+      <div class="events events_color_orange news-events-mix"><img class="events__img" src="img/moskau.png" alt="events">
         <div class="events__text">
           <div class="events__date">
             <div class="events__date-day">10</div>
             <div class="events__date-month">Dec</div>
           </div>
-          <h4>HolyJS 2017 Moscow</h4>
-          <p>HolyJS is a unique conference dedicated to JavaScript only.</p>
+          <div class="events__title">HolyJS 2017 Moscow</div>
+          <p class="events__desription">HolyJS is a unique conference dedicated to JavaScript only.</p>
           <div class="events__button">
-            <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-small">add to calendar</button>
+            <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small events__button-mix">add to calendar</button>
           </div>
         </div>
       </div>
-      <div class="news news_color-blue" style="background-image: url(img/rally.png);">
+      <div class="news news_color_blue news-events-mix"><img class="news__img" src="img/rally.png" alt="news">
         <div class="news__text">
-          <h2>RALLY DAKAR-2017</h2>
-          <h4>15 january 2017</h4>
-          <p>The Russian KAMAZ-master team triumphantly returned the Champion title in the extreme rally-marathon Dakar.</p>
+          <h2 class="news__title">RALLY DAKAR-2017</h2>
+          <div class="news__date">15 january 2017</div>
+          <p class="news__desription">The Russian KAMAZ-master team triumphantly returned the Champion title in the extreme rally-marathon Dakar.</p>
         </div>
       </div>
-      <div class="events events_color-blue" style="background-image: url(img/Layer2.png);">
+      <div class="events events_color_blue news-events-mix"><img class="events__img" src="img/Layer2.png" alt="events">
         <div class="events__text">
           <div class="events__date">
             <div class="events__date-day">9</div>
             <div class="events__date-month">Sep</div>
           </div>
-          <h4>this is Event</h4>
-          <p>Lorem ipsum Lorem ipsum Lorem ipsum</p>
+          <div class="events__title">this is Event</div>
+          <p class="events__desription">Lorem ipsum Lorem ipsum Lorem ipsum</p>
           <div class="events__button">
-            <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-small">add to calendar</button>
+            <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small events__button-mix">add to calendar</button>
           </div>
         </div>
       </div>
-      <div class="video__frame">
-        <div class="js-video video">
-          <div class="video__title">
-            <h2>New Zeland</h2>
-            <h4>video/Travel_New_Zeland.mp4</h4>
+      <div class="js-video video video-map-mix">
+        <div class="video__title">
+          <h2>New Zeland</h2>
+          <h4>video/Travel_New_Zeland.mp4</h4>
+        </div>
+        <video class="video__video" poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
+        <div class="video__controls">
+          <div class="video__button video__button-play"></div>
+          <div class="video__slider">
+            <div class="video__slider_line-full"></div>
+            <div class="video__slider_line"></div>
+            <input class="js-video__slider-input video__slider-input" type="range" min="0" max="100" value="0">
           </div>
-          <video poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
-          <div class="video__controls">
-            <div class="video__button video__button-play"></div>
-            <div class="video__slider">
-              <div class="video__slider_line-full"></div>
-              <div class="video__slider_line"></div>
-              <input class="js-video__slider-input video__slider-input" type="range" min="0" max="100" value="0">
-            </div>
-            <div class="video__button-full"></div>
-          </div>
+          <div class="video__button-full"></div>
         </div>
       </div>
-      <div class="news news_color-blue" style="background-image: url(img/Layer.png);">
+      <div class="news news_color_blue news-events-mix"><img class="news__img" src="img/Layer.png" alt="news">
         <div class="news__text">
-          <h2>It'is all going downhill</h2>
-          <h4>26 december 2016</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h2 class="news__title">It'is all going downhill</h2>
+          <div class="news__date">26 december 2016</div>
+          <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
-      <div class="news news_color-blue" style="background-image: url(img/Layer.png);">
+      <div class="news news_color_blue news-events-mix"><img class="news__img" src="img/Layer.png" alt="news">
         <div class="news__text">
-          <h2>It'is all going downhill</h2>
-          <h4>20 august 2017</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h2 class="news__title">It'is all going downhill</h2>
+          <div class="news__date">20 august 2017</div>
+          <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
-      <div class="map">
+      <div class="map video-map-mix">
         <div class="map__element" data-lat="-33.877685" data-lng="151.207077"></div>
         <div class="map__down">
           <div class="map__message">Meet Us !</div>
-          <div class="map__addres">loading..</div>
+          <div class="map__addres">no data ...</div>
           <div class="map__icon1"></div>
           <div class="map__icon2"></div>
         </div>
       </div>
-      <div class="news news_color-orange" style="background-image: url(img/Layer.png);">
+      <div class="news news_color_orange news-events-mix"><img class="news__img" src="img/Layer.png" alt="news">
         <div class="news__text">
-          <h2>It'is all going downhill</h2>
-          <h4>20 august 2017</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h2 class="news__title">It'is all going downhill</h2>
+          <div class="news__date">20 august 2017</div>
+          <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
-      <div class="events events_color-orange" style="background-image: url(img/Layer2.png);">
+      <div class="events events_color_orange news-events-mix"><img class="events__img" src="img/Layer2.png" alt="events">
         <div class="events__text">
           <div class="events__date">
             <div class="events__date-day">24</div>
             <div class="events__date-month">Aug</div>
           </div>
-          <h4>this is title</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="events__title">this is title</div>
+          <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <div class="events__button">
-            <button class="standart-button js-standart-button standart-button_color-orange standart-button_size-small">add to calendar</button>
+            <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small events__button-mix">add to calendar</button>
           </div>
         </div>
       </div>
-      <div class="events events_color-blue" style="background-image: url(img/Layer2.png);">
+      <div class="events events_color_blue news-events-mix"><img class="events__img" src="img/Layer2.png" alt="events">
         <div class="events__text">
           <div class="events__date">
             <div class="events__date-day">24</div>
             <div class="events__date-month">Aug</div>
           </div>
-          <h4>this is title</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="events__title">this is title</div>
+          <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <div class="events__button">
-            <button class="standart-button js-standart-button standart-button_color-blue standart-button_size-small">add to calendar</button>
+            <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small events__button-mix">add to calendar</button>
           </div>
         </div>
       </div>
       <div class="arrows">
-        <button class="arrow-button arrow-button_orientation-left arrow-button_color-orange" disabled>
+        <button class="arrow-button arrow-button_orientation_left arrow-button_color_orange" disabled>
           <div class="arrow-button__arrow"></div>
         </button>
-        <button class="arrow-button arrow-button_orientation-right arrow-button_color-orange">
+        <button class="arrow-button arrow-button_orientation_right arrow-button_color_orange">
           <div class="arrow-button__arrow"></div>
         </button>
       </div>

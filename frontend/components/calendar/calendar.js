@@ -48,7 +48,7 @@ const calendarChange = function calendarChange(element, year, month) {
   element.children[4].replaceChild(table, element.children[4].children[0]);
 };
 
-const tableOnclick = function tableOnclick({ target }) {
+const setDate = function setDate({ target }) {
   if (target.tagName !== 'TD') return;
   const oldElement = target.parentElement.parentElement.getElementsByClassName('calendar__today')[0];
   oldElement.classList.remove('calendar__today');
@@ -57,21 +57,21 @@ const tableOnclick = function tableOnclick({ target }) {
   target.parentElement.parentElement.parentElement.parentElement.children[0].innerHTML = today;
 };
 
-const leftClick = function leftClick(event) {
+const nextMonth = function nextMonth(event) {
   const element = event.target.parentElement.parentElement;
   const year = Number(element.children[4].children[0].getAttribute('data-year'));
   const month = Number(element.children[4].children[0].getAttribute('data-month'));
   calendarChange(element, year, month - 1);
 };
 
-const rightClick = function rightClick(event) {
+const previousMonth = function previousMonth(event) {
   const element = event.target.parentElement.parentElement;
   const year = Number(element.children[4].children[0].getAttribute('data-year'));
   const month = Number(element.children[4].children[0].getAttribute('data-month'));
   calendarChange(element, year, month + 1);
 };
 
-const todayClick = function todayClick(event) {
+const setToday = function setToday(event) {
   const element = event.target.parentElement;
   const oldElement = element.getElementsByClassName('calendar__today')[0];
   oldElement.classList.remove('calendar__today');
@@ -81,7 +81,7 @@ const todayClick = function todayClick(event) {
 (function calendarInit() {
   const elements = document.querySelectorAll('.calendar');
   elements.forEach((element) => {
-    element.onclick = tableOnclick;
+    element.onclick = setDate;
     calendarChange(element, date.getFullYear(), date.getMonth());// календарь текущего месяца
   });
 }());
@@ -89,20 +89,20 @@ const todayClick = function todayClick(event) {
 (function calendarInit() {
   const elements = document.querySelectorAll('.calendar__left');
   elements.forEach((element) => {
-    element.onclick = leftClick;
+    element.onclick = nextMonth;
   });
 }());
 
 (function calendarInit() {
   const elements = document.querySelectorAll('.calendar__right');
   elements.forEach((element) => {
-    element.onclick = rightClick;
+    element.onclick = previousMonth;
   });
 }());
 
 (function calendarInit() {
   const elements = document.querySelectorAll('.calendar__data');
   elements.forEach((element) => {
-    element.onclick = todayClick;
+    element.onclick = setToday;
   });
 }());

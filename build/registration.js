@@ -73,9 +73,9 @@ var scripts =
 
 
 // ripple effect
-var buttonClick = function buttonClick(event) {
+var rippleEffect = function rippleEffect(event) {
   var div = document.createElement('div');
-  div.id = 'ripple';
+  div.id = 'button__ripple';
   div.style.top = event.pageY - 25 + 'px';
   div.style.left = event.pageX - 25 + 'px';
 
@@ -88,7 +88,7 @@ var buttonClick = function buttonClick(event) {
 (function initButtons() {
   var elements = document.querySelectorAll('.standart-button');
   elements.forEach(function (element) {
-    element.onclick = buttonClick;
+    element.onclick = rippleEffect;
   });
 })();
 
@@ -101,17 +101,17 @@ var buttonClick = function buttonClick(event) {
 
 
 // search
-var searchClick = function searchClick(_ref) {
+var modNotFoundRemove = function modNotFoundRemove(_ref) {
   var target = _ref.target;
 
-  target.className = '';
+  target.className = 'search__input';
   target.attributes.placeholder.value = 'Search';
 };
 
 (function initSearch() {
   var elements = document.querySelectorAll('.js-search');
   elements.forEach(function (element) {
-    element.children[0].onfocus = searchClick;
+    element.children[0].onfocus = modNotFoundRemove;
   });
 })();
 

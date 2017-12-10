@@ -1,14 +1,16 @@
 mixin arrow-button(options)
+    - //{orientation:'right',color:'blue',disabled:false}
     if (!options || (typeof(options) !== 'object'))
         - options = {}
-    -var orientations = ['right', 'left']; colors = ['blue', 'orange'];
-    if (options.orientation != orientations[0] && options.orientation != orientations[1])
-        -options.orientation = orientations[0]
-    if (options.color != colors[0] && options.color != colors[1])
-        -options.color = colors[0]
+    - var orientations = ['right', 'left']; colors = ['blue', 'orange'];
+    if (options.orientation !== orientations[0] && options.orientation !== orientations[1])
+        - options.orientation = orientations[0]
+    if (options.color !== colors[0] && options.color !== colors[1])
+        - options.color = colors[0]
+
     if (options.disabled)
-        button(class="arrow-button arrow-button_orientation-"+options.orientation+" arrow-button_color-"+options.color disabled)
+        button(disabled class = "arrow-button arrow-button_orientation_" + options.orientation + " arrow-button_color_" + options.color)
             .arrow-button__arrow
     else
-        button(class="arrow-button arrow-button_orientation-"+options.orientation+" arrow-button_color-"+options.color)
+        button(class = "arrow-button arrow-button_orientation_" + options.orientation + " arrow-button_color_" + options.color)
             .arrow-button__arrow
