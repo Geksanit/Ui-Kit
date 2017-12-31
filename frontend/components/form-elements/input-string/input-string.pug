@@ -1,0 +1,10 @@
+mixin input-string(options)
+    if (!options || (typeof(options) !== 'object'))
+        - options = {}
+    - options.placeholder = options.placeholder || 'placeholder'
+    - options.name = options.name || 'name'
+    - options.type = options.type || 'text'
+
+    label.input-string
+        input.input-string__input(type = options.type name = options.name placeholder = options.placeholder required)
+        .input-string__status
