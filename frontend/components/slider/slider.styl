@@ -1,8 +1,8 @@
-slider($font, $color, $gray, $white)
+slider($font, $blue, $orange, $gray, $white)
+  $color = $blue[0]
   // track - линия
   $track-color = $gray[1]
   // thumb - ползунок
-  $thumb-color = $color[0]
   $thumb-radius = 10px
   $thumb-size = 20px
 
@@ -17,19 +17,20 @@ slider($font, $color, $gray, $white)
     height $thumb-size
     width $thumb-size
     border-radius $thumb-radius
-    background $thumb-color
+    background $color
     cursor pointer
 
   .slider
     position relative
     font-family $font, Arial, sans-serif
     font-weight 700
+    width 100%
 
     &__view
       position absolute
       width 35px
       height 24px
-      background-color $thumb-color
+      background-color $color
       border-radius 5px
       top 0
       left 50% - 17.5px
@@ -46,6 +47,15 @@ slider($font, $color, $gray, $white)
         height 5px
         background-color inherit
         transform rotate(-45deg)
+
+    &__line
+      background-color $color
+      width 10px
+      height 5px
+      border-radius 5px
+      position absolute
+      top 39px
+      left 0
 
     &__input
       -webkit-appearance none
@@ -70,20 +80,29 @@ slider($font, $color, $gray, $white)
         thumb()
         border none
 
-      &::-ms-track
-        track()
-        background transparent
-        border-color transparent
-        border-width $thumb-size 0
-        color transparent
+    &__numbers
+      padding 7px 2px 0 2px
+      color $gray[1]
+      font-size 10px
+      display flex
+      justify-content space-between
+      
+    &_color_orange
+      $color = $orange[0]
 
-      &::-ms-fill-lower
-        background yellow
-        border-radius 10px
+      .slider
 
-      &::-ms-fill-upper
-        background $track-color
-        border-radius 10px
+        &__view, &__line
+          background-color $color
 
-      &::-ms-thumb
-        thumb()
+        &__input
+
+          &::-webkit-slider-thumb
+            background $color
+
+          &::-moz-range-thumb
+            background $color
+      
+      
+      
+      
