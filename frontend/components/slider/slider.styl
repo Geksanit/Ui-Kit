@@ -3,17 +3,18 @@ slider($font, $blue, $orange, $gray, $white)
   // track - линия
   $track-color = $gray[1]
   // thumb - ползунок
-  $thumb-radius = 10px
-  $thumb-size = 20px
+  $thumb-radius = 0.625rem
+  $thumb-size = 1.25rem
+  h = 0.31rem
 
   track()
     width 100%
-    height 5px
-    border-radius 5px
+    height h
+    border-radius h
     background-color $track-color
     cursor pointer
   thumb()
-    margin-top -7.5px
+    margin-top -0.5rem
     height $thumb-size
     width $thumb-size
     border-radius $thumb-radius
@@ -28,40 +29,41 @@ slider($font, $blue, $orange, $gray, $white)
 
     &__view
       position absolute
-      width 35px
-      height 24px
+      width 2.2rem
+      height 1.5rem
       background-color $color
-      border-radius 5px
+      border-radius h
       top 0
-      left 50% - 17.5px
+      left 50%
       color $white
       text-align center
-      line-height 24px
+      line-height 1.5rem
 
       &::after
         content ''
-        bottom -2px
-        left 15.7px
+        bottom -0.125rem
+        left 1rem
         position absolute
-        width 5px
-        height 5px
+        width h
+        height h
         background-color inherit
         transform rotate(-45deg)
 
     &__line
       background-color $color
-      width 10px
-      height 5px
-      border-radius 5px
+      width 0.625rem
+      height h
+      border-radius h
       position absolute
-      top 39px
+      top 2.44rem
       left 0
 
     &__input
       -webkit-appearance none
       -moz-appearance none
       width 100%
-      margin 39px 0 0 0
+      padding-top 2.44rem
+      margin 0
 
       &:focus
         outline none
@@ -81,9 +83,9 @@ slider($font, $blue, $orange, $gray, $white)
         border none
 
     &__numbers
-      padding 7px 2px 0 2px
+      padding 0.44rem 0.125rem 0 0.125rem
       color $gray[1]
-      font-size 10px
+      font-size 0.625rem
       display flex
       justify-content space-between
       
@@ -102,7 +104,3 @@ slider($font, $blue, $orange, $gray, $white)
 
           &::-moz-range-thumb
             background $color
-      
-      
-      
-      

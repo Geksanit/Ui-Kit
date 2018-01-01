@@ -1,14 +1,15 @@
 video($font, $orange, $gray, $white, $black)
 
   .video
-    $height = 48px
+    $path = '../img/'
+    $height = 3rem
     position relative
-    width 640px
-    height 281px
+    width 100%
+    height 21rem
     min-width 200px
     min-height 100px
     background-color $black
-    border-radius 3px
+    border-radius 0.2rem
     font-family $font, Arial, sans-serif
     font-weight 400
     color $white
@@ -31,23 +32,25 @@ video($font, $orange, $gray, $white, $black)
         background-color rgba(0,0,0, 0.5)
         z-index -1
 
-    &__title
-      padding 0 40px
+    &__text
+      padding 1.6rem 2.5rem
       box-sizing border-box
       position absolute
       top 0
       left 0
       width 100%
 
-      h2
-        font-family $font, Arial, sans-serif
-        font-weight 300
-        margin 20px 0 10px 0
-      h4
-        margin 0
-
       &-hide
         display none
+
+    &__title
+      font-size 2.2rem
+      margin-bottom 2.2rem
+      font-family $font, Arial, sans-serif
+      font-weight 300
+
+    &__src
+      font-size 1.1rem
 
     &__video
       width 100%
@@ -61,8 +64,8 @@ video($font, $orange, $gray, $white, $black)
       width 100%
       height $height
       background-color rgba(0,0,0,0.5)
-      border-bottom-right-radius 3px
-      border-bottom-left-radius 3px
+      border-bottom-right-radius 0.2rem
+      border-bottom-left-radius 0.2rem
 
     &__button
       flex 0 0 $height
@@ -80,28 +83,28 @@ video($font, $orange, $gray, $white, $black)
 
     &__slider
       position relative
-      flex 1 1 100px
-      margin 0 20px
+      flex 1 1 6.25rem
+      margin 0 1.25rem
       height $height
       background-color transparent
 
       &_line-full
         position absolute
-        top 22px
+        top 1.375rem
         left 0
         background-color $gray[1]
         width 100%
-        height 5px
-        border-radius 5px
+        height 0.3125rem
+        border-radius 0.3125rem
 
       &_line
         position absolute
-        top 22px
+        top 1.375rem
         left 0
         background-color $orange[0]
         width 0
-        height 5px
-        border-radius 5px
+        height 0.3125rem
+        border-radius 0.3125rem
 
       .video__slider-input
         position relative
@@ -113,7 +116,7 @@ video($font, $orange, $gray, $white, $black)
 
         &::-webkit-slider-runnable-track
           background-color transparent
-          border-radius 5px
+          border-radius 0.3125rem
 
           &::-webkit-slider-thumb
             background-color $orange[0]
@@ -122,27 +125,27 @@ video($font, $orange, $gray, $white, $black)
       flex 0 0 $height
       height $height
       background $orange[0] url($path + 'fullScreen.svg') no-repeat center
-      border-bottom-right-radius 3px
+      border-bottom-right-radius 0.2rem
 
       &:hover
-        background-size 44px
+        background-size 2.75rem
 
     &__slider-input
       // track - линия
       $track-color = $gray[1]
       // thumb - ползунок
       $thumb-color = $orange[0]
-      $thumb-radius = 10px
-      $thumb-size = 20px
+      $thumb-radius = 0.625rem
+      $thumb-size = 1.25rem
 
       track()
         width 100%
-        height 5px
-        border-radius 5px
+        height 0.3125rem
+        border-radius 0.3125rem
         background-color transparent
         cursor pointer
       thumb()
-        margin-top -7.5px
+        margin-top -0.47rem
         height $thumb-size
         width $thumb-size
         border-radius $thumb-radius
@@ -152,7 +155,7 @@ video($font, $orange, $gray, $white, $black)
       -webkit-appearance none
       -moz-appearance none
       width 100%
-      margin 40px 0 0 0
+      margin 2.5rem 0 0 0
       opacity 0.99
       background-color transparent
 
@@ -161,7 +164,6 @@ video($font, $orange, $gray, $white, $black)
 
       &::-webkit-slider-runnable-track
         track()
-        //background-color transparent
       &::-webkit-slider-thumb
         thumb()
         -webkit-appearance none
@@ -182,11 +184,11 @@ video($font, $orange, $gray, $white, $black)
 
       &::-ms-fill-lower
         background yellow
-        border-radius 10px
+        border-radius 0.625rem
 
       &::-ms-fill-upper
         background $track-color
-        border-radius 10px
+        border-radius 0.625rem
 
       &::-ms-thumb
         thumb()

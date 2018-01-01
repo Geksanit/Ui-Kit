@@ -1,19 +1,22 @@
 // slider
+function convertRemToPixels(rem) {
+  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
 
 const sliderChange = function sliderChange(element) {
   const { value } = element;
   const parent = element.parentElement;
-  const width = parent.clientWidth - 20;
+  const width = element.clientWidth - convertRemToPixels(1.25);
   const min = element.attributes.min.value;
   const max = element.attributes.max.value;
   const view = parent.querySelector('.slider__view');
   if (view) {
     view.innerText = value;
-    view.style.left = `${((width / (max - min)) * (value - min)) - 8.75}px`;
+    view.style.left = `${((width / (max - min)) * (value - min)) - convertRemToPixels(0.55)}px`;
   }
   const line = parent.querySelector('.slider__line');
   if (line) {
-    line.style.width = `${((width / (max - min)) * (value - min)) + 1}px`;
+    line.style.width = `${((width / (max - min)) * (value - min)) + convertRemToPixels(0.2)}px`;
   }
 };
 

@@ -9,9 +9,9 @@ mixin video(options)
     - options.mix = options.mix || ''
 
     div(class = "js-video video " + options.mix)
-        .video__title
-            h2 #{options.title}
-            h4 #{src}
+        .video__text
+            .video__title #{options.title}
+            .video__src #{src}
         if(options.src)
             video.video__video(poster = url src = src)
         else
