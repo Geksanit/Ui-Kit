@@ -34,6 +34,7 @@ standart-button($font, $blue, $orange, $gray, $white)
     border-style solid
     border-width 1px
     outline none
+    overflow hidden
     font-family $font, Arial, sans-serif
     font-weight 900
     font-size 0.75rem
@@ -71,13 +72,11 @@ standart-button($font, $blue, $orange, $gray, $white)
       &:hover
         background-color $white
 
-  #button__ripple
-    position absolute
-    top 6rem
-    left 6rem
-    width 3rem
-    height @width
-    border-radius @width
-    background-color $white
-    animation ripple 0.5s forwards
-    pointer-events none
+    #button__ripple
+      position absolute
+      width 4rem
+      height @width
+      border-radius 100%
+      background-color $white
+      animation ripple 0.7s forwards
+      pointer-events none

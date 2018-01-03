@@ -1,7 +1,7 @@
 calendar($font1, $font2, $color1, $color2, $white)
 
   .calendar
-    $width = 279px
+    $width = 17.44rem
     width $width
     color $white
     font-family $font1, Arial, sans-serif
@@ -29,8 +29,8 @@ calendar($font1, $font2, $color1, $color2, $white)
       line-height @height
       background-color rgba(0,0,0, 0.1)
 
-      .calendar__left,
-      .calendar__right
+      .calendar__button-left,
+      .calendar__button-right
         position absolute
         top 0
         height $height
@@ -46,14 +46,14 @@ calendar($font1, $font2, $color1, $color2, $white)
           border-right 0.2rem solid $white
           border-bottom 0.2rem solid $white
 
-      .calendar__left
+      .calendar__button-left
         left 0
 
         &::before
           transform rotate(135deg)
           left calc(50% - 0.31rem)
 
-      .calendar__right
+      .calendar__button-right
         right 0
 
         &::before
@@ -94,7 +94,7 @@ calendar($font1, $font2, $color1, $color2, $white)
 
       td
         border 0.0625rem solid $white
-        width ($width / 7)
+        width 'calc(%s / 7)' % $width
         height @width
         box-sizing border-box
 
@@ -105,7 +105,7 @@ calendar($font1, $font2, $color1, $color2, $white)
         background-color $color1[0]
         color $white
 
-    .calendar__data
+    .calendar__button-today
       font-family $font1, Arial, sans-serif
       font-weight 900
       height 3.06rem

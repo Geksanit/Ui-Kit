@@ -5,9 +5,10 @@ mixin search(options)
     - options.placeholder = options.placeholder || 'Search'
     - options.name = options.name || 'search'
     if options.notfound
-        - var mod = 'search_notfound'
+        - var mod = 'search__input_notfound'
         - options.placeholder = "I've not found what I'm looking for..."
+    - mod = mod || ''
 
-    form(action = "404" class = "search js-search")
-        input(type = "search" name = options.name class = "search__input " + mod placeholder = options.placeholder)
+    form(action = "404" class = "search")
+        input(type = "search" name = options.name class = "search__input js-search__input " + mod placeholder = options.placeholder)
         input.search__submit(type = "submit" name = "" value = "" class = "submit")

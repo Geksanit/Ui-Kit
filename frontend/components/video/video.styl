@@ -40,7 +40,7 @@ video($font, $orange, $gray, $white, $black)
       left 0
       width 100%
 
-      &-hide
+      &_hide
         display none
 
     &__title
@@ -66,60 +66,22 @@ video($font, $orange, $gray, $white, $black)
       background-color rgba(0,0,0,0.5)
       border-bottom-right-radius 0.2rem
       border-bottom-left-radius 0.2rem
+      overflow hidden
 
     &__button
       flex 0 0 $height
       height $height
       background-color transparent
+      background url($path + 'play.svg') center no-repeat
 
       &:hover
         background-color rgba(255,255,255,0.1)
 
-      &-play
-        background url($path + 'play.svg') center no-repeat
-
-      &-pause
+      &_play
         background url($path + 'pause.svg') center  no-repeat
 
-    &__slider
-      position relative
-      flex 1 1 6.25rem
-      margin 0 1.25rem
-      height $height
-      background-color transparent
-
-      &_line-full
-        position absolute
-        top 1.375rem
-        left 0
-        background-color $gray[1]
-        width 100%
-        height 0.3125rem
-        border-radius 0.3125rem
-
-      &_line
-        position absolute
-        top 1.375rem
-        left 0
-        background-color $orange[0]
-        width 0
-        height 0.3125rem
-        border-radius 0.3125rem
-
-      .video__slider-input
-        position relative
-        margin 0
-        padding 0
-        width 100%
-        height 100%
-        background-color transparent
-
-        &::-webkit-slider-runnable-track
-          background-color transparent
-          border-radius 0.3125rem
-
-          &::-webkit-slider-thumb
-            background-color $orange[0]
+    &__slider-mix
+      margin -1.2rem 1.25rem 0 1.25rem
 
     &__button-full
       flex 0 0 $height
@@ -129,66 +91,3 @@ video($font, $orange, $gray, $white, $black)
 
       &:hover
         background-size 2.75rem
-
-    &__slider-input
-      // track - линия
-      $track-color = $gray[1]
-      // thumb - ползунок
-      $thumb-color = $orange[0]
-      $thumb-radius = 0.625rem
-      $thumb-size = 1.25rem
-
-      track()
-        width 100%
-        height 0.3125rem
-        border-radius 0.3125rem
-        background-color transparent
-        cursor pointer
-      thumb()
-        margin-top -0.47rem
-        height $thumb-size
-        width $thumb-size
-        border-radius $thumb-radius
-        background $thumb-color
-        cursor pointer
-
-      -webkit-appearance none
-      -moz-appearance none
-      width 100%
-      margin 2.5rem 0 0 0
-      opacity 0.99
-      background-color transparent
-
-      &:focus
-        outline none
-
-      &::-webkit-slider-runnable-track
-        track()
-      &::-webkit-slider-thumb
-        thumb()
-        -webkit-appearance none
-
-      &::-moz-range-track
-        track()
-
-      &::-moz-range-thumb
-        thumb()
-        border none
-
-      &::-ms-track
-        track()
-        background transparent
-        border-color transparent
-        border-width $thumb-size 0
-        color transparent
-
-      &::-ms-fill-lower
-        background yellow
-        border-radius 0.625rem
-
-      &::-ms-fill-upper
-        background $track-color
-        border-radius 0.625rem
-
-      &::-ms-thumb
-        thumb()

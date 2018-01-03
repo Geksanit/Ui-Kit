@@ -17,9 +17,6 @@ mixin video(options)
         else
             video.video__video
         .video__controls
-            .video__button.video__button-play
-            .video__slider
-                .video__slider_line-full
-                .video__slider_line
-                input(class = "js-video__slider-input video__slider-input" type = "range" min = "0" max = "100" value = "0")
+            .video__button
+            +slider({ min: 0, max: 100, value: 0, color: 'orange', mix: 'video__slider-mix', line: true })
             .video__button-full

@@ -1,12 +1,12 @@
-// search
-const modNotFoundRemove = function modNotFoundRemove({ target }) {
-  target.className = 'search__input';
-  target.attributes.placeholder.value = 'Search';
-};
+/* global $ */
 
-(function initSearch() {
-  const elements = document.querySelectorAll('.js-search');
-  elements.forEach((element) => {
-    element.children[0].onfocus = modNotFoundRemove;
-  });
-}());
+class Search {
+  constructor(element) {
+    this.$element = $(element).one('focus', this.removeNotFoundMod);
+  }
+  removeNotFoundMod({ target }) {
+    $(target).removeClass('search__input_notfound').attr({ placeholder: 'Search' });
+  }
+}
+let elements = [];
+$('.js-search__input').each((index, element) => elements.push(new Search(element)));

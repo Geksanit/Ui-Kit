@@ -4,7 +4,7 @@ search($font, $blue, $orange, $gray, $white)
     w = 2.0625rem
     r = 0.2rem
     $height = 1.75rem
-    $path = '../img'
+    $path = '../img/'
     display flex
     width 100%
     height $height
@@ -13,7 +13,6 @@ search($font, $blue, $orange, $gray, $white)
 
     &__input
       display block
-
       box-sizing border-box
       flex 1 1 3rem
       height 100%
@@ -28,6 +27,15 @@ search($font, $blue, $orange, $gray, $white)
       font-size 0.875rem
       color $gray[2]
 
+      &_notfound
+        background-color $orange[0]
+
+        &::-webkit-input-placeholder
+          color $white
+
+        &::-moz-placeholder
+          color $white
+
     &__submit
       -webkit-appearance none
       -moz-appearance none
@@ -39,15 +47,6 @@ search($font, $blue, $orange, $gray, $white)
       border-radius 0 r r 0
       border none
       outline none
-      background-image url($path + '/lupa.png')
+      background-image url($path + 'lupa.png')
       background-repeat no-repeat
       background-position center
-
-    .search_notfound
-      background-color $orange[0]
-
-      &::-webkit-input-placeholder
-        color $white
-
-      &::-moz-placeholder
-        color $white

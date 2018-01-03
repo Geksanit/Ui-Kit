@@ -3,7 +3,7 @@ mixin slider(options)
         - options = {}
     - options.min = options.min || 0
     - options.max = options.max || 100
-    - options.value = options.value || Math.ceil((options.max - options.min) / 2)
+    - options.value = options.value || 0
     - options.mix = options.mix || ''
 
     div(class = "slider slider_color_" + options.color + " " + options.mix)

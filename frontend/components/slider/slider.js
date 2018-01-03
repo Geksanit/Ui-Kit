@@ -1,33 +1,27 @@
-// slider
-function convertRemToPixels(rem) {
-  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+/* global $ */
+import convertRemToPixels from '../../scripts/convertRemToPixels';
+
+class Slider {
+  constructor(element) {
+    this.$element = $(element);
+    this.$parent = this.$element.parent();
+    this.$view = this.$parent.find('.slider__view');
+    this.$line = this.$parent.find('.slider__line');
+    this.sliderChange.call(this);
+    this.$element.on('input.slider', this.sliderChange.bind(this));
+  }
+  sliderChange() {
+    const { $element } = this;
+    const width = $element.width() - convertRemToPixels(1.25);
+    const value = $element.val();
+    const min = this.$element.prop('min');
+    const max = this.$element.prop('max');
+    const newLeft = ((width / (max - min)) * (value - min)) - convertRemToPixels(0.625);
+    this.$view.text(value).css({ left: newLeft });
+    const newWidth = ((width / (max - min)) * (value - min)) + convertRemToPixels(0.625);
+    this.$line.width(newWidth);
+  }
 }
 
-const sliderChange = function sliderChange(element) {
-  const { value } = element;
-  const parent = element.parentElement;
-  const width = element.clientWidth - convertRemToPixels(1.25);
-  const min = element.attributes.min.value;
-  const max = element.attributes.max.value;
-  const view = parent.querySelector('.slider__view');
-  if (view) {
-    view.innerText = value;
-    view.style.left = `${((width / (max - min)) * (value - min)) - convertRemToPixels(0.55)}px`;
-  }
-  const line = parent.querySelector('.slider__line');
-  if (line) {
-    line.style.width = `${((width / (max - min)) * (value - min)) + convertRemToPixels(0.2)}px`;
-  }
-};
-
-const sliderInput = function sliderInput(event) {
-  sliderChange(event.target);
-};
-
-(function initSliders() {
-  const elements = document.querySelectorAll('.js-slider__input');
-  elements.forEach((element) => {
-    sliderChange(element);
-    element.oninput = sliderInput;
-  });
-}());
+let sliders = [];
+$('.js-slider__input').each((index, element) => sliders.push(new Slider(element)));
