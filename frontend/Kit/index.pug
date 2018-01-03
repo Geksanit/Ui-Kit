@@ -8,65 +8,115 @@ html
         +favicons()
         title Ui-Kit
     body
-        .container-line
-            +standart-button({ title:'button', size:'small', color:'blue' })
-            +standart-button()
-            +standart-button({ title:'button', size:'normal', color:'orange' })
-            +standart-button({ title:'button', size:'small', color:'orange' })
-        .container-line
-            +arrow-button({ orientation:'left', disabled:true })
-            +arrow-button({ orientation:'right', color:'orange', disabled:true })
-            +arrow-button({ orientation:'left' })
-            +arrow-button()
-            +arrow-button({ orientation:'left', color:'orange' })
-            +arrow-button({ orientation:'right', color:'orange' })
-        .container-line
-            +percentages(0)
-            +percentages(38)
-            +percentages(50)
-            +percentages(62)
-            +percentages(89)
-            +percentages(100)
-        .container-line
-            +pie-chart(10,25,30)
-            +pie-chart()
-            +pie-chart(0,20,30)
-        .container-line
-            +slider()
-            +slider({ min:-5, max:12, value:1 })
-            +slider-percent(75)
-        .container-line
-            +stages({ color:'orange' })
-        .container-line
-            forma.send-mes
-                +input-text({ placeholder:'Your Name' })
-                +input-email({ placeholder:'Your Email' })
-                +textarea({ placeholder:'Your Message' })
-                +radio()
-                +checkbox()
-                +standart-button({ mix:'submit-mix', title:'submit' })
-        .container-line
-            +search()
-        .container-line
-            +search({ notfound:true })
-        .container-line
-            +select({ def:'Choose An Option', list:['option-1','option-2','option-3'] })
-        .container-line
-            +user-profile({ name:'John Smith', prof:'ux designer', src:'photo2', color:'orange' })
-        .container-line
-            +user-profile({ name:'Sarah Brown', prof:'developer', src:'photo1', color:'blue' })
-        .container-line
-            +news({ title:"It'is all going downhill", date:'24 august 2013', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.', color:'orange' })
-        .container-line
-            +events({ day:'24', month:'Aug', title:'this is the title', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' })
-        .container-line
-            +map({ lat:'-33.877685', lng:'151.207077', title:'Meet Us !' })
-        .container-line
-            +calendar()
-        .container-line
-            +messaging({ name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo1' })
-        .container-line
-            +video({ src:'Travel_New_Zeland', title:'New Zeland' })
-        .container-line
+        main
+            .standart-buttons-container
+                .title standard buttons
+                .container-line
+                    +standart-button({title: 'button', size: 'small', color: 'blue'})
+                    +standart-button()
+                    +standart-button({title: 'button', size: 'normal', color: 'orange'})
+                    +standart-button({title: 'button', size: 'small', color: 'orange'})
+                .container-line
+                    +standart-button({title: 'button', size: 'small', color: 'blue'})
+                    +standart-button()
+                    +standart-button({title: 'button', size: 'normal', color: 'orange'})
+                    +standart-button({title: 'button', size: 'small', color: 'orange'})
+                .container-line
+                    +standart-button({title: 'button', size: 'small', color: 'blue'})
+                    +standart-button()
+                    +standart-button({title: 'button', size: 'normal', color: 'orange'})
+                    +standart-button({title: 'button', size: 'small', color: 'orange'})
+            .arrow-buttons-container
+                .title arrow buttons
+                .container-line
+                    +arrow-button({orientation: 'left'})
+                    +arrow-button()
+                    +arrow-button({orientation: 'left', disabled: true})
+                    +arrow-button({orientation: 'right', color: 'orange', disabled: true})
+                    +arrow-button({orientation: 'left', color: 'orange'})
+                    +arrow-button({orientation: 'right', color: 'orange'})
+            .percentages-container
+                .title percentages / pie-chart
+                .container-line
+                    +percentages(0)
+                    +percentages(38)
+                    +percentages(62)
+                    +percentages(89)
+                    +pie-chart(10,25,30)
+            .sliders-container
+                .title sliders
+                .container-line
+                    +slider({ min: 0, max: 100, value: 40, view: true, color: 'orange' })
+                    +slider({ value: 75, line: true, numbers: true })
+            .stages-container
+                .title stages
+                .container-line
+                    +stages({color: 'orange'})
+            .form-elements-container
+                .title form elements
+                .container-line
+                    forma
+                        +input-string({ placeholder: 'Your Name' })
+                        +input-string({ type: 'email', placeholder: 'Your Email' })
+                        +textarea({ placeholder: 'Your Message' })
+                        +standart-button({ mix: 'submit-mix', title: 'submit' })
+                    .container-column
+                        .toggles-container
+                            .title toggles
+                            .container-line
+                                +checkbox()
+                                +checkbox({ checked: true })
+                        .tick-boxes-container
+                            .title tick-boxes
+                            .container-line
+                                +radio({ checked: true })
+                                +radio()
+            .container-line
+                .search-drop-down-container
+                    .title search / drop down
+                    .container-line
+                        +search()
+                    .container-line
+                        +search({ notfound: true })
+                    .container-line
+                        +select({ def: 'Choose An Option', list: ['option-1', 'option-2', 'option-3'] })
+                .user-profile-container
+                    .title user profile
+                    .container-line
+                        +user-profile({ name: 'John Smith', prof: 'ux designer', src: 'photo2', color: 'orange' })
+                    .container-line
+                        +user-profile({ name: 'Sarah Brown', prof: 'developer', src: 'photo1', color: 'blue' })
+            .news-events-container
+                .title news & events
+                .container-line
+                    +news({
+                      title: "It'is all going downhill",
+                      date: '24 august 2013',
+                      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.',
+                      color: 'orange'
+                    })
+                    +events({
+                      day: '24',
+                      month: 'Aug',
+                      title: 'this is the title',
+                      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                    })
+            .location-container
+                .title location
+                +map({ lat: '-33.877685', lng: '151.207077', title: 'Meet Us !' })
+            .container-line
+                .calendar-container
+                    .title calendar
+                    +calendar()
+                .messaging-container
+                    .title messaging
+                    +messaging({
+                      name: 'Sarah Brown',
+                      text: 'Hey, so are we cool to meet at the art gallery? Say 8pm',
+                      src: 'photo1'
+                    })
+            .video-container
+                .title video
+                +video({ src: 'Travel_New_Zeland', title: 'New Zeland' })
 
-        script( async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap")
+        script(defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap")

@@ -1,51 +1,50 @@
-// двигает слайдер
-const sliderChange = function sliderChange(element) {
-  const { value } = element;
-  const width = element.parentElement.clientWidth - 20;
-  const min = element.attributes.min.value;
-  const max = element.attributes.max.value;
-  element.previousElementSibling.style.width = `${((width / (max - min)) * (value - min)) + 1}px`;
-};
+/* global $ */
+import autobind from '../../scripts/autobind';
 
-const play = function play(element) {
-  element.parentElement.parentElement.getElementsByTagName('video')[0].play();
-  element.parentElement.parentElement.getElementsByClassName('video__title')[0].classList.toggle('video__title-hide');
-  element.classList.toggle('video__button-pause');
-};
-
-const pause = function pause(element) {
-  element.parentElement.parentElement.getElementsByTagName('video')[0].pause();
-  element.parentElement.parentElement.getElementsByClassName('video__title')[0].classList.toggle('video__title-hide');
-  element.classList.toggle('video__button-pause');
-};
-
-const full = function full(element) {
-  element.parentElement.parentElement.classList.toggle('video_full');
-  sliderChange(element.previousElementSibling.children[2]);
-};
-
-const playPauseFull = function playPauseFull({ target }) {
-  if (target.classList.contains('video__button')) {
-    if (!target.classList.contains('video__button-pause')) play(target);
-    else pause(target);
+class Video {
+  constructor(element) {
+    this.$element = $(element);
+    autobind(this);
+    this.$video = this.$element.find('video').on('timeupdate.video', this.handleUpdateVideo);
+    this.$text = this.$element.find('.video__text');
+    this.$button = this.$element.find('.video__button').on('click.video', this.handleButton);
+    this.$buttonFull = this.$element.find('.video__button-full').on('click.video', this.handleButtonFull);
+    this.$slider = this.$element.find('.video__slider-mix input').on('input.video', this.handleSlider);
   }
-  if (target.classList.contains('video__button-full')) full(target);
-  if (target.classList.contains('js-video__slider-input')) {
-    target.parentElement.parentElement.parentElement.getElementsByTagName('video')[0].currentTime = target.value;
+  changeSlider() {
+    this.$slider.triggerHandler('input.slider');
   }
-};
+  setPlay() {
+    this.$video[0].play();
+    this.$text.toggleClass('video__text_hide');
+    this.$button.toggleClass('video__button_play');
+  }
+  setPause() {
+    this.$video[0].pause();
+    this.$text.toggleClass('video__text_hide');
+    this.$button.toggleClass('video__button_play');
+  }
+  setFull() {
+    this.$element.toggleClass('video_full');
+  }
+  handleButton({ target }) {
+    const $target = $(target);
+    if ($target.hasClass('video__button_play')) this.setPause();
+    else this.setPlay();
+  }
+  handleButtonFull() {
+    this.setFull();
+    this.changeSlider();
+  }
+  handleSlider({ target }) {
+    this.$video[0].currentTime = target.value;
+  }
+  handleUpdateVideo({ target }) {
+    this.$slider.prop('max', target.duration);
+    this.$slider.prop('value', target.currentTime);
+    this.changeSlider();
+  }
+}
 
-const videoUpdate = function videoUpdate({ target }) {
-  const input = target.parentElement.getElementsByClassName('js-video__slider-input')[0];
-  input.attributes.max.value = target.duration;
-  input.value = target.currentTime;
-  sliderChange(input);
-};
-
-(function initVideos() {
-  const blocks = document.querySelectorAll('.js-video');
-  blocks.forEach((element) => {
-    element.children[1].ontimeupdate = videoUpdate;
-    element.children[2].onclick = playPauseFull;
-  });
-}());
+let elements = [];
+$('.js-video').each((index, element) => elements.push(new Video(element)));

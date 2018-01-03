@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
 const baseConfig = {
-  context: __dirname + '\\frontend',
+  context: __dirname + '/frontend',
   entry: {
     'index': './Kit/index.js',
     'news': './pages/page_news.js',
@@ -20,6 +20,10 @@ const baseConfig = {
     library: 'scripts',
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: __dirname + '/frontend/scripts/jquery-3.2.1.min.js',
+      jQuery: __dirname + '/frontend/scripts/jquery-3.2.1.min.js',
+    }),
     new ExtractTextPlugin('[name].css', { allChunks: true }),
     new HtmlWebpackPlugin({ filename: 'index.html', chunks: ['index'], template: './Kit/index.pug' }),
     new HtmlWebpackPlugin({ filename: 'page_news.html', chunks: ['news'], template: 'pages/page_news.pug' }),
@@ -34,7 +38,7 @@ const baseConfig = {
     extensions: ['.js'],
   },
   module: {
-    rules: [{
+    rules: [/*{
       enforce: 'pre',
       test: /\.js$/,
       exclude: /node_modules/,
@@ -46,7 +50,7 @@ const baseConfig = {
       options: {
         presets: ['env'],
       },
-    }, {
+    },*/ {
       test: /\.pug$/,
       use: {
         loader: 'pug',

@@ -2,46 +2,46 @@ events(font, $blue, $orange, $gray, $white)
 
   .events
     $color = $blue
-    $path = '../'
-    width 288px
-    height 212px
-    border-radius 3px
+    width 100%
+    height 13.25rem
+    border-radius 0.2rem
     color $white
     background-color $gray[2]
     background-repeat no-repeat
     background-size contain
+    overflow hidden
 
     &__img
-      width 95px
-      height 212px
+      width 5.94rem
+      height 100%
 
     &__text
       float right
-      width calc(100% - 95px)
+      width calc(100% - 5.94rem)
       height 100%
-      padding 0 20px
+      padding 0 1.25rem
       box-sizing border-box
       background-color $blue[0]
-      font-size 12px
-      border-top-right-radius 3px
-      border-bottom-right-radius 3px
+      font-size 0.75rem
+      border-top-right-radius 0.2rem
+      border-bottom-right-radius 0.2rem
 
     &__date
       font-family font, Arial, sans-serif
       font-weight 300
-      font-size 30px
+      font-size 1.875rem
       text-align center
       display flex
       align-items flex-end
 
       &-day
-        font-size 70px
+        font-size 4.375rem
 
       &-month
-        margin-bottom 10px
+        margin-bottom 0.625rem
 
     &__title
-      font-size 12px
+      font-size 0.75rem
       font-family font, Arial, sans-serif
       font-weight 900
       text-transform uppercase
@@ -50,14 +50,14 @@ events(font, $blue, $orange, $gray, $white)
     &__description
       font-family font, Arial, sans-serif
       font-weight 400
-      margin-top 5px
+      margin-top 0.31rem
 
     &__button
         display flex
         justify-content space-around
 
         &-mix
-          width 128px
+          width 8rem
 
     &_color_orange
       .events__text

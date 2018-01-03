@@ -4,15 +4,15 @@ checkbox($font, $blue, $gray, $white)
     -webkit-appearance none
     -moz-appearance none
     box-sizing border-box
-    height 24px
-    padding 2px
-    width 60px
+    height 1.5rem
+    padding 0.125rem
+    width 3.75rem
     border none
     outline none
     cursor pointer
     position relative
     -webkit-transition: .15s;
-    border-radius  12px
+    border-radius  0.75rem
     background-color $gray[1]
 
     &:checked
@@ -21,24 +21,24 @@ checkbox($font, $blue, $gray, $white)
     &::after
       content ''
       position absolute
-      width 20px
-      height 20px
-      border-radius 10px
-      top 2px
-      left 2px
+      width 1.25rem
+      height 1.25rem
+      border-radius 0.625rem
+      top 0.125rem
+      left 0.125rem
       background-color $white
       transition: all 0.5s
 
     &:checked::after
-      left 38px
+      left 2.375rem
 
     &::before
       position absolute
       top 0
-      left 10px
+      left 0.625rem
       width 100%
       height 100%
-      line-height 24px
+      line-height 1.5rem
       font-family $font, Arial, sans-serif
       font-weight 900
       font-size 0.7rem
@@ -47,8 +47,10 @@ checkbox($font, $blue, $gray, $white)
       color $white
       content 'off'
       transition: all 0.5s
+      padding 0
+      margin 0
 
     &:checked::before
       content 'on'
-      left -10px
+      left -0.625rem
       

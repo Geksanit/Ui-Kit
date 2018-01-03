@@ -1,57 +1,71 @@
-slider($font, $color, $gray, $white)
+slider($font, $blue, $orange, $gray, $white)
+  $color = $blue[0]
   // track - линия
   $track-color = $gray[1]
   // thumb - ползунок
-  $thumb-color = $color[0]
-  $thumb-radius = 10px
-  $thumb-size = 20px
+  $thumb-radius = 0.625rem
+  $thumb-size = 1.25rem
+  h = 0.31rem
 
   track()
     width 100%
-    height 5px
-    border-radius 5px
+    height h
+    border-radius h
     background-color $track-color
     cursor pointer
   thumb()
-    margin-top -7.5px
+    margin-top -0.5rem
     height $thumb-size
     width $thumb-size
     border-radius $thumb-radius
-    background $thumb-color
+    background $color
     cursor pointer
 
   .slider
     position relative
     font-family $font, Arial, sans-serif
     font-weight 700
+    width 100%
 
     &__view
       position absolute
-      width 35px
-      height 24px
-      background-color $thumb-color
-      border-radius 5px
+      width 2.2rem
+      height 1.5rem
+      background-color $color
+      border-radius h
       top 0
-      left 50% - 17.5px
+      left 50%
       color $white
       text-align center
-      line-height 24px
+      line-height 1.5rem
 
       &::after
         content ''
-        bottom -2px
-        left 15.7px
+        bottom -0.125rem
+        left 1rem
         position absolute
-        width 5px
-        height 5px
+        width h
+        height h
         background-color inherit
         transform rotate(-45deg)
+
+    &__line
+      background-color $color
+      width 0.625rem
+      height h
+      border-radius h
+      position absolute
+      top 2.44rem
+      left 0
+      pointer-events none
 
     &__input
       -webkit-appearance none
       -moz-appearance none
       width 100%
-      margin 39px 0 0 0
+      margin 0
+      padding-top 2.44rem
+      background-color transparent
 
       &:focus
         outline none
@@ -70,20 +84,25 @@ slider($font, $color, $gray, $white)
         thumb()
         border none
 
-      &::-ms-track
-        track()
-        background transparent
-        border-color transparent
-        border-width $thumb-size 0
-        color transparent
+    &__numbers
+      padding 0.44rem 0.125rem 0 0.125rem
+      color $gray[1]
+      font-size 0.625rem
+      display flex
+      justify-content space-between
+      
+    &_color_orange
+      $color = $orange[0]
 
-      &::-ms-fill-lower
-        background yellow
-        border-radius 10px
+      .slider
 
-      &::-ms-fill-upper
-        background $track-color
-        border-radius 10px
+        &__view, &__line
+          background-color $color
 
-      &::-ms-thumb
-        thumb()
+        &__input
+
+          &::-webkit-slider-thumb
+            background $color
+
+          &::-moz-range-thumb
+            background $color

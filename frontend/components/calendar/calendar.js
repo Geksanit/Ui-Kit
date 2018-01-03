@@ -1,108 +1,88 @@
-// calendar
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+/* global $ */
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December',
 ];
-const weekDay = function weekDay() {
-  let n = this.getDay();
-  n = n ? n - 1 : 6;
-  return n;
-};
 
-const date = new Date();
-
-const calendarChange = function calendarChange(element, year, month) {
-  const calendar = new Date(year, month);
-  calendar.weekDay = weekDay;
-  month = calendar.getMonth();
-  year = calendar.getFullYear();
-  // выбранная дата предыдущего месяца, если есть
-  const List = element.getElementsByClassName('calendar__today');
-  let today = date.getDate();
-  if (List.length !== 0) {
-    today = Number(element.getElementsByClassName('calendar__today')[0].innerHTML);
+class Calendar {
+  constructor(element) {
+    this.$element = $(element);
+    this.date = new Date();
+    this.calendarChange();
+    this.initHandlers();
   }
-  // если нет даты в месяце
-  const testDate = new Date(year, month, today);
-  if (testDate.getMonth() !== month) today = 28;
-  element.children[0].innerHTML = today;
-  element.children[1].childNodes[0].data = monthNames[month];
-  element.children[2].innerHTML = year;
-  const table = document.createElement('tbody');
-  table.setAttribute('data-month', month);
-  table.setAttribute('data-year', calendar.getFullYear());
-  calendar.setDate(1 - calendar.weekDay());// последний понедельник предыдущего месяца
-  for (let j = 0; j < 6; j += 1) { // заполнение таблицы
-    const tr = document.createElement('tr');
-    for (let i = 0; i < 7; i += 1) { // неделя
-      const td = document.createElement('td');
-      td.innerHTML = calendar.getDate();
-      if (calendar.getMonth() === month) td.classList.add('calendar__days-month');
-      if (calendar.getDate() === today && calendar.getMonth() === month) {
-        td.classList.add('calendar__today');
+  getWeekDay(date) {
+    let n = date.getDay();
+    n = n ? n - 1 : 6;
+    return n;
+  }
+  isThisMonth(date) {
+    const result = (date.getMonth() === this.date.getMonth());
+    return result;
+  }
+  isThisDay(date) {
+    return ((date.getDate() === this.date.getDate()) && this.isThisMonth(date));
+  }
+  getNewTbody() {
+    const $tbody = $(document.createElement('tbody'));
+    let date = new Date(this.date.getFullYear(), this.date.getMonth());
+    // начинаем с понедельника, идущего после последнего воскресенья предыдущего месяца
+    date.setDate(1 - this.getWeekDay(date));
+
+    for (let j = 0; j < 6; j += 1) { // 6 недель
+      let $tr = $(document.createElement('tr'));
+      let flag = false;
+      for (let i = 0; i < 7; i += 1) { // 7 дней
+        let $td = $(document.createElement('td'));
+        $td.text(date.getDate());
+        if (this.isThisMonth(date)) {
+          $td.addClass('calendar__days-month');
+          flag = true;
+        }
+        if (this.isThisDay(date)) $td.addClass('calendar__today');
+        date.setDate(date.getDate() + 1);
+        $tr.append($td);
       }
-      calendar.setDate(calendar.getDate() + 1);
-      tr.appendChild(td);
+      if (flag) $tbody.append($tr);
     }
-    table.appendChild(tr);
+    return $tbody;
   }
-  element.children[4].replaceChild(table, element.children[4].children[0]);
-};
+  calendarChange() {
+    const { $element } = this;
+    const year = this.date.getFullYear();
+    const month = this.date.getMonth();
+    const day = this.date.getDate();
 
-const setDate = function setDate({ target }) {
-  if (target.tagName !== 'TD') return;
-  const oldElement = target.parentElement.parentElement.getElementsByClassName('calendar__today')[0];
-  oldElement.classList.remove('calendar__today');
-  target.classList.add('calendar__today');
-  const today = target.innerHTML;
-  target.parentElement.parentElement.parentElement.parentElement.children[0].innerHTML = today;
-};
+    $element.find('.calendar__day').text(day);
+    $element.find('.calendar__month').prop('childNodes')[0].nodeValue = MONTH_NAMES[month];
+    $element.find('.calendar__year').text(year);
+    $element.find('.calendar__days tbody').replaceWith(this.getNewTbody());
+  }
+  handleNextMonth() {
+    this.date.setMonth(this.date.getMonth() + 1, 1);
+    this.calendarChange();
+  }
+  handlePreviousMonth() {
+    this.date.setMonth(this.date.getMonth() - 1, 1);
+    this.calendarChange();
+  }
+  handleSetDate({ target }) {
+    if (!$(target).hasClass('calendar__days-month')) return;
+    this.$element.find('calendar__today').removeClass('calendar__today');
+    const today = $(target).addClass('calendar__today').text();
+    this.date.setDate(Number(today));
+    this.calendarChange();
+  }
+  handleSetToday() {
+    this.date = new Date();
+    this.calendarChange();
+  }
+  initHandlers() {
+    this.$element.find('.calendar__days').on('click.calendar', 'td', this.handleSetDate.bind(this));
+    this.$element.find('.calendar__button-left').on('click.calendar', this.handlePreviousMonth.bind(this));
+    this.$element.find('.calendar__button-right').on('click.calendar', this.handleNextMonth.bind(this));
+    this.$element.find('.calendar__button-today').on('click.calendar', this.handleSetToday.bind(this));
+  }
+}
+let elements = [];
+$('.js-calendar').each((index, element) => elements.push(new Calendar(element)));
 
-const nextMonth = function nextMonth(event) {
-  const element = event.target.parentElement.parentElement;
-  const year = Number(element.children[4].children[0].getAttribute('data-year'));
-  const month = Number(element.children[4].children[0].getAttribute('data-month'));
-  calendarChange(element, year, month - 1);
-};
-
-const previousMonth = function previousMonth(event) {
-  const element = event.target.parentElement.parentElement;
-  const year = Number(element.children[4].children[0].getAttribute('data-year'));
-  const month = Number(element.children[4].children[0].getAttribute('data-month'));
-  calendarChange(element, year, month + 1);
-};
-
-const setToday = function setToday(event) {
-  const element = event.target.parentElement;
-  const oldElement = element.getElementsByClassName('calendar__today')[0];
-  oldElement.classList.remove('calendar__today');
-  calendarChange(element, date.getFullYear(), date.getMonth());
-};
-
-(function calendarInit() {
-  const elements = document.querySelectorAll('.calendar');
-  elements.forEach((element) => {
-    element.onclick = setDate;
-    calendarChange(element, date.getFullYear(), date.getMonth());// календарь текущего месяца
-  });
-}());
-
-(function calendarInit() {
-  const elements = document.querySelectorAll('.calendar__left');
-  elements.forEach((element) => {
-    element.onclick = nextMonth;
-  });
-}());
-
-(function calendarInit() {
-  const elements = document.querySelectorAll('.calendar__right');
-  elements.forEach((element) => {
-    element.onclick = previousMonth;
-  });
-}());
-
-(function calendarInit() {
-  const elements = document.querySelectorAll('.calendar__data');
-  elements.forEach((element) => {
-    element.onclick = setToday;
-  });
-}());

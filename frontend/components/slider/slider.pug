@@ -2,10 +2,20 @@ mixin slider(options)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
     - options.min = options.min || 0
-    - options.max = options.max || 10
-    - options.value = options.value || Math.ceil((options.max - options.min) / 2)
+    - options.max = options.max || 100
+    - options.value = options.value || 0
     - options.mix = options.mix || ''
 
-    div(class = "slider " + options.mix)
-      .slider__view #{options.value}
+    div(class = "slider slider_color_" + options.color + " " + options.mix)
+      if (options.view)
+        .slider__view #{options.value}
+      if (options.line)
+        .slider__line
       input(class = "slider__input js-slider__input" type = "range" min = options.min max = options.max value = options.value)
+      if (options.numbers)
+        .slider__numbers
+          div 0
+          div 25
+          div 50
+          div 75
+          div 100

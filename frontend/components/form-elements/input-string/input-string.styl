@@ -1,67 +1,67 @@
-input-email($font1, $font2, $blue, $orange, $gray, $white)
+input-string($font1, $font2, $blue, $orange, $gray, $white)
 
-  .input-email
-    $height = 28px
+  .input-string
+    $height = 1.75rem
+    $width = 4.5rem
     width 100%
+    height $height
     display flex
-    margin-bottom 12px
+    margin-bottom 0.75rem
 
     &__input
-      float left
-      display block
-      box-sizing border-box
-      width 208px
-      height $height
-      padding 4px 1rem
-      margin-right 8px
+      flex 1 1 1rem
+      width 1rem
+      height 100%
+      padding 0 0.8rem
+      margin-right 0.5rem
       background-color $gray[1]
-      border-radius 3px
+      border-radius 0.2rem
       border none
       outline none
       font-family $font2
-      font-size 14px
+      font-size 0.875rem
       line-height @height
       color $gray[2]
 
-      & + .input-email__status
+      & + .input-string__status
         position relative
-        float right
-        width 72px
+        flex 0 0 $width
+        height 100%
         margin 0
-        height $height
         background-color $gray[1]
-        border-radius 5px
+        border-radius 0.25rem
         font-family $font1
         font-weight 900
-        font-size 10px
+        font-size 0.625rem
 
         &::before
           position absolute
           content ''
-          top 9px
-          left -3px
-          width 10px
-          height 10px
+          h = $height
+          top "calc(%s / 4)" % h
+          left -0.15rem
+          width "calc(%s / 2)" % h
+          height "calc(%s / 2)" % h
           background-color inherit
           transform rotate(-45deg)
 
         &::after
           position absolute
           content ''
-          width 70px
+          width $width
           height $height
           text-transform uppercase
           color $white
           text-align center
           line-height @height
 
-      &:invalid + .input-email__status
+      &:invalid + .input-string__status
         background-color $orange[0]
 
         &::after
           content 'error'
 
-      &:valid + .input-email__status
+      &:valid + .input-string__status
         background-color $blue[0]
 
         &::after

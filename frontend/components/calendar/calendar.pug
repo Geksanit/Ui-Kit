@@ -1,9 +1,9 @@
 mixin calendar
-    .calendar
+    .calendar.js-calendar
         .calendar__day 0
         .calendar__month month
-            .calendar__left
-            .calendar__right
+            .calendar__button-left
+            .calendar__button-right
         .calendar__year year
         table(cols = "7").calendar__days-week
             tr
@@ -16,4 +16,4 @@ mixin calendar
                 td SUN
         table.calendar__days(cols = "7")
             tbody
-        .calendar__data TODAY
+        .calendar__button-today TODAY

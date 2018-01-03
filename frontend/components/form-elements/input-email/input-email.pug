@@ -1,9 +1,0 @@
-mixin input-email(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
-    - options.placeholder = options.placeholder || 'placeholder'
-    - options.name = options.name || 'email'
-
-    label.input-email
-        input.input-email__input(type = "email" name = options.name placeholder = options.placeholder required)
-        .input-email__status

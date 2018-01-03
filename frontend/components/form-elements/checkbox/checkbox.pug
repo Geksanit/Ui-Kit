@@ -5,4 +5,7 @@ mixin checkbox(options)
     - options.value = options.value || 'value'
     - options.mix = options.mix || ''
 
-    input(type = "checkbox" class = "checkbox " + options.mix name = options.name value = options.value)
+    if options.checked
+        input(checked type = "checkbox" class = "checkbox " + options.mix name = options.name value = options.value)
+    else
+        input(type = "checkbox" class = "checkbox " + options.mix name = options.name value = options.value)

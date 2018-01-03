@@ -1,17 +1,17 @@
-// ripple effect
-const rippleEffect = function rippleEffect(event) {
-  const div = document.createElement('div');
-  div.id = 'button__ripple';
-  div.style.top = `${event.pageY - 25}px`;
-  div.style.left = `${event.pageX - 25}px`;
+/* global $ */
+import convertRemToPixels from '../../scripts/convertRemToPixels';
 
-  document.body.appendChild(div);
-  setTimeout(() => { document.body.removeChild(div); }, 550);
-};
-
-(function initButtons() {
-  const elements = document.querySelectorAll('.standart-button');
-  elements.forEach((element) => {
-    element.onclick = rippleEffect;
-  });
-}());
+class Button {
+  constructor(element) {
+    this.$element = $(element).on('click.standart-button', this.rippleEffect.bind(this));
+    this.size = convertRemToPixels(2);
+  }
+  rippleEffect(event) {
+    const $div = $(document.createElement('div')).attr('id', 'button__ripple');
+    $div.css({ top: `${event.offsetY - this.size}px`, left: `${event.offsetX - this.size}px` });
+    this.$element.append($div);
+    setTimeout(() => $div.remove(), 550);
+  }
+}
+let buttons = [];
+$('.standart-button').each((index, element) => buttons.push(new Button(element)));

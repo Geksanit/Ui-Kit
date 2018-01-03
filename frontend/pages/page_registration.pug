@@ -10,9 +10,9 @@ html
         +header()
         main(date-title='Sign up')
             forma.send-mes
-                +input-email({placeholder: 'Your Email'})
-                +input-text({placeholder: 'Your first name'})
-                +input-text({placeholder: 'Your last name'})
+                +input-string({ type:'email', placeholder: 'Your Email' })
+                +input-string({ placeholder: 'Your first name' })
+                +input-string({ placeholder: 'Your last name' })
                 div Your age
                 label
                     +slider({ mix:'slider-mix', min: 10, max: 100, value: 20 })

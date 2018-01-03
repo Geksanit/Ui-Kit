@@ -6,7 +6,7 @@ mixin select(options)
         - options.list = ['']
     - options.mix = options.mix || ''
 
-    form(action = "#" class = "select " + options.mix)
+    form(action = "404" class = "select " + options.mix)
         select.select__select
             option(disabled selected)= options.def
             each item in options.list
