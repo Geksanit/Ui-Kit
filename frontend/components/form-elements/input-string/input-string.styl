@@ -23,7 +23,7 @@ input-string($font1, $font2, $blue, $orange, $gray, $white)
       line-height @height
       color $gray[2]
 
-      & + .input-string__status
+      & + ^[0]__status
         position relative
         flex 0 0 $width
         height 100%
@@ -55,13 +55,13 @@ input-string($font1, $font2, $blue, $orange, $gray, $white)
           text-align center
           line-height @height
 
-      &:invalid + .input-string__status
+      &:invalid + ^[0]__status
         background-color $orange[0]
 
         &::after
           content 'error'
 
-      &:valid + .input-string__status
+      &:valid + ^[0]__status
         background-color $blue[0]
 
         &::after

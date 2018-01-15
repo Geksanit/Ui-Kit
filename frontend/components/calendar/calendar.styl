@@ -12,14 +12,14 @@ calendar($font1, $font2, $color1, $color2, $white)
     cursor default
     border-radius 0.2rem
 
-    .calendar__day
+    &__day
       font-family $font1, Arial, sans-serif
       font-weight 300
       height 6.81rem
       line-height @height
       font-size 5rem
 
-    .calendar__month
+    &__month
       $height = 2.69rem
       position relative
       height $height
@@ -29,14 +29,16 @@ calendar($font1, $font2, $color1, $color2, $white)
       line-height @height
       background-color rgba(0,0,0, 0.1)
 
-      .calendar__button-left,
-      .calendar__button-right
+      & ^[0]__button-left
+      & ^[0]__button-right
         position absolute
         top 0
         height $height
         width @height
+
         &:hover
           background-color rgba(0,0,0, 0.1)
+
         &::before
           content ''
           position absolute
@@ -46,28 +48,28 @@ calendar($font1, $font2, $color1, $color2, $white)
           border-right 0.2rem solid $white
           border-bottom 0.2rem solid $white
 
-      .calendar__button-left
+      & ^[0]__button-left
         left 0
 
         &::before
           transform rotate(135deg)
           left calc(50% - 0.31rem)
 
-      .calendar__button-right
+      & ^[0]__button-right
         right 0
 
         &::before
           transform rotate(-45deg)
           right calc(50% - 0.31rem)
 
-    .calendar__year
+    &__year
       height 2.5rem
       font-family $font1, Arial, sans-serif
       font-weight 300
       font-size 1.875rem
       line-height @height
 
-    .calendar__days-week
+    &__days-week
       font-family $font1, Arial, sans-serif
       font-weight 900
       font-size 0.625rem
@@ -81,7 +83,7 @@ calendar($font1, $font2, $color1, $color2, $white)
       td
         width ($width / 7)
 
-    .calendar__days
+    &__days
       $width = $width + 0.125rem
       margin 0 -0.0625rem
       background-color $color2[0]
@@ -98,14 +100,14 @@ calendar($font1, $font2, $color1, $color2, $white)
         height @width
         box-sizing border-box
 
-      .calendar__days-month
+      & ^[0]__days-month
         color $color2[2]
 
-      .calendar__today
+      & ^[0]__today
         background-color $color1[0]
         color $white
 
-    .calendar__button-today
+    &__button-today
       font-family $font1, Arial, sans-serif
       font-weight 900
       height 3.06rem

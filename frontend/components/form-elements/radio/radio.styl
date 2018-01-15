@@ -14,9 +14,6 @@ radio($blue, $orange, $gray, $white)
     padding 0
     margin 0
 
-    &:checked
-      background-color $blue[0]
-
     &::before
       content ''
       position absolute
@@ -27,6 +24,9 @@ radio($blue, $orange, $gray, $white)
       border-bottom 0.125rem solid $gray[2]
       border-left 0.125rem solid $gray[2]
       transform rotate(-45deg)
+
+    &:checked
+      background-color $blue[0]
 
     &:checked::before
       border-color $white

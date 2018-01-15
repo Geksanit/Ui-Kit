@@ -4,6 +4,8 @@ $black = black
 $blue = #4eb7a8 #28a290
 $orange = #e75735 #bf3e1f
 $gray = #f2f2f2 #e5e5e5 #8e8d8d #9d9d9d #747474
+//paths
+$path-img = '../img/'
 
 //fonts
 @font-face
@@ -126,13 +128,13 @@ slider(Lato, $blue, $orange, $gray, $white)
 stages(Lato, $blue, $orange, $gray, $white)
 
 @import "../components/search/search.styl"
-search(SourceSansPro, $blue, $orange, $gray, $white)
+search(SourceSansPro, $blue, $orange, $gray, $white, $path-img)
 
 @import "../components/select/select.styl"
 select(SourceSansPro, $blue, $gray, $white)
 
 @import "../components/user-profile/user-profile.styl"
-user-profile(Lato, $blue, $orange, $gray, $white)
+user-profile(Lato, $blue, $orange, $gray, $white, $path-img)
 
 @import "../components/news/news.styl"
 news(Lato, $blue, $orange, $gray, $white)
@@ -141,23 +143,23 @@ news(Lato, $blue, $orange, $gray, $white)
 events(Lato, $blue, $orange, $gray, $white)
 
 @import "../components/map/map.styl"
-map(Lato, $orange, $gray, $white)
+map(Lato, $orange, $gray, $white, $path-img)
 
 @import "../components/calendar/calendar.styl"
 calendar(Lato, SourceSansPro, $orange, $gray, $white)
 
 @import "../components/messaging/messaging.styl"
-messaging(Lato, SourceSansPro, $blue, $orange, $gray, $white)
+messaging(Lato, SourceSansPro, $blue, $orange, $gray, $white, $path-img)
 
 @import "../components/video/video.styl"
-video(Lato, $orange, $gray, $white, $black)
+video(Lato, $orange, $gray, $white, $black, $path-img)
 
 // другие компоненты
 @import "../components/photo/photo.styl"
 photo($gray, $white)
 
 @import "../components/header/header.styl"
-header(Lato, $orange, $white)
+header(Lato, $orange, $white, $path-img)
 
 @import "../components/form-elements/input-string/input-string.styl"
 input-string(Lato, SourceSansPro, $blue, $orange, $gray, $white)

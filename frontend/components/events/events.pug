@@ -20,5 +20,5 @@ mixin events(options)
                 .events__date-month #{options.month}
             .events__title #{options.title}
             p.events__desription #{options.text}
-            .events__button
+            .events__button-container
                 +standart-button({ mix:'events__button-mix', title: 'add to calendar', size: 'small', color: options.color })
