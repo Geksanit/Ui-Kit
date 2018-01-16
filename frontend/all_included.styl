@@ -5,171 +5,78 @@ $blue = #4eb7a8 #28a290
 $orange = #e75735 #bf3e1f
 $gray = #f2f2f2 #e5e5e5 #8e8d8d #9d9d9d #747474
 //paths
-$path-img = '../img/'
-
+$path-img = '~img/'
 //fonts
-@font-face
-  font-family Lato
-  src: url(../fonts/Lato/Lato-Hairline.ttf) format('truetype'),
-    url(../fonts/Lato/lato-hairline-webfont.svg) format('svg'),
-    url(../fonts/Lato/lato-hairline-webfont.woff) format('woff');
-  font-weight: 100;
-  font-style: normal;
+@import "~fonts/Lato/Lato.styl"
 
-@font-face
-  font-family Lato
-  src: url(../fonts/Lato/Lato-Thin.ttf) format('truetype'),
-    url(../fonts/Lato/lato-thin-webfont.svg) format('svg'),
-    url(../fonts/Lato/lato-thin-webfont.woff) format('woff');
-  font-weight: 200;
-  font-style: normal;
-
-@font-face
-  font-family Lato
-  src: url(../fonts/Lato/Lato-Light.ttf) format('truetype'),
-    url(../fonts/Lato/lato-light-webfont.svg) format('svg'),
-    url(../fonts/Lato/lato-light-webfont.woff) format('woff');
-  font-weight: 300;
-  font-style: normal;
-
-@font-face
-  font-family Lato
-  src: url(../fonts/Lato/Lato-Regular.ttf) format('truetype'),
-    url(../fonts/Lato/lato-regular-webfont.svg) format('svg'),
-    url(../fonts/Lato/lato-regular-webfont.woff) format('woff');
-  font-weight: 400;
-  font-style: normal;
-
-@font-face
-  font-family Lato
-  src: url(../fonts/Lato/Lato-Medium.ttf) format('truetype'),
-    url(../fonts/Lato/lato-medium-webfont.svg) format('svg'),
-    url(../fonts/Lato/lato-medium-webfont.woff) format('woff');
-  font-weight: 500;
-  font-style: normal;
-
-@font-face
-  font-family Lato
-  src: url(../fonts/Lato/Lato-Semibold.ttf) format('truetype'),
-    url(../fonts/Lato/lato-semibold-webfont.svg) format('svg'),
-    url(../fonts/Lato/lato-semibold-webfont.woff) format('woff');
-  font-weight: 600;
-  font-style: normal;
-
-@font-face
-  font-family Lato
-  src: url(../fonts/Lato/Lato-Bold.ttf) format('truetype'),
-    url(../fonts/Lato/lato-bold-webfont.svg) format('svg'),
-    url(../fonts/Lato/lato-bold-webfont.woff) format('woff');
-  font-weight: 700;
-  font-style: normal;
-
-@font-face
-  font-family Lato
-  src: url(../fonts/Lato/Lato-Heavy.ttf) format('truetype'),
-    url(../fonts/Lato/lato-heavy-webfont.svg) format('svg'),
-    url(../fonts/Lato/lato-heavy-webfont.woff) format('woff');
-  font-weight: 800;
-  font-style: normal;
-
-@font-face
-  font-family Lato
-  src: url(../fonts/Lato/Lato-Black.ttf) format('truetype'),
-    url(../fonts/Lato/lato-black-webfont.svg) format('svg'),
-    url(../fonts/Lato/lato-black-webfont.woff) format('woff');
-  font-weight: 900;
-  font-style: normal;
-
-@font-face
-  font-family SourceSansPro
-  src: url(../fonts/SourceSansPro/SourceSansProRegular.ttf) format('truetype'),
-    url(../fonts/SourceSansPro/sourcesanspro-regular-webfont.svg) format('svg'),
-    url(../fonts/SourceSansPro/sourcesanspro-regular-webfont.woff) format('woff');
-  font-weight: 400;
-  font-style: normal;
-
-@font-face
-  font-family SourceSansPro
-  src: url(../fonts/SourceSansPro/SourceSansProLight.ttf) format('truetype'),
-    url(../fonts/SourceSansPro/sourcesanspro-light-webfont.svg) format('svg'),
-    url(../fonts/SourceSansPro/sourcesanspro-light-webfont.woff) format('woff');
-  font-weight: 300;
-  font-style: normal;
-
-@font-face
-  font-family SourceSansPro
-  src: url(../fonts/SourceSansPro/SourceSansProBold.ttf) format('truetype'),
-    url(../fonts/SourceSansPro/sourcesanspro-bold-webfont.svg) format('svg'),
-    url(../fonts/SourceSansPro/sourcesanspro-bold-webfont.woff) format('woff');
-  font-weight: 700;
-  font-style: normal;
+@import "~fonts/SourceSansPro/SourceSansPro.styl"
 
 body
   font-family Lato, Arial, sans-serif
   font-weight 400
 
 
-@import "../components/standart-button/standart-button"
+@import "~components/standart-button/standart-button"
 standart-button(Lato, $blue, $orange, $gray , $white)
 
-@import "../components/arrow-button/arrow-button.styl"
+@import "~components/arrow-button/arrow-button.styl"
 arrow-button($blue, $orange, $gray, $white)
 
-@import "../components/percentages/percentages.styl"
+@import "~components/percentages/percentages.styl"
 percentages(Lato, $orange, $gray, $white)
 
-@import "../components/pie-chart/pie-chart.styl"
+@import "~components/pie-chart/pie-chart.styl"
 pie-chart($blue, $orange, $gray, $white)
 
-@import "../components/slider/slider.styl"
+@import "~components/slider/slider.styl"
 slider(Lato, $blue, $orange, $gray, $white)
 
-@import "../components/stages/stages.styl"
+@import "~components/stages/stages.styl"
 stages(Lato, $blue, $orange, $gray, $white)
 
-@import "../components/search/search.styl"
+@import "~components/search/search.styl"
 search(SourceSansPro, $blue, $orange, $gray, $white, $path-img)
 
-@import "../components/select/select.styl"
+@import "~components/select/select.styl"
 select(SourceSansPro, $blue, $gray, $white)
 
-@import "../components/user-profile/user-profile.styl"
+@import "~components/user-profile/user-profile.styl"
 user-profile(Lato, $blue, $orange, $gray, $white, $path-img)
 
-@import "../components/news/news.styl"
+@import "~components/news/news.styl"
 news(Lato, $blue, $orange, $gray, $white)
 
-@import "../components/events/events.styl"
+@import "~components/events/events.styl"
 events(Lato, $blue, $orange, $gray, $white)
 
-@import "../components/map/map.styl"
+@import "~components/map/map.styl"
 map(Lato, $orange, $gray, $white, $path-img)
 
-@import "../components/calendar/calendar.styl"
+@import "~components/calendar/calendar.styl"
 calendar(Lato, SourceSansPro, $orange, $gray, $white)
 
-@import "../components/messaging/messaging.styl"
+@import "~components/messaging/messaging.styl"
 messaging(Lato, SourceSansPro, $blue, $orange, $gray, $white, $path-img)
 
-@import "../components/video/video.styl"
+@import "~components/video/video.styl"
 video(Lato, $orange, $gray, $white, $black, $path-img)
 
 // другие компоненты
-@import "../components/photo/photo.styl"
+@import "~components/photo/photo.styl"
 photo($gray, $white)
 
-@import "../components/header/header.styl"
+@import "~components/header/header.styl"
 header(Lato, $orange, $white, $path-img)
 
-@import "../components/form-elements/input-string/input-string.styl"
+@import "~components/form-elements/input-string/input-string.styl"
 input-string(Lato, SourceSansPro, $blue, $orange, $gray, $white)
 
-@import "../components/form-elements/textarea/textarea.styl"
+@import "~components/form-elements/textarea/textarea.styl"
 textarea(SourceSansPro, $gray)
 
-@import "../components/form-elements/radio/radio.styl"
+@import "~components/form-elements/radio/radio.styl"
 radio($blue, $orange, $gray, $white)
 
-@import "../components/form-elements/checkbox/checkbox.styl"
+@import "~components/form-elements/checkbox/checkbox.styl"
 checkbox(Lato, $blue, $gray, $white)
 

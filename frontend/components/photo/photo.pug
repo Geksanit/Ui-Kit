@@ -3,7 +3,7 @@ mixin photo(options)
         - options = {}
     - options.mix = options.mix || ''
     if (options.src)
-        - options.src = require('../img/' + options.src + '.png')
+        - options.src = require('../../img/' + options.src + '.png')
         img(class = "photo " + options.mix src = options.src alt = "avatar")
     else
         img(class = "photo " + options.mix alt = "avatar")
