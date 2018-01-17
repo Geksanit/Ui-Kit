@@ -1,4 +1,4 @@
-header($font, $color, $white)
+header($font, $color, $white, $path)
 
   .main-header
     display flex
@@ -8,6 +8,7 @@ header($font, $color, $white)
 
     @media (max-width: 696px)
       padding 10px
+
     box-sizing border-box
     background-color $color[0]
     font-family $font, Arial, sans-serif
@@ -17,7 +18,7 @@ header($font, $color, $white)
     &__logo
       width 30px
       height 30px
-      background url(../img/icon3.png) center no-repeat
+      background url($path + 'icon3.png') center no-repeat
 
     &__nav
       flex 1 1 100px

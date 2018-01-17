@@ -3,7 +3,7 @@ mixin news(options)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
     - options.src = options.src || 'Layer'
-    - var url = require('../img/' + options.src + '.png')
+    - var url = require('../../img/' + options.src + '.png')
     if (options.color !== 'blue' && options.color !== 'orange')
         - options.color = 'blue'
     - options.date = options.date || '1 January'

@@ -17,23 +17,24 @@
       <nav class="main-header__nav"><a class="main-header__link" href="./page_news.html">News</a><a class="main-header__link" href="./page_messages.html">Messages</a><a class="main-header__link" href="./page_friends.html">Friends</a><a class="main-header__link" href="./page_stats.html">My stats</a></nav>
     </header>
     <main date-title="Sign up">
-      <forma class="send-mes">
-        <label class="input-email">
-          <input class="input-email__input" type="email" name="email" placeholder="Your Email" required>
-          <div class="input-email__status"></div>
+      <form class="form-registration">
+        <label class="input-string">
+          <input class="input-string__input" type="email" name="name" placeholder="Your Email" required>
+          <div class="input-string__status"></div>
         </label>
-        <label class="input-text">
-          <input class="input-text__input" type="text" name="name" placeholder="Your first name" required>
-          <div class="input-text__status"></div>
+        <label class="input-string">
+          <input class="input-string__input" type="text" name="name" placeholder="Your first name" required>
+          <div class="input-string__status"></div>
         </label>
-        <label class="input-text">
-          <input class="input-text__input" type="text" name="name" placeholder="Your last name" required>
-          <div class="input-text__status"></div>
+        <label class="input-string">
+          <input class="input-string__input" type="text" name="name" placeholder="Your last name" required>
+          <div class="input-string__status"></div>
         </label>
         <div>Your age</div>
         <label>
-          <div class="slider slider-mix">
+          <div class="slider slider_color_undefined slider-mix">
             <div class="slider__view">20</div>
+            <div class="slider__line"></div>
             <input class="slider__input js-slider__input" type="range" min="10" max="100" value="20">
           </div>
         </label>
@@ -53,7 +54,7 @@
           <p>I agree <a href="404.html">privacy policy</a></p>
         </label>
         <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal button-mix">sign up</button>
-      </forma>
+      </form>
     </main>
   <script type="text/javascript" src="registration.js"></script></body>
 </html>

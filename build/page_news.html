@@ -18,7 +18,7 @@
     </header>
     <main date-title="News">
       <div class="container-center">
-        <form class="select " action="#">
+        <form class="select " action="404">
           <select class="select__select">
             <option disabled selected>sorting</option>
             <option>by date</option>
@@ -42,7 +42,7 @@
           </div>
           <div class="events__title">HolyJS 2017 Moscow</div>
           <p class="events__desription">HolyJS is a unique conference dedicated to JavaScript only.</p>
-          <div class="events__button">
+          <div class="events__button-container">
             <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small events__button-mix">add to calendar</button>
           </div>
         </div>
@@ -62,23 +62,22 @@
           </div>
           <div class="events__title">this is Event</div>
           <p class="events__desription">Lorem ipsum Lorem ipsum Lorem ipsum</p>
-          <div class="events__button">
+          <div class="events__button-container">
             <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small events__button-mix">add to calendar</button>
           </div>
         </div>
       </div>
       <div class="js-video video video-map-mix">
-        <div class="video__title">
-          <h2>New Zeland</h2>
-          <h4>video/Travel_New_Zeland.mp4</h4>
+        <div class="video__text">
+          <div class="video__title">New Zeland</div>
+          <div class="video__src">video/Travel_New_Zeland.mp4</div>
         </div>
         <video class="video__video" poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
         <div class="video__controls">
-          <div class="video__button video__button-play"></div>
-          <div class="video__slider">
-            <div class="video__slider_line-full"></div>
-            <div class="video__slider_line"></div>
-            <input class="js-video__slider-input video__slider-input" type="range" min="0" max="100" value="0">
+          <div class="video__button"></div>
+          <div class="slider slider_color_orange video__slider-mix">
+            <div class="slider__line"></div>
+            <input class="slider__input js-slider__input" type="range" min="0" max="100" value="0">
           </div>
           <div class="video__button-full"></div>
         </div>
@@ -98,12 +97,12 @@
         </div>
       </div>
       <div class="map video-map-mix">
-        <div class="map__element" data-lat="-33.877685" data-lng="151.207077"></div>
+        <div class="map__element js-map__element" data-lat="-33.877685" data-lng="151.207077"></div>
         <div class="map__down">
           <div class="map__message">Meet Us !</div>
-          <div class="map__addres">no data ...</div>
-          <div class="map__icon1"></div>
-          <div class="map__icon2"></div>
+          <div class="map__address">no data ...</div>
+          <div class="map__icon-location"></div>
+          <div class="map__icon-marker"></div>
         </div>
       </div>
       <div class="news news_color_orange news-events-mix"><img class="news__img" src="img/Layer.png" alt="news">
@@ -121,7 +120,7 @@
           </div>
           <div class="events__title">this is title</div>
           <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="events__button">
+          <div class="events__button-container">
             <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small events__button-mix">add to calendar</button>
           </div>
         </div>
@@ -134,7 +133,7 @@
           </div>
           <div class="events__title">this is title</div>
           <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="events__button">
+          <div class="events__button-container">
             <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small events__button-mix">add to calendar</button>
           </div>
         </div>
@@ -149,11 +148,11 @@
       </div>
       <div class="container-calendar">
         <input type="checkbox">
-        <div class="calendar">
+        <div class="calendar js-calendar">
           <div class="calendar__day">0</div>
           <div class="calendar__month">month
-            <div class="calendar__left"></div>
-            <div class="calendar__right"></div>
+            <div class="calendar__button-left"></div>
+            <div class="calendar__button-right"></div>
           </div>
           <div class="calendar__year">year</div>
           <table class="calendar__days-week" cols="7">
@@ -170,7 +169,7 @@
           <table class="calendar__days" cols="7">
             <tbody></tbody>
           </table>
-          <div class="calendar__data">TODAY</div>
+          <div class="calendar__button-today">TODAY</div>
         </div>
       </div>
     </main>

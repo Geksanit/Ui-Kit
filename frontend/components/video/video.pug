@@ -3,8 +3,8 @@ mixin video(options)
         - options = {}
     - var src = 'no src!'
     if (options.src)
-        - var url = require('../video/' + options.src + '.jpg')
-        - src = require('../video/' + options.src + '.mp4')
+        - var url = require('../../video/' + options.src + '.jpg')
+        - src = require('../../video/' + options.src + '.mp4')
     - options.title = options.title || 'Title'
     - options.mix = options.mix || ''
 

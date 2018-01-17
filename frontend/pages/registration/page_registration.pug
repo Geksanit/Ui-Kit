@@ -1,21 +1,21 @@
 doctype html
-include ../all_included
+include ../../all_included
 html
     head
-        meta(charset = 'utf-8')
-        meta(name='viewport', content="initial-scale=1.0, width=device-width")
+        meta(charset = "utf-8")
+        meta(name="viewport", content="initial-scale=1.0, width=device-width")
         +favicons()
         title Sign up
     body
         +header()
-        main(date-title='Sign up')
-            forma.send-mes
+        main(date-title = "Sign up")
+            form.form-registration
                 +input-string({ type:'email', placeholder: 'Your Email' })
                 +input-string({ placeholder: 'Your first name' })
                 +input-string({ placeholder: 'Your last name' })
                 div Your age
                 label
-                    +slider({ mix:'slider-mix', min: 10, max: 100, value: 20 })
+                    +slider({ mix:'slider-mix', min: 10, max: 100, value: 20, line: true, view: true })
                 div Your gender
                 .container
                     label

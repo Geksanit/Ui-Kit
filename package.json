@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env development\"",
-    "build": "webpack --env production"
+    "dev": "./node_modules/.bin/nodemon --watch webpack.config.js --exec \"./node_modules/.bin/webpack-dev-server --env development\"",
+    "build": "./node_modules/.bin/webpack --env production"
   },
   "keywords": [],
   "author": "",

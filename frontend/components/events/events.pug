@@ -3,7 +3,7 @@ mixin events(options)
     if (!options || (typeof(options) !== 'object'))
         - options = {}
     - options.src = options.src || 'Layer2'
-    - var url = require('../img/' + options.src + '.png')
+    - var url = require('../../img/' + options.src + '.png')
     if (options.color !== 'blue' && options.color !== 'orange')
         - options.color = 'blue'
     - options.day = options.day || '1'
@@ -20,5 +20,5 @@ mixin events(options)
                 .events__date-month #{options.month}
             .events__title #{options.title}
             p.events__desription #{options.text}
-            .events__button
+            .events__button-container
                 +standart-button({ mix:'events__button-mix', title: 'add to calendar', size: 'small', color: options.color })

@@ -30,26 +30,25 @@ arrow-button($blue, $orange, $gray, $white)
     &:hover
       background-color $blue[0]
 
-      .arrow-button__arrow
+      & ^[0]__arrow
         border-color $white
 
     &_color_orange
       $_color = $orange
       border-color $_color[0]
 
-      .arrow-button__arrow
+      & ^[0]__arrow
         border-color $_color[0]
 
       &:hover
         background-color $_color[0]
 
-    &_orientation_left
-      .arrow-button__arrow
-        transform translateX(0.25rem) rotate(135deg)
+    &_orientation_left ^[0]__arrow
+      transform translateX(0.25rem) rotate(135deg)
 
     &:disabled
       border-color $gray[1]
       background-color $gray[1]
 
-      .arrow-button__arrow
+      & ^[0]__arrow
         border-color $white

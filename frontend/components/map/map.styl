@@ -1,7 +1,6 @@
-map($font, $orange, $gray, $white)
+map($font, $orange, $gray, $white, $path)
 
   .map
-    $path = '../img/'
     width 100%
     border-radius 0.2rem
     font-family $font, Arial, sans-serif
@@ -46,14 +45,14 @@ map($font, $orange, $gray, $white)
       line-height @height
       vertical-align middle
 
-    &__icon1
+    &__icon-location
       float right
       height 100%
       width 1.875rem
-      background url($path+'icon4.png') no-repeat center
+      background url($path + 'icon4.png') no-repeat center
 
-    &__icon2
+    &__icon-marker
       float right
       height 100%
       width 1.875rem
-      background url($path+'icon5.png') no-repeat center
+      background url($path + 'icon5.png') no-repeat center

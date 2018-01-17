@@ -34,10 +34,10 @@ events(font, $blue, $orange, $gray, $white)
       display flex
       align-items flex-end
 
-      &-day
+      & ^[0]__date-day
         font-size 4.375rem
 
-      &-month
+      & ^[0]__date-month
         margin-bottom 0.625rem
 
     &__title
@@ -52,13 +52,13 @@ events(font, $blue, $orange, $gray, $white)
       font-weight 400
       margin-top 0.31rem
 
-    &__button
-        display flex
-        justify-content space-around
+    &__button-container
+      display flex
+      justify-content space-around
 
-        &-mix
-          width 8rem
+      & ^[0]__button-mix
+        width 8rem
 
     &_color_orange
-      .events__text
+      & ^[0]__text
         background-color $orange[0]

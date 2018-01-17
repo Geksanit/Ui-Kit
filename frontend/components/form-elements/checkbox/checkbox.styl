@@ -15,9 +15,6 @@ checkbox($font, $blue, $gray, $white)
     border-radius  0.75rem
     background-color $gray[1]
 
-    &:checked
-      background-color $blue[0]
-
     &::after
       content ''
       position absolute
@@ -28,9 +25,6 @@ checkbox($font, $blue, $gray, $white)
       left 0.125rem
       background-color $white
       transition: all 0.5s
-
-    &:checked::after
-      left 2.375rem
 
     &::before
       position absolute
@@ -49,6 +43,12 @@ checkbox($font, $blue, $gray, $white)
       transition: all 0.5s
       padding 0
       margin 0
+
+    &:checked
+      background-color $blue[0]
+
+    &:checked::after
+      left 2.375rem
 
     &:checked::before
       content 'on'
