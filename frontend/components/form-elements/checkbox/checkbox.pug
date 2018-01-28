@@ -1,6 +1,5 @@
 mixin checkbox(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.name = options.name || 'radio'
     - options.value = options.value || 'value'
     - options.mix = options.mix || ''

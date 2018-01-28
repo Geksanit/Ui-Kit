@@ -1,6 +1,5 @@
 mixin select(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.def = options.def || 'default'
     if (!options.list || (!Array.isArray(options.list)))
         - options.list = ['']

@@ -1,6 +1,5 @@
 mixin stages(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.value = options.value || 3
     - options.max = options.max || 5
     - options.mix = options.mix || ''

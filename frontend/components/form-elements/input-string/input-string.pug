@@ -1,6 +1,5 @@
 mixin input-string(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.placeholder = options.placeholder || 'placeholder'
     - options.name = options.name || 'name'
     - options.type = options.type || 'text'

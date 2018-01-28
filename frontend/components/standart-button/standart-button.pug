@@ -1,7 +1,5 @@
 mixin standart-button(options)
-    - //{size:'normal',color:'blue',title:'button',disabled:false,mix:''}
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.title = options.title || 'button'
     - options.mix = options.mix || ''
     if (!options.size !== 'normal' && options.size !== 'small')

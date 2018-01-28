@@ -1,7 +1,5 @@
 mixin user-profile(options)
-    - // (name,prof,src,color)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     if (options.color !== 'blue' && options.color !== 'orange')
         - options.color = 'blue'
     - options.name = options.name || 'name'

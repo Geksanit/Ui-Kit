@@ -1,7 +1,5 @@
 mixin news(options)
-    - // (date,title,text,color,url)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.src = options.src || 'Layer'
     - var url = require('../../img/' + options.src + '.png')
     if (options.color !== 'blue' && options.color !== 'orange')

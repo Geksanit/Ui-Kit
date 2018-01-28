@@ -1,6 +1,5 @@
 mixin map(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.title = options.title || 'Title'
     - options.lat = options.lat || -30
     - options.lng = options.lng || 150

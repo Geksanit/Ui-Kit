@@ -1,6 +1,5 @@
 mixin photo(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.mix = options.mix || ''
     if (options.src)
         - options.src = require('../../img/' + options.src + '.png')
