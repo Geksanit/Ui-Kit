@@ -33,7 +33,7 @@ class Calendar {
       let flag = false;
       for (let i = 0; i < 7; i += 1) { // 7 дней
         let $td = $(document.createElement('td'));
-        $td.text(date.getDate());
+        $td.text(date.getDate()).addClass('calendar__cell');
         if (this.isThisMonth(date)) {
           $td.addClass('calendar__days-month');
           flag = true;

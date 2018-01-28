@@ -84,6 +84,7 @@ body {
   border-width: 1px;
   outline: none;
   overflow: hidden;
+  text-overflow: ellipsis;
   font-family: Lato, Arial, sans-serif;
   font-weight: 900;
   font-size: 0.75rem;
@@ -564,13 +565,13 @@ body {
 }
 .user-profile {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 5.875rem;
   font-family: Lato, Arial, sans-serif;
   font-weight: 400;
 }
-.user-profile__photo-mix {
+.user-profile__photo {
   margin-right: 0.69rem;
 }
 .user-profile__block {
@@ -581,7 +582,7 @@ body {
   padding: 0.75rem 0.625rem;
   box-sizing: border-box;
   text-align: center;
-  flex: 1 1 1rem;
+  flex: 1 0 5rem;
   border-radius: 0.625rem;
 }
 .user-profile__block::before {
@@ -873,7 +874,7 @@ body {
   border-collapse: collapse;
   vertical-align: middle;
 }
-.calendar__days-week td {
+.calendar__days-week .calendar__cell {
   width: 2.491428571428572rem;
 }
 .calendar__days {
@@ -886,7 +887,7 @@ body {
   width: 17.565rem;
   border-collapse: collapse;
 }
-.calendar__days td {
+.calendar__days .calendar__cell {
   border: 0.0625rem solid #fff;
   width: calc(17.565rem / 7);
   height: calc(17.565rem / 7);
@@ -949,7 +950,7 @@ body {
   justify-content: space-around;
   z-index: 3;
 }
-.messaging__img .photo {
+.messaging__photo {
   z-index: 1;
 }
 .messaging__chat {
@@ -1014,7 +1015,7 @@ body {
 .messaging__message:focus {
   border: 0.2rem solid #fff;
 }
-.messaging__button-mix {
+.messaging__button {
   width: 100%;
   margin: 0;
 }
@@ -1106,7 +1107,8 @@ body {
 .video__button_play {
   background: url(img/pause.svg) center no-repeat;
 }
-.video__slider-mix {
+.video__slider {
+  flex: 1 1;
   margin: -1.2rem 1.25rem 0 1.25rem;
 }
 .video__button-full {
@@ -1178,7 +1180,6 @@ body {
   width: 100%;
   height: 1.75rem;
   display: flex;
-  margin-bottom: 0.75rem;
 }
 .input-string__input {
   flex: 1 1 1rem;
@@ -1246,7 +1247,6 @@ body {
   width: 100%;
   height: 5.5rem;
   padding: 0.5rem 0.8rem;
-  margin-bottom: 0.625rem;
   background-color: #e5e5e5;
   border-radius: 0.2rem;
   border: none;
@@ -1348,13 +1348,53 @@ body {
   margin: 0;
   background-color: #d3d3d3;
 }
-body main {
+body .main {
   width: 70%;
   padding: 8.2% 5.3% 10.9% 5.3%;
   margin: 0 auto;
   background-color: #fff;
 }
-body main .title {
+@media (max-width: 1000px) {
+  body .main {
+    width: 80%;
+  }
+}
+@media (max-width: 800px) {
+  body .main {
+    width: 100%;
+  }
+}
+body .main__standart-buttons {
+  margin-bottom: 2.2rem;
+}
+body .main__arrow-buttons {
+  margin-bottom: 2.9rem;
+}
+body .main__percentages {
+  margin-bottom: 2rem;
+}
+body .main__sliders {
+  margin-bottom: 2.5rem;
+}
+body .main__stages {
+  margin-bottom: 3.5rem;
+}
+body .main__form-elements {
+  margin-bottom: 4.2rem;
+}
+body .main__container-line {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .main__news-events {
+  margin-bottom: 3rem;
+}
+body .main__video {
+  margin-bottom: 2rem;
+}
+body .main .title {
   font-size: 1.1rem;
   font-family: Lato;
   font-weight: 900;
@@ -1363,170 +1403,179 @@ body main .title {
   text-align: center;
   letter-spacing: 0.07rem;
 }
-body main .container-column {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
+body .main .standart-buttons-container__title {
+  margin-bottom: 4.2rem;
 }
-body main .container-line {
-  padding: 0;
-  box-sizing: border-box;
+body .main .standart-buttons-container__container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 11%;
+}
+body .main .standart-buttons-container__button {
+  margin-bottom: 1.4rem;
+}
+body .main .arrow-buttons-container__title {
+  margin-bottom: 2.2rem;
+}
+body .main .arrow-buttons-container__container {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0 auto;
-}
-body main .standart-buttons-container {
-  margin-bottom: 3.7rem;
-}
-body main .standart-buttons-container .title {
-  margin-bottom: 4.2rem;
-}
-body main .standart-buttons-container .container-line {
-  align-items: flex-end;
-  margin: 1.4rem 0;
-  padding: 0 11%;
-}
-body main .arrow-buttons-container {
-  margin-bottom: 2.8rem;
-}
-body main .arrow-buttons-container .title {
-  margin-bottom: 2.2rem;
-}
-body main .arrow-buttons-container .container-line {
   margin: 1.4rem 0;
   padding: 0 15%;
 }
-body main .percentages-container {
-  margin-bottom: 2rem;
-}
-body main .percentages-container .title {
+body .main .percentages-container__title {
   margin-bottom: 1.2rem;
 }
-body main .percentages-container .container-line {
+body .main .percentages-container__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   margin: 1.4rem 0;
   padding: 0 1%;
 }
-body main .sliders-container {
-  margin-bottom: 2.5rem;
-}
-body main .sliders-container .title {
+body .main .sliders-container__title {
   margin-bottom: 0.45rem;
 }
-body main .sliders-container .container-line {
-  margin: 0;
-  padding: 0;
+body .main .sliders-container__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-body main .sliders-container .container-line>div {
+body .main .sliders-container__slider {
   width: 44%;
 }
-body main .stages-container {
-  margin-bottom: 3.5rem;
-}
-body main .stages-container .title {
+body .main .stages-container__title {
   margin-bottom: 1.5rem;
 }
-body main .stages-container .container-line {
-  margin: 0;
-  padding: 0 1%;
-}
-body main .form-elements-container {
-  margin-bottom: 4.2rem;
-}
-body main .form-elements-container .title {
+body .main .form-elements-container__title {
   margin-bottom: 2.95rem;
 }
-body main .form-elements-container .container-line {
+body .main .form-elements-container__container-line {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: flex-start;
-  margin: 0;
-  padding: 0;
 }
-body main .form-elements-container .container-line forma {
+body .main .form-elements-container__container-column {
   width: 48.4%;
+  justify-content: flex-start;
 }
-body main .form-elements-container .container-line forma .submit-mix {
+body .main .form-container__element {
+  margin-bottom: 0.75rem;
+}
+body .main .form-container__button {
   float: right;
 }
-body main .form-elements-container .container-line .container-column {
-  justify-content: flex-start;
-  margin-right: 12%;
+body .main .form-container__clearfix {
+  clear: both;
 }
-body main .form-elements-container .container-line .container-column .toggles-container {
+body .main .toggles-container {
   margin-bottom: 2.2rem;
 }
-body main .form-elements-container .container-line .container-column .toggles-container .title {
+body .main .toggles-container__title {
   margin-bottom: 1.5rem;
 }
-body main .form-elements-container .container-line .container-column .tick-boxes-container {
+body .main .toggles-container__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 9rem;
+  margin: 0 auto;
+}
+body .main .tick-boxes-container {
   margin-bottom: 0.2rem;
 }
-body main .form-elements-container .container-line .container-column .tick-boxes-container .title {
+body .main .tick-boxes-container__title {
   margin-bottom: 1.9rem;
 }
-body main .form-elements-container .container-line .container-column .tick-boxes-container .container-line {
+body .main .tick-boxes-container__container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+  width: 5rem;
+  margin: 0 auto;
 }
-body main .search-drop-down-container {
+body .main .search-drop-down-container {
   margin-bottom: 2rem;
   width: 48.5%;
 }
-body main .search-drop-down-container .title {
+@media (max-width: 600px) {
+  body .main .search-drop-down-container {
+    width: 100%;
+  }
+}
+body .main .search-drop-down-container__title {
   margin-bottom: 1.3rem;
 }
-body main .search-drop-down-container .container-line {
+body .main .search-drop-down-container__container {
   margin-bottom: 1rem;
 }
-body main .user-profile-container {
-  margin-bottom: 4.3rem;
-  width: 45.5%;
+body .main .user-profile-container {
+  margin-bottom: 4.2rem;
   padding-right: 0.3%;
+  width: 45.5%;
 }
-body main .user-profile-container .title {
+@media (max-width: 600px) {
+  body .main .user-profile-container {
+    width: 100%;
+  }
+}
+body .main .user-profile-container__title {
   margin-bottom: 1.9rem;
 }
-body main .user-profile-container .container-line {
+body .main .user-profile-container__container {
   margin-bottom: 1.6rem;
 }
-body main .news-events-container {
-  margin-bottom: 3rem;
-}
-body main .news-events-container .title {
+body .main .news-events-container__title {
   margin-bottom: 2.05rem;
 }
-body main .news-events-container .container-line {
-  margin-bottom: 1.6rem;
+body .main .news-events-container__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-body main .news-events-container .container-line>div {
+body .main .news-events-container__element {
   width: 48.5%;
 }
-body main .location-container {
+@media (max-width: 650px) {
+  body .main .news-events-container__element {
+    width: 100%;
+    margin-bottom: 1.6rem;
+  }
+}
+body .main .location-container {
   margin-bottom: 3.2rem;
 }
-body main .location-container .title {
+body .main .location-container__title {
   margin-bottom: 1.9rem;
 }
-body main .calendar-container {
-  margin-bottom: 2rem;
-  width: 48.5%;
+body .main .calendar-container {
+  width: 17.44rem;
 }
-body main .calendar-container .title {
+body .main .calendar-container__title {
   margin-bottom: 1.5rem;
 }
-body main .messaging-container {
+body .main .calendar-container__container {
+  margin-bottom: 2rem;
+}
+body .main .messaging-container {
+  width: 48.5%;
+}
+@media (max-width: 600px) {
+  body .main .messaging-container {
+    width: 100%;
+  }
+}
+body .main .messaging-container__title {
+  margin-bottom: 1.5rem;
+}
+body .main .messaging-container__container {
   margin-bottom: 3.7rem;
-  width: 48.5%;
 }
-body main .messaging-container .title {
-  margin-bottom: 1.5rem;
-}
-body main .video-container {
-  margin-bottom: 2rem;
-}
-body main .video-container .title {
+body .main .video-container__title {
   margin-bottom: 1.4rem;
 }

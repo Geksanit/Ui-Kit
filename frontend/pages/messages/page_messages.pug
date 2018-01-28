@@ -9,8 +9,14 @@ html
     body
         +header()
         main(date-title="Messages")
-            +messaging({ mix:'messaging-mix', name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo1', color:'orange' })
-            +messaging({ mix:'messaging-mix', name:'John Smith', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo2', color:'blue' })
+            .main-container
+                .friends-container
+                    label(for = "friend1") Sarah Brown
+                    label(for = "friend2") John Smith
+                input(type = "radio" id = "friend1" name="friends" checked)
+                +messaging({ mix:'messaging-mix', name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo1', color:'orange' })
+                input(type = "radio" id = "friend2" name="friends")
+                +messaging({ mix:'messaging-mix', name:'John Smith', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo2', color:'blue' })
 
         footer
             center

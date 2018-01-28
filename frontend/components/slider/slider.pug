@@ -3,9 +3,8 @@ mixin slider(options)
     - options.min = options.min || 0
     - options.max = options.max || 100
     - options.value = options.value || 0
-    - options.mix = options.mix || ''
 
-    div(class = "slider slider_color_" + options.color + " " + options.mix)
+    div(class = "slider slider_color_" + options.color)
       if (options.view)
         .slider__view #{options.value}
       if (options.line)

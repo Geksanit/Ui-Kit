@@ -9,6 +9,7 @@ class Slider {
     this.$line = this.$parent.find('.slider__line');
     this.sliderChange.call(this);
     this.$element.on('input.slider', this.sliderChange.bind(this));
+    $(window).resize(this.sliderChange.bind(this));
   }
   sliderChange() {
     const { $element } = this;

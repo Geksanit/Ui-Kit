@@ -157,6 +157,7 @@ class Slider {
     this.$line = this.$parent.find('.slider__line');
     this.sliderChange.call(this);
     this.$element.on('input.slider', this.sliderChange.bind(this));
+    $(window).resize(this.sliderChange.bind(this));
   }
   sliderChange() {
     const { $element } = this;
@@ -180,7 +181,7 @@ $('.js-slider__input').each((index, element) => sliders.push(new Slider(element)
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {/* global $ */
+/* WEBPACK VAR INJECTION */(function($) {
 const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December',
 ];
@@ -215,7 +216,7 @@ class Calendar {
       let flag = false;
       for (let i = 0; i < 7; i += 1) { // 7 дней
         let $td = $(document.createElement('td'));
-        $td.text(date.getDate());
+        $td.text(date.getDate()).addClass('calendar__cell');
         if (this.isThisMonth(date)) {
           $td.addClass('calendar__days-month');
           flag = true;
@@ -288,7 +289,7 @@ class Video {
     this.$text = this.$element.find('.video__text');
     this.$button = this.$element.find('.video__button').on('click.video', this.handleButton);
     this.$buttonFull = this.$element.find('.video__button-full').on('click.video', this.handleButtonFull);
-    this.$slider = this.$element.find('.video__slider-mix input').on('input.video', this.handleSlider);
+    this.$slider = this.$element.find('input[type=range]').on('input.video', this.handleSlider);
   }
   changeSlider() {
     this.$slider.triggerHandler('input.slider');

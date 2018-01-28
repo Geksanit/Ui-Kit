@@ -9,7 +9,7 @@ class Video {
     this.$text = this.$element.find('.video__text');
     this.$button = this.$element.find('.video__button').on('click.video', this.handleButton);
     this.$buttonFull = this.$element.find('.video__button-full').on('click.video', this.handleButtonFull);
-    this.$slider = this.$element.find('.video__slider-mix input').on('input.video', this.handleSlider);
+    this.$slider = this.$element.find('input[type=range]').on('input.video', this.handleSlider);
   }
   changeSlider() {
     this.$slider.triggerHandler('input.slider');

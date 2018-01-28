@@ -80,7 +80,7 @@ calendar($font1, $font2, $color1, $color2, $white)
       border-collapse collapse
       vertical-align middle
 
-      td
+      & ^[0]__cell
         width ($width / 7)
 
     &__days
@@ -94,7 +94,7 @@ calendar($font1, $font2, $color1, $color2, $white)
       width $width
       border-collapse collapse
 
-      td
+      & ^[0]__cell
         border 0.0625rem solid $white
         width 'calc(%s / 7)' % $width
         height @width

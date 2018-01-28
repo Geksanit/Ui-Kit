@@ -7,11 +7,46 @@ body
   margin 0
   background-color lightgrey
 
-  main
+  .main
     width 70%
+    @media (max-width:1000px)
+      width 80%
+    @media (max-width:800px)
+      width 100%
+
     padding 8.2% 5.3% 10.9% 5.3%
     margin 0 auto
     background-color white
+
+    &__standart-buttons
+      margin-bottom 2.2rem
+
+    &__arrow-buttons
+      margin-bottom 2.9rem
+
+    &__percentages
+      margin-bottom 2rem
+
+    &__sliders
+      margin-bottom 2.5rem
+
+    &__stages
+      margin-bottom 3.5rem
+
+    &__form-elements
+      margin-bottom 4.2rem
+
+    &__container-line
+      display flex
+      align-items flex-start
+      justify-content space-between
+      flex-wrap wrap
+
+    &__news-events
+      margin-bottom 3rem
+
+    &__video
+      margin-bottom 2rem
 
     .title
       font-size 1.1rem
@@ -22,168 +57,186 @@ body
       text-align center
       letter-spacing 0.07rem
 
-    .container-column
-      padding 0
-      margin 0
-      box-sizing border-box
-      display flex
-      align-items center
-      justify-content space-between
-      flex-direction column
-
-    .container-line
-      padding 0
-      box-sizing border-box
-      display flex
-      align-items flex-start
-      justify-content space-between
-      flex-wrap wrap
-      margin 0 auto
-
     .standart-buttons-container
-      margin-bottom 3.7rem
 
-      .title
+      &__title
         margin-bottom 4.2rem
 
-      .container-line
+      &__container
+        display flex
         align-items flex-end
-        margin 1.4rem 0
+        justify-content space-between
+        flex-wrap wrap
         padding 0 11%
 
-    .arrow-buttons-container
-      margin-bottom 2.8rem
+      &__button
+        margin-bottom 1.4rem
 
-      .title
+    .arrow-buttons-container
+
+      &__title
         margin-bottom 2.2rem
 
-      .container-line
+      &__container
+        display flex
+        align-items flex-start
+        justify-content space-between
+        flex-wrap wrap
         margin 1.4rem 0
         padding 0 15%
 
     .percentages-container
-      margin-bottom 2rem
 
-      .title
+      &__title
         margin-bottom 1.2rem
 
-      .container-line
+      &__container
+        display flex
+        justify-content space-between
+        flex-wrap wrap
         margin 1.4rem 0
         padding 0 1%
 
     .sliders-container
-      margin-bottom 2.5rem
 
-      .title
+      &__title
         margin-bottom 0.45rem
 
-      .container-line
-        margin 0
-        padding 0
+      &__container
+        display flex
+        justify-content space-between
+        flex-wrap wrap
 
-        &>div
-          width 44%
+      &__slider
+        width 44%
 
     .stages-container
-      margin-bottom 3.5rem
 
-      .title
+      &__title
         margin-bottom 1.5rem
 
-      .container-line
-        margin 0
-        padding 0 1%
-
     .form-elements-container
-      margin-bottom 4.2rem
 
-      .title
+      &__title
         margin-bottom 2.95rem
 
-      .container-line
+      &__container-line
+        display flex
+        justify-content space-between
+        flex-wrap wrap
         align-items flex-start
-        margin 0
-        padding 0
 
-        forma
-          width 48.4%
+      &__container-column
+        width 48.4%
+        justify-content flex-start
 
-          .submit-mix
-            float right
+    .form-container
 
-        .container-column
-          justify-content flex-start
-          margin-right 12%
+      &__element
+        margin-bottom 0.75rem
 
-          .toggles-container
-            margin-bottom 2.2rem
+      &__button
+        float right
 
-            .title
-              margin-bottom 1.5rem
+      &__clearfix
+        clear both
 
-          .tick-boxes-container
-            margin-bottom 0.2rem
+    .toggles-container
+      margin-bottom 2.2rem
 
-            .title
-              margin-bottom 1.9rem
+      &__title
+        margin-bottom 1.5rem
 
-            .container-line
-              justify-content space-around
+      &__container
+        display flex
+        justify-content space-between
+        flex-wrap wrap
+        width 9rem
+        margin 0 auto
+
+    .tick-boxes-container
+      margin-bottom 0.2rem
+
+      &__title
+        margin-bottom 1.9rem
+
+      &__container
+        display flex
+        flex-wrap wrap
+        justify-content space-around
+        width 5rem
+        margin 0 auto
+
     .search-drop-down-container
       margin-bottom 2rem
       width 48.5%
 
-      .title
+      @media (max-width:600px)
+        width 100%
+
+      &__title
         margin-bottom 1.3rem
 
-      .container-line
+      &__container
         margin-bottom 1rem
 
     .user-profile-container
-      margin-bottom 4.3rem
-      width 45.5%
+      margin-bottom 4.2rem
       padding-right 0.3%
+      width 45.5%
 
-      .title
+      @media (max-width:600px)
+        width 100%
+
+      &__title
         margin-bottom 1.9rem
 
-      .container-line
+      &__container
         margin-bottom 1.6rem
 
     .news-events-container
-      margin-bottom 3rem
 
-      .title
+      &__title
         margin-bottom 2.05rem
 
-      .container-line
-        margin-bottom 1.6rem
+      &__container
+        display flex
+        justify-content space-between
+        flex-wrap wrap
 
-        &>div
-          width 48.5%
+      &__element
+        width  48.5%
+        @media (max-width:650px)
+          width 100%
+          margin-bottom 1.6rem
 
     .location-container
       margin-bottom 3.2rem
 
-      .title
+      &__title
         margin-bottom 1.9rem
 
     .calendar-container
-      margin-bottom 2rem
-      width 48.5%
+      width 17.44rem
 
-      .title
+      &__title
         margin-bottom 1.5rem
+
+      &__container
+        margin-bottom 2rem
 
     .messaging-container
-      margin-bottom 3.7rem
       width 48.5%
+      @media (max-width:600px)
+        width 100%
 
-      .title
+      &__title
         margin-bottom 1.5rem
 
-    .video-container
-      margin-bottom 2rem
+      &__container
+        margin-bottom 3.7rem
 
-      .title
+    .video-container
+
+      &__title
         margin-bottom 1.4rem

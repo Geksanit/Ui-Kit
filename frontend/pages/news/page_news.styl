@@ -4,6 +4,7 @@ body
   margin 0
   padding 0
   background-color $gray[0]
+
   main
     min-height calc(100vh - 50px)
     display flex
@@ -13,12 +14,15 @@ body
     margin 0 auto
     padding 20px
     width 696px
+
     @media (max-width:712px)
       margin 0
       width 100%
+
     @media (min-width:1000px)
       margin auto
       width 696px
+
     box-sizing border-box
     background-color white
       
@@ -31,13 +35,15 @@ body
       line-height @height
       text-align center
       font-size 20px
+
     & > div
       margin 20px
 
     .news-events-mix
-      flex 1 0 288px  
-    .video-map-mix, .container-center
+      flex 1 0 288px
 
+    .video-map-mix
+    .container-center
       width 100%
       margin 20px
 
@@ -58,6 +64,7 @@ body
       margin 0
       padding 0
       background-color yellow
+
       input[type=checkbox]
         border-top-right-radius 3px
         border-bottom-right-radius 3px
@@ -74,6 +81,7 @@ body
         top calc(50% - 25px)
         left 0
         -webkit-transition: .15s;
+
         &:after
           content ''
           position absolute
@@ -84,6 +92,7 @@ body
           border-bottom 2px solid white
           border-left 2px solid white
           transform rotate(225deg)
+
         &:before
           content 'My calendar'
           position absolute
@@ -97,13 +106,17 @@ body
           width 90px
           background-color transparent
           transform rotate(-90deg)
+
         &:checked
           left $width
+
           &:after
             left 7px
             transform rotate(45deg)
+
         &:checked + div
           left 0
+
       input[type=checkbox] + div
         position fixed
         top calc(50% - 255px)

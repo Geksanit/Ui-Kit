@@ -84,6 +84,7 @@ body {
   border-width: 1px;
   outline: none;
   overflow: hidden;
+  text-overflow: ellipsis;
   font-family: Lato, Arial, sans-serif;
   font-weight: 900;
   font-size: 0.75rem;
@@ -564,13 +565,13 @@ body {
 }
 .user-profile {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 5.875rem;
   font-family: Lato, Arial, sans-serif;
   font-weight: 400;
 }
-.user-profile__photo-mix {
+.user-profile__photo {
   margin-right: 0.69rem;
 }
 .user-profile__block {
@@ -581,7 +582,7 @@ body {
   padding: 0.75rem 0.625rem;
   box-sizing: border-box;
   text-align: center;
-  flex: 1 1 1rem;
+  flex: 1 0 5rem;
   border-radius: 0.625rem;
 }
 .user-profile__block::before {
@@ -873,7 +874,7 @@ body {
   border-collapse: collapse;
   vertical-align: middle;
 }
-.calendar__days-week td {
+.calendar__days-week .calendar__cell {
   width: 2.491428571428572rem;
 }
 .calendar__days {
@@ -886,7 +887,7 @@ body {
   width: 17.565rem;
   border-collapse: collapse;
 }
-.calendar__days td {
+.calendar__days .calendar__cell {
   border: 0.0625rem solid #fff;
   width: calc(17.565rem / 7);
   height: calc(17.565rem / 7);
@@ -949,7 +950,7 @@ body {
   justify-content: space-around;
   z-index: 3;
 }
-.messaging__img .photo {
+.messaging__photo {
   z-index: 1;
 }
 .messaging__chat {
@@ -1014,7 +1015,7 @@ body {
 .messaging__message:focus {
   border: 0.2rem solid #fff;
 }
-.messaging__button-mix {
+.messaging__button {
   width: 100%;
   margin: 0;
 }
@@ -1106,7 +1107,8 @@ body {
 .video__button_play {
   background: url(img/pause.svg) center no-repeat;
 }
-.video__slider-mix {
+.video__slider {
+  flex: 1 1;
   margin: -1.2rem 1.25rem 0 1.25rem;
 }
 .video__button-full {
@@ -1178,7 +1180,6 @@ body {
   width: 100%;
   height: 1.75rem;
   display: flex;
-  margin-bottom: 0.75rem;
 }
 .input-string__input {
   flex: 1 1 1rem;
@@ -1246,7 +1247,6 @@ body {
   width: 100%;
   height: 5.5rem;
   padding: 0.5rem 0.8rem;
-  margin-bottom: 0.625rem;
   background-color: #e5e5e5;
   border-radius: 0.2rem;
   border: none;
@@ -1392,6 +1392,9 @@ body main:before {
   line-height: 25px;
   text-align: center;
   font-size: 20px;
+}
+body main .button-mix {
+  margin: 10px auto 0 auto;
 }
 body footer {
   width: 100%;
