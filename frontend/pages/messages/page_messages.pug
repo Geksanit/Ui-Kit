@@ -9,14 +9,23 @@ html
     body
         +header()
         main(date-title="Messages")
-            .main-container
-                .friends-container
-                    label(for = "friend1") Sarah Brown
-                    label(for = "friend2") John Smith
-                input(type = "radio" id = "friend1" name="friends" checked)
-                +messaging({ mix:'messaging-mix', name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo1', color:'orange' })
-                input(type = "radio" id = "friend2" name="friends")
-                +messaging({ mix:'messaging-mix', name:'John Smith', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo2', color:'blue' })
+            .friends-container
+                .friends-container__list-friends
+                    label.friends-container__list-item.friends-container__list-item_color_orange(for = "friend1") Sarah Brown
+                    label.friends-container__list-item.friends-container__list-item_color_blue(for = "friend2") John Smith
+                    label.friends-container__list-item.friends-container__list-item_color_orange(for = "friend3") Tom Parker
+                .friends-container__container
+                    input.friends-container__radio(type = "radio" id = "friend1" name="friends" checked)
+                    .friends-container__messages
+                        +messaging({ name:'Sarah Brown', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo1', color:'orange' })
+
+                    input.friends-container__radio(type = "radio" id = "friend2" name="friends")
+                    .friends-container__messages
+                        +messaging({ name:'John Smith', text:'Hey, so are we cool to meet at the art gallery? Say 8pm', src:'photo2', color:'blue' })
+
+                    input.friends-container__radio(type = "radio" id = "friend3" name="friends")
+                    .friends-container__messages
+                        +messaging({ name: 'Tom Parker', text: 'Hey, so are we cool to meet at the art gallery?', color: 'orange'})
 
         footer
             center

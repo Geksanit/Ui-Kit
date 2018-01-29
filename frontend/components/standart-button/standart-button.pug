@@ -1,12 +1,12 @@
 mixin standart-button(options)
     - options = options || {}
     - options.title = options.title || 'button'
-    - options.mix = options.mix || ''
+    - var width = options.fullWidth ? 'standart-button_fullWidth' : ''
     if (!options.size !== 'normal' && options.size !== 'small')
         - options.size = 'normal'
     if (options.color !== 'blue' && options.color !== 'orange')
         - options.color = 'blue'
-    - var cls = "standart-button js-standart-button standart-button_color_" + options.color + " standart-button_size_" + options.size + " " + options.mix;
+    - var cls = "standart-button js-standart-button standart-button_color_" + options.color + " standart-button_size_" + options.size + width;
 
     if (options.disabled)
         button(disabled class = cls) #{options.title}

@@ -2,11 +2,10 @@ mixin stages(options)
     - options = options || {}
     - options.value = options.value || 3
     - options.max = options.max || 5
-    - options.mix = options.mix || ''
     if (options.color !== 'blue' && options.color !== 'orange')
         -options.color = 'blue'
 
-    div(class = "stages " + options.mix)
+    .stages
         div(class = "stages__circle stages_color_" + options.color)
             .stages__text 1
         - var i = 2;

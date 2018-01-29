@@ -113,6 +113,9 @@ body {
   font-size: 0.625rem;
   box-shadow: 0 0.125rem 0 #28a290;
 }
+.standart-button_fullWidth {
+  width: 100%;
+}
 .standart-button_color_orange {
   border-color: #e75735;
   box-shadow: 0 0.2rem 0 #bf3e1f;
@@ -728,10 +731,7 @@ body {
   margin-top: 0.31rem;
 }
 .events__button-container {
-  display: flex;
-  justify-content: space-around;
-}
-.events__button-container .events__button-mix {
+  margin: 0 auto;
   width: 8rem;
 }
 .events_color_orange .events__text {
@@ -800,7 +800,6 @@ body {
   font-family: Lato, Arial, sans-serif;
   font-weight: 400;
   text-align: center;
-  background-color: #e75735;
   overflow: hidden;
   cursor: default;
   border-radius: 0.2rem;
@@ -811,6 +810,7 @@ body {
   height: 6.81rem;
   line-height: 6.81rem;
   font-size: 5rem;
+  background-color: #e75735;
 }
 .calendar__month {
   position: relative;
@@ -819,7 +819,7 @@ body {
   font-weight: 300;
   font-size: 1.625rem;
   line-height: 2.69rem;
-  background-color: rgba(0,0,0,0.1);
+  background-color: #d03c19;
 }
 .calendar__month .calendar__button-left,
 .calendar__month .calendar__button-right {
@@ -862,6 +862,7 @@ body {
   font-weight: 300;
   font-size: 1.875rem;
   line-height: 2.5rem;
+  background-color: #e75735;
 }
 .calendar__days-week {
   font-family: Lato, Arial, sans-serif;
@@ -869,7 +870,7 @@ body {
   font-size: 0.625rem;
   height: 1.69rem;
   line-height: 1.69rem;
-  background-color: rgba(0,0,0,0.1);
+  background-color: #d03c19;
   border: none;
   border-collapse: collapse;
   vertical-align: middle;
@@ -1134,8 +1135,8 @@ body {
 .main-header {
   display: flex;
   width: 100%;
-  min-height: 50px;
-  padding: 10px calc(50% - 348px);
+  min-height: 3.125rem;
+  padding: 0.625rem calc(50% - 348px);
   box-sizing: border-box;
   background-color: #e75735;
   font-family: Lato, Arial, sans-serif;
@@ -1144,36 +1145,36 @@ body {
 }
 @media (max-width: 696px) {
   .main-header {
-    padding: 10px;
+    padding: 0.625rem;
   }
 }
 .main-header__logo {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
   background: url(img/icon3.png) center no-repeat;
 }
 .main-header__nav {
-  flex: 1 1 100px;
+  flex: 1 1;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  min-height: 30px;
-  margin: 0 20px;
+  min-height: 1.875rem;
+  margin: 0 1.25rem;
   overflow: hidden;
 }
 .main-header__link {
-  flex: 1 1 50px;
+  flex: 1 1;
   text-decoration: none;
   margin: 0;
-  padding: 4px;
+  padding: 0.25rem;
   text-align: center;
-  font-size: 22px;
-  line-height: 22px;
+  font-size: 1.375rem;
+  line-height: 1.375rem;
   color: #fff;
 }
 .main-header__link:hover {
-  border-radius: 3px;
+  border-radius: 0.2rem;
   background-color: #bf3e1f;
 }
 .input-string {
@@ -1345,9 +1346,12 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-body main {
-  min-height: calc(100vh - 50px);
+body .main {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
@@ -1359,59 +1363,48 @@ body main {
   background-color: #fff;
 }
 @media (max-width: 712px) {
-  body main {
+  body .main {
     margin: 0;
     width: 100%;
   }
 }
 @media (min-width: 1000px) {
-  body main {
+  body .main {
     margin: auto;
     width: 696px;
   }
 }
-body main:before {
+body .main:before {
   content: attr(date-title);
   color: #e5e5e5;
-  margin: 0 10%;
+  margin-bottom: 1.2rem;
   width: 80%;
-  height: 25px;
-  line-height: 25px;
+  height: 1.5rem;
+  line-height: 1.5rem;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.2rem;
 }
-body main > div {
-  margin: 20px;
-}
-body main .news-events-mix {
-  flex: 1 0 288px;
-}
-body main .video-map-mix,
-body main .container-center {
+body .main__container-around {
   width: 100%;
-  margin: 20px;
-}
-body main .container-center {
+  margin: 1.2rem;
   display: flex;
   justify-content: space-around;
 }
-body main .arrows {
+body .main__container-between {
   width: 100%;
+  margin: 1.2rem;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
   justify-content: space-between;
 }
-body main .container-calendar {
-  margin: 0;
-  padding: 0;
-  background-color: #ff0;
+body .main__container-news {
+  flex: 1 0 18rem;
+  margin: 1.2rem;
 }
-body main .container-calendar input[type=checkbox] {
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  width: 20px;
-  height: 150px;
+body .main__container-calendar .calendar-container__checkbox {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  width: 1.2rem;
+  height: 9rem;
   margin: 0;
   padding: 0;
   border: none;
@@ -1420,54 +1413,52 @@ body main .container-calendar input[type=checkbox] {
   -moz-appearance: none;
   background-color: #4eb7a8;
   position: fixed;
-  top: calc(50% - 25px);
+  top: calc(50% - 4.5rem);
   left: 0;
   -webkit-transition: 0.15s;
 }
-body main .container-calendar input[type=checkbox]:after {
+body .main__container-calendar .calendar-container__checkbox:after {
   content: '';
   position: absolute;
-  top: 20px;
-  left: 0px;
-  width: 10px;
-  height: 10px;
-  border-bottom: 2px solid #fff;
-  border-left: 2px solid #fff;
+  top: 1.2rem;
+  left: 0;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-bottom: 0.15rem solid #fff;
+  border-left: 0.15rem solid #fff;
   transform: rotate(225deg);
 }
-body main .container-calendar input[type=checkbox]:before {
+body .main__container-calendar .calendar-container__checkbox:before {
   content: 'My calendar';
   position: absolute;
-  top: 85px;
-  left: -40px;
-  height: 20px;
-  line-height: 20px;
-  font-size: 16px;
+  top: 5rem;
+  left: -2.2rem;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  font-size: 1rem;
   color: #fff;
-  padding: 0 3px;
-  width: 90px;
-  background-color: transparent;
+  width: 5.6rem;
   transform: rotate(-90deg);
 }
-body main .container-calendar input[type=checkbox]:checked {
-  left: 279px;
+body .main__container-calendar .calendar-container__checkbox:checked {
+  left: 17.44rem;
 }
-body main .container-calendar input[type=checkbox]:checked:after {
-  left: 7px;
+body .main__container-calendar .calendar-container__checkbox:checked:after {
+  left: 0.5rem;
   transform: rotate(45deg);
 }
-body main .container-calendar input[type=checkbox]:checked + div {
+body .main__container-calendar .calendar-container__checkbox:checked + .calendar-container__calendar {
   left: 0;
 }
-body main .container-calendar input[type=checkbox] + div {
+body .main__container-calendar .calendar-container__checkbox + .calendar-container__calendar {
   position: fixed;
-  top: calc(50% - 255px);
-  left: -279px;
+  top: calc(50% - 15rem);
+  left: -17.44rem;
   -webkit-transition: 0.15s;
 }
 body footer {
   width: 100%;
-  height: 20px;
-  padding: 10px 0;
+  height: 1.2rem;
+  padding: 0.6rem 0;
   background-color: #e75735;
 }

@@ -18,4 +18,4 @@ mixin events(options)
             .events__title #{options.title}
             p.events__desription #{options.text}
             .events__button-container
-                +standart-button({ mix:'events__button-mix', title: 'add to calendar', size: 'small', color: options.color })
+                +standart-button({ fullWidth: true, title: 'add to calendar', size: 'small', color: options.color })

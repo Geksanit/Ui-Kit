@@ -7,9 +7,8 @@ mixin news(options)
     - options.date = options.date || '1 January'
     - options.title = options.title || 'title'
     - options.text = options.text || 'text'
-    - options.mix = options.mix || ''
 
-    div(class="news news_color_" + options.color + " " + options.mix)
+    div(class="news news_color_" + options.color)
         img.news__img(src = url alt = "news")
         .news__text
             h2.news__title #{options.title}

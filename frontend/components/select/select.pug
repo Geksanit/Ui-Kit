@@ -3,9 +3,8 @@ mixin select(options)
     - options.def = options.def || 'default'
     if (!options.list || (!Array.isArray(options.list)))
         - options.list = ['']
-    - options.mix = options.mix || ''
 
-    form(action = "404" class = "select " + options.mix)
+    form(action = "404" class = "select")
         select.select__select
             option(disabled selected)= options.def
             each item in options.list

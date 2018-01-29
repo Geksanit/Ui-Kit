@@ -16,9 +16,9 @@
       <div class="main-header__logo"></div>
       <nav class="main-header__nav"><a class="main-header__link" href="./page_news.html">News</a><a class="main-header__link" href="./page_messages.html">Messages</a><a class="main-header__link" href="./page_friends.html">Friends</a><a class="main-header__link" href="./page_stats.html">My stats</a></nav>
     </header>
-    <main date-title="News">
-      <div class="container-center">
-        <form class="select " action="404">
+    <main class="main" date-title="News">
+      <div class="main__container-around">
+        <form class="select" action="404">
           <select class="select__select">
             <option disabled selected>sorting</option>
             <option>by date</option>
@@ -27,120 +27,142 @@
           <div class="select__arrow"></div>
         </form>
       </div>
-      <div class="news news_color_orange news-events-mix"><img class="news__img" src="img/Layer.png" alt="news">
-        <div class="news__text">
-          <h2 class="news__title">It'is all going downhill</h2>
-          <div class="news__date">24 august 2013</div>
-          <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
-        </div>
-      </div>
-      <div class="events events_color_orange"><img class="events__img" src="img/moskau.png" alt="events">
-        <div class="events__text">
-          <div class="events__date">
-            <div class="events__date-day">10</div>
-            <div class="events__date-month">Dec</div>
-          </div>
-          <div class="events__title">HolyJS 2017 Moscow</div>
-          <p class="events__desription">HolyJS is a unique conference dedicated to JavaScript only.</p>
-          <div class="events__button-container">
-            <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small events__button-mix">add to calendar</button>
+      <div class="main__container-news">
+        <div class="news news_color_orange"><img class="news__img" src="img/Layer.png" alt="news">
+          <div class="news__text">
+            <h2 class="news__title">It'is all going downhill</h2>
+            <div class="news__date">24 august 2013</div>
+            <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
           </div>
         </div>
       </div>
-      <div class="news news_color_blue news-events-mix"><img class="news__img" src="img/rally.png" alt="news">
-        <div class="news__text">
-          <h2 class="news__title">RALLY DAKAR-2017</h2>
-          <div class="news__date">15 january 2017</div>
-          <p class="news__desription">The Russian KAMAZ-master team triumphantly returned the Champion title in the extreme rally-marathon Dakar.</p>
-        </div>
-      </div>
-      <div class="events events_color_blue"><img class="events__img" src="img/Layer2.png" alt="events">
-        <div class="events__text">
-          <div class="events__date">
-            <div class="events__date-day">9</div>
-            <div class="events__date-month">Sep</div>
-          </div>
-          <div class="events__title">this is Event</div>
-          <p class="events__desription">Lorem ipsum Lorem ipsum Lorem ipsum</p>
-          <div class="events__button-container">
-            <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small events__button-mix">add to calendar</button>
-          </div>
-        </div>
-      </div>
-      <div class="js-video video video-map-mix">
-        <div class="video__text">
-          <div class="video__title">New Zeland</div>
-          <div class="video__src">video/Travel_New_Zeland.mp4</div>
-        </div>
-        <video class="video__video" poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
-        <div class="video__controls">
-          <div class="video__button"></div>
-          <div class="video__slider">
-            <div class="slider slider_color_orange">
-              <div class="slider__line"></div>
-              <input class="slider__input js-slider__input" type="range" min="0" max="100" value="0">
+      <div class="main__container-news">
+        <div class="events events_color_orange"><img class="events__img" src="img/moskau.png" alt="events">
+          <div class="events__text">
+            <div class="events__date">
+              <div class="events__date-day">10</div>
+              <div class="events__date-month">Dec</div>
+            </div>
+            <div class="events__title">HolyJS 2017 Moscow</div>
+            <p class="events__desription">HolyJS is a unique conference dedicated to JavaScript only.</p>
+            <div class="events__button-container">
+              <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_smallstandart-button_fullWidth">add to calendar</button>
             </div>
           </div>
-          <div class="video__button-full"></div>
         </div>
       </div>
-      <div class="news news_color_blue news-events-mix"><img class="news__img" src="img/Layer.png" alt="news">
-        <div class="news__text">
-          <h2 class="news__title">It'is all going downhill</h2>
-          <div class="news__date">26 december 2016</div>
-          <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      <div class="news news_color_blue news-events-mix"><img class="news__img" src="img/Layer.png" alt="news">
-        <div class="news__text">
-          <h2 class="news__title">It'is all going downhill</h2>
-          <div class="news__date">20 august 2017</div>
-          <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      <div class="map video-map-mix">
-        <div class="map__element js-map__element" data-lat="-33.877685" data-lng="151.207077"></div>
-        <div class="map__down">
-          <div class="map__message">Meet Us !</div>
-          <div class="map__address">no data ...</div>
-          <div class="map__icon-location"></div>
-          <div class="map__icon-marker"></div>
-        </div>
-      </div>
-      <div class="news news_color_orange news-events-mix"><img class="news__img" src="img/Layer.png" alt="news">
-        <div class="news__text">
-          <h2 class="news__title">It'is all going downhill</h2>
-          <div class="news__date">20 august 2017</div>
-          <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      <div class="events events_color_orange"><img class="events__img" src="img/Layer2.png" alt="events">
-        <div class="events__text">
-          <div class="events__date">
-            <div class="events__date-day">24</div>
-            <div class="events__date-month">Aug</div>
-          </div>
-          <div class="events__title">this is title</div>
-          <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="events__button-container">
-            <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small events__button-mix">add to calendar</button>
+      <div class="main__container-news">
+        <div class="news news_color_blue"><img class="news__img" src="img/rally.png" alt="news">
+          <div class="news__text">
+            <h2 class="news__title">RALLY DAKAR-2017</h2>
+            <div class="news__date">15 january 2017</div>
+            <p class="news__desription">The Russian KAMAZ-master team triumphantly returned the Champion title in the extreme rally-marathon Dakar.</p>
           </div>
         </div>
       </div>
-      <div class="events events_color_blue"><img class="events__img" src="img/Layer2.png" alt="events">
-        <div class="events__text">
-          <div class="events__date">
-            <div class="events__date-day">24</div>
-            <div class="events__date-month">Aug</div>
-          </div>
-          <div class="events__title">this is title</div>
-          <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div class="events__button-container">
-            <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small events__button-mix">add to calendar</button>
+      <div class="main__container-news">
+        <div class="events events_color_blue"><img class="events__img" src="img/Layer2.png" alt="events">
+          <div class="events__text">
+            <div class="events__date">
+              <div class="events__date-day">9</div>
+              <div class="events__date-month">Sep</div>
+            </div>
+            <div class="events__title">this is Event</div>
+            <p class="events__desription">Lorem ipsum Lorem ipsum Lorem ipsum</p>
+            <div class="events__button-container">
+              <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_smallstandart-button_fullWidth">add to calendar</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="arrows">
+      <div class="main__container-around">
+        <div class="js-video video">
+          <div class="video__text">
+            <div class="video__title">New Zeland</div>
+            <div class="video__src">video/Travel_New_Zeland.mp4</div>
+          </div>
+          <video class="video__video" poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
+          <div class="video__controls">
+            <div class="video__button"></div>
+            <div class="video__slider">
+              <div class="slider slider_color_orange">
+                <div class="slider__line"></div>
+                <input class="slider__input js-slider__input" type="range" min="0" max="100" value="0">
+              </div>
+            </div>
+            <div class="video__button-full"></div>
+          </div>
+        </div>
+      </div>
+      <div class="main__container-news">
+        <div class="news news_color_blue"><img class="news__img" src="img/Layer.png" alt="news">
+          <div class="news__text">
+            <h2 class="news__title">It'is all going downhill</h2>
+            <div class="news__date">26 december 2016</div>
+            <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="main__container-news">
+        <div class="news news_color_blue"><img class="news__img" src="img/Layer.png" alt="news">
+          <div class="news__text">
+            <h2 class="news__title">It'is all going downhill</h2>
+            <div class="news__date">20 august 2017</div>
+            <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="main__container-around">
+        <div class="map">
+          <div class="map__element js-map__element" data-lat="-33.877685" data-lng="151.207077"></div>
+          <div class="map__down">
+            <div class="map__message">Meet Us !</div>
+            <div class="map__address">no data ...</div>
+            <div class="map__icon-location"></div>
+            <div class="map__icon-marker"></div>
+          </div>
+        </div>
+      </div>
+      <div class="main__container-news">
+        <div class="news news_color_orange"><img class="news__img" src="img/Layer.png" alt="news">
+          <div class="news__text">
+            <h2 class="news__title">It'is all going downhill</h2>
+            <div class="news__date">20 august 2017</div>
+            <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+      <div class="main__container-news">
+        <div class="events events_color_orange"><img class="events__img" src="img/Layer2.png" alt="events">
+          <div class="events__text">
+            <div class="events__date">
+              <div class="events__date-day">24</div>
+              <div class="events__date-month">Aug</div>
+            </div>
+            <div class="events__title">this is title</div>
+            <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="events__button-container">
+              <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_smallstandart-button_fullWidth">add to calendar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__container-news">
+        <div class="events events_color_blue"><img class="events__img" src="img/Layer2.png" alt="events">
+          <div class="events__text">
+            <div class="events__date">
+              <div class="events__date-day">24</div>
+              <div class="events__date-month">Aug</div>
+            </div>
+            <div class="events__title">this is title</div>
+            <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="events__button-container">
+              <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_smallstandart-button_fullWidth">add to calendar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__container-between">
         <button class="arrow-button arrow-button_orientation_left arrow-button_color_orange" disabled>
           <div class="arrow-button__arrow"></div>
         </button>
@@ -148,30 +170,34 @@
           <div class="arrow-button__arrow"></div>
         </button>
       </div>
-      <div class="container-calendar">
-        <input type="checkbox">
-        <div class="calendar js-calendar">
-          <div class="calendar__day">0</div>
-          <div class="calendar__month">month
-            <div class="calendar__button-left"></div>
-            <div class="calendar__button-right"></div>
+      <div class="main__container-calendar">
+        <div class="calendar-container">
+          <input class="calendar-container__checkbox" type="checkbox">
+          <div class="calendar-container__calendar">
+            <div class="calendar js-calendar">
+              <div class="calendar__day">0</div>
+              <div class="calendar__month">month
+                <div class="calendar__button-left"></div>
+                <div class="calendar__button-right"></div>
+              </div>
+              <div class="calendar__year">year</div>
+              <table class="calendar__days-week" cols="7">
+                <tr>
+                  <td class="calendar__cell">MON</td>
+                  <td class="calendar__cell">TUE</td>
+                  <td class="calendar__cell">WED</td>
+                  <td class="calendar__cell">THU</td>
+                  <td class="calendar__cell">FRI</td>
+                  <td class="calendar__cell">SAT</td>
+                  <td class="calendar__cell">SUN</td>
+                </tr>
+              </table>
+              <table class="calendar__days" cols="7">
+                <tbody></tbody>
+              </table>
+              <div class="calendar__button-today">TODAY</div>
+            </div>
           </div>
-          <div class="calendar__year">year</div>
-          <table class="calendar__days-week" cols="7">
-            <tr>
-              <td class="calendar__cell">MON</td>
-              <td class="calendar__cell">TUE</td>
-              <td class="calendar__cell">WED</td>
-              <td class="calendar__cell">THU</td>
-              <td class="calendar__cell">FRI</td>
-              <td class="calendar__cell">SAT</td>
-              <td class="calendar__cell">SUN</td>
-            </tr>
-          </table>
-          <table class="calendar__days" cols="7">
-            <tbody></tbody>
-          </table>
-          <div class="calendar__button-today">TODAY</div>
         </div>
       </div>
     </main>

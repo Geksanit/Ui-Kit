@@ -10,12 +10,16 @@ html
         +header()
         main(date-title='Friends')
             +search()
-            .container
-                +user-profile({ name:'John Smith', prof:'ux designer', src:'photo2', color:'orange' })
-                +standart-button({ title:'send message', color:'orange', mix: 'button-mix' })
-            .container
-                +user-profile({ name:'Sarah Brown', prof:'developer', src:'photo1', color:'blue' })
-                +standart-button({ title:'send message', color:'blue', mix: 'button-mix' })
+            .user-profile-container
+                .user-profile-container__profile
+                    +user-profile({ name:'John Smith', prof:'ux designer', src:'photo2', color:'orange' })
+                .user-profile-container__button
+                    +standart-button({ title:'send message', color:'orange' })
+            .user-profile-container
+                .user-profile-container__profile
+                    +user-profile({ name:'Sarah Brown', prof:'developer', src:'photo1', color:'blue' })
+                .user-profile-container__button
+                    +standart-button({ title:'send message', color:'blue' })
         footer
             center
                 a(href="./page_registration.html") Sugn up

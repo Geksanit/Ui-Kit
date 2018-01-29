@@ -3,9 +3,8 @@ mixin map(options)
     - options.title = options.title || 'Title'
     - options.lat = options.lat || -30
     - options.lng = options.lng || 150
-    - options.mix = options.mix || ''
 
-    div(class = "map " + options.mix)
+    div(class = "map")
         .map__element.js-map__element(data-lat = options.lat, data-lng = options.lng)
         .map__down
             .map__message #{options.title}

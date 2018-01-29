@@ -4,9 +4,8 @@ mixin user-profile(options)
         - options.color = 'blue'
     - options.name = options.name || 'name'
     - options.prof = options.prof || 'prof'
-    - options.mix = options.mix || ''
 
-    div(class = "user-profile " + options.mix)
+    .user-profile
         .user-profile__photo
             +photo({ src: options.src })
         div(class="user-profile__block user-profile_color_" + options.color)
