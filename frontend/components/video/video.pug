@@ -1,9 +1,7 @@
 mixin video(options)
     - options = options || {}
-    - var src = 'no src!'
-    if (options.src)
-        - var url = require('../../video/' + options.src + '.jpg')
-        - src = require('../../video/' + options.src + '.mp4')
+    - var url = options.src ? require('../../video/' + options.src + '.jpg') : 'no src!'
+    - var src = options.src ? require('../../video/' + options.src + '.mp4') : 'no src!'
     - options.title = options.title || 'Title'
 
     .js-video.video

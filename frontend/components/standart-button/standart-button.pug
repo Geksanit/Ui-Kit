@@ -8,7 +8,4 @@ mixin standart-button(options)
         - options.color = 'blue'
     - var cls = "standart-button js-standart-button standart-button_color_" + options.color + " standart-button_size_" + options.size + width;
 
-    if (options.disabled)
-        button(disabled class = cls) #{options.title}
-    else
-        button(class = cls) #{options.title}
+    button(disabled = options.disabled ? true : false class = cls) #{options.title}
