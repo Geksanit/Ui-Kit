@@ -6,5 +6,5 @@ mixin input-string(options)
     - options.required = options.required || true
 
     label.input-string
-        input.input-string__input(required = options.required ? true : false type = options.type name = options.name placeholder = options.placeholder)
+        input.input-string__input(required = !!options.required type = options.type name = options.name placeholder = options.placeholder)
         .input-string__status

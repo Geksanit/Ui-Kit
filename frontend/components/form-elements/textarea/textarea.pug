@@ -4,4 +4,4 @@ mixin textarea(options)
     - options.name = options.name || 'message'
     - options.required = options.required || true
 
-    textarea.textarea(required = options.required ? true : false name = options.name placeholder = options.placeholder)
+    textarea.textarea(required = !!options.required name = options.name placeholder = options.placeholder)

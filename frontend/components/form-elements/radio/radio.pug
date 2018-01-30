@@ -3,4 +3,4 @@ mixin radio(options)
     - options.name = options.name || 'radio'
     - options.value = options.value || 'value'
 
-    input(checked = options.checked ? true : false type = "radio" class = "radio" name = options.name value = options.value)
+    input(checked = !!options.checked type = "radio" class = "radio" name = options.name value = options.value)
