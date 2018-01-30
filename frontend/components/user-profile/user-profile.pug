@@ -1,15 +1,13 @@
 mixin user-profile(options)
-    - // (name,prof,src,color)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     if (options.color !== 'blue' && options.color !== 'orange')
         - options.color = 'blue'
     - options.name = options.name || 'name'
     - options.prof = options.prof || 'prof'
-    - options.mix = options.mix || ''
 
-    div(class = "user-profile " + options.mix)
-        +photo({ src: options.src, mix: 'user-profile__photo-mix' })
+    .user-profile
+        .user-profile__photo
+            +photo({ src: options.src })
         div(class="user-profile__block user-profile_color_" + options.color)
             .user-profile__name #{options.name}
             .user-profile__prof #{options.prof}

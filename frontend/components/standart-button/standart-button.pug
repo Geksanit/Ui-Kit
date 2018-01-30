@@ -1,15 +1,11 @@
 mixin standart-button(options)
-    - //{size:'normal',color:'blue',title:'button',disabled:false,mix:''}
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.title = options.title || 'button'
-    - options.mix = options.mix || ''
+    - var width = options.fullWidth ? ' standart-button_fullWidth' : ''
     if (!options.size !== 'normal' && options.size !== 'small')
         - options.size = 'normal'
     if (options.color !== 'blue' && options.color !== 'orange')
         - options.color = 'blue'
+    - var cls = "standart-button js-standart-button standart-button_color_" + options.color + " standart-button_size_" + options.size + width;
 
-    if (options.disabled)
-        button(disabled class = "standart-button js-standart-button standart-button_color_" + options.color + " standart-button_size_" + options.size + " " + options.mix) #{options.title}
-    else
-        button(class = "standart-button js-standart-button standart-button_color_" + options.color + " standart-button_size_" + options.size + " " + options.mix) #{options.title}
+    button(disabled = options.disabled ? true : false class = cls) #{options.title}

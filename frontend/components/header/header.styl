@@ -3,11 +3,11 @@ header($font, $color, $white, $path)
   .main-header
     display flex
     width 100%
-    min-height 50px
-    padding 10px calc(50% - 348px)
+    min-height 3.125rem
+    padding 0.625rem calc(50% - 348px)
 
     @media (max-width: 696px)
-      padding 10px
+      padding 0.625rem
 
     box-sizing border-box
     background-color $color[0]
@@ -16,30 +16,30 @@ header($font, $color, $white, $path)
     color $white
 
     &__logo
-      width 30px
-      height 30px
+      width 1.875rem
+      height 1.875rem
       background url($path + 'icon3.png') center no-repeat
 
     &__nav
-      flex 1 1 100px
+      flex 1 1
       display flex
       align-items flex-start
       justify-content space-between
       flex-wrap wrap
-      min-height 30px
-      margin 0 20px;
+      min-height 1.875rem
+      margin 0 1.25rem;
       overflow hidden
 
     &__link
-      flex 1 1 50px
+      flex 1 1
       text-decoration none
       margin 0
-      padding 4px
+      padding 0.25rem
       text-align center
-      font-size 22px
-      line-height 22px
+      font-size 1.375rem
+      line-height 1.375rem
       color $white
 
       &:hover
-        border-radius 3px
+        border-radius 0.2rem
         background-color $color[1]

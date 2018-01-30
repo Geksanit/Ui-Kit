@@ -9,20 +9,24 @@ html
     body
         +header()
         main(date-title='My stats')
-            .container
-                h3 Respect
-                +percentages(87)
-            .container
-                h3 Activity
-                +percentages(62)
-            .container
-                h3 Content
-                +pie-chart(10,25,30)
-                div
-                    p - posts
-                    p - photos
-                    p - videos
-                    p - other
+            .stats-container
+                h3.sats-container__title Respect
+                .sats-container__data
+                    +percentages(87)
+            .stats-container
+                h3.sats-container__title Activity
+                .sats-container__data
+                    +percentages(62)
+            .stats-container
+                h3.sats-container__title Content
+                .sats-container__data
+                    +pie-chart(10,25,30)
+                .sats-container__data
+                    .stats-colors
+                        p.stats-colors__element.stats-colors__element_color_gray - posts
+                        p.stats-colors__element.stats-colors__element_color_orange - photos
+                        p.stats-colors__element.stats-colors__element_color_blue - videos
+                        p.stats-colors__element.stats-colors__element_color_lightgray - other
 
         footer
             center

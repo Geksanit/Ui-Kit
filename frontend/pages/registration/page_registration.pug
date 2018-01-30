@@ -10,21 +10,25 @@ html
         +header()
         main(date-title = "Sign up")
             form.form-registration
-                +input-string({ type:'email', placeholder: 'Your Email' })
-                +input-string({ placeholder: 'Your first name' })
-                +input-string({ placeholder: 'Your last name' })
-                div Your age
-                label
-                    +slider({ mix:'slider-mix', min: 10, max: 100, value: 20, line: true, view: true })
-                div Your gender
-                .container
-                    label
+                .form-registration__container-line
+                    +input-string({ type:'email', placeholder: 'Your Email' })
+                .form-registration__container-line
+                    +input-string({ placeholder: 'Your first name' })
+                .form-registration__container-line
+                    +input-string({ placeholder: 'Your last name' })
+                .form-registration__container-line Your age
+                .form-registration__container-line
+                    +slider({ min: 10, max: 100, value: 20, line: true, view: true })
+                .form-registration__container-line Your gender
+                .form-registration__container-line
+                    label.form-registration__label
                         input(type="radio" class="radio" name="gender" value="male" required)
-                        p Male
-                    label
+                        p.form-registration__label-text Male
+                    label.form-registration__label
                         input(type="radio" class="radio"  name="gender" value="female" required)
-                        p Female
-                label
-                    +checkbox()
-                    p I agree <a href="404.html">privacy policy</a>
-                +standart-button({ mix:'button-mix', title: 'sign up' })
+                        p.form-registration__label-text Female
+                .form-registration__container-line
+                    label.form-registration__label
+                        +checkbox()
+                        p.form-registration__label-text I agree <a href="404.html">privacy policy</a>
+                +standart-button({ fullWidth: true, title: 'sign up' })

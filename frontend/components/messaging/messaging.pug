@@ -1,22 +1,21 @@
 mixin messaging(options)
-    - // (name,text,src,color)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     if (options.color !== 'blue' && options.color !== 'orange')
         -options.color = 'blue'
     - options.name = options.name || 'name'
     - options.text = options.text || 'text text text'
-    - options.mix = options.mix || ''
 
-    div(class="messaging messaging_color_" + options.color + " " + options.mix)
+    div(class="messaging messaging_color_" + options.color)
         .messaging__top
             .messaging__name #{options.name}
             .messaging__img
                 .messaging__chat
-                +photo({ src: options.src })
+                .messaging__photo
+                    +photo({ src: options.src })
                 .messaging__camera
         .messaging__bottom
             .messaging__buble #{options.text}
             textarea.messaging__message(name = "message")
-            +standart-button({ title: 'reply', color: options.color, mix: 'messaging__button-mix' })
+            .messaging__button
+                +standart-button({ title: 'reply', color: options.color, fullWidth: true })
             .messaging__clearfix

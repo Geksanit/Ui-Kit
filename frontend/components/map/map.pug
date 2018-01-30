@@ -1,15 +1,13 @@
 mixin map(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.title = options.title || 'Title'
     - options.lat = options.lat || -30
     - options.lng = options.lng || 150
-    - options.mix = options.mix || ''
 
-    div(class = "map " + options.mix)
+    .map.js-map
         .map__element.js-map__element(data-lat = options.lat, data-lng = options.lng)
         .map__down
             .map__message #{options.title}
-            .map__address no data ...
+            .map__address.js-map__address  no data ...
             .map__icon-location
             .map__icon-marker

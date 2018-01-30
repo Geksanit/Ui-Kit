@@ -1,10 +1,10 @@
 mixin input-string(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.placeholder = options.placeholder || 'placeholder'
     - options.name = options.name || 'name'
     - options.type = options.type || 'text'
+    - options.required = options.required || true
 
     label.input-string
-        input.input-string__input(type = options.type name = options.name placeholder = options.placeholder required)
+        input.input-string__input(required = options.required ? true : false type = options.type name = options.name placeholder = options.placeholder)
         .input-string__status

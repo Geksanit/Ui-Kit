@@ -35,6 +35,7 @@ standart-button($font, $blue, $orange, $gray, $white)
     border-width 1px
     outline none
     overflow hidden
+    text-overflow ellipsis
     font-family $font, Arial, sans-serif
     font-weight 900
     font-size 0.75rem
@@ -62,6 +63,9 @@ standart-button($font, $blue, $orange, $gray, $white)
       height 1.375rem
       font-size 0.625rem
       box-shadow 0 0.125rem 0 $blue[1]
+
+    &_fullWidth
+      width 100%
 
     &_color_orange
       setColor($orange)

@@ -1,12 +1,7 @@
 mixin textarea(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.placeholder = options.placeholder || 'placeholder'
     - options.name = options.name || 'message'
-    if (options.required === undefined)
-        - options.required = true;
+    - options.required = options.required || true
 
-    if (options.required)
-        textarea.textarea(name = options.name placeholder = options.placeholder required)
-    else
-        textarea.textarea(name = options.name placeholder = options.placeholder)
+    textarea.textarea(required = options.required ? true : false name = options.name placeholder = options.placeholder)

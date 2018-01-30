@@ -7,7 +7,6 @@ calendar($font1, $font2, $color1, $color2, $white)
     font-family $font1, Arial, sans-serif
     font-weight 400
     text-align center
-    background-color $color1[0]
     overflow hidden
     cursor default
     border-radius 0.2rem
@@ -18,6 +17,7 @@ calendar($font1, $font2, $color1, $color2, $white)
       height 6.81rem
       line-height @height
       font-size 5rem
+      background-color $color1[0]
 
     &__month
       $height = 2.69rem
@@ -27,7 +27,7 @@ calendar($font1, $font2, $color1, $color2, $white)
       font-weight 300
       font-size 1.625rem
       line-height @height
-      background-color rgba(0,0,0, 0.1)
+      background-color darken($color1[0], 10)
 
       & ^[0]__button-left
       & ^[0]__button-right
@@ -68,6 +68,7 @@ calendar($font1, $font2, $color1, $color2, $white)
       font-weight 300
       font-size 1.875rem
       line-height @height
+      background-color $color1[0]
 
     &__days-week
       font-family $font1, Arial, sans-serif
@@ -75,12 +76,12 @@ calendar($font1, $font2, $color1, $color2, $white)
       font-size 0.625rem
       height 1.69rem
       line-height @height
-      background-color rgba(0,0,0, 0.1)
+      background-color darken($color1[0], 10)
       border none
       border-collapse collapse
       vertical-align middle
 
-      td
+      & ^[0]__cell
         width ($width / 7)
 
     &__days
@@ -94,7 +95,7 @@ calendar($font1, $font2, $color1, $color2, $white)
       width $width
       border-collapse collapse
 
-      td
+      & ^[0]__cell
         border 0.0625rem solid $white
         width 'calc(%s / 7)' % $width
         height @width

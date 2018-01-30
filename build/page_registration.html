@@ -18,42 +18,50 @@
     </header>
     <main date-title="Sign up">
       <form class="form-registration">
-        <label class="input-string">
-          <input class="input-string__input" type="email" name="name" placeholder="Your Email" required>
-          <div class="input-string__status"></div>
-        </label>
-        <label class="input-string">
-          <input class="input-string__input" type="text" name="name" placeholder="Your first name" required>
-          <div class="input-string__status"></div>
-        </label>
-        <label class="input-string">
-          <input class="input-string__input" type="text" name="name" placeholder="Your last name" required>
-          <div class="input-string__status"></div>
-        </label>
-        <div>Your age</div>
-        <label>
-          <div class="slider slider_color_undefined slider-mix">
+        <div class="form-registration__container-line">
+          <label class="input-string">
+            <input class="input-string__input" required type="email" name="name" placeholder="Your Email">
+            <div class="input-string__status"></div>
+          </label>
+        </div>
+        <div class="form-registration__container-line">
+          <label class="input-string">
+            <input class="input-string__input" required type="text" name="name" placeholder="Your first name">
+            <div class="input-string__status"></div>
+          </label>
+        </div>
+        <div class="form-registration__container-line">
+          <label class="input-string">
+            <input class="input-string__input" required type="text" name="name" placeholder="Your last name">
+            <div class="input-string__status"></div>
+          </label>
+        </div>
+        <div class="form-registration__container-line">Your age</div>
+        <div class="form-registration__container-line">
+          <div class="slider slider_color_undefined">
             <div class="slider__view">20</div>
             <div class="slider__line"></div>
             <input class="slider__input js-slider__input" type="range" min="10" max="100" value="20">
           </div>
-        </label>
-        <div>Your gender</div>
-        <div class="container">
-          <label>
+        </div>
+        <div class="form-registration__container-line">Your gender</div>
+        <div class="form-registration__container-line">
+          <label class="form-registration__label">
             <input class="radio" type="radio" name="gender" value="male" required>
-            <p>Male</p>
+            <p class="form-registration__label-text">Male</p>
           </label>
-          <label>
+          <label class="form-registration__label">
             <input class="radio" type="radio" name="gender" value="female" required>
-            <p>Female</p>
+            <p class="form-registration__label-text">Female</p>
           </label>
         </div>
-        <label>
-          <input class="checkbox " type="checkbox" name="radio" value="value">
-          <p>I agree <a href="404.html">privacy policy</a></p>
-        </label>
-        <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal button-mix">sign up</button>
+        <div class="form-registration__container-line">
+          <label class="form-registration__label">
+            <input class="checkbox" type="checkbox" name="radio" value="value">
+            <p class="form-registration__label-text">I agree <a href="404.html">privacy policy</a></p>
+          </label>
+        </div>
+        <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normalstandart-button_fullWidth">sign up</button>
       </form>
     </main>
   <script type="text/javascript" src="registration.js"></script></body>

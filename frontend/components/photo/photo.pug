@@ -1,9 +1,7 @@
 mixin photo(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
-    - options.mix = options.mix || ''
+    - options = options || {}
     if (options.src)
         - options.src = require('../../img/' + options.src + '.png')
-        img(class = "photo " + options.mix src = options.src alt = "avatar")
+        img.photo(src = options.src alt = "photo")
     else
-        img(class = "photo " + options.mix alt = "avatar")
+        .photo no photo

@@ -1,7 +1,5 @@
 mixin search(options)
-    - //(placeholder='search',name='search',notfound=false)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
+    - options = options || {}
     - options.placeholder = options.placeholder || 'Search'
     - options.name = options.name || 'search'
     if options.notfound

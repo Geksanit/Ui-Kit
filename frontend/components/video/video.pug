@@ -1,22 +1,19 @@
 mixin video(options)
-    if (!options || (typeof(options) !== 'object'))
-        - options = {}
-    - var src = 'no src!'
-    if (options.src)
-        - var url = require('../../video/' + options.src + '.jpg')
-        - src = require('../../video/' + options.src + '.mp4')
+    - options = options || {}
+    - var url = options.src ? require('../../video/' + options.src + '.jpg') : 'no src!'
+    - var src = options.src ? require('../../video/' + options.src + '.mp4') : 'no src!'
     - options.title = options.title || 'Title'
-    - options.mix = options.mix || ''
 
-    div(class = "js-video video " + options.mix)
-        .video__text
+    .js-video.video
+        .video__text.js-video__text
             .video__title #{options.title}
             .video__src #{src}
         if(options.src)
-            video.video__video(poster = url src = src)
+            video.video__video.js-video__video(poster = url src = src)
         else
-            video.video__video
+            video.video__video.js-video__video
         .video__controls
-            .video__button
-            +slider({ min: 0, max: 100, value: 0, color: 'orange', mix: 'video__slider-mix', line: true })
-            .video__button-full
+            .video__button.js-video__button
+            .video__slider
+                +slider({ min: 0, max: 100, value: 0, color: 'orange', mix: 'video__slider-mix', line: true })
+            .video__button-full.js-video__button-full

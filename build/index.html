@@ -13,184 +13,253 @@
     <title>Ui-Kit</title>
   <link href="index.css" rel="stylesheet"></head>
   <body>
-    <main>
-      <div class="standart-buttons-container">
-        <div class="title">standard buttons</div>
-        <div class="container-line">
-          <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small ">button</button>
-          <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal ">button</button>
-          <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_normal ">button</button>
-          <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small ">button</button>
-        </div>
-        <div class="container-line">
-          <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small ">button</button>
-          <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal ">button</button>
-          <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_normal ">button</button>
-          <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small ">button</button>
-        </div>
-        <div class="container-line">
-          <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small ">button</button>
-          <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal ">button</button>
-          <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_normal ">button</button>
-          <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small ">button</button>
-        </div>
-      </div>
-      <div class="arrow-buttons-container">
-        <div class="title">arrow buttons</div>
-        <div class="container-line">
-          <button class="arrow-button arrow-button_orientation_left arrow-button_color_blue">
-            <div class="arrow-button__arrow"></div>
-          </button>
-          <button class="arrow-button arrow-button_orientation_right arrow-button_color_blue">
-            <div class="arrow-button__arrow"></div>
-          </button>
-          <button class="arrow-button arrow-button_orientation_left arrow-button_color_blue" disabled>
-            <div class="arrow-button__arrow"></div>
-          </button>
-          <button class="arrow-button arrow-button_orientation_right arrow-button_color_orange" disabled>
-            <div class="arrow-button__arrow"></div>
-          </button>
-          <button class="arrow-button arrow-button_orientation_left arrow-button_color_orange">
-            <div class="arrow-button__arrow"></div>
-          </button>
-          <button class="arrow-button arrow-button_orientation_right arrow-button_color_orange">
-            <div class="arrow-button__arrow"></div>
-          </button>
-        </div>
-      </div>
-      <div class="percentages-container">
-        <div class="title">percentages / pie-chart</div>
-        <div class="container-line">
-          <div class="percentages">
-            <svg class="percentages__svg">
-              <circle class="percentages__circle" cx="50%" cy="50%" r="2.8125rem" stroke-dasharray="0rem 31rem" stroke-dashoffset="0"></circle>
-            </svg>
-            <div class="percentages__number">0</div>
+    <main class="main">
+      <div class="main__standart-buttons">
+        <div class="standart-buttons-container">
+          <div class="standart-buttons-container__title">
+                <div class="title">standard buttons</div>
           </div>
-          <div class="percentages">
-            <svg class="percentages__svg">
-              <circle class="percentages__circle" cx="50%" cy="50%" r="2.8125rem" stroke-dasharray="6.71495625rem 31rem" stroke-dashoffset="0"></circle>
-            </svg>
-            <div class="percentages__number">38</div>
+          <div class="standart-buttons-container__container">
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small">button</button>
+            </div>
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal">button</button>
+            </div>
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_normal">button</button>
+            </div>
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small">button</button>
+            </div>
           </div>
-          <div class="percentages">
-            <svg class="percentages__svg">
-              <circle class="percentages__circle" cx="50%" cy="50%" r="2.8125rem" stroke-dasharray="10.95598125rem 31rem" stroke-dashoffset="0"></circle>
-            </svg>
-            <div class="percentages__number">62</div>
+          <div class="standart-buttons-container__container">
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small">button</button>
+            </div>
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal">button</button>
+            </div>
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_normal">button</button>
+            </div>
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small">button</button>
+            </div>
           </div>
-          <div class="percentages">
-            <svg class="percentages__svg">
-              <circle class="percentages__circle" cx="50%" cy="50%" r="2.8125rem" stroke-dasharray="15.727134375rem 31rem" stroke-dashoffset="0"></circle>
-            </svg>
-            <div class="percentages__number">89</div>
-          </div>
-          <div class="pie-chart">
-            <svg class="pie-chart__svg">
-              <circle class="pie-chart__circle pie-chart_color_lightgray" r="2.5rem" cx="50%" cy="50%" stroke-dasharray="31rem" stroke="lightgray" stroke-dashoffset="0"></circle>
-              <circle class="pie-chart__circle pie-chart_color_blue" r="2.5rem" cx="50%" cy="50%" stroke-dasharray="10.209875rem 31rem" stroke="darkgray" stroke-dashoffset="0"></circle>
-              <circle class="pie-chart__circle pie-chart_color_orange" r="2.5rem" cx="50%" cy="50%" stroke-dasharray="5.497625000000001rem 31rem" stroke="red" stroke-dashoffset="0"></circle>
-              <circle class="pie-chart__circle pie-chart_color_gray" r="2.5rem" cx="50%" cy="50%" stroke-dasharray="1.5707500000000003rem 31rem" stroke="green" stroke-dashoffset="0"></circle>
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="sliders-container">
-        <div class="title">sliders</div>
-        <div class="container-line">
-          <div class="slider slider_color_orange ">
-            <div class="slider__view">40</div>
-            <input class="slider__input js-slider__input" type="range" min="0" max="100" value="40">
-          </div>
-          <div class="slider slider_color_undefined ">
-            <div class="slider__line"></div>
-            <input class="slider__input js-slider__input" type="range" min="0" max="100" value="75">
-            <div class="slider__numbers">
-              <div>0</div>
-              <div>25</div>
-              <div>50</div>
-              <div>75</div>
-              <div>100</div>
+          <div class="standart-buttons-container__container">
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small">button</button>
+            </div>
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal">button</button>
+            </div>
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_normal">button</button>
+            </div>
+            <div class="standart-buttons-container__button">
+              <button class="standart-button js-standart-button standart-button_color_orange standart-button_size_small">button</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="stages-container">
-        <div class="title">stages</div>
-        <div class="container-line">
-          <div class="stages ">
-            <div class="stages__circle stages_color_orange">
-              <div class="stages__text">1</div>
+      <div class="main__arrow-buttons">
+        <div class="arrow-buttons-container">
+          <div class="arrow-buttons-container__title">
+                <div class="title">arrow buttons</div>
+          </div>
+          <div class="arrow-buttons-container__container">
+            <button class="arrow-button arrow-button_orientation_left arrow-button_color_blue">
+              <div class="arrow-button__arrow"></div>
+            </button>
+            <button class="arrow-button arrow-button_orientation_right arrow-button_color_blue">
+              <div class="arrow-button__arrow"></div>
+            </button>
+            <button class="arrow-button arrow-button_orientation_left arrow-button_color_blue" disabled>
+              <div class="arrow-button__arrow"></div>
+            </button>
+            <button class="arrow-button arrow-button_orientation_right arrow-button_color_orange" disabled>
+              <div class="arrow-button__arrow"></div>
+            </button>
+            <button class="arrow-button arrow-button_orientation_left arrow-button_color_orange">
+              <div class="arrow-button__arrow"></div>
+            </button>
+            <button class="arrow-button arrow-button_orientation_right arrow-button_color_orange">
+              <div class="arrow-button__arrow"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="main__percentages">
+        <div class="percentages-container">
+          <div class="percentages-container__title">
+                <div class="title">percentages / pie-chart</div>
+          </div>
+          <div class="percentages-container__container">
+            <div class="percentages">
+              <svg class="percentages__svg">
+                <circle class="percentages__circle" cx="50%" cy="50%" r="2.8125rem" stroke-dasharray="0rem 31rem" stroke-dashoffset="0"></circle>
+              </svg>
+              <div class="percentages__number">0</div>
             </div>
-            <div class="stages__line stages_color_orange"></div>
-            <div class="stages__circle stages_color_orange">
-              <div class="stages__text">2</div>
+            <div class="percentages">
+              <svg class="percentages__svg">
+                <circle class="percentages__circle" cx="50%" cy="50%" r="2.8125rem" stroke-dasharray="6.71495625rem 31rem" stroke-dashoffset="0"></circle>
+              </svg>
+              <div class="percentages__number">38</div>
             </div>
-            <div class="stages__line stages_color_orange"></div>
-            <div class="stages__circle stages_color_orange">
-              <div class="stages__text">3</div>
+            <div class="percentages">
+              <svg class="percentages__svg">
+                <circle class="percentages__circle" cx="50%" cy="50%" r="2.8125rem" stroke-dasharray="10.95598125rem 31rem" stroke-dashoffset="0"></circle>
+              </svg>
+              <div class="percentages__number">62</div>
             </div>
-            <div class="stages__line"></div>
-            <div class="stages__circle">
-              <div class="stages__text">4</div>
+            <div class="percentages">
+              <svg class="percentages__svg">
+                <circle class="percentages__circle" cx="50%" cy="50%" r="2.8125rem" stroke-dasharray="15.727134375rem 31rem" stroke-dashoffset="0"></circle>
+              </svg>
+              <div class="percentages__number">89</div>
             </div>
-            <div class="stages__line"></div>
-            <div class="stages__circle">
-              <div class="stages__text">5</div>
+            <div class="pie-chart">
+              <svg class="pie-chart__svg">
+                <circle class="pie-chart__circle pie-chart_color_lightgray" r="2.5rem" cx="50%" cy="50%" stroke-dasharray="31rem" stroke="lightgray" stroke-dashoffset="0"></circle>
+                <circle class="pie-chart__circle pie-chart_color_blue" r="2.5rem" cx="50%" cy="50%" stroke-dasharray="10.209875rem 31rem" stroke="darkgray" stroke-dashoffset="0"></circle>
+                <circle class="pie-chart__circle pie-chart_color_orange" r="2.5rem" cx="50%" cy="50%" stroke-dasharray="5.497625000000001rem 31rem" stroke="red" stroke-dashoffset="0"></circle>
+                <circle class="pie-chart__circle pie-chart_color_gray" r="2.5rem" cx="50%" cy="50%" stroke-dasharray="1.5707500000000003rem 31rem" stroke="green" stroke-dashoffset="0"></circle>
+              </svg>
             </div>
           </div>
         </div>
       </div>
-      <div class="form-elements-container">
-        <div class="title">form elements</div>
-        <div class="container-line">
-          <forma>
-            <label class="input-string">
-              <input class="input-string__input" type="text" name="name" placeholder="Your Name" required>
-              <div class="input-string__status"></div>
-            </label>
-            <label class="input-string">
-              <input class="input-string__input" type="email" name="name" placeholder="Your Email" required>
-              <div class="input-string__status"></div>
-            </label>
-            <textarea class="textarea" name="message" placeholder="Your Message" required></textarea>
-            <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal submit-mix">submit</button>
-          </forma>
-          <div class="container-column">
-            <div class="toggles-container">
-              <div class="title">toggles</div>
-              <div class="container-line">
-                <input class="checkbox " type="checkbox" name="radio" value="value">
-                <input class="checkbox " checked type="checkbox" name="radio" value="value">
+      <div class="main__sliders">
+        <div class="sliders-container">
+          <div class="sliders-container__title">
+                <div class="title">sliders</div>
+          </div>
+          <div class="sliders-container__container">
+            <div class="sliders-container__slider">
+              <div class="slider slider_color_orange">
+                <div class="slider__view">40</div>
+                <input class="slider__input js-slider__input" type="range" min="0" max="100" value="40">
               </div>
             </div>
-            <div class="tick-boxes-container">
-              <div class="title">tick-boxes</div>
-              <div class="container-line">
-                <input class="radio " checked type="radio" name="radio" value="value">
-                <input class="radio " type="radio" name="radio" value="value">
+            <div class="sliders-container__slider">
+              <div class="slider slider_color_undefined">
+                <div class="slider__line"></div>
+                <input class="slider__input js-slider__input" type="range" min="0" max="100" value="75">
+                <div class="slider__numbers">
+                  <div>0</div>
+                  <div>25</div>
+                  <div>50</div>
+                  <div>75</div>
+                  <div>100</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="container-line">
+      <div class="main__stages">
+        <div class="stages-container">
+          <div class="stages-container__title">
+                <div class="title">stages</div>
+          </div>
+          <div class="stages-container__container">
+            <div class="stages">
+              <div class="stages__circle stages_color_orange">
+                <div class="stages__text">1</div>
+              </div>
+              <div class="stages__line stages_color_orange"></div>
+              <div class="stages__circle stages_color_orange">
+                <div class="stages__text">2</div>
+              </div>
+              <div class="stages__line stages_color_orange"></div>
+              <div class="stages__circle stages_color_orange">
+                <div class="stages__text">3</div>
+              </div>
+              <div class="stages__line"></div>
+              <div class="stages__circle">
+                <div class="stages__text">4</div>
+              </div>
+              <div class="stages__line"></div>
+              <div class="stages__circle">
+                <div class="stages__text">5</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__form-elements">
+        <div class="form-elements-container">
+          <div class="form-elements-container__title">
+                <div class="title">form elements</div>
+          </div>
+          <div class="form-elements-container__container-line">
+            <div class="form-elements-container__container-column">
+              <form class="form-container">
+                <div class="form-container__element">
+                  <label class="input-string">
+                    <input class="input-string__input" required type="text" name="name" placeholder="Your Name">
+                    <div class="input-string__status"></div>
+                  </label>
+                </div>
+                <div class="form-container__element">
+                  <label class="input-string">
+                    <input class="input-string__input" required type="email" name="name" placeholder="Your Email">
+                    <div class="input-string__status"></div>
+                  </label>
+                </div>
+                <div class="form-container__element">
+                  <textarea class="textarea" required name="message" placeholder="Your Message"></textarea>
+                </div>
+                <div class="form-container__button">
+                  <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal">submit</button>
+                </div>
+                <div class="form-container__clearfix"></div>
+              </form>
+            </div>
+            <div class="form-elements-container__container-column">
+              <div class="toggles-container">
+                <div class="toggles-container__title">
+                      <div class="title">toggles</div>
+                </div>
+                <div class="toggles-container__container">
+                  <input class="checkbox" type="checkbox" name="radio" value="value">
+                  <input class="checkbox" checked type="checkbox" name="radio" value="value">
+                </div>
+              </div>
+              <div class="tick-boxes-container">
+                <div class="tick-boxes-container__title">
+                      <div class="title">tick-boxes</div>
+                </div>
+                <div class="tick-boxes-container__container">
+                  <input class="radio" checked type="radio" name="radio" value="value">
+                  <input class="radio" type="radio" name="radio" value="value">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__container-line">
         <div class="search-drop-down-container">
-          <div class="title">search / drop down</div>
-          <div class="container-line">
+          <div class="search-drop-down-container__title">
+                <div class="title">search / drop down</div>
+          </div>
+          <div class="search-drop-down-container__container">
             <form class="search" action="404">
               <input class="search__input js-search__input " type="search" name="search" placeholder="Search">
               <input class="search__submit submit" type="submit" name="" value="">
             </form>
           </div>
-          <div class="container-line">
+          <div class="search-drop-down-container__container">
             <form class="search" action="404">
               <input class="search__input js-search__input search__input_notfound" type="search" name="search" placeholder="I've not found what I'm looking for...">
               <input class="search__submit submit" type="submit" name="" value="">
             </form>
           </div>
-          <div class="container-line">
-            <form class="select " action="404">
+          <div class="search-drop-down-container__container">
+            <form class="select" action="404">
               <select class="select__select">
                 <option disabled selected>Choose An Option</option>
                 <option>option-1</option>
@@ -202,9 +271,13 @@
           </div>
         </div>
         <div class="user-profile-container">
-          <div class="title">user profile</div>
-          <div class="container-line">
-            <div class="user-profile "><img class="photo user-profile__photo-mix" src="img/photo2.png" alt="avatar">
+          <div class="user-profile-container__title">
+                <div class="title">user profile</div>
+          </div>
+          <div class="user-profile-container__container">
+            <div class="user-profile">
+              <div class="user-profile__photo"><img class="photo" src="img/photo2.png" alt="photo">
+              </div>
               <div class="user-profile__block user-profile_color_orange">
                 <div class="user-profile__name">John Smith</div>
                 <div class="user-profile__prof">ux designer</div>
@@ -216,8 +289,10 @@
               </div>
             </div>
           </div>
-          <div class="container-line">
-            <div class="user-profile "><img class="photo user-profile__photo-mix" src="img/photo1.png" alt="avatar">
+          <div class="user-profile-container__container">
+            <div class="user-profile">
+              <div class="user-profile__photo"><img class="photo" src="img/photo1.png" alt="photo">
+              </div>
               <div class="user-profile__block user-profile_color_blue">
                 <div class="user-profile__name">Sarah Brown</div>
                 <div class="user-profile__prof">developer</div>
@@ -231,104 +306,134 @@
           </div>
         </div>
       </div>
-      <div class="news-events-container">
-        <div class="title">news & events</div>
-        <div class="container-line">
-          <div class="news news_color_orange "><img class="news__img" src="img/Layer.png" alt="news">
-            <div class="news__text">
-              <h2 class="news__title">It'is all going downhill</h2>
-              <div class="news__date">24 august 2013</div>
-              <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
-            </div>
+      <div class="main__news-events">
+        <div class="news-events-container">
+          <div class="news-events-container__title">
+                <div class="title">news &amp; events</div>
           </div>
-          <div class="events events_color_blue "><img class="events__img" src="img/Layer2.png" alt="events">
-            <div class="events__text">
-              <div class="events__date">
-                <div class="events__date-day">24</div>
-                <div class="events__date-month">Aug</div>
+          <div class="news-events-container__container">
+            <div class="news-events-container__element">
+              <div class="news news_color_orange"><img class="news__img" src="img/Layer.png" alt="news">
+                <div class="news__text">
+                  <h2 class="news__title">It'is all going downhill</h2>
+                  <div class="news__date">24 august 2013</div>
+                  <p class="news__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.</p>
+                </div>
               </div>
-              <div class="events__title">this is the title</div>
-              <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <div class="events__button-container">
-                <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small events__button-mix">add to calendar</button>
+            </div>
+            <div class="news-events-container__element">
+              <div class="events events_color_blue"><img class="events__img" src="img/Layer2.png" alt="events">
+                <div class="events__text">
+                  <div class="events__date">
+                    <div class="events__date-day">24</div>
+                    <div class="events__date-month">Aug</div>
+                  </div>
+                  <div class="events__title">this is the title</div>
+                  <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <div class="events__button-container">
+                    <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_smallstandart-button_fullWidth">add to calendar</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="location-container">
-        <div class="title">location</div>
-        <div class="map ">
-          <div class="map__element js-map__element" data-lat="-33.877685" data-lng="151.207077"></div>
-          <div class="map__down">
-            <div class="map__message">Meet Us !</div>
-            <div class="map__address">no data ...</div>
-            <div class="map__icon-location"></div>
-            <div class="map__icon-marker"></div>
+      <div class="main__location">
+        <div class="location-container">
+          <div class="location-container__title">
+                <div class="title">location</div>
+          </div>
+          <div class="map">
+            <div class="map__element js-map__element" data-lat="-33.877685" data-lng="151.207077"></div>
+            <div class="map__down">
+              <div class="map__message">Meet Us !</div>
+              <div class="map__address">no data ...</div>
+              <div class="map__icon-location"></div>
+              <div class="map__icon-marker"></div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="container-line">
+      <div class="main__container-line">
         <div class="calendar-container">
-          <div class="title">calendar</div>
-          <div class="calendar js-calendar">
-            <div class="calendar__day">0</div>
-            <div class="calendar__month">month
-              <div class="calendar__button-left"></div>
-              <div class="calendar__button-right"></div>
+          <div class="calendar-container__title">
+                <div class="title">calendar</div>
+          </div>
+          <div class="calendar-container__container">
+            <div class="calendar js-calendar">
+              <div class="calendar__day">0</div>
+              <div class="calendar__month">month
+                <div class="calendar__button-left"></div>
+                <div class="calendar__button-right"></div>
+              </div>
+              <div class="calendar__year">year</div>
+              <table class="calendar__days-week" cols="7">
+                <tr>
+                  <td class="calendar__cell">MON</td>
+                  <td class="calendar__cell">TUE</td>
+                  <td class="calendar__cell">WED</td>
+                  <td class="calendar__cell">THU</td>
+                  <td class="calendar__cell">FRI</td>
+                  <td class="calendar__cell">SAT</td>
+                  <td class="calendar__cell">SUN</td>
+                </tr>
+              </table>
+              <table class="calendar__days" cols="7">
+                <tbody></tbody>
+              </table>
+              <div class="calendar__button-today">TODAY</div>
             </div>
-            <div class="calendar__year">year</div>
-            <table class="calendar__days-week" cols="7">
-              <tr>
-                <td>MON</td>
-                <td>TUE</td>
-                <td>WED</td>
-                <td>THU</td>
-                <td>FRI</td>
-                <td>SAT</td>
-                <td>SUN</td>
-              </tr>
-            </table>
-            <table class="calendar__days" cols="7">
-              <tbody></tbody>
-            </table>
-            <div class="calendar__button-today">TODAY</div>
           </div>
         </div>
         <div class="messaging-container">
-          <div class="title">messaging</div>
-          <div class="messaging messaging_color_blue ">
-            <div class="messaging__top">
-              <div class="messaging__name">Sarah Brown</div>
-              <div class="messaging__img">
-                <div class="messaging__chat"></div><img class="photo " src="img/photo1.png" alt="avatar">
-                <div class="messaging__camera"></div>
+          <div class="messaging-container__title">
+                <div class="title">messaging</div>
+          </div>
+          <div class="messaging-container__container">
+            <div class="messaging messaging_color_blue">
+              <div class="messaging__top">
+                <div class="messaging__name">Sarah Brown</div>
+                <div class="messaging__img">
+                  <div class="messaging__chat"></div>
+                  <div class="messaging__photo"><img class="photo" src="img/photo1.png" alt="photo">
+                  </div>
+                  <div class="messaging__camera"></div>
+                </div>
               </div>
-            </div>
-            <div class="messaging__bottom">
-              <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
-              <textarea class="messaging__message" name="message"></textarea>
-              <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal messaging__button-mix">reply</button>
-              <div class="messaging__clearfix"></div>
+              <div class="messaging__bottom">
+                <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
+                <textarea class="messaging__message" name="message"></textarea>
+                <div class="messaging__button">
+                  <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normalstandart-button_fullWidth">reply</button>
+                </div>
+                <div class="messaging__clearfix"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="video-container">
-        <div class="title">video</div>
-        <div class="js-video video ">
-          <div class="video__text">
-            <div class="video__title">New Zeland</div>
-            <div class="video__src">video/Travel_New_Zeland.mp4</div>
+      <div class="main__video">
+        <div class="video-container">
+          <div class="video-container__title">
+                <div class="title">video</div>
           </div>
-          <video class="video__video" poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
-          <div class="video__controls">
-            <div class="video__button"></div>
-            <div class="slider slider_color_orange video__slider-mix">
-              <div class="slider__line"></div>
-              <input class="slider__input js-slider__input" type="range" min="0" max="100" value="0">
+          <div class="js-video video">
+            <div class="video__text">
+              <div class="video__title">New Zeland</div>
+              <div class="video__src">video/Travel_New_Zeland.mp4</div>
             </div>
-            <div class="video__button-full"></div>
+            <video class="video__video" poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
+            <div class="video__controls">
+              <div class="video__button"></div>
+              <div class="video__slider">
+                <div class="slider slider_color_orange">
+                  <div class="slider__line"></div>
+                  <input class="slider__input js-slider__input" type="range" min="0" max="100" value="0">
+                </div>
+              </div>
+              <div class="video__button-full"></div>
+            </div>
           </div>
         </div>
       </div>

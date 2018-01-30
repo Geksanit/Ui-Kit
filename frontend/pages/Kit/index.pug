@@ -8,115 +8,167 @@ html
         +favicons()
         title Ui-Kit
     body
-        main
-            .standart-buttons-container
-                .title standard buttons
-                .container-line
-                    +standart-button({title: 'button', size: 'small', color: 'blue'})
-                    +standart-button()
-                    +standart-button({title: 'button', size: 'normal', color: 'orange'})
-                    +standart-button({title: 'button', size: 'small', color: 'orange'})
-                .container-line
-                    +standart-button({title: 'button', size: 'small', color: 'blue'})
-                    +standart-button()
-                    +standart-button({title: 'button', size: 'normal', color: 'orange'})
-                    +standart-button({title: 'button', size: 'small', color: 'orange'})
-                .container-line
-                    +standart-button({title: 'button', size: 'small', color: 'blue'})
-                    +standart-button()
-                    +standart-button({title: 'button', size: 'normal', color: 'orange'})
-                    +standart-button({title: 'button', size: 'small', color: 'orange'})
-            .arrow-buttons-container
-                .title arrow buttons
-                .container-line
-                    +arrow-button({orientation: 'left'})
-                    +arrow-button()
-                    +arrow-button({orientation: 'left', disabled: true})
-                    +arrow-button({orientation: 'right', color: 'orange', disabled: true})
-                    +arrow-button({orientation: 'left', color: 'orange'})
-                    +arrow-button({orientation: 'right', color: 'orange'})
-            .percentages-container
-                .title percentages / pie-chart
-                .container-line
-                    +percentages(0)
-                    +percentages(38)
-                    +percentages(62)
-                    +percentages(89)
-                    +pie-chart(10,25,30)
-            .sliders-container
-                .title sliders
-                .container-line
-                    +slider({ min: 0, max: 100, value: 40, view: true, color: 'orange' })
-                    +slider({ value: 75, line: true, numbers: true })
-            .stages-container
-                .title stages
-                .container-line
-                    +stages({color: 'orange'})
-            .form-elements-container
-                .title form elements
-                .container-line
-                    forma
-                        +input-string({ placeholder: 'Your Name' })
-                        +input-string({ type: 'email', placeholder: 'Your Email' })
-                        +textarea({ placeholder: 'Your Message' })
-                        +standart-button({ mix: 'submit-mix', title: 'submit' })
-                    .container-column
-                        .toggles-container
-                            .title toggles
-                            .container-line
-                                +checkbox()
-                                +checkbox({ checked: true })
-                        .tick-boxes-container
-                            .title tick-boxes
-                            .container-line
-                                +radio({ checked: true })
-                                +radio()
-            .container-line
+        mixin title(text)
+            .title #{text}
+
+        main.main
+            .main__standart-buttons
+                .standart-buttons-container
+                    .standart-buttons-container__title
+                        +title('standard buttons')
+                    .standart-buttons-container__container
+                        .standart-buttons-container__button
+                            +standart-button({title: 'button', size: 'small', color: 'blue'})
+                        .standart-buttons-container__button
+                            +standart-button()
+                        .standart-buttons-container__button
+                            +standart-button({title: 'button', size: 'normal', color: 'orange'})
+                        .standart-buttons-container__button
+                            +standart-button({title: 'button', size: 'small', color: 'orange'})
+                    .standart-buttons-container__container
+                        .standart-buttons-container__button
+                            +standart-button({title: 'button', size: 'small', color: 'blue'})
+                        .standart-buttons-container__button
+                            +standart-button()
+                        .standart-buttons-container__button
+                            +standart-button({title: 'button', size: 'normal', color: 'orange'})
+                        .standart-buttons-container__button
+                            +standart-button({title: 'button', size: 'small', color: 'orange'})
+                    .standart-buttons-container__container
+                        .standart-buttons-container__button
+                            +standart-button({title: 'button', size: 'small', color: 'blue'})
+                        .standart-buttons-container__button
+                            +standart-button()
+                        .standart-buttons-container__button
+                            +standart-button({title: 'button', size: 'normal', color: 'orange'})
+                        .standart-buttons-container__button
+                            +standart-button({title: 'button', size: 'small', color: 'orange'})
+            .main__arrow-buttons
+                .arrow-buttons-container
+                    .arrow-buttons-container__title
+                        +title('arrow buttons')
+                    .arrow-buttons-container__container
+                        +arrow-button({orientation: 'left'})
+                        +arrow-button()
+                        +arrow-button({orientation: 'left', disabled: true})
+                        +arrow-button({orientation: 'right', color: 'orange', disabled: true})
+                        +arrow-button({orientation: 'left', color: 'orange'})
+                        +arrow-button({orientation: 'right', color: 'orange'})
+            .main__percentages
+                .percentages-container
+                    .percentages-container__title
+                        +title('percentages / pie-chart')
+                    .percentages-container__container
+                        +percentages(0)
+                        +percentages(38)
+                        +percentages(62)
+                        +percentages(89)
+                        +pie-chart(10,25,30)
+            .main__sliders
+                .sliders-container
+                    .sliders-container__title
+                        +title('sliders')
+                    .sliders-container__container
+                        .sliders-container__slider
+                            +slider({ min: 0, max: 100, value: 40, view: true, color: 'orange' })
+                        .sliders-container__slider
+                            +slider({ value: 75, line: true, numbers: true })
+            .main__stages
+                .stages-container
+                    .stages-container__title
+                        +title('stages')
+                    .stages-container__container
+                        +stages({color: 'orange'})
+            .main__form-elements
+                .form-elements-container
+                    .form-elements-container__title
+                        +title('form elements')
+                    .form-elements-container__container-line
+                        .form-elements-container__container-column
+                            form.form-container
+                                .form-container__element
+                                    +input-string({ placeholder: 'Your Name' })
+                                .form-container__element
+                                    +input-string({ type: 'email', placeholder: 'Your Email' })
+                                .form-container__element
+                                    +textarea({ placeholder: 'Your Message' })
+                                .form-container__button
+                                    +standart-button({ title: 'submit' })
+                                .form-container__clearfix
+                        .form-elements-container__container-column
+                            .toggles-container
+                                .toggles-container__title
+                                    +title('toggles')
+                                .toggles-container__container
+                                    +checkbox()
+                                    +checkbox({ checked: true })
+                            .tick-boxes-container
+                                .tick-boxes-container__title
+                                    +title('tick-boxes')
+                                .tick-boxes-container__container
+                                    +radio({ checked: true })
+                                    +radio()
+            .main__container-line
                 .search-drop-down-container
-                    .title search / drop down
-                    .container-line
+                    .search-drop-down-container__title
+                        +title('search / drop down')
+                    .search-drop-down-container__container
                         +search()
-                    .container-line
+                    .search-drop-down-container__container
                         +search({ notfound: true })
-                    .container-line
+                    .search-drop-down-container__container
                         +select({ def: 'Choose An Option', list: ['option-1', 'option-2', 'option-3'] })
                 .user-profile-container
-                    .title user profile
-                    .container-line
+                    .user-profile-container__title
+                        +title('user profile')
+                    .user-profile-container__container
                         +user-profile({ name: 'John Smith', prof: 'ux designer', src: 'photo2', color: 'orange' })
-                    .container-line
+                    .user-profile-container__container
                         +user-profile({ name: 'Sarah Brown', prof: 'developer', src: 'photo1', color: 'blue' })
-            .news-events-container
-                .title news & events
-                .container-line
-                    +news({
-                      title: "It'is all going downhill",
-                      date: '24 august 2013',
-                      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.',
-                      color: 'orange'
-                    })
-                    +events({
-                      day: '24',
-                      month: 'Aug',
-                      title: 'this is the title',
-                      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-                    })
-            .location-container
-                .title location
-                +map({ lat: '-33.877685', lng: '151.207077', title: 'Meet Us !' })
-            .container-line
+            .main__news-events
+                .news-events-container
+                    .news-events-container__title
+                        +title('news & events')
+                    .news-events-container__container
+                        .news-events-container__element
+                            +news({
+                              title: "It'is all going downhill",
+                              date: '24 august 2013',
+                              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.',
+                              color: 'orange'
+                            })
+                        .news-events-container__element
+                            +events({
+                              day: '24',
+                              month: 'Aug',
+                              title: 'this is the title',
+                              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                            })
+            .main__location
+                .location-container
+                    .location-container__title
+                        +title('location')
+                    +map({ lat: '-33.877685', lng: '151.207077', title: 'Meet Us !' })
+
+            .main__container-line
                 .calendar-container
-                    .title calendar
-                    +calendar()
+                    .calendar-container__title
+                        +title('calendar')
+                    .calendar-container__container
+                        +calendar()
                 .messaging-container
-                    .title messaging
-                    +messaging({
-                      name: 'Sarah Brown',
-                      text: 'Hey, so are we cool to meet at the art gallery? Say 8pm',
-                      src: 'photo1'
-                    })
-            .video-container
-                .title video
-                +video({ src: 'Travel_New_Zeland', title: 'New Zeland' })
+                    .messaging-container__title
+                        +title('messaging')
+                    .messaging-container__container
+                        +messaging({
+                          name: 'Sarah Brown',
+                          text: 'Hey, so are we cool to meet at the art gallery? Say 8pm',
+                          src: 'photo1'
+                        })
+            .main__video
+                .video-container
+                    .video-container__title
+                        +title('video')
+                    +video({ src: 'Travel_New_Zeland', title: 'New Zeland' })
 
         script(defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBaRq2hOoLSW3DaHWf2aBP_xFlXdtYH0Oo&callback=initMap")

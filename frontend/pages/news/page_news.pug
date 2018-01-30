@@ -8,27 +8,42 @@ html
         title News
     body
         +header()
-        main(date-title='News')
-            .container-center
+        main.main(date-title='News')
+            .main__container-around
                 +select({ def:'sorting', list:['by date','by relevance'] })
-            +news({ mix:'news-events-mix', title:"It'is all going downhill", date:'24 august 2013', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.', color:'orange', src:'Layer' })
-            +events({ mix:'news-events-mix', day:'10', month:'Dec', title:'HolyJS 2017 Moscow', text:'HolyJS is a unique conference dedicated to JavaScript only.', color:'orange', src:'moskau' })
-            +news({ mix:'news-events-mix', title:"RALLY DAKAR-2017", date:'15 january 2017', text:'The Russian KAMAZ-master team triumphantly returned the Champion title in the extreme rally-marathon Dakar.', color:'blue', src:'rally' })
-            +events({ mix:'news-events-mix', day:'9', month:'Sep', title:'this is Event', text:'Lorem ipsum Lorem ipsum Lorem ipsum' })
-            +video({ mix:'video-map-mix', src:'Travel_New_Zeland', title:'New Zeland' })
-            +news({ mix:'news-events-mix', title:"It'is all going downhill", date:'26 december 2016', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'blue' })
-            +news({ mix:'news-events-mix', title:"It'is all going downhill", date:'20 august 2017', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'blue' })
-            +map({ mix:'video-map-mix', lat:'-33.877685', lng:'151.207077', title:'Meet Us !' })
-            +news({ mix:'news-events-mix', title:"It'is all going downhill", date:'20 august 2017', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'orange' })
-            +events({ mix:'news-events-mix', day:'24', month:'Aug', title:'this is title', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'orange' })
-            +events({ mix:'news-events-mix', day:'24', month:'Aug', title:'this is title', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'blue' })
+            .main__container-news
+                +news({ title:"It'is all going downhill", date:'24 august 2013', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed condimentum aliquet venanatis. Etiam a ninsi nunc, a tincidunt eros.', color:'orange', src:'Layer' })
+            .main__container-news
+                +events({ day:'10', month:'Dec', title:'HolyJS 2017 Moscow', text:'HolyJS is a unique conference dedicated to JavaScript only.', color:'orange', src:'moskau' })
+            .main__container-news
+                +news({ title:"RALLY DAKAR-2017", date:'15 january 2017', text:'The Russian KAMAZ-master team triumphantly returned the Champion title in the extreme rally-marathon Dakar.', color:'blue', src:'rally' })
+            .main__container-news
+                +events({ day:'9', month:'Sep', title:'this is Event', text:'Lorem ipsum Lorem ipsum Lorem ipsum' })
+            .main__container-around
+                +video({ src:'Travel_New_Zeland', title:'New Zeland' })
+            .main__container-news
+                +news({ title:"It'is all going downhill", date:'26 december 2016', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'blue' })
+            .main__container-news
+                +news({ title:"It'is all going downhill", date:'20 august 2017', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'blue' })
+            .main__container-around
+                +map({ lat:'-33.877685', lng:'151.207077', title:'Meet Us !' })
+            .main__container-news
+                +news({ title:"It'is all going downhill", date:'20 august 2017', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'orange' })
+            .main__container-news
+                +events({ day:'24', month:'Aug', title:'this is title', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'orange' })
+            .main__container-news
+                +events({ day:'24', month:'Aug', title:'this is title', text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', color:'blue' })
 
-            .arrows
+            .main__container-between
                 +arrow-button({ orientation:'left', color:'orange', disabled: true })
                 +arrow-button({ orientation:'right', color:'orange' })
-            .container-calendar
-                input(type="checkbox")
-                +calendar()
+
+            .main__container-calendar
+
+                .calendar-container
+                    input.calendar-container__checkbox(type="checkbox")
+                    .calendar-container__calendar
+                        +calendar()
 
         footer
             center
