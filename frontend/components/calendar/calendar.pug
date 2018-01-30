@@ -1,11 +1,11 @@
 mixin calendar
     .calendar.js-calendar
-        .calendar__day 0
-        .calendar__month month
-            .calendar__button-left
-            .calendar__button-right
-        .calendar__year year
-        table(cols = "7").calendar__days-week
+        .calendar__day.js-calendar__day 0
+        .calendar__month.js-calendar__month month
+            .calendar__button-left.js-calendar__button-left
+            .calendar__button-right.js-calendar__button-right
+        .calendar__year.js-calendar__year year
+        table(cols = "7").calendar__days-week.js-calendar__days-week
             tr
                 td.calendar__cell MON
                 td.calendar__cell TUE
@@ -14,6 +14,6 @@ mixin calendar
                 td.calendar__cell FRI
                 td.calendar__cell SAT
                 td.calendar__cell SUN
-        table.calendar__days(cols = "7")
+        table.calendar__days.js-calendar__days-table(cols = "7")
             tbody
-        .calendar__button-today TODAY
+        .calendar__button-today.js-calendar__button-today TODAY

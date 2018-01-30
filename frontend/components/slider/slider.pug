@@ -4,11 +4,11 @@ mixin slider(options)
     - options.max = options.max || 100
     - options.value = options.value || 0
 
-    div(class = "slider slider_color_" + options.color)
+    div(class = "slider js-slider slider_color_" + options.color)
       if (options.view)
-        .slider__view #{options.value}
+        .slider__view.js-slider__view #{options.value}
       if (options.line)
-        .slider__line
+        .slider__line.js-slider__line
       input(class = "slider__input js-slider__input" type = "range" min = options.min max = options.max value = options.value)
       if (options.numbers)
         .slider__numbers

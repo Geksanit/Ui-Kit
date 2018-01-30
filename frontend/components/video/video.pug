@@ -5,15 +5,15 @@ mixin video(options)
     - options.title = options.title || 'Title'
 
     .js-video.video
-        .video__text
+        .video__text.js-video__text
             .video__title #{options.title}
             .video__src #{src}
         if(options.src)
-            video.video__video(poster = url src = src)
+            video.video__video.js-video__video(poster = url src = src)
         else
-            video.video__video
+            video.video__video.js-video__video
         .video__controls
-            .video__button
+            .video__button.js-video__button
             .video__slider
                 +slider({ min: 0, max: 100, value: 0, color: 'orange', mix: 'video__slider-mix', line: true })
-            .video__button-full
+            .video__button-full.js-video__button-full

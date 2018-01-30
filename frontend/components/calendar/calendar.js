@@ -6,6 +6,12 @@ const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
 class Calendar {
   constructor(element) {
     this.$element = $(element);
+    this.$calendarDay = this.$element.find('.js-calendar__day');
+    this.$month = this.$element.find('.js-calendar__month');
+    this.$year = this.$element.find('.js-calendar__year');
+    this.$daysWeek = this.$element.find('.js-calendar__days-week');
+    this.$daysTable = this.$element.find('.js-calendar__days-table');
+
     this.date = new Date();
     this.calendarChange();
     this.initHandlers();
@@ -47,15 +53,15 @@ class Calendar {
     return $tbody;
   }
   calendarChange() {
-    const { $element } = this;
     const year = this.date.getFullYear();
     const month = this.date.getMonth();
     const day = this.date.getDate();
+    const $newTbody = this.getNewTbody();
 
-    $element.find('.calendar__day').text(day);
-    $element.find('.calendar__month').prop('childNodes')[0].nodeValue = MONTH_NAMES[month];
-    $element.find('.calendar__year').text(year);
-    $element.find('.calendar__days tbody').replaceWith(this.getNewTbody());
+    this.$calendarDay.text(day);
+    this.$month.prop('childNodes')[0].nodeValue = MONTH_NAMES[month];
+    this.$year.text(year);
+    $(this.$daysTable[0].children[0]).replaceWith($newTbody);
   }
   handleNextMonth() {
     this.date.setMonth(this.date.getMonth() + 1, 1);
@@ -67,7 +73,7 @@ class Calendar {
   }
   handleSetDate({ target }) {
     if (!$(target).hasClass('calendar__days-month')) return;
-    this.$element.find('calendar__today').removeClass('calendar__today');
+    this.$daysTable.find('calendar__today').removeClass('calendar__today');
     const today = $(target).addClass('calendar__today').text();
     this.date.setDate(Number(today));
     this.calendarChange();
@@ -77,10 +83,10 @@ class Calendar {
     this.calendarChange();
   }
   initHandlers() {
-    this.$element.find('.calendar__days').on('click.calendar', 'td', this.handleSetDate.bind(this));
-    this.$element.find('.calendar__button-left').on('click.calendar', this.handlePreviousMonth.bind(this));
-    this.$element.find('.calendar__button-right').on('click.calendar', this.handleNextMonth.bind(this));
-    this.$element.find('.calendar__button-today').on('click.calendar', this.handleSetToday.bind(this));
+    this.$daysTable.on('click.calendar', 'td', this.handleSetDate.bind(this));
+    this.$element.find('.js-calendar__button-left').on('click.calendar', this.handlePreviousMonth.bind(this));
+    this.$element.find('.js-calendar__button-right').on('click.calendar', this.handleNextMonth.bind(this));
+    this.$element.find('.js-calendar__button-today').on('click.calendar', this.handleSetToday.bind(this));
   }
 }
 let elements = [];

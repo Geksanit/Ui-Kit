@@ -7,11 +7,11 @@ class Button {
     this.size = convertRemToPixels(2);
   }
   rippleEffect(event) {
-    const $div = $(document.createElement('div')).attr('id', 'button__ripple');
+    const $div = $('<div/>').attr('id', 'button__ripple');
     $div.css({ top: `${event.offsetY - this.size}px`, left: `${event.offsetX - this.size}px` });
     this.$element.append($div);
     setTimeout(() => $div.remove(), 550);
   }
 }
 let buttons = [];
-$('.standart-button').each((index, element) => buttons.push(new Button(element)));
+$('.js-standart-button').each((index, element) => buttons.push(new Button(element)));

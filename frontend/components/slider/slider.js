@@ -2,11 +2,11 @@
 import convertRemToPixels from '../../scripts/convertRemToPixels';
 
 class Slider {
-  constructor(element) {
-    this.$element = $(element);
-    this.$parent = this.$element.parent();
-    this.$view = this.$parent.find('.slider__view');
-    this.$line = this.$parent.find('.slider__line');
+  constructor(block) {
+    this.$block = $(block);
+    this.$element = this.$block.find('.js-slider__input');
+    this.$view = this.$block.find('.js-slider__view');
+    this.$line = this.$block.find('.js-slider__line');
     this.sliderChange.call(this);
     this.$element.on('input.slider', this.sliderChange.bind(this));
     $(window).resize(this.sliderChange.bind(this));
@@ -25,4 +25,4 @@ class Slider {
 }
 
 let sliders = [];
-$('.js-slider__input').each((index, element) => sliders.push(new Slider(element)));
+$('.js-slider').each((index, element) => sliders.push(new Slider(element)));
