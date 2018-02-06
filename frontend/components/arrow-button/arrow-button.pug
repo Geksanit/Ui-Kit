@@ -6,5 +6,5 @@ mixin arrow-button(options)
     if (options.color !== colors[0] && options.color !== colors[1])
         - options.color = colors[0]
 
-    button(disabled = options.disabled ? true : false class = "arrow-button arrow-button_orientation_" + options.orientation + " arrow-button_color_" + options.color)
+    button(disabled = !!options.disabled class = "arrow-button arrow-button_orientation_" + options.orientation + " arrow-button_color_" + options.color)
         .arrow-button__arrow

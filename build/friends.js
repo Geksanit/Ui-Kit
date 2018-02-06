@@ -104,14 +104,14 @@ class Button {
     this.size = Object(__WEBPACK_IMPORTED_MODULE_0__scripts_convertRemToPixels__["a" /* default */])(2);
   }
   rippleEffect(event) {
-    const $div = $(document.createElement('div')).attr('id', 'button__ripple');
+    const $div = $('<div/>').attr('id', 'button__ripple');
     $div.css({ top: `${event.offsetY - this.size}px`, left: `${event.offsetX - this.size}px` });
     this.$element.append($div);
     setTimeout(() => $div.remove(), 550);
   }
 }
 let buttons = [];
-$('.standart-button').each((index, element) => buttons.push(new Button(element)));
+$('.js-standart-button').each((index, element) => buttons.push(new Button(element)));
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 

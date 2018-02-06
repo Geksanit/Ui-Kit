@@ -101,14 +101,14 @@ class Button {
     this.size = Object(__WEBPACK_IMPORTED_MODULE_0__scripts_convertRemToPixels__["a" /* default */])(2);
   }
   rippleEffect(event) {
-    const $div = $(document.createElement('div')).attr('id', 'button__ripple');
+    const $div = $('<div/>').attr('id', 'button__ripple');
     $div.css({ top: `${event.offsetY - this.size}px`, left: `${event.offsetX - this.size}px` });
     this.$element.append($div);
     setTimeout(() => $div.remove(), 550);
   }
 }
 let buttons = [];
-$('.standart-button').each((index, element) => buttons.push(new Button(element)));
+$('.js-standart-button').each((index, element) => buttons.push(new Button(element)));
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
@@ -150,11 +150,11 @@ $('.js-search__input').each((index, element) => elements.push(new Search(element
 
 
 class Slider {
-  constructor(element) {
-    this.$element = $(element);
-    this.$parent = this.$element.parent();
-    this.$view = this.$parent.find('.slider__view');
-    this.$line = this.$parent.find('.slider__line');
+  constructor(block) {
+    this.$block = $(block);
+    this.$element = this.$block.find('.js-slider__input');
+    this.$view = this.$block.find('.js-slider__view');
+    this.$line = this.$block.find('.js-slider__line');
     this.sliderChange.call(this);
     this.$element.on('input.slider', this.sliderChange.bind(this));
     $(window).resize(this.sliderChange.bind(this));
@@ -173,7 +173,7 @@ class Slider {
 }
 
 let sliders = [];
-$('.js-slider__input').each((index, element) => sliders.push(new Slider(element)));
+$('.js-slider').each((index, element) => sliders.push(new Slider(element)));
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
@@ -189,6 +189,12 @@ const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
 class Calendar {
   constructor(element) {
     this.$element = $(element);
+    this.$calendarDay = this.$element.find('.js-calendar__day');
+    this.$month = this.$element.find('.js-calendar__month');
+    this.$year = this.$element.find('.js-calendar__year');
+    this.$daysWeek = this.$element.find('.js-calendar__days-week');
+    this.$daysTable = this.$element.find('.js-calendar__days-table');
+
     this.date = new Date();
     this.calendarChange();
     this.initHandlers();
@@ -230,15 +236,15 @@ class Calendar {
     return $tbody;
   }
   calendarChange() {
-    const { $element } = this;
     const year = this.date.getFullYear();
     const month = this.date.getMonth();
     const day = this.date.getDate();
+    const $newTbody = this.getNewTbody();
 
-    $element.find('.calendar__day').text(day);
-    $element.find('.calendar__month').prop('childNodes')[0].nodeValue = MONTH_NAMES[month];
-    $element.find('.calendar__year').text(year);
-    $element.find('.calendar__days tbody').replaceWith(this.getNewTbody());
+    this.$calendarDay.text(day);
+    this.$month.prop('childNodes')[0].nodeValue = MONTH_NAMES[month];
+    this.$year.text(year);
+    $(this.$daysTable[0].children[0]).replaceWith($newTbody);
   }
   handleNextMonth() {
     this.date.setMonth(this.date.getMonth() + 1, 1);
@@ -250,7 +256,7 @@ class Calendar {
   }
   handleSetDate({ target }) {
     if (!$(target).hasClass('calendar__days-month')) return;
-    this.$element.find('calendar__today').removeClass('calendar__today');
+    this.$daysTable.find('calendar__today').removeClass('calendar__today');
     const today = $(target).addClass('calendar__today').text();
     this.date.setDate(Number(today));
     this.calendarChange();
@@ -260,10 +266,10 @@ class Calendar {
     this.calendarChange();
   }
   initHandlers() {
-    this.$element.find('.calendar__days').on('click.calendar', 'td', this.handleSetDate.bind(this));
-    this.$element.find('.calendar__button-left').on('click.calendar', this.handlePreviousMonth.bind(this));
-    this.$element.find('.calendar__button-right').on('click.calendar', this.handleNextMonth.bind(this));
-    this.$element.find('.calendar__button-today').on('click.calendar', this.handleSetToday.bind(this));
+    this.$daysTable.on('click.calendar', 'td', this.handleSetDate.bind(this));
+    this.$element.find('.js-calendar__button-left').on('click.calendar', this.handlePreviousMonth.bind(this));
+    this.$element.find('.js-calendar__button-right').on('click.calendar', this.handleNextMonth.bind(this));
+    this.$element.find('.js-calendar__button-today').on('click.calendar', this.handleSetToday.bind(this));
   }
 }
 let elements = [];
@@ -285,10 +291,10 @@ class Video {
   constructor(element) {
     this.$element = $(element);
     Object(__WEBPACK_IMPORTED_MODULE_0__scripts_autobind__["a" /* default */])(this);
-    this.$video = this.$element.find('video').on('timeupdate.video', this.handleUpdateVideo);
-    this.$text = this.$element.find('.video__text');
-    this.$button = this.$element.find('.video__button').on('click.video', this.handleButton);
-    this.$buttonFull = this.$element.find('.video__button-full').on('click.video', this.handleButtonFull);
+    this.$video = this.$element.find('.js-video__video').on('timeupdate.video', this.handleUpdateVideo);
+    this.$text = this.$element.find('.js-video__text');
+    this.$button = this.$element.find('.js-video__button').on('click.video', this.handleButton);
+    this.$buttonFull = this.$element.find('.js-video__button-full').on('click.video', this.handleButtonFull);
     this.$slider = this.$element.find('input[type=range]').on('input.video', this.handleSlider);
   }
   changeSlider() {

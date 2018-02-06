@@ -138,14 +138,14 @@
           </div>
           <div class="sliders-container__container">
             <div class="sliders-container__slider">
-              <div class="slider slider_color_orange">
-                <div class="slider__view">40</div>
+              <div class="slider js-slider slider_color_orange">
+                <div class="slider__view js-slider__view">40</div>
                 <input class="slider__input js-slider__input" type="range" min="0" max="100" value="40">
               </div>
             </div>
             <div class="sliders-container__slider">
-              <div class="slider slider_color_undefined">
-                <div class="slider__line"></div>
+              <div class="slider js-slider slider_color_undefined">
+                <div class="slider__line js-slider__line"></div>
                 <input class="slider__input js-slider__input" type="range" min="0" max="100" value="75">
                 <div class="slider__numbers">
                   <div>0</div>
@@ -331,7 +331,7 @@
                   <div class="events__title">this is the title</div>
                   <p class="events__desription">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                   <div class="events__button-container">
-                    <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_smallstandart-button_fullWidth">add to calendar</button>
+                    <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_small standart-button_fullWidth">add to calendar</button>
                   </div>
                 </div>
               </div>
@@ -344,11 +344,11 @@
           <div class="location-container__title">
                 <div class="title">location</div>
           </div>
-          <div class="map">
+          <div class="map js-map">
             <div class="map__element js-map__element" data-lat="-33.877685" data-lng="151.207077"></div>
             <div class="map__down">
               <div class="map__message">Meet Us !</div>
-              <div class="map__address">no data ...</div>
+              <div class="map__address js-map__address"> no data ...</div>
               <div class="map__icon-location"></div>
               <div class="map__icon-marker"></div>
             </div>
@@ -362,13 +362,13 @@
           </div>
           <div class="calendar-container__container">
             <div class="calendar js-calendar">
-              <div class="calendar__day">0</div>
-              <div class="calendar__month">month
-                <div class="calendar__button-left"></div>
-                <div class="calendar__button-right"></div>
+              <div class="calendar__day js-calendar__day">0</div>
+              <div class="calendar__month js-calendar__month">month
+                <div class="calendar__button-left js-calendar__button-left"></div>
+                <div class="calendar__button-right js-calendar__button-right"></div>
               </div>
-              <div class="calendar__year">year</div>
-              <table class="calendar__days-week" cols="7">
+              <div class="calendar__year js-calendar__year">year</div>
+              <table class="calendar__days-week js-calendar__days-week" cols="7">
                 <tr>
                   <td class="calendar__cell">MON</td>
                   <td class="calendar__cell">TUE</td>
@@ -379,10 +379,10 @@
                   <td class="calendar__cell">SUN</td>
                 </tr>
               </table>
-              <table class="calendar__days" cols="7">
+              <table class="calendar__days js-calendar__days-table" cols="7">
                 <tbody></tbody>
               </table>
-              <div class="calendar__button-today">TODAY</div>
+              <div class="calendar__button-today js-calendar__button-today">TODAY</div>
             </div>
           </div>
         </div>
@@ -405,7 +405,7 @@
                 <div class="messaging__buble">Hey, so are we cool to meet at the art gallery? Say 8pm</div>
                 <textarea class="messaging__message" name="message"></textarea>
                 <div class="messaging__button">
-                  <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normalstandart-button_fullWidth">reply</button>
+                  <button class="standart-button js-standart-button standart-button_color_blue standart-button_size_normal standart-button_fullWidth">reply</button>
                 </div>
                 <div class="messaging__clearfix"></div>
               </div>
@@ -419,20 +419,20 @@
                 <div class="title">video</div>
           </div>
           <div class="js-video video">
-            <div class="video__text">
+            <div class="video__text js-video__text">
               <div class="video__title">New Zeland</div>
               <div class="video__src">video/Travel_New_Zeland.mp4</div>
             </div>
-            <video class="video__video" poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
+            <video class="video__video js-video__video" poster="video/Travel_New_Zeland.jpg" src="video/Travel_New_Zeland.mp4"></video>
             <div class="video__controls">
-              <div class="video__button"></div>
+              <div class="video__button js-video__button"></div>
               <div class="video__slider">
-                <div class="slider slider_color_orange">
-                  <div class="slider__line"></div>
+                <div class="slider js-slider slider_color_orange">
+                  <div class="slider__line js-slider__line"></div>
                   <input class="slider__input js-slider__input" type="range" min="0" max="100" value="0">
                 </div>
               </div>
-              <div class="video__button-full"></div>
+              <div class="video__button-full js-video__button-full"></div>
             </div>
           </div>
         </div>
